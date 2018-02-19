@@ -5,6 +5,7 @@
     <meta name = "viewport" content="width=device-width, initial-scale=1">
 
     <link href="<?php echo base_url('bootstrap/bootstrap.min.css');?>"  rel = "stylesheet"/>
+     <link href="<?php echo base_url('assets/css/bootstrap-datetimepicker.min.css');?>"  rel = "stylesheet"/>
 	<title>HR Information System</title>
 </head>
 <body>
@@ -34,23 +35,45 @@
 				<label for="repeatPass">Repeat Password</label>
 				<input class="form-control" type="password" name="repeatPass" id="repeatPass" placeholder="Repeat Password" />
 			</div>
-			<div id="message"></div>
+			<div id="message">
+				
+			</div>
+			<div class="input-append date" id="birthdate" data-field="date">
+			    <input class="span2" type="text">
+			    <span class="add-on"><i class="icon-remove"></i></span>
+			    <span class="add-on"><i class="icon-th"></i></span>
+			</div> 
 			<div class="pull-right">
 				<button type="submit" name="save" value="Save" class ="btn btn-success" >SAVE</button>
 			</div>
 		</form>
-
 		<div class="pull-right">
 			<button type="submit" name="cancel" id="cancel" value="Cancel" class ="btn btn-danger" >CANCEL</button>
 		</div>
-
 	</div>
+
+	<?php 
+		//--Conversion of date--
+		/*$current = date("m/d/y");
+		$new_format = date("m-d-y", strtotime($current));
+		echo $current. "<br>";
+		echo $new_format;
+		$current;
+		$db_date;*/
+	?>
 	<script src="<?php echo base_url('assets/js/jquery-2.1.4.min.js');?>"></script>
+	<script src="<?php echo base_url('assets/js/bootstrap-datetimepicker.min.js');?>"></script>
 </body>
 </html>
 
 <script>
+	$(function () {
+        $('#birthdate').datepicker({
+        	format: 'mm/dd/yyyy',
 
+        })
+    });
+	       
 	$("#cancel").on("click", function(){
 		
 		self.location = "<?php echo base_url("index");?>";
@@ -63,11 +86,13 @@
 		val = val.value;
 
 		if(passwordVal != val){
-			$("#message").text("Password not match!");
+			$("#message").text("Password does not match!");
 		}else{
 			$("#message").text("");
 		}
 
 		//console.log(passwordVal);
 	});
+
+	
 </script>
