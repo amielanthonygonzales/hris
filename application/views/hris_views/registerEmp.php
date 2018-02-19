@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="container">
-		<form>
+		<form method="post" action="<?php echo base_url();?>hris_Controller/add">
 			<div class="form-group">
 				<label for="fname">First Name</label>
 				<input class="form-control" type="text" name="fname" id="fname" placeholder="First Name"/>
@@ -23,6 +23,16 @@
 				<label for="lname">Last Name</label>
 				<input class="form-control" type="text" name="lname" id="lname" placeholder="Last Name"/>
 			</div>
+			<div class="form-group">
+				<label for="extname">Extension Name</label>
+				<input class="form-control" type="text" name="extname" id="extname" placeholder="Extension Name"/>
+			</div>
+			<div class="input-append date" id="birthdate" data-field="date">
+				<label for="bday">Birthdate (YYYY-MM-DD)</label>
+			    <input id="bday" name="bday" class="form-control" placeholder="Birthdate" type="text"/>
+			    <span class="add-on"><i class="icon-remove"></i></span>
+			    <span class="add-on"><i class="icon-th"></i></span>
+			</div> 
 			<div class="form-group">
 				<label for="username">Username</label>
 				<input class="form-control" type="text" name="username" id="username" placeholder="Username"/>
@@ -38,11 +48,7 @@
 			<div id="message">
 				
 			</div>
-			<div class="input-append date" id="birthdate" data-field="date">
-			    <input class="span2" type="text">
-			    <span class="add-on"><i class="icon-remove"></i></span>
-			    <span class="add-on"><i class="icon-th"></i></span>
-			</div> 
+			
 			<div class="pull-right">
 				<button type="submit" name="save" value="Save" class ="btn btn-success" >SAVE</button>
 			</div>
@@ -69,7 +75,7 @@
 <script>
 	$(function () {
         $('#birthdate').datepicker({
-        	format: 'mm/dd/yyyy',
+        	format: 'yyyy-mm-dd',
 
         })
     });
