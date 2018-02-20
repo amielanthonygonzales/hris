@@ -46,9 +46,8 @@
 				<input class="form-control" type="password" name="repeatPass" id="repeatPass" placeholder="Repeat Password" />
 			</div>
 			<div id="message">
-				here is the message
+
 			</div>
-			
 			<div class="pull-right">
 				<button type="submit" name="save" value="Save" class ="btn btn-success" >SAVE</button>
 			</div>
@@ -57,7 +56,6 @@
 			<button type="submit" name="cancel" id="cancel" value="Cancel" class ="btn btn-danger" >CANCEL</button>
 		</div>
 	</div>
-
 	<?php 
 		//--Conversion of date--
 		/*$current = date("m/d/y");
@@ -99,6 +97,4 @@
 
 		//console.log(passwordVal);
 	});
-
-	
 </script>
