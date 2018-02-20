@@ -50,10 +50,7 @@
 				<input class="form-control" type="password" name="repeatPass" id="repeatPass" placeholder="Repeat Password" required/>
 			</div>
 			<div id="message" class="message">
-<<<<<<< HEAD
 
-=======
->>>>>>> 898a687febd6c9b67612197cce582f962096a1ae
 			</div>
 			<div class="pull-right">
 				<button type="submit" name="save" value="Save" class ="btn btn-success" >SAVE</button>
