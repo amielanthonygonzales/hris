@@ -1,10 +1,10 @@
 <?php 
 
-	class hris_Controller extends CI_Controller{
+	class RegisterEmp_Controller extends CI_Controller{
 
 		public function __construct(){
 			parent::__construct();
-			$this->load->model('hris_Model');
+			$this->load->model('Employee_Model');
 		}
 
 		function index(){
@@ -28,7 +28,7 @@
 					'position' => "employee"
 				);
 				
-				$this->hris_Model->add($data);
+				$this->Employee_Model->add($data);
 			}
 			redirect(base_url('registerEmp'));
 
