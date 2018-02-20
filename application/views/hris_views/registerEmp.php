@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="container">
-		<form method="post" action="<?php echo base_url();?>hris_Controller/add">
+		<form method="post" action="<?php echo base_url();?>RegisterEmp_Controller/add">
 			<div class="form-group">
 				<label for="fname">First Name</label>
 				<input class="form-control" type="text" name="fname" id="fname" placeholder="First Name"/>
@@ -28,7 +28,7 @@
 				<input class="form-control" type="text" name="extname" id="extname" placeholder="Extension Name"/>
 			</div>
 			<div class="input-append date" id="birthdate" data-field="date">
-				<label for="bday">Birthdate (YYYY-MM-DD)</label>
+				<label for="bday">Birthdate (yyyy-mm-dd)</label>
 			    <input id="bday" name="bday" class="form-control" placeholder="Birthdate" type="text"/>
 			    <span class="add-on"><i class="icon-remove"></i></span>
 			    <span class="add-on"><i class="icon-th"></i></span>
@@ -46,7 +46,6 @@
 				<input class="form-control" type="password" name="repeatPass" id="repeatPass" placeholder="Repeat Password" />
 			</div>
 			<div id="message">
-				here is the message
 			</div>
 			
 			<div class="pull-right">
