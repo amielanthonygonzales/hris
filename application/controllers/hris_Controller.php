@@ -14,5 +14,24 @@
 		function registerEmp(){
 			$this->load->view('hris_views/registerEmp');
 		}
+
+		function add(){
+			if($this->input->method() === 'post' && $_POST != ""){
+				$data = array(
+					'firstName' => $this->input->post('fname'),
+					'middleName' => $this->input->post('mname'),
+					'lastName' => $this->input->post('lname'),
+					'extName' => $this->input->post('extname'),
+					'birthday' => $this->input->post('bday'),
+					'username' => $this->input->post('username'),
+					'password' => $this->input->post('password'),
+					'position' => "employee"
+				);
+				
+				$this->hris_Model->add($data);
+			}
+			redirect(base_url('registerEmp'));
+
+		}
 	}
 ?>
