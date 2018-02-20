@@ -46,7 +46,7 @@
 				<input class="form-control" type="password" name="repeatPass" id="repeatPass" placeholder="Repeat Password" />
 			</div>
 			<div id="message">
-				
+				here is the message
 			</div>
 			
 			<div class="pull-right">
