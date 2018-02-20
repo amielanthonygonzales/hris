@@ -23,6 +23,7 @@
 					'lastName' => $this->input->post('lname'),
 					'extName' => $this->input->post('extname'),
 					'birthday' => $this->input->post('bday'),
+					'email' => $this->input->post('email'),
 					'username' => $this->input->post('username'),
 					'password' => $this->input->post('password'),
 					'position' => "employee"
