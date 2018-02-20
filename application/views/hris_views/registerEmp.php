@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="container">
-		<form>
+		<form id="form-id">
 			<div class="form-group">
 				<label for="fname">First Name</label>
 				<input class="form-control" type="text" name="fname" id="fname" placeholder="First Name"/>
@@ -38,8 +38,9 @@
 			<div id="message">
 				
 			</div>
-			<div class="input-append date" id="birthdate" data-field="date">
-			    <input class="span2" type="text">
+			<div class="input-append date form-group" id="birthdate" data-field="date">
+				<label for="birthdate">Date of Birth</label>
+			    <input class="form-control" type="text" placeholder="Date of Birth">
 			    <span class="add-on"><i class="icon-remove"></i></span>
 			    <span class="add-on"><i class="icon-th"></i></span>
 			</div> 
@@ -70,6 +71,7 @@
 	$(function () {
         $('#birthdate').datepicker({
         	format: 'mm/dd/yyyy',
+        	clearBtn: true
 
         })
     });
