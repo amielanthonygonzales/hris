@@ -49,7 +49,7 @@
 				<label for="repeatPass">Repeat Password</label>
 				<input class="form-control" type="password" name="repeatPass" id="repeatPass" placeholder="Repeat Password" required/>
 			</div>
-			<div id="message">
+			<div id="message" class="message">
 			</div>
 			
 			<div class="pull-right">
