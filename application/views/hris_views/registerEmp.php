@@ -94,10 +94,8 @@
 	});
 
 	$("#repeatPass").on("keyup", function(){
-		var passwordVal = document.getElementById("password");
-		passwordVal = passwordVal.value;
-		var val = document.getElementById("repeatPass");
-		val = val.value;
+		var passwordVal = $("#repeatPass").val();
+		var val = $("#repeatPass").val();
 
 		if(passwordVal != val){
 			$("#message").text("Password does not match!");
@@ -127,8 +125,7 @@
 				enteredBirthday="";
 
 			$("#fname").on("keyup", function(){
-				enteredFirstName = document.getElementById("fname");
-				enteredFirstName = enteredFirstName.value.toUpperCase();
+				enteredFirstName = $("#fname").val().toUpperCase();
 				
 				if(enteredFirstName == empFirstName 
 					&& enteredLastName == empLastName 
