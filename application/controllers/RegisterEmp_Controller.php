@@ -12,11 +12,19 @@
 		}
 
 		function registerEmp(){
-			$this->load->view('hris_views/registerEmp');
+			$data['query']=$this->Employee_Model->getName();
+			$this->load->view('hris_views/registerEmp', $data);
+		}
+
+		function getName(){
+			$data['query']=$this->Employee_Model->getName();
+			header('Content-Type: application/json');
+      		echo json_encode($data);
 		}
 
 		function add(){
 			if($this->input->method() === 'post' && $_POST != ""){
+
 				$data = array(
 					'firstName' => $this->input->post('fname'),
 					'middleName' => $this->input->post('mname'),

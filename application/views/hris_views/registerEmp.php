@@ -5,7 +5,8 @@
     <meta name = "viewport" content="width=device-width, initial-scale=1">
 
     <link href="<?php echo base_url('bootstrap/bootstrap.min.css');?>"  rel = "stylesheet"/>
-     <link href="<?php echo base_url('assets/css/bootstrap-datetimepicker.min.css');?>"  rel = "stylesheet"/>
+     <link href="<?php echo base_url('assets/css/bootstrap-datetimepicker.min.css');?>"  rel = "stylesheet"/> 
+
 	<title>HR Information System</title>
 </head>
 <body>
@@ -106,4 +107,95 @@
 
 		//console.log(passwordVal);
 	});
+
+	$("#bday").on("change", function(){
+		
+	});
+
+	$.getJSON('<?php echo base_url('RegisterEmp_Controller/getName')?>', function(result){
+		result = result['query'];
+
+		$.each(result, function(key, value){
+			var empFirstName = value['firstName'].toUpperCase();
+			var empLastName = value['lastName'].toUpperCase();
+			var empMiddleName = value['middleName'].toUpperCase();
+			var empExtName = value['extName'].toUpperCase();
+			var empBirthday = value['birthday'];
+			
+
+			var enteredFirstName="", enteredLastName="", enteredMiddleName="", enteredExtName="",
+				enteredBirthday="";
+
+			$("#fname").on("keyup", function(){
+				enteredFirstName = document.getElementById("fname");
+				enteredFirstName = enteredFirstName.value.toUpperCase();
+				
+				if(enteredFirstName == empFirstName 
+					&& enteredLastName == empLastName 
+					&& enteredMiddleName == empMiddleName 
+					&& empExtName == enteredExtName 
+					&& empBirthday == enteredBirthday){
+
+					alert('Data already exist, try to login with your username and password');
+				}
+			});
+
+			$("#lname").on("keyup", function(){
+				enteredLastName = document.getElementById("lname");
+				enteredLastName = enteredLastName.value.toUpperCase();
+				
+				if(enteredFirstName == empFirstName 
+					&& enteredLastName == empLastName 
+					&& enteredMiddleName == empMiddleName 
+					&& empExtName == enteredExtName 
+					&& empBirthday == enteredBirthday){
+					alert('Data already exist, try to login with your username and password');
+				}
+			});
+
+			$("#mname").on("keyup", function(){
+				enteredMiddleName = document.getElementById("mname");
+				enteredMiddleName = enteredMiddleName.value.toUpperCase();
+				
+				if(enteredFirstName == empFirstName 
+					&& enteredLastName == empLastName 
+					&& enteredMiddleName == empMiddleName 
+					&& empExtName == enteredExtName 
+					&& empBirthday == enteredBirthday){
+					alert('Data already exist, try to login with your username and password');
+				}
+			});
+
+			$("#extname").on("keyup", function(){
+				enteredExtName = document.getElementById("extname");
+				enteredExtName = enteredExtName.value.toUpperCase();
+				
+				if(enteredFirstName == empFirstName 
+					&& enteredLastName == empLastName 
+					&& enteredMiddleName == empMiddleName 
+					&& empExtName == enteredExtName 
+					&& empBirthday == enteredBirthday){
+					alert('Data already exist, try to login with your username and password');
+				}
+			});
+
+			$("#bday").on("change", function(){
+				enteredBirthday = document.getElementById("bday");
+				enteredBirthday = enteredBirthday.value;
+				
+				if(enteredFirstName == empFirstName 
+					&& enteredLastName == empLastName 
+					&& enteredMiddleName == empMiddleName 
+					&& empExtName == enteredExtName 
+					&& empBirthday == enteredBirthday){
+					alert('Data already exist, try to login with your username and password');
+				}
+			});
+
+
+		});
+
+	});
+
+
 </script>
