@@ -15,6 +15,12 @@
 			$this->load->view('hris_views/registerCompany');
 		}
 
+		function getCompanyIdInfo(){
+			$data['query'] = $this->Company_Model->checkID();
+			header('Content-Type: application/json');
+      		echo json_encode($data);
+		}
+
 		function add(){
 			if($this->input->method() === 'post' && $_POST != ""){
 				$address = array(
@@ -41,8 +47,6 @@
 				
 				$this->Company_Model->add($data);
 			}
-			redirect(base_url('registerCompany'));
-
 		}
 	}
 ?>
