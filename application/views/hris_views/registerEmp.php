@@ -94,7 +94,7 @@
 	});
 
 	$("#repeatPass").on("keyup", function(){
-		var passwordVal = $("#repeatPass").val();
+		var passwordVal = $("#password").val();
 		var val = $("#repeatPass").val();
 
 		if(passwordVal != val){
@@ -102,8 +102,6 @@
 		}else{
 			$("#message").text("");
 		}
-
-		//console.log(passwordVal);
 	});
 
 	$("#bday").on("change", function(){
@@ -138,8 +136,7 @@
 			});
 
 			$("#lname").on("keyup", function(){
-				enteredLastName = document.getElementById("lname");
-				enteredLastName = enteredLastName.value.toUpperCase();
+				enteredLastName = $("#lname").val().toUpperCase();
 				
 				if(enteredFirstName == empFirstName 
 					&& enteredLastName == empLastName 
@@ -151,8 +148,7 @@
 			});
 
 			$("#mname").on("keyup", function(){
-				enteredMiddleName = document.getElementById("mname");
-				enteredMiddleName = enteredMiddleName.value.toUpperCase();
+				enteredMiddleName = $("#mname").val().toUpperCase();
 				
 				if(enteredFirstName == empFirstName 
 					&& enteredLastName == empLastName 
@@ -164,8 +160,7 @@
 			});
 
 			$("#extname").on("keyup", function(){
-				enteredExtName = document.getElementById("extname");
-				enteredExtName = enteredExtName.value.toUpperCase();
+				enteredExtName = $("#extname").val().toUpperCase();
 				
 				if(enteredFirstName == empFirstName 
 					&& enteredLastName == empLastName 
@@ -177,8 +172,7 @@
 			});
 
 			$("#bday").on("change", function(){
-				enteredBirthday = document.getElementById("bday");
-				enteredBirthday = enteredBirthday.value;
+				enteredBirthday = $("#bday").val();
 				
 				if(enteredFirstName == empFirstName 
 					&& enteredLastName == empLastName 
