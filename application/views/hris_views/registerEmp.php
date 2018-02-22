@@ -11,6 +11,26 @@
 </head>
 <body>
 	<div class="container">
+		<div class="modal fade" tabindex="-1" id="cancel-modal">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header bg-secondary">
+						<h5 class="modal-title text-white">MESSAGE</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p class="text-info"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-dismiss="modal" id="cancel-no">No</button>
+						<button type="button" class="btn btn-success" id="cancel-yes">Yes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<form method="post" action="<?php echo base_url();?>RegisterEmp_Controller/add">
 			<div class="form-group">
 				<label for="fname">First Name</label>
@@ -53,12 +73,13 @@
 			<div id="message" class="message">
 
 			</div>
-			<div class="pull-right">
-				<button type="submit" name="save" value="Save" class ="btn btn-success" >SAVE</button>
+			<div class="float-right form-group">
+				<button type="submit" name="save" id="save" value="Save" data-target="#cancel-modal" data-toggle="modal" class ="btn btn-success" data-save="Succesfully Added!">SAVE</button>
 			</div>
 		</form>
-		<div class="pull-right">
-			<button type="submit" name="cancel" id="cancel" value="Cancel" class ="btn btn-danger" >CANCEL</button>
+		<div class="clearfix"></div>
+		<div class="float-right">
+			<button type="button" name="cancel" id="cancel" value="Cancel" class ="btn btn-danger" data-toggle="modal" data-target="#cancel-modal" data-save="Are you sure you want to cancel?">CANCEL</button>
 		</div>
 	</div>
 	<?php 
@@ -72,10 +93,34 @@
 	?>
 	<script src="<?php echo base_url('assets/js/jquery-2.1.4.min.js');?>"></script>
 	<script src="<?php echo base_url('assets/js/bootstrap-datetimepicker.min.js');?>"></script>
+	<script src="<?php echo base_url('bootstrap/bootstrap.min.js');?>"></script>
 </body>
 </html>
 
 <script>
+	$('#cancel-yes').on('click', function(){
+		self.location = "<?php echo base_url("index");?>";
+	});
+
+	$('#cancel-modal').on('show.bs.modal', function(event){
+		var save = $(event.relatedTarget);
+		if(save.val() == "Save"){
+			$('#cancel-yes').hide();
+			$('#cancel-no').hide();
+			var message = save.data('save');
+			var modal = $(this);
+			modal.find('.modal-body p').text(message);
+
+		}else{
+			$('#cancel-yes').show();
+			$('#cancel-no').show();
+			var message = save.data('save');
+			var modal = $(this);
+			modal.find('.modal-body p').text(message);	
+		}
+		
+	});
+
 	$(function () {
         $('#birthdate').datepicker({
         	format: 'yyyy-mm-dd',
@@ -83,10 +128,10 @@
         })
     });
 	       
-	$("#cancel").on("click", function(){
+	// $("#cancel").on("click", function(){
 		
-		self.location = "<?php echo base_url("index");?>";
-	});
+	// 	self.location = "<?php echo base_url("index");?>";
+	// });
 
 	$("#password").on("keyup", function(){
 		$("#repeatPass").val("");
