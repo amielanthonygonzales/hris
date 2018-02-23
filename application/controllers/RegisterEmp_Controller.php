@@ -25,6 +25,17 @@
 		function add(){
 			if($this->input->method() === 'post' && $_POST != ""){
 
+				$dataName = array(
+					'firstName' => $this->input->post('fname'),
+					'middleName' => $this->input->post('mname'),
+					'lastName' => $this->input->post('lname'),
+					'extName' => $this->input->post('extname')
+				);
+
+				$dataName = json_encode($dataName);
+
+				$name = array('information' => $dataName);
+
 				$data = array(
 					'firstName' => $this->input->post('fname'),
 					'middleName' => $this->input->post('mname'),
@@ -37,9 +48,9 @@
 					'position' => "employee"
 				);
 				
-				$this->Employee_Model->add($data);
+				$this->Employee_Model->add($data, $name);
 			}
-			redirect(base_url('registerEmp'));
+			//redirect(base_url('registerEmp'));
 
 		}
 	}
