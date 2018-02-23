@@ -47,6 +47,8 @@
 				
 				$this->Company_Model->add($data);
 			}
+			// redirect(base_url('registerCompany'));
+
 		}
 	}
 ?>
