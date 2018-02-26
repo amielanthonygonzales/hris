@@ -9,7 +9,7 @@
 
 		function index(){
 			$data['query']=$this->SSS_Model->getEmployee();
-			$this->load->view('hris_views/sssTable',$data);
+			$this->load->view('hris_views/sss/sssTable',$data);
 		}
 
 		function getEmployee(){
@@ -20,7 +20,7 @@
 
 		function sssView($id){
 			$data['query']=$this->SSS_Model->sssView($id);
-			$this->load->view('hris_views/ssView',$data);
+			$this->load->view('hris_views/sss/ssView',$data);
 		}
 
 		function sssEdit($id){

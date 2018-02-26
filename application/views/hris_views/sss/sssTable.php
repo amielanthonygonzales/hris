@@ -10,6 +10,7 @@
      <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/datatables/css/dataTables.bootstrap.min.css');?>"/>
     <link rel="stylesheet" href="<?php echo base_url('amaretti/html/assets/css/style.css');?>" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/stroke-7/style.css');?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/font-awesome/css/font-awesome.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/jquery.nanoscroller/css/nanoscroller.css');?>"/>
 
 	<title>HR Information System</title>
@@ -87,27 +88,27 @@
 			$('#sssEmployee'+key).append(tdExtName);
 
 			var tdAnchorView = $('<a></a>');
-			tdAnchorView.attr("href", "<?= base_url('sssView/')?>"+value['id']);
-			tdAnchorView.attr("class", "btn btn-light text-info");
+			tdAnchorView.attr("href", "<?= base_url('sss-view/')?>"+value['id']);
+			tdAnchorView.attr("class", "text-info");
 			tdAnchorView.attr("id", "anchorViewSS"+key);
 			$('#sssEmployee'+key).append(tdAnchorView);
 
 			var tdAnchorEdit = $('<a></a>');
-			tdAnchorEdit.attr("href", "<?= base_url('sssEdit/')?>"+value['id']);
-			tdAnchorEdit.attr("class", "btn btn-light text-success");
+			tdAnchorEdit.attr("href", "<?= base_url('sss-edit/')?>"+value['id']);
+			tdAnchorEdit.attr("class", "text-success");
 			tdAnchorEdit.attr("id", "anchorEditSS"+key);
 			$('#sssEmployee'+key).append(tdAnchorEdit);
 
 		});
 		for(x=1; x<=lengthResult; x++){
 
-			var spanView=$('<span></span>');
-			spanView.attr('class','icon s7-info');
-			$('#anchorViewSS'+x).append(spanView);
+			var tdView=$('<td></td>');
+			tdView.attr('class','icon icon-left fa fa-eye');
+			$('#anchorViewSS'+x).append(tdView);
 
-			var spanEdit=$('<span></span>');
-			spanEdit.attr('class','icon s7-pen');
-			$('#anchorEditSS'+x).append(spanEdit);
+			var tdEdit=$('<td></td>');
+			tdEdit.attr('class','icon icon-left fa fa-edit');
+			$('#anchorEditSS'+x).append(tdEdit);
 		}
 
 	});

@@ -13,16 +13,16 @@
 
 		function employeeTable(){
 			$data['query']=$this->Employee_Model->getName();
-			$this->load->view('hris_views/employeeTable',$data);
+			$this->load->view('hris_views/employee/employeeTable',$data);
 		}
 		function viewEmployee($id){
 			$data['query']=$this->Employee_Model->viewEmployee($id);
-			$this->load->view('hris_views/viewEmployee',$data);
+			$this->load->view('hris_views/employee/viewEmployee',$data);
 		}
 
 		function registerEmp(){
 			$data['query']=$this->Employee_Model->getName();
-			$this->load->view('hris_views/registerEmp', $data);
+			$this->load->view('hris_views/employee/registerEmp', $data);
 		}
 
 		function changeStatus($id){

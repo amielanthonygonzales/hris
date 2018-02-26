@@ -12,7 +12,7 @@
 		}
 
 		function registerCompany(){
-			$this->load->view('hris_views/registerCompany');
+			$this->load->view('hris_views/company/registerCompany');
 		}
 
 		function getCompanyIdInfo(){
