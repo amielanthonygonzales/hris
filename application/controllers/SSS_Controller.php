@@ -24,7 +24,8 @@
 		}
 
 		function sssEdit($id){
-
+			$data['query']=$this->SSS_Model->sssView($id);
+			$this->load->view('hris_views/sss/sssEdit',$data);
 		}
 
 		function getSSInfo($id){
