@@ -52,14 +52,14 @@
 				<label for="bday">Birthdate (yyyy-mm-dd)</label>
 			    <input id="bday" name="bday" class="form-control" placeholder="Birthdate" type="text" required/>
 			    <span class="add-on"><i class="icon-remove"></i></span>
-			    <span class="add-on"><i class="icon-th"></i></span>
+			    <!-- <span class="add-on"><i class="icon-th"></i></span> -->
 			</div> 
 			<div class="form-group">
 				<label for="email">Email</label>
 				<input class="form-control" type="email" name="email" id="email" placeholder="Email" required/>
 			</div>
 			<div class="form-group">
-				<label for="username">Username</label>
+				<label for="username">Username<code id="username-code"></code></label>
 				<input class="form-control" type="text" name="username" id="username" placeholder="Username" required/>
 			</div>
 			<div class="form-group">
@@ -74,12 +74,12 @@
 
 			</div>
 			<div class="float-right form-group">
-				<button type="submit" name="save" id="save" value="Save" data-target="#cancel-modal" data-toggle="modal" class ="btn btn-success" data-save="Succesfully Added!">SAVE</button>
+				<button type="submit" name="save" id="save" value="Save" data-target="#cancel-modal" data-toggle="modal" class ="btn btn-success" >SAVE</button>
 			</div>
 		</form>
 		<div class="clearfix"></div>
 		<div class="float-right">
-			<button type="button" name="cancel" id="cancel" value="Cancel" class ="btn btn-danger" data-toggle="modal" data-target="#cancel-modal" data-save="Are you sure you want to cancel?">CANCEL</button>
+			<button type="button" name="cancel" id="cancel" value="Cancel" class ="btn btn-danger" data-toggle="modal" data-target="#cancel-modal" ">CANCEL</button>
 		</div>
 	</div>
 	<?php 
@@ -100,6 +100,14 @@
 <script>
 	$('#cancel-yes').on('click', function(){
 		self.location = "<?php echo base_url("index");?>";
+	});
+
+	$('#save').on('click', function(){
+		$('.text-info').text('Succesfully Added!');
+	});
+
+	$('#cancel').on('click', function(){
+		$('.text-info').text('Are you sure you want to cancel?');
 	});
 
 	$('#cancel-modal').on('show.bs.modal', function(event){
@@ -127,11 +135,6 @@
 
         })
     });
-	       
-	// $("#cancel").on("click", function(){
-		
-	// 	self.location = "<?php echo base_url("index");?>";
-	// });
 
 	$("#password").on("keyup", function(){
 		$("#repeatPass").val("");
@@ -144,13 +147,15 @@
 
 		if(passwordVal != val){
 			$("#message").text("Password does not match!");
+			$("#save").hide();
 		}else{
 			$("#message").text("");
+			$("#save").show();
 		}
 	});
 
-	$("#bday").on("change", function(){
-		
+	$("#bday").on('change',function(){
+		$("#save").show();
 	});
 
 	$.getJSON('<?php echo base_url('RegisterEmp_Controller/getName')?>', function(result){
@@ -162,10 +167,11 @@
 			var empMiddleName = value['middleName'].toUpperCase();
 			var empExtName = value['extName'].toUpperCase();
 			var empBirthday = value['birthday'];
+			var empUsername = value['username'].toUpperCase();
+			var empStatus = value['active'].toUpperCase();
 			
 
-			var enteredFirstName="", enteredLastName="", enteredMiddleName="", enteredExtName="",
-				enteredBirthday="";
+			var enteredFirstName="", enteredLastName="", enteredMiddleName="", enteredExtName="", enteredBirthday="", enteredUsername="", enteredStatus="YES";
 
 			$("#fname").on("keyup", function(){
 				enteredFirstName = $("#fname").val().toUpperCase();
@@ -174,10 +180,19 @@
 					&& enteredLastName == empLastName 
 					&& enteredMiddleName == empMiddleName 
 					&& empExtName == enteredExtName 
-					&& empBirthday == enteredBirthday){
+					&& empBirthday == enteredBirthday ){
 
-					alert('Data already exist, try to login with your username and password');
+					$('.text-info').text('Ooops! Data already exist, try to login with your username and password');
+					$('#cancel-modal').modal('show');
+					$('#cancel-yes').hide();
+					$('#cancel-no').hide();
+					$("#save").hide();
+
 				}
+			});
+
+			$('#fname').on('keydown', function(){
+				$("#save").show();
 			});
 
 			$("#lname").on("keyup", function(){
@@ -188,8 +203,16 @@
 					&& enteredMiddleName == empMiddleName 
 					&& empExtName == enteredExtName 
 					&& empBirthday == enteredBirthday){
-					alert('Data already exist, try to login with your username and password');
+
+					$('.text-info').text('Ooops! Data already exist, try to login with your username and password');
+					$('#cancel-modal').modal('show');
+					$('#cancel-yes').hide();
+					$('#cancel-no').hide();
+					$("#save").hide();
 				}
+			});
+			$('#lname').on('keydown', function(){
+				$("#save").show();
 			});
 
 			$("#mname").on("keyup", function(){
@@ -200,8 +223,15 @@
 					&& enteredMiddleName == empMiddleName 
 					&& empExtName == enteredExtName 
 					&& empBirthday == enteredBirthday){
-					alert('Data already exist, try to login with your username and password');
+					$('.text-info').text('Ooops! Data already exist, try to login with your username and password');
+					$('#cancel-modal').modal('show');
+					$('#cancel-yes').hide();
+					$('#cancel-no').hide();
+					$("#save").hide();
 				}
+			});
+			$('#mname').on('keydown', function(){
+				$("#save").show();
 			});
 
 			$("#extname").on("keyup", function(){
@@ -212,8 +242,15 @@
 					&& enteredMiddleName == empMiddleName 
 					&& empExtName == enteredExtName 
 					&& empBirthday == enteredBirthday){
-					alert('Data already exist, try to login with your username and password');
+					$('.text-info').text('Ooops! Data already exist, try to login with your username and password');
+					$('#cancel-modal').modal('show');
+					$('#cancel-yes').hide();
+					$('#cancel-no').hide();
+					$("#save").hide();
 				}
+			});
+			$('#extname').on('keydown', function(){
+				$("#save").show();
 			});
 
 			$("#bday").on("change", function(){
@@ -224,9 +261,36 @@
 					&& enteredMiddleName == empMiddleName 
 					&& empExtName == enteredExtName 
 					&& empBirthday == enteredBirthday){
-					alert('Data already exist, try to login with your username and password');
+					$('.text-info').text('Ooops! Data already exist, try to login with your username and password');
+					$('#cancel-modal').modal('show');
+					$('#cancel-yes').hide();
+					$('#cancel-no').hide();
+					$("#save").hide();
+
 				}
 			});
+			
+
+			$("#username").on("keyup", function(){
+				enteredUsername = $("#username").val().toUpperCase();
+				
+
+				if(empUsername == enteredUsername  ){
+					
+					$("#save").hide();
+					$('.text-info').text('Ooops! Username already exist, try to use other username');
+					$('#cancel-modal').modal('show');
+					$('#cancel-yes').hide();
+					$('#cancel-no').hide();
+					
+				}
+
+			});
+			$('#username').on('keydown', function(){
+				$("#save").show();
+			});
+
+
 
 
 		});
