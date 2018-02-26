@@ -51,16 +51,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 $route['index'] = 'RegisterEmp_Controller/index';
-$route['registerEmp'] = 'RegisterEmp_Controller/registerEmp';
-$route['employeeTable'] = 'RegisterEmp_Controller/employeeTable';
-$route['viewEmployee/(:any)'] = 'RegisterEmp_Controller/viewEmployee/$1';
+$route['register-employee'] = 'RegisterEmp_Controller/registerEmp';
+$route['employee'] = 'RegisterEmp_Controller/employeeTable';
+$route['employee-view/(:any)'] = 'RegisterEmp_Controller/viewEmployee/$1';
 $route['changeStatus/(:any)'] = 'RegisterEmp_Controller/changeStatus/$1';
 
-$route['registerCompany'] = 'RegisterCompany_Controller/registerCompany';
+$route['register-company'] = 'RegisterCompany_Controller/registerCompany';
 
-$route['sssTable'] = 'SSS_Controller/index';
-$route['sssView/(:any)'] = 'SSS_Controller/sssView/$1';
-$route['sssEdit/(:any)'] = 'SSS_Controller/sssEdit/$1';
+$route['sss'] = 'SSS_Controller/index';
+$route['sss-view/(:any)'] = 'SSS_Controller/sssView/$1';
+$route['sss-edit/(:any)'] = 'SSS_Controller/sssEdit/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
