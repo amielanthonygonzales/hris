@@ -16,7 +16,7 @@
 
 			<div id="sss-No" class="form-group">
 				<label for="ssNo">SSS NUMBER</label>
-				<input type="number" name="ssNo" id="" class="form-control" readonly />
+				<input type="text" name="sssNo" id="sss-Number" class="form-control" readonly />
 			</div>
 
 			<div id="sss-firstName" class="form-group">
@@ -66,13 +66,14 @@
 
 	$.getJSON('<?php echo base_url('SSS_Controller/getSSInfo/')?>'+getId, function(result){
 		result = result['query'];
+		console.log(result);
 
 		$.each(result, function(key, value){
 		console.log(result);
 
 		var obj=jQuery.parseJSON(value['information']);
 
-		$('#sss-No').val(obj['sssNo']);
+		$('#sss-Number').val(obj['sssNo']);
 		$('#sss-FirstName').val(obj['firstName']);
 		$('#sss-MiddleName').val(obj['middleName']);
 		$('#sss-LastName').val(obj['lastName']);

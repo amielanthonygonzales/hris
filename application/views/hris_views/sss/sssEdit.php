@@ -12,32 +12,32 @@
 <body>
 	<div class="container">
 		<?php $quer = $query[0];?>
-		<form id="edit-form">
+		<form id="edit-form-sss">
 			<div id="sss-No" class="form-group">
 				<label for="ssNo">SSS NUMBER</label>
-				<input type="number" name="ssNo" id="" class="form-control"/>
+				<input type="text" name="sssNo" maxlength="10" minlength="10" id="sss-Number" class="form-control"/>
 			</div>
 
 			<div id="sss-firstName" class="form-group">
 				<label for="ssFirstName">FIRST NAME</label>
-				<input type="text" name="ssFirstName" class="form-control" id="sss-FirstName" readonly/>
+				<input type="text" name="firstName" class="form-control" id="sss-FirstName" readonly/>
 			</div>
 			<div id="sss-middleName" class="form-group">
 				<label for="ssMiddleName">MIDDLE NAME</label>
-				<input type="text" name="ssMiddleName" id="sss-MiddleName" class="form-control" readonly/>
+				<input type="text" name="middleName" id="sss-MiddleName" class="form-control" readonly/>
 			</div>
 			<div id="sss-lastName" class="form-group">
 				<label for="ssLastName">LAST NAME</label>
-				<input type="text" name="ssLastName" id="sss-LastName" class="form-control" readonly/>
+				<input type="text" name="lastName" id="sss-LastName" class="form-control" readonly/>
 			</div>
 			<div id="sss-extName" class="form-group">
 				<label for="ssExtName">EXT NAME</label>
-				<input type="text" name="ssExtName" id="sss-ExtName" class="form-control" readonly/>
+				<input type="text" name="extName" id="sss-ExtName" class="form-control" readonly/>
 			</div>
 			<div class="row form-group">
 				<div class="col-md-4" id="sss-salary">
 					<label for="ssSalary">SALARY</label>
-					<input type="number" name="ssSalary" id="sss-employeeSalary" class="form-control" />
+					<input type="number" name="salary" id="sss-employeeSalary" class="form-control" />
 				</div>
 				<div class="col-md-4" id="ss-contribution">
 					<label for="ssContribution">SS CONTRIBUTION</label>
@@ -48,6 +48,9 @@
 					<input type="text" name="ecContribution" id="ec-Contribution" class="form-control" readonly/>
 				</div>
 				
+			</div>
+			<div class="pull-right">
+					<button type="submit" name="updateSSS" value="update" class ="btn btn-success">UPDATE</button>
 			</div>
 			
 		</form>
@@ -68,11 +71,10 @@
 		result = result['query'];
 
 		$.each(result, function(key, value){
-		console.log(result);
 
 		var obj=jQuery.parseJSON(value['information']);
 
-		$('#sss-No').val(obj['sssNo']);
+		$('#sss-Number').val(obj['sssNo']);
 		$('#sss-FirstName').val(obj['firstName']);
 		$('#sss-MiddleName').val(obj['middleName']);
 		$('#sss-LastName').val(obj['lastName']);
@@ -82,21 +84,18 @@
 		$('#ec-Contribution').val(obj['ecContribution']);
 
 		});
+
 		
 	});
 
-	var count = 1;
-	$('#sss-No').on('keyup', function(event){
-
-		count = count+1;
-		if(count>10){
-		}
-	});
 
 	$('#sss-employeeSalary').on('keyup', function(){
 		var empSalary = $('#sss-employeeSalary').val();
 
-		if(empSalary >= 1000 && empSalary <= 1249.99){
+		if(empSalary < 1000){
+			$('#sss-Contribution').val('0.00');
+			$('#ec-Contribution').val('0.00');
+		}else if(empSalary >= 1000 && empSalary <= 1249.99){
 			$('#sss-Contribution').val('110.00');
 			$('#ec-Contribution').val('10.00');
 		}else if(empSalary >= 1250 && empSalary <= 1749.99){
@@ -190,6 +189,46 @@
 			$('#sss-Contribution').val('1760.00');
 			$('#ec-Contribution').val('30.00');
 		}
+	});
+
+	function getDataForm(){
+		var formData = $('#edit-form-sss').serializeArray();
+		var data = {};
+
+		for(key in formData){
+			var name=formData[key]['name'];
+			var value=formData[key]['value'];
+			data[name]=value;
+		}
+		return data;
+	}
+
+	$('#edit-form-sss').click(function(){
+		var countSSNumber = $('#sss-Number').val().length;
+		
+		
+			var postData = getDataForm();
+			//alert(JSON.stringify(postData));
+
+			$.ajax({
+				method: "POST",
+				url: "<?php echo base_url('sss-update/')?>"+getId,
+				data: postData,
+				success: function(result){
+			        // result = result['data'];
+			        if(result['success'] == 1){
+			        	//alert("Your data was saved");
+			        	//self.location = "<?php echo site_url('form');?>";
+			        }else{
+			        	alert("You have an error");
+			        }
+			        
+			    }
+			});
+
+			
+		
+		return false;
 	});
 
 </script>

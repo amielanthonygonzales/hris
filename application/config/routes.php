@@ -61,6 +61,7 @@ $route['register-company'] = 'RegisterCompany_Controller/registerCompany';
 $route['sss'] = 'SSS_Controller/index';
 $route['sss-view/(:any)'] = 'SSS_Controller/sssView/$1';
 $route['sss-edit/(:any)'] = 'SSS_Controller/sssEdit/$1';
+$route['sss-update/(:any)'] = 'SSS_Controller/sssUpdate/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -33,6 +33,16 @@
 			header('Content-Type: application/json');
       		echo json_encode($data);
 		}
+
+		function sssUpdate($id){
+			$data=$this->input->post();
+		    $data=json_encode($data);//need to encode for us to save it as object
+		    $var=$this->SSS_Model->sssUpdate($data,$id);
+		    $var = $var['return'];
+
+		    header('Content-Type: application/json');
+		    echo json_encode($var);
+		}
 		
 	}
 ?>

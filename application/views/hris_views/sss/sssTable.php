@@ -52,8 +52,12 @@
 </body>
 </html>
 <script type="text/javascript">
+	var ecContributionTotal = 0;
+	var ssContributionTotal = 0;
+	var contributionTotal = 0;
 	$.getJSON('<?php echo base_url('SSS_Controller/getEmployee')?>', function(result){
 		result = result['query'];
+		console.log(result);
 
 		var lengthResult = result.length;
 
@@ -99,7 +103,14 @@
 			tdAnchorEdit.attr("id", "anchorEditSS"+key);
 			$('#sssEmployee'+key).append(tdAnchorEdit);
 
+			ecContributionTotal += parseInt(obj['ecContribution']);
+			ssContributionTotal += parseInt(obj['ssContribution']);
+
+			//alert(ecContributionTotal);
+
 		});
+		contributionTotal = ecContributionTotal + ssContributionTotal;
+		console.log(contributionTotal);
 		for(x=1; x<=lengthResult; x++){
 
 			var tdView=$('<td></td>');
@@ -112,4 +123,5 @@
 		}
 
 	});
+
 </script>
