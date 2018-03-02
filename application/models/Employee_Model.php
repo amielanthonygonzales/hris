@@ -19,6 +19,8 @@
 
 		function changeStatus($id){
 			$this->db->query("UPDATE employee set active = 0 WHERE id =".$id);
+			$this->db->query("UPDATE sss set active = 0 WHERE id =".$id);
+			$this->db->query("UPDATE pag_ibig set active = 0 WHERE id =".$id);
 		}
 	}
 ?>

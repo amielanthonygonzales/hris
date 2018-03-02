@@ -4,13 +4,13 @@
 	<meta charset="utf-8">
     <meta name = "viewport" content="width=device-width, initial-scale=1">
 
-    <link href="<?php echo base_url('bootstrap/bootstrap.min.css');?>"  rel = "stylesheet"/>
+     <link href="<?php echo base_url('bootstrap/bootstrap.min.css');?>"  rel = "stylesheet"/>
      <link href="<?php echo base_url('assets/css/bootstrap-datetimepicker.min.css');?>"  rel = "stylesheet"/> 
-     <link href="<?php echo base_url('assets/css/style.css');?>"  rel = "stylesheet"/> 
 
      <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/datatables/css/dataTables.bootstrap.min.css');?>"/>
     <link rel="stylesheet" href="<?php echo base_url('amaretti/html/assets/css/style.css');?>" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/stroke-7/style.css');?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/font-awesome/css/font-awesome.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/jquery.nanoscroller/css/nanoscroller.css');?>"/>
 
 	<title>HR Information System</title>
@@ -27,7 +27,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<p class="text-info"></p>
+						<p class="text-info delete-message"></p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-danger" data-dismiss="modal" id="cancel-no">No</button>
@@ -126,27 +126,27 @@
 			$('#table-information'+key).append(tdColumnBdate);
 
 			var anchorView = $('<a></a>')
-			anchorView.attr('href',"<?= base_url('viewEmployee/')?>"+value['id']);
+			anchorView.attr('href',"<?= base_url('employee-view/')?>"+value['id']);
 			anchorView.attr('id', 'anchorView' + key);
-			anchorView.attr('class','btn btn-light text-info');
+			anchorView.attr('class','text-info');
 			$('#table-information' + key).append(anchorView);
 
-			var tdButtonDelete=$('<button></button>');
+			var tdButtonDelete=$('<a></a>');
 			tdButtonDelete.attr('id','functionButtonDelete'+key);
 			tdButtonDelete.attr('onclick','callModal('+value['id']+')');
-			tdButtonDelete.attr('class','btn btn-light text-danger');
+			tdButtonDelete.attr('class','text-danger');
 			$('#table-information'+key).append(tdButtonDelete);
 			
 
 		});
 		for(x=1; x<=y; x++){
 
-			var spanView=$('<span></span>');
-			spanView.attr('class','icon s7-info');
+			var spanView=$('<td></td>');
+			spanView.attr('class','icon icon-left fa fa-eye');
 			$('#anchorView'+x).append(spanView);
 
-			var spanDelete=$('<span></span>');
-			spanDelete.attr('class','icon s7-trash');
+			var spanDelete=$('<td></td>');
+			spanDelete.attr('class','icon icon-left fa fa-close');
 			$('#functionButtonDelete'+x).append(spanDelete);
 		}
 	});
@@ -157,7 +157,7 @@
 
 
 	function callModal(id){
-		$('.text-info').text('Ooops! Are you sure you want to delete this data?');
+		$('.delete-message').text('Ooops! Are you sure you want to delete this data?');
 		$('#cancel-modal').modal('show');
 		$('#cancel-yes').show();
 		$('#cancel-no').show();
@@ -167,13 +167,13 @@
 				method: "POST",
 				url: "<?php echo base_url('changeStatus/')?>"+id,
 				success: function(result){
-
+					$('.delete-message').text('Data successfully deleted!');
+					$('#cancel-modal').modal('show');
+					$('#cancel-yes').hide();
+					$('#cancel-no').hide();
 				}
 			});
-			$('.text-info').text('Data successfully deleted!');
-		$('#cancel-modal').modal('show');
-		$('#cancel-yes').hide();
-		$('#cancel-no').hide();
+			
 		});
 
 		$('#cancel-no').on('click', function(){

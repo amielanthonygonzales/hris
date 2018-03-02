@@ -17,6 +17,24 @@
 </head>
 <body>
 	<div class="container">
+		<table id="total-table" class="table table-striped table-hover table-fw-widget">
+			<thead>
+				<tr>
+					<th class="center">TOTAL SS CONTRIBUTION</th>
+					<th class="center">TOTAL EC CONTRIBUTION</th>
+					<th class="center">TOTAL CONTRIBUTION</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="total-ssContri" class="center"></td>
+					<td id="total-ecContri"></td>
+					<td id="total-contri"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="container">
 		<table id="info-table" class="table table-striped table-hover table-fw-widget">
 			<thead>
 				<tr>
@@ -121,6 +139,10 @@
 			tdEdit.attr('class','icon icon-left fa fa-edit');
 			$('#anchorEditSS'+x).append(tdEdit);
 		}
+
+		$('#total-ssContri').append(ssContributionTotal);
+		$('#total-ecContri').append(ecContributionTotal);
+		$('#total-contri').append(contributionTotal);
 
 	});
 

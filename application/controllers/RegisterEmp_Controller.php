@@ -27,6 +27,7 @@
 
 		function changeStatus($id){
 			$this->Employee_Model->changeStatus($id);
+			redirect(base_url('employee'));
 		}
 
 		function getName(){
@@ -90,7 +91,7 @@
 				
 				$this->Employee_Model->add($data, $nameSSS, $namePagibig);
 			}
-			redirect(base_url('registerEmp'));
+			redirect(base_url('register-employee'));
 
 		}
 	}

@@ -12,6 +12,27 @@
 <body>
 	<div class="container">
 		<?php $quer = $query[0];?>
+
+		<div class="modal fade" tabindex="-1" id="cancel-modal">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header bg-secondary">
+						<h5 class="modal-title text-white">MESSAGE</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p class="text-info"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-dismiss="modal" id="cancel-no">No</button>
+						<button type="button" class="btn btn-success" id="cancel-yes">Yes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<form id="edit-form-sss">
 			<div id="sss-No" class="form-group">
 				<label for="ssNo">SSS NUMBER</label>
@@ -50,10 +71,13 @@
 				
 			</div>
 			<div class="pull-right">
-					<button type="submit" name="updateSSS" value="update" class ="btn btn-success">UPDATE</button>
+					<button type="submit" name="updateSSS" id="updateSSS" value="update" class ="btn btn-success">UPDATE</button>
 			</div>
 			
 		</form>
+		<div class="pull-right">
+			<button type="submit" name="backBtn" id="backBtn" value="back" class ="btn btn-danger">BACK</button>
+		</div>
 		
 	</div>
 
@@ -203,7 +227,8 @@
 		return data;
 	}
 
-	$('#edit-form-sss').click(function(){
+
+	$('#updateSSS').click(function(){
 		var countSSNumber = $('#sss-Number').val().length;
 		
 		
@@ -218,17 +243,23 @@
 			        // result = result['data'];
 			        if(result['success'] == 1){
 			        	//alert("Your data was saved");
-			        	//self.location = "<?php echo site_url('form');?>";
+			        	$('.text-info').text('Data successfully updated!');
+						$('#cancel-modal').modal('show');
+						$('#cancel-yes').hide();
+						$('#cancel-no').hide();
+			        	//self.location = "<?php echo site_url('sss');?>";
 			        }else{
 			        	alert("You have an error");
 			        }
 			        
 			    }
 			});
-
-			
 		
 		return false;
+	});
+
+	$('#backBtn').click(function(){
+		self.location = "<?php echo site_url('sss');?>";
 	});
 
 </script>

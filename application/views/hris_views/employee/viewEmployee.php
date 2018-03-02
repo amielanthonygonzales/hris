@@ -47,7 +47,11 @@
 				<label for="password">Password</label>
 				<input class="form-control" type="password" name="password" id="password" value="<?= $quer->password?>" readonly/>
 			</div>
+			
 		</form>
+		<div class="pull-right">
+			<button type="submit" name="backBtn" id="backBtn" value="back" class ="btn btn-danger">BACK</button>
+		</div>
 
 	</div>
 
@@ -56,3 +60,9 @@
 	<script src="<?php echo base_url('bootstrap/bootstrap.min.js');?>"></script>
 </body>
 </html>
+
+<script type="text/javascript">
+	$('#backBtn').click(function(){
+		self.location = "<?php echo base_url('employee');?>";
+	});
+</script>

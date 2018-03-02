@@ -52,6 +52,10 @@
 			</div>
 			
 		</form>
+
+		<div class="pull-right">
+					<button type="submit" name="backBtn" id="backBtn" value="back" class ="btn btn-danger">BACK</button>
+		</div>
 		
 	</div>
 
@@ -84,6 +88,10 @@
 
 		});
 		
+	});
+
+	$('#backBtn').click(function(){
+		self.location = "<?php echo site_url('sss');?>";
 	});
 
 </script>
