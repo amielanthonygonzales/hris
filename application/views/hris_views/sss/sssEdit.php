@@ -230,8 +230,8 @@
 
 	$('#updateSSS').click(function(){
 		var countSSNumber = $('#sss-Number').val().length;
-		
-		
+		console.log(countSSNumber);
+		if(countSSNumber == 10){
 			var postData = getDataForm();
 			//alert(JSON.stringify(postData));
 
@@ -254,8 +254,14 @@
 			        
 			    }
 			});
-		
+		}else{
+			$('.text-info').text('Ooopps! You need to enter 10 digit sss number!');
+						$('#cancel-modal').modal('show');
+						$('#cancel-yes').hide();
+						$('#cancel-no').hide();
+		}
 		return false;
+
 	});
 
 	$('#backBtn').click(function(){

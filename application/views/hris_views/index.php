@@ -20,7 +20,7 @@
 				<input class="form-control" type="password" name="password" id="password" placeholder="Password" required/>
 			</div>
 			<div class="form-group">
-				<a href="<?php echo base_url('registerEmp');?>">Register here</a>
+				<a href="<?php echo base_url('register-employee');?>">Register here</a>
 			</div>
 			<div class="pull-right">
 				<button type="submit" name="login" value="Login" class ="btn btn-success">LOGIN</button>

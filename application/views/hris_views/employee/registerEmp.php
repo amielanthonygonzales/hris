@@ -297,5 +297,12 @@
 
 	});
 
+	function getDataForm(){
+		var dataTransfer = {};
+
+		for ()
+		}
+	}
+
 
 </script>
