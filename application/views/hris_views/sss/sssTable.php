@@ -12,7 +12,14 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/stroke-7/style.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/font-awesome/css/font-awesome.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/jquery.nanoscroller/css/nanoscroller.css');?>"/>
-
+    <style>
+    	.green {
+    		color: green;
+    	}
+    	.blue {
+    		color:blue;
+    	}
+    </style>
 	<title>HR Information System</title>
 </head>
 <body>
@@ -109,17 +116,32 @@
 			tdExtName.html(obj['extName']);
 			$('#sssEmployee'+key).append(tdExtName);
 
-			var tdAnchorView = $('<a></a>');
-			tdAnchorView.attr("href", "<?= base_url('sss-view/')?>"+value['id']);
-			tdAnchorView.attr("class", "text-info");
-			tdAnchorView.attr("id", "anchorViewSS"+key);
+			// var tdAnchorView = $('<a></a>');
+			// tdAnchorView.attr("href", "<?= base_url('sss-view/')?>"+value['id']);
+			// tdAnchorView.attr("class", "text-info");
+			// tdAnchorView.attr("id", "anchorViewSS"+key);
+			// $('#sssEmployee'+key).append(tdAnchorView);
+			var tdAnchorView = $('<td></td>');
+			tdAnchorView.append('<a></a>');
+			tdAnchorView.find('a').attr("href", "<?= base_url('sss-view/')?>"+value['id']);
+			tdAnchorView.find('a').attr("class", "text-info");
+			tdAnchorView.find('a').attr("id", "anchorViewSS"+key);
 			$('#sssEmployee'+key).append(tdAnchorView);
 
-			var tdAnchorEdit = $('<a></a>');
-			tdAnchorEdit.attr("href", "<?= base_url('sss-edit/')?>"+value['id']);
-			tdAnchorEdit.attr("class", "text-success");
-			tdAnchorEdit.attr("id", "anchorEditSS"+key);
+			// var tdAnchorEdit = $('<a></a>');
+			// tdAnchorEdit.attr("href", "<?= base_url('sss-edit/')?>"+value['id']);
+			// tdAnchorEdit.attr("class", "text-success");
+			// tdAnchorEdit.attr("id", "anchorEditSS"+key);
+			// $('#sssEmployee'+key).append(tdAnchorEdit);
+
+			var tdAnchorEdit = $('<td></td>');
+			tdAnchorEdit.append('<a></a>');
+			tdAnchorEdit.find('a').attr("href", "<?= base_url('sss-edit/')?>"+value['id']);
+			tdAnchorEdit.find('a').attr("class", "text-success");
+			tdAnchorEdit.find('a').attr("id", "anchorEditSS"+key);
 			$('#sssEmployee'+key).append(tdAnchorEdit);
+
+
 
 			ecContributionTotal += parseInt(obj['ecContribution']);
 			ssContributionTotal += parseInt(obj['ssContribution']);
@@ -131,13 +153,16 @@
 		console.log(contributionTotal);
 		for(x=1; x<=lengthResult; x++){
 
-			var tdView=$('<td></td>');
-			tdView.attr('class','icon icon-left fa fa-eye');
-			$('#anchorViewSS'+x).append(tdView);
+			// var tdView=$('<td></td>');
+			// tdView.attr('class','icon icon-left fa fa-eye');
+			// $('#anchorViewSS'+x).append(tdView);
 
-			var tdEdit=$('<td></td>');
-			tdEdit.attr('class','icon icon-left fa fa-edit');
-			$('#anchorEditSS'+x).append(tdEdit);
+			// var tdEdit=$('<td></td>');
+			// tdEdit.attr('class','icon icon-left fa fa-edit');
+			// $('#anchorEditSS'+x).append(tdEdit);
+
+			$('#anchorViewSS'+x).attr('class','icon icon-left fa fa-eye blue');
+			$('#anchorEditSS'+x).attr('class','icon icon-left fa fa-edit green');
 		}
 
 		$('#total-ssContri').append(ssContributionTotal);

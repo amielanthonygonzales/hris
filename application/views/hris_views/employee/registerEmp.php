@@ -30,8 +30,9 @@
 				</div>
 			</div>
 		</div>
-
-		<form method="post" action="<?php echo base_url();?>RegisterEmp_Controller/add">
+		
+		<form id="register-employee">
+			<!-- method="post" action="<?php echo base_url();?>RegisterEmp_Controller/add" -->
 			<div class="form-group">
 				<label for="fname">First Name</label>
 				<input class="form-control" type="text" name="fname" id="fname" placeholder="First Name" required />
@@ -298,11 +299,21 @@
 	});
 
 	function getDataForm(){
+		var formData = $('#register-employee').serializeArray();
 		var dataTransfer = {};
 
-		for ()
+		for (key in formData){
+			var name=formData[key]['name'];
+			var value=formData[key]['value'];
+			dataTransfer[name]=value;
 		}
+		return dataTransfer;
 	}
 
+	$('#save').click(function(){
+		var getDataTransfer = getDataForm();
+		console.log(JSON.stringify(getDataTransfer));
+		alert(JSON.stringify(getDataTransfer));
+	});
 
 </script>

@@ -51,6 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 $route['index'] = 'RegisterEmp_Controller/index';
+$route['dashboard'] = 'Dashboard_Controller/dashboard';
 $route['register-employee'] = 'RegisterEmp_Controller/registerEmp';
 $route['employee'] = 'RegisterEmp_Controller/employeeTable';
 $route['employee-view/(:any)'] = 'RegisterEmp_Controller/viewEmployee/$1';

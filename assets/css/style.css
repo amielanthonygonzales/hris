@@ -1,8 +1,52 @@
+body{
+	background-image: url('../../assets/img/background2.jpg');
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
 
-[id*='functionButtonDelete']{
-	background-color: transparent;
+}
+#logo-image{
+	width: 394px;
+    height: 80px;
+}
+.login-form{
+	width: 420px;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    float: right;
+    margin-right: 148px;
+    padding: 20px;
 }
 
-[id*='anchorView']{
-	background-color: transparent;
+#username, #password{
+	border: 0;
+    background-color: transparent;
+    box-shadow: none;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    height: 36px;
+    border-radius: 0;
+}
+
+.input-group-addon{
+	font-size: 24px;
+    color: #ffffff;
+}
+
+.input-group{
+	border-bottom: 2px solid #4a4949;
+    padding: 10px 0;
+}
+
+#register-anchor{
+	color: #ffffff;
+}
+
+a:hover{
+	text-decoration: none;
+    outline: none;
+    color: #89fae9;
 }
