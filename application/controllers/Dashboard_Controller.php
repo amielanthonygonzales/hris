@@ -9,5 +9,10 @@
 		function dashboard(){
 			$this->load->view('hris_views/dashboard');
 		}
+		function dashboard2(){
+			$data = array();
+			$this->load->view('app/header', $data);
+			$this->load->view('app/footer', $data);
+		}
 	}
 ?>
