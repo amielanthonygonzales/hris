@@ -11,7 +11,7 @@
 		}
 		function dashboard2(){
 			$data = array();
-			$data['content'] = "hello world";
+			$data['content'] = $this->load->view('app/content/page-dashboard', $data, true);
 			$this->load->view('app/header', $data);
 			$this->load->view('app/footer', $data);
 		}
