@@ -57,7 +57,7 @@
 							<div class="row form-group">
 								<div class="col-md-6">
 									<label for="sssnum">SSS Employer Number</label>
-									<input class="form-control" type="text" name="sssnum" id="sssnum" placeholder="SSS Employer Number" maxlength="10" pattern="/*d" title="Numbers only" required />
+									<input class="form-control" type="number" name="sssnum" id="sssnum" placeholder="SSS Employer Number" required />
 								</div>
 								<div class="col-md-6">
 									<label for="sssnum">Pag-IBIG Employer Number</label>
