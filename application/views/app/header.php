@@ -25,6 +25,7 @@
 		
 		<meta name="description" content="">
 		<meta name="author" content="">
+		<link rel = "icon" href="assets/img/logo3.png"/>	
 		<title>HRIS</title>
 		
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/app") ?>/lib/stroke-7/style.css"/>
