@@ -38,6 +38,7 @@
 		
 		<!-- base -->
 		<link rel="stylesheet" href="<?php echo base_url("assets/app") ?>/css/style.css" type="text/css"/>
+		<link rel="stylesheet" href="<?php echo base_url("assets/app") ?>/css/themes/theme-hris.css" type="text/css"/>
 
 		<!-- font awesome -->
 		<link rel="stylesheet" href="<?php echo base_url("assets/app") ?>/css/font-awesome-5.0.8/css/font-awesome.css" type="text/css"/>
