@@ -1,0 +1,174 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #f0edbb33;
+}
+.top-header{
+
+}
+
+#logo-nav{
+	width: 70px;
+}
+
+.left-sidebar{
+	background-color: #3d3c3c;
+    width: 100px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 5;
+    position: fixed;
+}
+
+.left-sidebar .sidebar-element{
+	margin: 0;
+    padding: 0;
+}
+
+.left-sidebar .sidebar-element li .active a{
+	border-left: 2px solid #89fae9;
+    padding-left: 13px;
+}
+
+.left-sidebar .sidebar-element li a{
+	display: block;
+    padding: 7px;
+    color: #e1e1e1;
+    text-align: center;
+    font-size: 12px;
+
+}
+
+.left-sidebar .sidebar-element li{
+	border-bottom: 1px solid #474646;
+    list-style: none;
+}
+
+.left-sidebar .sidebar-element li a .icon{
+	display: block;
+    font-size: 33px;
+}
+
+.left-sidebar .sidebar-element li a .span{
+	display: block;
+    margin-top: 5px;
+}
+
+a:hover {
+	text-decoration: none;
+
+}
+
+.panel{
+	position: relative;
+    left: 0;
+    margin-left: 40px;
+    top: 10px;
+    min-height: 100%;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #f0edbb00;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#hr-header{
+	width: 100%;
+	height: 70px;
+	background-color: #009393;
+	z-index: 2;
+	padding: 20px;
+}
+
+.header-element li{
+	display: block;
+}
+
+#header-name{
+	margin-left: 120px;
+	font-size: 20px;
+	font-family: Century Gothic;
+	float: right;
+	color: #fffcc4;
+}
+
+
+
+#header-logout a {
+	text-decoration: none;
+	color: black;
+
+}
+
+#header-logout a #logout {
+	font-size: 25px;
+	float: left;
+}
+#logout-name{
+	font-size: 14px;
+}
+
+.panel-default .panel-heading{
+	color: #333333;
+    background-color: transparent;
+    border-color: #ddd;
+ }
+ .panel-heading{
+	font-size: 18px;
+    font-weight: 300;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 20px;
+    padding: 20px 20px 15px;
+    border-bottom: 1px solid transparent;
+ }
+
+ .panel-heading h3{
+ 	font-size: 18px;
+    font-weight: 300;
+    display: block;
+    margin: 0;
+ }
+
+
+ .panel-body{
+ 	padding: 15px 20px 20px 10px;
+ }
+
+  .panel-body-company{
+    padding: 15px 20px 20px 10px;
+    min-height: 610px;
+ }
+
+ label {
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.form-control{
+	display: block;
+    width: 100%;
+    height: 44px;
+    padding: 8px 12px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #777777;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #eaeaea;
+    border-radius: 0;
+}
+
+#info-table{
+    font-size: 12px;
+}
+
+#btnEdit{
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
