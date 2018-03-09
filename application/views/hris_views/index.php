@@ -11,10 +11,10 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/stroke-7/style.css');?>"/>
 	<title>HR Information System</title>
 </head>
-<body>
+<body class="login-body">
 	<div class="container login-form">
 		<div id="logo">
-			<img src = "assets/img/title5.png" id="logo-image" alt="Logo">
+			<img src = "assets/img/title-8.png" id="logo-image" alt="Logo">
 		</div>
 		<form>
 			<div class="form-group">
