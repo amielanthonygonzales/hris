@@ -166,9 +166,10 @@
 				</table>
 			</div>
 		</div>
-		<div class="panel panel-default">
-			<div class="row">
-				<div class="col-md-6">
+		
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h3><strong>SSS Contribution</strong></h3>
 					</div>
@@ -176,7 +177,9 @@
 						
 					</div>
 				</div>
-				<div class="col-md-6">
+			</div>
+			<div class="col-md-6">
+				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h3><strong>Pag-ibig Contribution</strong></h3>
 					</div>
