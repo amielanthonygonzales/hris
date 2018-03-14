@@ -136,7 +136,7 @@
 	<div class="col-md-6">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3><strong>Pag-ibig Contribution</strong></h3>
+				<h3>Pag-ibig Contribution</h3>
 			</div>
 			<div class="panel-body">
 				
@@ -144,3 +144,15 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	$(document).ready(function(){
+		$("#info-table").dataTable({
+			"pagingType": "full_numbers",
+           "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+           "scrollY"  : "400px"
+		});
+	});
+	
+
+</script>

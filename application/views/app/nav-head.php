@@ -2,7 +2,7 @@
 	<div class="container-fluid">	
 		<div class="navbar-header">
 			<div class="page-title">
-				<span><img src="<?php echo site_url("assets/app/img/logo.png"); ?>" style="height:50px;"></span>
+				<span><img src="<?php echo base_url("assets/app/img/logo.png"); ?>" style="height:50px;"></span>
 			</div>
 			<!-- burger -->
 			<a href="#" class="am-toggle-left-sidebar navbar-toggle collapsed"><span class="icon-bar"><span></span><span></span><span></span></span></a>
