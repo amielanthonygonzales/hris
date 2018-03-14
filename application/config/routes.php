@@ -54,6 +54,7 @@ $route['index'] = 'RegisterEmp_Controller/index';
 $route['dashboard'] = 'Dashboard_Controller/dashboard';
 $route['dashboard2'] = 'Dashboard_Controller/dashboard2';
 $route['employee'] = 'Dashboard_Controller/employee';
+$route['company'] = 'Dashboard_Controller/company';
 $route['register-employee'] = 'RegisterEmp_Controller/registerEmp';
 // $route['employee'] = 'RegisterEmp_Controller/employeeTable';
 $route['employee-view/(:any)'] = 'RegisterEmp_Controller/viewEmployee/$1';

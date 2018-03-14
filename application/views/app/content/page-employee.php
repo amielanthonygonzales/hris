@@ -8,7 +8,7 @@
 				<div class="col-md-11">
 					<div class="pull-right">
 						<button type="submit" name="btnBack" id="btnBack" value="back" class ="btn btn-success">
-							<span><i class="icon icon-left fa fa-backward white"></i></span>	BACK
+							<i class="icon fa fa-backward"></i>	BACK
 						</button>
 					</div>
 				</div>

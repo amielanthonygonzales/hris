@@ -21,5 +21,11 @@
 			$this->load->view('app/header', $data);
 			$this->load->view('app/footer', $data);
 		}
+		function company(){
+			$data = array();
+			$data['content'] = $this->load->view('app/content/page-company', $data, true);
+			$this->load->view('app/header', $data);
+			$this->load->view('app/footer', $data);
+		}
 	}
 ?>

@@ -1,13 +1,15 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<h3>Company's Information</h3>
-
 	</div>
 	<div class="panel-body panel-body-company ">
 			<form>
 				<div class="col-md-12">
 					<div class="pull-right">
-						<button type="submit" name="btnEdit" id="btnEdit" value="edit" class ="btn btn-success">EDIT</button>
+						<button type="submit" name="btnSave" id="btnSave" value="save" class ="btn btn-success">SAVE</button>
+					</div>
+					<div class="pull-right">
+						<button type="submit" name="btnBack" id="btnBack" value="back" class ="btn btn-success">BACK</button>
 					</div>
 				</div>
 			
@@ -91,56 +93,5 @@
 				</div>
 					
 			</form>
-	</div>
-</div>
-
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h3>Employee's Information</h3>
-	</div>
-	<div class="panel-body">
-		<table id="info-table" class="table table-striped table-hover table-fw-widget">
-			<thead>
-				<tr>
-					<th class="center">FIRST NAME</th>
-					<th class="center">MIDDLE NAME</th>
-					<th class="center">LAST NAME</th>
-					<th class="center">EXTENSION NAME</th>
-					<th class="center">BIRTHDAY</th>
-				</tr>
-			</thead>
-			<tbody id="table-emp">
-				<!-- <tr id="table-information">
-					
-					<td class="center">
-						<button class="btn btn-light text-info"><span class="icon s7-info"></button>
-						<button class="btn btn-light text-success"><span class="icon s7-look"></button>
-						<button class="btn btn-light text-danger"><span class="icon s7-trash"></button></td>
-				</tr> -->
-			</tbody>
-		</table>
-	</div>
-</div>
-		
-<div class="row">
-	<div class="col-md-6">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3>SSS Contribution</h3>
-			</div>
-			<div class="panel-body">
-				
-			</div>
-		</div>
-	</div>
-	<div class="col-md-6">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3><strong>Pag-ibig Contribution</strong></h3>
-			</div>
-			<div class="panel-body">
-				
-			</div>
-		</div>
 	</div>
 </div>
