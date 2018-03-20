@@ -5,12 +5,6 @@
 	</div>
 	<div class="panel-body panel-body-company ">
 			<form>
-				<div class="col-md-12">
-					<div class="pull-right">
-						<button type="submit" name="btnEdit" id="btnEdit" value="edit" class ="btn btn-success">EDIT</button>
-					</div>
-				</div>
-			
 				<div class="form-group">
 					<div class="row form-group">
 						<div class="col-md-6">
