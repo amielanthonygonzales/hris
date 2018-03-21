@@ -25,7 +25,7 @@
 		
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel = "icon" href="assets/img/logo3.png"/>	
+		<link rel = "icon" href="<?php echo base_url("assets/app/img/logo.png"); ?>"/>	
 		<title>HRIS</title>
 		
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/app") ?>/lib/stroke-7/style.css"/>
@@ -65,7 +65,7 @@
 
 		<!-- data tables -->
 		
-		<script src="<?php echo base_url("assets/app"); ?>/lib/jquery.niftymodals/dist/jquery.niftymodals.js" type="text/javascript"></script>
+		
 		
 		
 	</head>
@@ -95,7 +95,6 @@
 				</div>
 			</div>
 		</div>
-	</body>
 	
 	<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/js/jquery.dataTables.min.js" type="text/javascript"></script>
 	<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/js/dataTables.bootstrap.min.js" type="text/javascript"></script>

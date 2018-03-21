@@ -51,16 +51,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 
-//Dashboard Controller
-$route['dashboard'] = 'Dashboard_Controller/dashboard';
-$route['dashboard2'] = 'Dashboard_Controller/dashboard2';
-$route['employee'] = 'Dashboard_Controller/employee';
-$route['company'] = 'Dashboard_Controller/company';
-$route['register-employee'] = 'Dashboard_Controller/registerEmployee';
-$route['department'] = 'Dashboard_Controller/department';
+//Employee Controller
+//app
+$route['employee'] = 'app/Employee_Controller/view';
+$route['register-employee'] = 'app/Employee_Controller/registerEmployee';
+//api
+$route['get-all-department'] = 'api/Employee_Controller/getAllDepartment';
+
+//Company
+//app
+$route['company'] = 'app/Company_Controller/view';
+
+//Dashboard
+//app
+$route['dashboard/(:any)'] = 'app/Dashboard_Controller/$1';
+$route['company'] = 'app/Dashboard_Controller/company';
+$route['employee-register'] = 'app/Dashboard_Controller/registerEmployee';
+$route['department'] = 'app/Dashboard_Controller/department';
 
 //Department Controller
-$route['add-department'] = 'Department_Controller/AddDepartment';
+//app
+$route['department'] = 'app/Department_Controller/view';
+
+
+//api
+$route['add-department'] = 'api/Department_Controller/addDepartment';
+$route['get-department'] = 'api/Department_Controller/getAllDepartment';
 
 
 

@@ -68,7 +68,7 @@
 					}
 			});	
 		});
-		$.getJSON('<?php echo base_url('Department_Controller/getAllDepartment')?>', callback);
+		$.getJSON('<?php echo site_url('get-department')?>', callback);
 
 	}
 	pageDepartment.init('#pageDepartment', function(result){
