@@ -61,6 +61,8 @@ $route['get-all-department'] = 'api/Employee_Controller/getAllDepartment';
 //Company
 //app
 $route['company'] = 'app/Company_Controller/view';
+//api
+$route['add-company'] = 'api/Company_Controller/addCompany';
 
 //Dashboard
 //app

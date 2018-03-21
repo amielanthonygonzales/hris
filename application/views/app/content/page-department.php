@@ -9,7 +9,7 @@
 					<div class="text-center">
 						<div class="i-circle text-success"><i class="icon s7-check"></i></div>
 						<h4>Awesome!</h4>
-						<p>Changes has been saved successfully!</p>
+						<p>Data has been saved successfully!</p>
 					</div>
 				</div>
 				<div class="modal-footer">
