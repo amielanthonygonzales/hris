@@ -5,7 +5,13 @@
 				<span><img src="<?php echo base_url("assets/app/img/logo.png"); ?>" style="height:50px;"></span>
 			</div>
 			<!-- burger -->
-			<a href="#" class="am-toggle-left-sidebar navbar-toggle collapsed"><span class="icon-bar"><span></span><span></span><span></span></span></a>
+			<a href="#" class="am-toggle-left-sidebar navbar-toggle collapsed">
+				<span class="icon-bar">
+					<span>Dashboard</span>
+					<span></span>
+					<span></span>
+				</span>
+			</a>
 			<!-- logo -->
 			<a href="<?php echo site_url(); ?>" class="navbar-brand"></a>
 		</div>

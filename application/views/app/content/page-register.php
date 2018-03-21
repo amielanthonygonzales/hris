@@ -4,12 +4,15 @@
 	</div>
 	<div class="panel-body">
 		<form>
-			<div class="col-md-12">
-				<div class="pull-right">
-					<button type="submit" name="btnAdd" id="btnAdd" value="add" class ="btn btn-success">ADD</button>
+			<div class="row form-group">
+				<div class="col-md-3 col-md-9 pull-right">
+					<button type="submit" name="btnBack" id="btnBack" value="back" class ="btn btn-space btn-success ">
+						<i class="icon icon-left s7-back"></i>BACK</button>
+					<button type="submit" name="btnAdd" id="btnAdd" value="add" class ="btn btn-space btn-success">
+						<i class="icon icon-left s7-plus"></i>ADD</button>	
 				</div>
-			</div>
-			<div class="fomr-group">
+			</div>	
+			<div class="form-group">
 				<label for="employeeID">Employee ID</label>
 				<input class="form-control" type="text" name="empId" id="employeeID" placeholder="Employee ID" required />
 			</div>
@@ -42,15 +45,22 @@
 					<label>Position</label>
 					<div class="col-md-12">
 						<div class="am-radio inline">
-                        	<input type="radio" name="admin-radio" id="adminRadio">
+                        	<input type="radio" name="admin-radio" id="adminRadio" class="emptype">
                         	<label for="adminRadio">Admin</label>
                         </div>
 			            <div class="am-radio inline">
-                        	<input type="radio" name="employee-radio" id="employeeRadio">
+                        	<input type="radio" name="admin-radio" id="employeeRadio" class="emptype">
                         	<label for="employeeRadio">Employee</label>
                         </div>
 			        </div>
 				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label">Department</label>
+				<select class="form-control">
+					<option value="Name">Name</option>
+					<option value="Address">Address</option>
+				</select>
 			</div>
 			
 		</form>

@@ -65,7 +65,7 @@
 
 		<!-- data tables -->
 		
-		
+		<script src="<?php echo base_url("assets/app"); ?>/lib/jquery.niftymodals/dist/jquery.niftymodals.js" type="text/javascript"></script>
 		
 		
 	</head>
@@ -106,3 +106,4 @@
 	<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/buttons.colVis.js" type="text/javascript"></script>
 	<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/buttons.bootstrap.js" type="text/javascript"></script>
 	<script src="<?php echo base_url("assets/app"); ?>/js/app-tables-datatables.js" type="text/javascript"></script>
+	

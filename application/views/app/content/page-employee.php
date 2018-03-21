@@ -4,21 +4,12 @@
 	</div>
 	<div class="panel-body">
 		<form>
-			<div class="row">
-				<div class="col-md-11">
-					<div class="pull-right">
-						<button type="submit" name="btnBack" id="btnBack" value="back" class ="btn btn-success">
-							<i class="icon fa fa-backward"></i>	BACK
-						</button>
-					</div>
+			<div class="row form-group">
+				<div class="col-md-2 col-md-10 pull-right">
+					<button type="submit" name="btnBack" id="btnBack" value="back" class ="btn btn-space btn-success">BACK</button>
+					<button type="submit" name="btnSave" id="btnSave" value="Save" class ="btn btn-space btn-success">SAVE</button>
 				</div>
-				<div class="col-md-1">
-					<div class="pull-right">
-						<button type="submit" name="btnSave" id="btnSave" value="save" class ="btn btn-success">SAVE</button>
-					</div>
-				</div>
-					
-			</div>
+			</div>	
 			<div class="form-group">
 				<label for="xfname">First Name</label>
 				<input class="form-control" type="text" name="fname" id="fname" placeholder="First Name" required />

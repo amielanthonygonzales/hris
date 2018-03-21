@@ -50,14 +50,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'welcome';
-$route['index'] = 'RegisterEmp_Controller/index';
+
+//Dashboard Controller
 $route['dashboard'] = 'Dashboard_Controller/dashboard';
 $route['dashboard2'] = 'Dashboard_Controller/dashboard2';
 $route['employee'] = 'Dashboard_Controller/employee';
 $route['company'] = 'Dashboard_Controller/company';
 $route['register-employee'] = 'Dashboard_Controller/registerEmployee';
+$route['department'] = 'Dashboard_Controller/department';
+
+//Department Controller
+$route['add-department'] = 'Department_Controller/AddDepartment';
+
+
+
+
 // $route['register-employee'] = 'RegisterEmp_Controller/registerEmp';
 // $route['employee'] = 'RegisterEmp_Controller/employeeTable';
+$route['index'] = 'RegisterEmp_Controller/index';
 $route['employee-view/(:any)'] = 'RegisterEmp_Controller/viewEmployee/$1';
 $route['changeStatus/(:any)'] = 'RegisterEmp_Controller/changeStatus/$1';
 

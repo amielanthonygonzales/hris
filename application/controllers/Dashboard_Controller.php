@@ -15,6 +15,12 @@
 			$this->load->view('app/header', $data);
 			$this->load->view('app/footer', $data);
 		}
+		function department(){
+			$data = array();
+			$data['content'] = $this->load->view('app/content/page-department', $data, true);
+			$this->load->view('app/header', $data);
+			$this->load->view('app/footer', $data);
+		}
 		function employee(){
 			$data = array();
 			$data['content'] = $this->load->view('app/content/page-employee', $data, true);
