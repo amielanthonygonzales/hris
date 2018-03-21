@@ -4,7 +4,7 @@
 		<div class="am-logo"></div>
 		<ul class="sidebar-elements">
 			<li class="parent">
-				<a href="<?php echo base_url('dashboard/dashboard'); ?>"><i class="icon s7-monitor"></i><span>Dashboard</span></a>
+				<a href="<?php echo base_url('dashboard'); ?>"><i class="icon s7-monitor"></i><span>Dashboard</span></a>
 				<li class="parent">
 					<a class="company" href="#"><i class="icon s7-culture"></i><span>Company</span></a>
 					<ul class="sub-menu"><li class="title">Company</li>
@@ -13,10 +13,10 @@
 								<div class="content nano-content">
 									<ul>
 										<li class="active">
-											<a href="<?php echo base_url('dashboard/company')?>">Company Information</a>
+											<a href="<?php echo base_url('dashboard-company')?>">Company Information</a>
 										</li>
 										<li>
-											<a href="<?php echo base_url('dashboard/department')?>">Departments</a>
+											<a href="<?php echo base_url('dashboard-department')?>">Departments</a>
 										</li>
 									</ul>
 								</div>

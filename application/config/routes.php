@@ -64,10 +64,10 @@ $route['company'] = 'app/Company_Controller/view';
 
 //Dashboard
 //app
-$route['dashboard/(:any)'] = 'app/Dashboard_Controller/$1';
-$route['company'] = 'app/Dashboard_Controller/company';
+$route['dashboard'] = 'app/Dashboard_Controller/dashboard';
+$route['dashboard-company'] = 'app/Dashboard_Controller/company';
 $route['employee-register'] = 'app/Dashboard_Controller/registerEmployee';
-$route['department'] = 'app/Dashboard_Controller/department';
+$route['dashboard-department'] = 'app/Dashboard_Controller/department';
 
 //Department Controller
 //app
