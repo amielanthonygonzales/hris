@@ -27,5 +27,55 @@
 			$sql = $this->db->query("SELECT * FROM department WHERE dept_deleted = 0");
 			return $sql->result();
 		}
+
+		public function addEmployee($postEmployee){
+			$this->db->query("
+				INSERT INTO 
+				employee 
+				(
+				emp_id, 
+				emp_dept, 
+				emp_name, 
+				emp_username, 
+				emp_password, 
+				emp_position
+				)
+				VALUES 
+				(
+				".$this->db->escape($postEmployee['emp_id']). " ,
+				".$this->db->escape($postEmployee['emp_dept'])." ,
+				".$this->db->escape($postEmployee['emp_name'])." ,
+				".$this->db->escape($postEmployee['emp_username'])." ,
+				".$this->db->escape($postEmployee['emp_password'])." ,
+				".$this->db->escape($postEmployee['emp_position'])." 
+				)
+				");
+			$this->db->query("
+				INSERT INTO 
+				sss 
+				(
+				sss_emp_id
+				) 
+				VALUES
+				(
+				".$this->db->escape($postEmployee['emp_id']). "
+				)");
+			$this->db->query("
+				INSERT INTO 
+				pag_ibig 
+				(
+				pagibig_emp_id
+				) 
+				VALUES
+				(
+				".$this->db->escape($postEmployee['emp_id']). "
+				)");
+			return 1;
+		}
+
+		public function getAllEmployee(){
+			$sql = $this->db->query("SELECT * FROM employee WHERE emp_deleted = 0");
+			return $sql->result();
+		}
 	}
 ?>

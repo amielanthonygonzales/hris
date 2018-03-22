@@ -7,9 +7,31 @@
 		}
 
 		public function getAllDepartment(){
+			$this->benchmark->mark('start');
 			$data['query'] = $this->Employee_Model->getAllDepartment();
+			$this->benchmark->mark('end');
+			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
 			header('Content-Type: application/json');
-      		echo json_encode($data);
+        	echo json_encode($data);
+		}
+
+		public function addEmployee(){
+			$this->benchmark->mark('start');
+			$postEmployee = $this->input->post();
+			$ret['success'] = $this->Employee_Model->addEmployee($postEmployee);
+			$this->benchmark->mark('end');
+			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($ret);
+		}
+
+		public function getAllEmployee(){
+			$this->benchmark->mark('start');
+			$data['query'] = $this->Employee_Model->getAllEmployee();
+			$this->benchmark->mark('end');
+			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($data);
 		}
 	}
 ?>

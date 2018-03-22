@@ -18,5 +18,12 @@
 			$this->load->view('app/header', $data);
 			$this->load->view('app/footer', $data);
 		}
+
+		public function employeeList(){
+			$data = array();
+			$data['content'] = $this->load->view('app/content/page-employee-list', $data, true);
+			$this->load->view('app/header', $data);
+			$this->load->view('app/footer', $data);
+		}
 	}
 ?>

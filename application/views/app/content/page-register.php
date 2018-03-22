@@ -1,4 +1,23 @@
 <div id="pageRegister">
+	<div tabindex="-1" role="dialog" class="modal fade in modal-department">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						<div class="i-circle text-success"><i class="icon s7-check"></i></div>
+						<h4>Awesome!</h4>
+						<p>Data has been saved successfully!</p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-success">Proceed</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3>Register Employee</h3>
@@ -10,7 +29,7 @@
 						<button type="button" name="btnBack" value="back" class ="btn btn-space btn-success btnBack">
 							<i class="icon icon-left s7-back"></i>BACK
 						</button>
-						<button type="button" name="btnAdd" value="add" class ="btn btn-space btn-success btnAdd">
+						<button type="button" name="btnAdd" value="add" class ="btn btn-space btn-success btn-add-register">
 							<i class="icon icon-left s7-plus"></i>ADD
 						</button>	
 					</div>
@@ -18,6 +37,10 @@
 				<div class="form-group">
 					<label for="employeeID">Employee ID</label>
 					<input class="form-control employeeID" type="text" name="empId" placeholder="Employee ID" required />
+				</div>
+				<div class="form-group">
+					<label for="lname">Last Name</label>
+					<input class="form-control lname" type="text" name="lname" placeholder="Last Name" required/>
 				</div>
 				<div class="form-group">
 					<label for="first-name">First Name</label>
@@ -28,31 +51,27 @@
 					<input class="form-control mname" type="text" name="mname" placeholder="Middle Name" required/>
 				</div>
 				<div class="form-group">
-					<label for="lname">Last Name</label>
-					<input class="form-control lname" type="text" name="lname" placeholder="Last Name" required/>
-				</div>
-				<div class="form-group">
 					<label for="extname">Extension Name</label>
 					<input class="form-control extname" type="text" name="extname" placeholder="Extension Name"/>
 				</div>
 				<div class="form-group">
 					<label for="username">Username</label>
-					<input class="form-control username" type="text" name="username" placeholder="Username" required/>
+					<input class="form-control usernameRegister" type="text" name="username" placeholder="Username" required/>
 				</div>
 				<div class="form-group">
 					<label for="password">Password</label>
-					<input class="form-control password" type="password" name="password" placeholder="Password" required/>
+					<input class="form-control passwordRegister" type="password" name="password" placeholder="Password" required/>
 				</div>
 				<div class="form-group">
 					<div class="horizontal">
 						<label>Position</label>
 						<div class="col-md-12">
 							<div class="am-radio inline">
-								<input type="radio" name="position-radio" id="hr-radio">
-								<label for="hr-radio">Human Resources</label>
+								<input type="radio" class="position-radio" name="position-radio" id="hr-radio" value="admin">
+								<label for="hr-radio">Admin</label>
 							</div>
 							<div class="am-radio inline">
-								<input type="radio" name="position-radio" id="employee-radio">
+								<input type="radio" class="position-radio" name="position-radio" id="employee-radio" value="employee">
 								<label for="employee-radio">Employee</label>
 							</div>
 						</div>
@@ -71,14 +90,42 @@
 	var pageRegister = {};
 	pageRegister.init = function(selector, callback){
 		pageRegister.elem = $(selector);
+		pageRegister.elem.find('.btn-add-register').off("click").click(function(event){
+			var register_info = {
+				"emp_id" : pageRegister.elem.find('.employeeID').val(),
+				"emp_dept" : pageRegister.elem.find('.listDepartment').val(),
+				"emp_name" : JSON.stringify({
+					"last_name" : pageRegister.elem.find('.lname').val(),
+					"first_name" : pageRegister.elem.find('.first-name').val(),
+					"middle_name" : pageRegister.elem.find('.mname').val(),
+					"ext_name" : pageRegister.elem.find('.extname').val()
+				}),
+				"emp_username" : pageRegister.elem.find('.usernameRegister').val(),
+				"emp_password" : pageRegister.elem.find('.passwordRegister').val(),
+				"emp_position" : pageRegister.elem.find('.position-radio:checked').val()
+			};
+
+			$.ajax({
+				method: "POST",
+					url: "<?php echo base_url('add-employee')?>",
+					data: register_info,
+					success: function(result){
+						if(result.success){
+							pageRegister.elem.find('.modal-department').modal();
+						}
+					}
+			});
+		});
+
 		$.getJSON('<?php echo site_url('get-all-department')?>', callback);
 	}
 
 	pageRegister.init("#pageRegister", function(result){
 		result = result['query'];
+		console.log(result);
 		$.each(result, function(key, value){
 			var createOption = $('<option></option>');
-			createOption.attr('value', value['dept_name']);
+			createOption.attr('value', value['dept_Id']);
 			createOption.html(value['dept_name']);
 			pageRegister.elem.find('.listDepartment').append(createOption);
 		});

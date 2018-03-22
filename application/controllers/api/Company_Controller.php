@@ -15,5 +15,14 @@
 			header('Content-Type: application/json');
         	echo json_encode($ret);
 		}
+
+		public function getAllCompanyInfo(){
+			$this->benchmark->mark('start');
+			$data['query'] = $this->Company_Model->getAllCompanyInfo();
+			$this->benchmark->mark('end');
+			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($data);
+		}
 	}
 ?>

@@ -25,8 +25,12 @@
 		<div class="panel-body panel-body-company ">
 			<form id="add-form" class="company-form">
 				<div class="row form-group">
-						<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-company">SAVE</button>
-						<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-company">BACK</button>
+					<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-company">
+							<i class="icon icon-left s7-diskette"></i>SAVE
+					</button>
+					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-company">
+						<i class="icon icon-left s7-back"></i>BACK
+					</button>
 				</div>
 
 				<div class="form-group">
@@ -119,31 +123,43 @@
 	pageCompany.init = function(selector, callback){
 		pageCompany.elem = $(selector);
 		pageCompany.elem.find('.btn-save-company').off("click").click(function(event){
-			var company_address = {
-				"bldg_name": pageCompany.elem.find('.rm').val(), 
-				"house": pageCompany.elem.find('.house').val(),
-				"street_name": pageCompany.elem.find('.street').val(),
-				"subdivision": pageCompany.elem.find('.subdivision').val(),
-				"barangay": pageCompany.elem.find('.brgy').val(),
-				"city": pageCompany.elem.find('.city').val(),
-				"province": pageCompany.elem.find('.province').val(),
-				"zip_code": pageCompany.elem.find('.zipcode').val()
-				};
-			company_address = JSON.stringify(company_address);
+			// var company_address = {
+			// 	"bldg_name": pageCompany.elem.find('.rm').val(), 
+			// 	"house": pageCompany.elem.find('.house').val(),
+			// 	"street_name": pageCompany.elem.find('.street').val(),
+			// 	"subdivision": pageCompany.elem.find('.subdivision').val(),
+			// 	"barangay": pageCompany.elem.find('.brgy').val(),
+			// 	"city": pageCompany.elem.find('.city').val(),
+			// 	"province": pageCompany.elem.find('.province').val(),
+			// 	"zip_code": pageCompany.elem.find('.zipcode').val()
+			// 	};
+			// company_address = JSON.stringify(company_address);
 
-			var company_contact = {
-				"company_tel_no": pageCompany.elem.find('.telnum').val(),
-				"company_cel_no": pageCompany.elem.find('.cellnum').val()
-				};
-			company_contact = JSON.stringify(company_contact);
+			// var company_contact = {
+			// 	"company_tel_no": pageCompany.elem.find('.telnum').val(),
+			// 	"company_cel_no": pageCompany.elem.find('.cellnum').val()
+			// 	};
+			// company_contact = JSON.stringify(company_contact);
 
 			var company_form_info = {	
 				"company_sss_id": pageCompany.elem.find('.sssnum').val(), 
 				"company_pagibig_id": pageCompany.elem.find('.pagibignum').val(),
 				"company_name": pageCompany.elem.find('.employername').val(),
-				"company_address": company_address,
+				"company_address": JSON.stringify({
+					"bldg_name": pageCompany.elem.find('.rm').val(), 
+					"house": pageCompany.elem.find('.house').val(),
+					"street_name": pageCompany.elem.find('.street').val(),
+					"subdivision": pageCompany.elem.find('.subdivision').val(),
+					"barangay": pageCompany.elem.find('.brgy').val(),
+					"city": pageCompany.elem.find('.city').val(),
+					"province": pageCompany.elem.find('.province').val(),
+					"zip_code": pageCompany.elem.find('.zipcode').val()
+					}),
 				"company_tax_id": pageCompany.elem.find('.taxnum').val(),
-				"company_contact_info": company_contact,
+				"company_contact_info": JSON.stringify({
+					"company_tel_no": pageCompany.elem.find('.telnum').val(),
+					"company_cel_no": pageCompany.elem.find('.cellnum').val()
+					}),
 				"company_email": pageCompany.elem.find('.email').val()
 			};
 
@@ -159,10 +175,33 @@
 			});
 			console.log(company_form_info);
 		});
-		callback();
+		$.getJSON('<?php echo site_url('getAllCompanyInfo')?>', callback);
 	}
 
-	pageCompany.init("#pageCompany", function(){
+	pageCompany.init("#pageCompany", function(result){
+		result = result['query'];
+		$.each(result, function(key,value){
 
+			pageCompany.elem.find('.sssnum').val(value['company_sss_id']);
+			pageCompany.elem.find('.pagibignum').val(value['company_pagibig_id']);
+			pageCompany.elem.find('.employername').val(value['company_name']);
+
+			var companyAddress = jQuery.parseJSON(value['company_address']);
+			pageCompany.elem.find('.rm').val(companyAddress['bldg_name']);
+			pageCompany.elem.find('.house').val(companyAddress['house']);
+			pageCompany.elem.find('.street').val(companyAddress['street_name']);
+			pageCompany.elem.find('.subdivision').val(companyAddress['subdivision']);
+			pageCompany.elem.find('.brgy').val(companyAddress['barangay']);
+			pageCompany.elem.find('.city').val(companyAddress['city']);
+			pageCompany.elem.find('.province').val(companyAddress['province']);
+			pageCompany.elem.find('.zipcode').val(companyAddress['zip_code']);
+			pageCompany.elem.find('.taxnum').val(value['company_tax_id']);
+
+			var companyContact = jQuery.parseJSON(value['company_contact_info']);
+			pageCompany.elem.find('.telnum').val(companyContact['company_tel_no']);
+			pageCompany.elem.find('.cellnum').val(companyContact['company_cel_no']);
+			pageCompany.elem.find('.email').val(value['company_email']);
+
+		});
 	});
 </script>

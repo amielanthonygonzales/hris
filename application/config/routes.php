@@ -55,14 +55,18 @@ $route['default_controller'] = 'welcome';
 //app
 $route['employee'] = 'app/Employee_Controller/view';
 $route['register-employee'] = 'app/Employee_Controller/registerEmployee';
+$route['employee-list'] = 'app/Employee_Controller/employeeList';
 //api
 $route['get-all-department'] = 'api/Employee_Controller/getAllDepartment';
+$route['add-employee'] = 'api/Employee_Controller/addEmployee';
+$route['get-all-employee'] = 'api/Employee_Controller/getAllEmployee';
 
 //Company
 //app
 $route['company'] = 'app/Company_Controller/view';
 //api
 $route['add-company'] = 'api/Company_Controller/addCompany';
+$route['getAllCompanyInfo'] = 'api/Company_Controller/getAllCompanyInfo';
 
 //Dashboard
 //app

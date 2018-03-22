@@ -28,7 +28,7 @@
 				<div class="input-group col-md-12">
 					<input type="text" name="dept_name" placeholder="Department Name" class="form-control dept_name"/>
 					<span class="input-group-btn">
-						<button type="button" class="btn btn-space btn-success md-trigger btn-dept-save">SAVE</button>
+						<button type="button" class="btn btn-space btn-success md-trigger btn-dept-save"><i class="icon icon-left s7-diskette"></i>SAVE</button>
 					</span>
 				</div>
 		</div>
