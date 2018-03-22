@@ -105,4 +105,5 @@
 	<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/buttons.colVis.js" type="text/javascript"></script>
 	<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/buttons.bootstrap.js" type="text/javascript"></script>
 	<script src="<?php echo base_url("assets/app"); ?>/js/app-tables-datatables.js" type="text/javascript"></script>
+	<script src="<?php echo base_url("assets/app"); ?>/lib/datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
 	

@@ -1,15 +1,23 @@
 <div id="pageEmployee">
+
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h3>Juan Dela Cruz</h3>
+			<h3 class="emp-full-name"></h3>
 		</div>
+		
 		<div class="panel-body">
 			<form>
 				<div class="row form-group">
-					<div class="col-md-2 col-md-10 pull-right">
-						<button type="button" name="btnBack" value="back" class ="btn btn-space btn-success btnBack">BACK</button>
-						<button type="button" name="btnSave" value="Save" class ="btn btn-space btn-success btnSave">SAVE</button>
-					</div>
+					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employee">
+						<i class="icon icon-left s7-back"></i>BACK
+					</button>
+					<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-employee">
+							<i class="icon icon-left s7-diskette"></i>SAVE
+					</button>
+					<button type="button" name="btnDeleted" value="deleted" class ="btn btn-success btn-space btn-deleted-employee">
+							<i class="icon icon-left s7-trash"></i>DELETED
+					</button>
+					
 				</div>	
 				<div class="form-group">
 					<label for="fname">First Name</label>
@@ -27,23 +35,29 @@
 					<label for="extname">Extension Name</label>
 					<input class="form-control extname" type="text" name="extname" placeholder="Extension Name"/>
 				</div>
-				<div class="input-append date birthdate" data-field="date">
-					<label for="bday">Birthdate (yyyy-mm-dd)</label>
-					<input name="bday" class="form-control bday" placeholder="Birthdate" type="text" required/>
-					<span class="add-on"><i class="icon-remove"></i></span>
-					<!-- <span class="add-on"><i class="icon-th"></i></span> -->
-				</div> 
+                <div class="form-group">
+                    <div class="form-group">
+                        <label>Birthday (yyyy-mm-dd)</label>
+                        <div data-min-view="2" data-date-format="yyyy-mm-dd" class="input-group date datetimepicker col-md-12" id="engagement-datepicker">
+                            <span class="input-group-addon btn btn-primary">
+                            	<i class="icon-left icon-th s7-date"></i>
+                            </span>
+                            <input type="datetime" size="16" type="text" class="form-control engagement-date" name="engagement-date">
+                            
+                        </div>
+                    </div>
+                </div>
 				<div class="form-group">
 					<label for="empSalary">Salary</label>
 					<input class="form-control empSalary" type="text" name="salary" placeholder="Salary" required />
 				</div>
 				<div class="form-group">
 					<label for="email">Email</label>
-					<input class="form-control email" type="email" name="email" placeholder="Email" required/>
+					<input class="form-control emp-email" type="email" name="email" placeholder="Email" required/>
 				</div>
 				<div class="form-group">
 					<label for="username">Username</label>
-					<input class="form-control username" type="text" name="username" placeholder="Username" required/>
+					<input class="form-control empUsername" type="text" name="username" placeholder="Username" required/>
 				</div>
 
 			</div>
@@ -111,13 +125,69 @@
 </div>
 
 <script type="text/javascript">
+
+	$(document).ready(function(){
+        //initialize the javascript
+        var date = "<?php echo date("m/d/Y"); ?>";
+        $(".datetimepicker").datetimepicker({
+            //startDate: date,
+            autoclose: true,
+            componentIcon: '.s7-date',
+            navIcons:{
+                rightIcon: 's7-angle-right',
+                leftIcon: 's7-angle-left'
+            }
+        });
+    });
+
 	var pageEmployee = {};
 	pageEmployee.init = function(selector, callback){
 		pageEmployee.elem = $(selector);
+		pageEmployee.action = "<?php echo $action?>";
+		pageEmployee.id = <?php echo $id?>;
 
+		if(pageEmployee.action == "view"){
+			pageEmployee.elem.find(".panel-body").find("*").attr("disabled", "disabled");
+			pageEmployee.elem.find(".btn-back-employee").removeAttr("disabled");
+		}
+		else if(pageEmployee.action == "edit"){
+			pageEmployee.elem.find(".btn-save-employee").remove("disabled");
+			pageEmployee.elem.find(".panel-body").find("*").remove("disabled");
+		}	
+		$.getJSON('<?php echo site_url('get-employee/')?>'+pageEmployee.id, callback);
 	}
 
-	pageEmployee.init("#pageEmployee", function(){
-		
+	pageEmployee.init("#pageEmployee", function(result){
+		result = result['query'];
+		console.log(result);
+		$.each(result, function(key, value){
+			pageEmployee.name = jQuery.parseJSON(value['emp_name']);
+
+			pageEmployee.elem.find('.emp-full-name').html(
+				pageEmployee.name['last_name'] + ", " 
+				+ pageEmployee.name['first_name'] + " " 
+				+ pageEmployee.name['middle_name'] + " " 
+				+ pageEmployee.name['ext_name']);
+
+			pageEmployee.elem.find('.fname').val(pageEmployee.name['first_name']);
+			pageEmployee.elem.find('.mname').val(pageEmployee.name['middle_name']);
+			pageEmployee.elem.find('.lname').val(pageEmployee.name['last_name']);
+			pageEmployee.elem.find('.extname').val(pageEmployee.name['ext_name']);
+
+			pageEmployee.elem.find('.engagement-date').val(value['emp_birthday']);
+			pageEmployee.elem.find('.empSalary').val(value['emp_salary']);
+			pageEmployee.elem.find('.emp-email').val(value['emp_email']);
+			pageEmployee.elem.find('.empUsername').val(value['emp_username']);
+
+			pageEmployee.elem.find('.sss-number').val(value['sss_no']);
+			pageEmployee.elem.find('.ss-Contribution').val(value['ss_contribution']);
+			pageEmployee.elem.find('.ec-contribution').val(value['ec_contribution']);
+
+			pageEmployee.elem.find('.pagibig-mid-number').val(value['pagibig_mid_no']);
+			pageEmployee.elem.find('.pagibig-number').val(value['pagibig_no']);
+			pageEmployee.elem.find('.membership-program').val(value['pagibig_member_prog']);
+			pageEmployee.elem.find('.ee-share').val(value['pagibig_ee_share']);
+			pageEmployee.elem.find('.er-share').val(value['pagibig_er_share']);
+		});
 	});
 </script>

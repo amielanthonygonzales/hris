@@ -13,7 +13,7 @@
 				</span>
 			</a>
 			<!-- logo -->
-			<a href="<?php echo site_url(); ?>" class="navbar-brand"></a>
+			<a href="<?php echo base_url('dashboard'); ?>" class="navbar-brand"></a>
 		</div>
 		<div id="am-navbar-collapse" class="collapse navbar-collapse">
 			

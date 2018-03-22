@@ -6,8 +6,8 @@
 			$this->load->model('Employee_Model');
 		}
 
-		public function view(){
-			$data = array();
+		public function view($id, $action){
+			$data = array("id"=>$id, "action"=>$action);
 			$data['content'] = $this->load->view('app/content/page-employee', $data, true);
 			$this->load->view('app/header', $data);
 			$this->load->view('app/footer', $data);

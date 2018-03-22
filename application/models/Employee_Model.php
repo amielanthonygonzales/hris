@@ -77,5 +77,10 @@
 			$sql = $this->db->query("SELECT * FROM employee WHERE emp_deleted = 0");
 			return $sql->result();
 		}
+
+		public function getEmployee($id){
+			$sql = $this->db->query("SELECT * FROM employee, sss, pag_ibig WHERE employee.emp_id = ".$id." and  sss.sss_emp_id = employee.emp_id and pag_ibig.pagibig_emp_id = employee.emp_id and employee.emp_deleted = 0");
+			return $sql->result();
+		}
 	}
 ?>
