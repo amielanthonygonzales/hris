@@ -61,6 +61,7 @@ $route['get-all-department'] = 'api/Employee_Controller/getAllDepartment';
 $route['add-employee'] = 'api/Employee_Controller/addEmployee';
 $route['get-all-employee'] = 'api/Employee_Controller/getAllEmployee';
 $route['get-employee/(:any)'] = 'api/Employee_Controller/getEmployee/$1';
+$route['update-employee/(:any)'] = 'api/Employee_Controller/updateEmployeeInfo/$1';
 
 //Company
 //app

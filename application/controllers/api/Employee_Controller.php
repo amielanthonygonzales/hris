@@ -19,6 +19,8 @@
 			$this->benchmark->mark('start');
 			$postEmployee = $this->input->post();
 			$ret['success'] = $this->Employee_Model->addEmployee($postEmployee);
+			$ret['success'] = $this->Employee_Model->addEmployeeSSS($postEmployee);
+			$ret['success'] = $this->Employee_Model->addEmployeePagibig($postEmployee);
 			$this->benchmark->mark('end');
 			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
 			header('Content-Type: application/json');
@@ -37,10 +39,24 @@
 		public function getEmployee($id){
 			$this->benchmark->mark('start');
 			$data['query'] = $this->Employee_Model->getEmployee($id);
+			$data['departmentQuery'] = $this->Employee_Model->getAllDepartment();
 			$this->benchmark->mark('end');
 			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
 			header('Content-Type: application/json');
         	echo json_encode($data);
+		}
+
+		public function updateEmployeeInfo($id){
+			$this->benchmark->mark('start');
+			$updatePost = $this->input->post();
+			$ret['success'] = $this->Employee_Model->updateEmployeeInfo($id, $updatePost);
+			$ret['success'] = $this->Employee_Model->updateSSSInfo($id, $updatePost);
+			$ret['success'] = $this->Employee_Model->updatePagibigInfo($id, $updatePost);
+			$this->benchmark->mark('end');
+			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($ret);
+
 		}
 	}
 ?>
