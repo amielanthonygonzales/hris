@@ -1,6 +1,7 @@
 <?php 
 	
 	class Employee_Model extends CI_Model{
+
 		function add($data, $nameSSS, $namePagibig){
 			$this->db->insert('employee',$data);
 			$this->db->insert('pag_ibig',$namePagibig);
@@ -162,9 +163,11 @@
 			SELECT * 
 			FROM `employee` 
 			WHERE `emp_deleted` = 0 
+			AND `emp_last_name` LIKE '%" .$this->db->escape_str($args['search']). "%' 
 			LIMIT " .$this->db->escape_str($args['count']). " 
 			OFFSET ".$this->db->escape_str($args['offset']);
 			return $this->db->query($sql)->result_array();
+
 		}
 
 		public function countEmployees(){

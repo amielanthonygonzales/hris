@@ -49,8 +49,10 @@
 		pageEmployeeList.elem.find('.employeeList').DataTable({
 			"autowidth":false,
 			"paging" : true,
+			"searching": true,
 			"processing": true,
 			"serverSide": true,
+			"orderable": true,
 			"pagingType": "full_numbers",
 			"ajax":{
 				"url": "<?php echo site_url('employee-datatable')?>",
