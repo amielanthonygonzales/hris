@@ -94,12 +94,10 @@
 			var register_info = {
 				"emp_id" : pageRegister.elem.find('.employeeID').val(),
 				"emp_dept" : pageRegister.elem.find('.listDepartment').val(),
-				"emp_name" : JSON.stringify({
-					"last_name" : pageRegister.elem.find('.lname').val(),
-					"first_name" : pageRegister.elem.find('.first-name').val(),
-					"middle_name" : pageRegister.elem.find('.mname').val(),
-					"ext_name" : pageRegister.elem.find('.extname').val()
-				}),
+				"emp_last_name" : pageRegister.elem.find('.lname').val(),
+				"emp_first_name" : pageRegister.elem.find('.first-name').val(),
+				"emp_middle_name" : pageRegister.elem.find('.mname').val(),
+				"emp_ext_name" : pageRegister.elem.find('.extname').val(),
 				"emp_username" : pageRegister.elem.find('.usernameRegister').val(),
 				"emp_password" : pageRegister.elem.find('.passwordRegister').val(),
 				"emp_position" : pageRegister.elem.find('.position-radio:checked').val()

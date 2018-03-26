@@ -35,7 +35,10 @@
 				(
 				emp_id, 
 				emp_dept, 
-				emp_name, 
+				emp_first_name,
+				emp_middle_name,
+				emp_last_name,
+				emp_ext_name, 
 				emp_username, 
 				emp_password, 
 				emp_position
@@ -44,7 +47,10 @@
 				(
 				".$this->db->escape($postEmployee['emp_id']). " ,
 				".$this->db->escape($postEmployee['emp_dept'])." ,
-				".$this->db->escape($postEmployee['emp_name'])." ,
+				".$this->db->escape($postEmployee['emp_first_name'])." ,
+				".$this->db->escape($postEmployee['emp_middle_name'])." ,
+				".$this->db->escape($postEmployee['emp_last_name'])." ,
+				".$this->db->escape($postEmployee['emp_ext_name'])." ,
 				".$this->db->escape($postEmployee['emp_username'])." ,
 				".$this->db->escape($postEmployee['emp_password'])." ,
 				".$this->db->escape($postEmployee['emp_position'])." 
@@ -131,6 +137,39 @@
 				WHERE 
 				pagibig_emp_id = ".$this->db->escape($id));
 			return 1;
+		}
+
+		public function deleteEmployeeInfo($id){
+			$sql = $this->db->query("UPDATE employee SET emp_deleted = 1 WHERE emp_id = " . $this->db->escape($id));
+			return 1;
+		}
+
+		public function deleteEmployeeSSS($id){
+			$sql = $this->db->query("UPDATE sss SET sss_deleted = 1 WHERE sss_emp_id = " . $this->db->escape($id));
+			return 1;
+		}
+
+		public function deleteEmployeePagibig($id){
+			$sql = $this->db->query("UPDATE pag_ibig SET pagibig_deleted = 1 WHERE pagibig_emp_id = " . $this->db->escape($id));
+			return 1;
+		}
+
+		public function getEmployees($args){
+			if(!isset($args['offset'])){
+				$args['offset'] = 0;
+			}
+			$sql = "
+			SELECT * 
+			FROM `employee` 
+			WHERE `emp_deleted` = 0 
+			LIMIT " .$this->db->escape_str($args['count']). " 
+			OFFSET ".$this->db->escape_str($args['offset']);
+			return $this->db->query($sql)->result_array();
+		}
+
+		public function countEmployees(){
+			$sql = "SELECT COUNT(*) AS `count` FROM `employee` WHERE `emp_deleted` = 0";
+			return $this->db->query($sql)->result_array()[0]["count"];
 		}
 	}
 ?>

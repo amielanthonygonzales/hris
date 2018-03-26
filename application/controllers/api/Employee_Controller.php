@@ -58,5 +58,31 @@
         	echo json_encode($ret);
 
 		}
+
+		public function deleteEmployeeInfo($id){
+			$this->benchmark->mark('start');
+			$ret['success'] = $this->Employee_Model->deleteEmployeeInfo($id);
+			$ret['success'] = $this->Employee_Model->deleteEmployeeSSS($id);
+			$ret['success'] = $this->Employee_Model->deleteEmployeePagibig($id);
+			$this->benchmark->mark('end');
+			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($ret);
+		}
+
+		public function dataTable(){
+			$args = array(
+	            "count" => $_GET['length'],
+	            "offset" =>  $_GET['start'],
+	            "search" =>  $_GET['search']['value']
+       		 );
+			$ret=array();
+			$ret['draw'] = $_GET['draw'];
+			$ret['data'] = $this->Employee_Model->getEmployees($args);
+			$ret['recordsTotal'] = $this->Employee_Model->countEmployees();
+			$ret['recordsFiltered'] = $ret['recordsTotal'];
+			header('Content-Type: application/json');
+			echo json_encode($ret);
+		}
 	}
 ?>

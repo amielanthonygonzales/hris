@@ -7,13 +7,14 @@
 				</div>
 				<div class="modal-body">
 					<div class="text-center">
-						<div class="i-circle text-success"><i class="icon s7-check"></i></div>
-						<h4>Awesome!</h4>
-						<p>Data has been saved successfully!</p>
+						<div class="i-circle"><i class="icon symbol"></i></div>
+						<p class="message"></p>
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" data-dismiss="modal" class="btn btn-success">Proceed</button>
+					<button type="button" data-dismiss="modal" class="btn btn-success btn-proceed">Proceed</button>
+					<button type="button" class="btn btn-success btn-yes">YES</button>
+					<button type="button" data-dismiss="modal" class="btn btn-default btn-no">NO</button>
 				</div>
 			</div>
 		</div>
@@ -27,6 +28,7 @@
 			<form>
 				<div class="row form-group">
 					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employee">
+
 						<i class="icon icon-left s7-back"></i>BACK
 					</button>
 					<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-employee">
@@ -162,6 +164,10 @@
 		pageEmployee.action = "<?php echo $action?>";
 		pageEmployee.id = <?php echo $id?>;
 
+		pageEmployee.elem.find('.btn-back-employee').off("click").click(function(e){
+			location.replace('<?php echo base_url('employee-list')?>');
+		});
+
 		if(pageEmployee.action == "view"){
 			pageEmployee.elem.find(".panel-body").find("*").attr("disabled", "disabled");
 			pageEmployee.elem.find(".btn-back-employee").removeAttr("disabled");
@@ -191,11 +197,47 @@
 					data: pageEmployee.employee_content,
 					success: function(result){
 						if(result.success){
+							pageEmployee.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
+							pageEmployee.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
+							pageEmployee.elem.find('.btn-proceed').show();
+							pageEmployee.elem.find('.btn-yes').hide();
+							pageEmployee.elem.find('.btn-no').hide();
+							pageEmployee.elem.find('.message').html('Data has been saved successfully!');
 							pageEmployee.elem.find('.modal-department').modal();
+							
 						}
 					}
 			});
 		});
+
+		pageEmployee.elem.find('.btn-deleted-employee').off("click").click(function(event){
+			
+			pageEmployee.elem.find('.i-circle').removeClass('text-success').addClass('text-danger');
+			pageEmployee.elem.find('.symbol').removeClass('s7-check').addClass('s7-attention');
+			pageEmployee.elem.find('.message').html('Are you sure you want to delete this data!');
+			pageEmployee.elem.find('.btn-proceed').hide();
+			pageEmployee.elem.find('.btn-yes').show().off("click").click(function(e){
+				$.ajax({
+					method: "POST",
+					url: "<?php echo base_url('delete-employee/')?>" + pageEmployee.id,
+					success: function(result){
+						if(result.success){
+							pageEmployee.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
+							pageEmployee.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
+							pageEmployee.elem.find('.btn-proceed').show();
+							pageEmployee.elem.find('.btn-yes').hide();
+							pageEmployee.elem.find('.btn-no').hide();
+							pageEmployee.elem.find('.message').html('Data successfully deleted!');
+							pageEmployee.elem.find('.modal-department').modal();
+							
+						}
+					}
+				});
+			});
+			pageEmployee.elem.find('.btn-no').show();
+			pageEmployee.elem.find('.modal-department').modal();
+		});
+
 		$.getJSON('<?php echo site_url('get-employee/')?>'+pageEmployee.id, callback);
 	}
 
@@ -218,18 +260,17 @@
 			pageEmployee.elem.find('.listDepartment').append(createOption);
 		});
 		$.each(pageEmployee.result, function(key, value){
-			pageEmployee.name = jQuery.parseJSON(value['emp_name']);
 
 			pageEmployee.elem.find('.emp-full-name').html(
-				pageEmployee.name['last_name'] + ", " 
-				+ pageEmployee.name['first_name'] + " " 
-				+ pageEmployee.name['middle_name'] + " " 
-				+ pageEmployee.name['ext_name']);
+				value['emp_last_name'] + ", " 
+				+ value['emp_first_name'] + " " 
+				+ value['emp_middle_name'] + " " 
+				+ value['emp_ext_name']);
 
-			pageEmployee.elem.find('.fname').val(pageEmployee.name['first_name']);
-			pageEmployee.elem.find('.mname').val(pageEmployee.name['middle_name']);
-			pageEmployee.elem.find('.lname').val(pageEmployee.name['last_name']);
-			pageEmployee.elem.find('.extname').val(pageEmployee.name['ext_name']);
+			pageEmployee.elem.find('.fname').val(value['emp_first_name']);
+			pageEmployee.elem.find('.mname').val(value['emp_middle_name']);
+			pageEmployee.elem.find('.lname').val(value['emp_last_name']);
+			pageEmployee.elem.find('.extname').val(value['emp_ext_name']);
 			pageEmployee.elem.find('.listDepartment').val(value['emp_dept']);
 
 			pageEmployee.elem.find('.engagement-date').val(value['emp_birthday']);

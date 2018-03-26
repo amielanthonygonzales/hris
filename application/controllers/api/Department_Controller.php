@@ -21,6 +21,46 @@
 			header('Content-Type: application/json');
       		echo json_encode($data);
 		}
+
+		public function deleteDepartment($id){
+			$this->benchmark->mark('start');
+			$ret['success'] = $this->Department_Model->deleteDepartment($id);
+			$this->benchmark->mark('end');
+			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+        	header('Content-Type: application/json');
+        	echo json_encode($ret);
+		}
+
+		public function updateDepartment($id){
+			$this->benchmark->mark('start');
+			$updateDept = $this->input->post();
+			$ret['success'] = $this->Department_Model->updateDepartment($id, $updateDept);
+			$this->benchmark->mark('end');
+			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+        	header('Content-Type: application/json');
+        	echo json_encode($ret);
+		}
+
+		public function dataTableDepartment(){
+			$args = array(
+	            "count" => $_GET['length'],
+	            "offset" =>  $_GET['start'],
+	            "search" =>  $_GET['search']['value']
+       		 );
+			$ret=array();
+			$ret['draw'] = $_GET['draw'];
+			$ret['data'] = $this->Department_Model->getDepartments($args);
+			$ret['recordsTotal'] = $this->Department_Model->countDepartments();
+			$ret['recordsFiltered'] = $ret['recordsTotal'];
+			header('Content-Type: application/json');
+			echo json_encode($ret);
+		}
+
+		public function getDepartmentName($id){
+			$data['query'] = $this->Department_Model->getDepartmentName($id);
+			header('Content-Type: application/json');
+      		echo json_encode($data);
+		}
 	}
 ?>
 

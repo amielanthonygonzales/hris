@@ -64,7 +64,16 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/app"); ?>/lib/select2/css/select2.min.css"/>
 
 		<!-- data tables -->
-		
+		<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/dataTables.buttons.js" type="text/javascript"></script>
+		<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/buttons.html5.js" type="text/javascript"></script>
+		<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/buttons.flash.js" type="text/javascript"></script>
+		<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/buttons.print.js" type="text/javascript"></script>
+		<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/buttons.colVis.js" type="text/javascript"></script>
+		<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/buttons.bootstrap.js" type="text/javascript"></script>
+		<script src="<?php echo base_url("assets/app"); ?>/js/app-tables-datatables.js" type="text/javascript"></script>
+		<script src="<?php echo base_url("assets/app"); ?>/lib/datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
 		
 		
 		
@@ -96,14 +105,5 @@
 			</div>
 		</div>
 	
-	<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/js/jquery.dataTables.min.js" type="text/javascript"></script>
-	<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-	<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/dataTables.buttons.js" type="text/javascript"></script>
-	<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/buttons.html5.js" type="text/javascript"></script>
-	<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/buttons.flash.js" type="text/javascript"></script>
-	<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/buttons.print.js" type="text/javascript"></script>
-	<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/buttons.colVis.js" type="text/javascript"></script>
-	<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/buttons.bootstrap.js" type="text/javascript"></script>
-	<script src="<?php echo base_url("assets/app"); ?>/js/app-tables-datatables.js" type="text/javascript"></script>
-	<script src="<?php echo base_url("assets/app"); ?>/lib/datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+	
 	

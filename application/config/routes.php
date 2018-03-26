@@ -62,6 +62,8 @@ $route['add-employee'] = 'api/Employee_Controller/addEmployee';
 $route['get-all-employee'] = 'api/Employee_Controller/getAllEmployee';
 $route['get-employee/(:any)'] = 'api/Employee_Controller/getEmployee/$1';
 $route['update-employee/(:any)'] = 'api/Employee_Controller/updateEmployeeInfo/$1';
+$route['delete-employee/(:any)'] = 'api/Employee_Controller/deleteEmployeeInfo/$1';
+$route['employee-datatable'] = 'api/Employee_Controller/dataTable';
 
 //Company
 //app
@@ -71,11 +73,15 @@ $route['add-company'] = 'api/Company_Controller/addCompany';
 $route['getAllCompanyInfo'] = 'api/Company_Controller/getAllCompanyInfo';
 
 //Dashboard
+//api
+$route['get-all-hr-info'] = 'api/Dashboard_Controller/getAllHrInfo';
+$route['dashboard-datatable'] = 'api/Dashboard_Controller/datatableDashboard';
 //app
 $route['dashboard'] = 'app/Dashboard_Controller/dashboard';
 $route['dashboard-company'] = 'app/Dashboard_Controller/company';
 $route['employee-register'] = 'app/Dashboard_Controller/registerEmployee';
 $route['dashboard-department'] = 'app/Dashboard_Controller/department';
+
 
 //Department Controller
 //app
@@ -85,6 +91,10 @@ $route['department'] = 'app/Department_Controller/view';
 //api
 $route['add-department'] = 'api/Department_Controller/addDepartment';
 $route['get-department'] = 'api/Department_Controller/getAllDepartment';
+$route['delete-department/(:any)'] = 'api/Department_Controller/deleteDepartment/$1';
+$route['update-department/(:any)'] = 'api/Department_Controller/updateDepartment/$1';
+$route['get-department-name/(:any)'] = 'api/Department_Controller/getDepartmentName/$1';
+$route['department-datatable'] = 'api/Department_Controller/datatableDepartment';
 
 
 
