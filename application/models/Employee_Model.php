@@ -8,6 +8,17 @@
 			$this->db->insert('sss',$nameSSS);
 		}
 
+		function checkLogin(){
+			if(isset($_POST['username']) && isset($_POST['password'])){
+				//$username = $_POST['username'];
+				$username = $_POST['username'];
+				$password = $_POST['password'];
+				// $sql = $this->db->query("SELECT * FROM employee WHERE emp_username =".$this->db->escape($username) AND "emp_password =" .$this->db->escape($password));
+				$sql = $this->db->query("SELECT * FROM `employee` WHERE `emp_username` = " .$this->db->escape($username).  "AND `emp_password` =" .$this->db->escape($password));
+				return $sql->result();
+			}
+		}
+
 		function getName(){
 			$sql=$this->db->query("SELECT id, firstName, lastName, middleName, extName, birthday, username, active from employee where active = 1 ");
 			return $sql->result();

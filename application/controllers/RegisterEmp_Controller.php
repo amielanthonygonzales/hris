@@ -8,7 +8,7 @@
 		}
 
 		function index(){
-			$this->load->view('hris_views/index');
+			$this->load->view('app/content/index');
 		}
 
 		function employeeTable(){

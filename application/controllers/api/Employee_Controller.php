@@ -6,6 +6,23 @@
 			$this->load->model('Employee_Model');
 		}
 
+		public function getEmployeeSession(){
+			$this->benchmark->mark('start');
+			$data;
+			$data['query'] = $this->Employee_Model->checkLogin();
+			if($data['query']){
+				$this->session->set_userdata('user_id',$data['user_id']);
+		        $this->session->set_userdata('user_email',$data['user_email']);
+		        $this->session->set_userdata('user_name',$data['user_name']);
+		        $this->session->set_userdata('user_age',$data['user_age']);
+		        $this->session->set_userdata('user_mobile',$data['user_mobile']);
+			}
+			$this->benchmark->mark('end');
+			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($data);
+		}
+
 		public function getAllDepartment(){
 			$this->benchmark->mark('start');
 			$data['query'] = $this->Employee_Model->getAllDepartment();
