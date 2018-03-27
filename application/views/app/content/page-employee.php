@@ -23,10 +23,8 @@
 		<div class="panel-heading">
 			<h3 class="emp-full-name"></h3>
 		</div>
-		
 		<div class="panel-body">
-			<form>
-				<div class="row form-group">
+			<div class="row">
 					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employee">
 
 						<i class="icon icon-left s7-back"></i>BACK
@@ -37,8 +35,15 @@
 					<button type="button" name="btnDeleted" value="deleted" class ="btn btn-success btn-space btn-deleted-employee">
 							<i class="icon icon-left s7-trash"></i>DELETED
 					</button>
-					
 				</div>	
+		</div>
+	</div>
+	<div class="panel panel-default">
+		
+		
+		<div class="panel-body">
+			<form>
+				
 				<div class="form-group">
 					<label for="fname">First Name</label>
 					<input class="form-control fname" type="text" name="fname" placeholder="First Name" required readonly />
@@ -153,6 +158,22 @@
 				</div>
 			</div>
 		</form>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="row">
+					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employee">
+
+						<i class="icon icon-left s7-back"></i>BACK
+					</button>
+					<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-employee">
+							<i class="icon icon-left s7-diskette"></i>SAVE
+					</button>
+					<button type="button" name="btnDeleted" value="deleted" class ="btn btn-success btn-space btn-deleted-employee">
+							<i class="icon icon-left s7-trash"></i>DELETED
+					</button>
+				</div>	
+		</div>
 	</div>
 </div>
 

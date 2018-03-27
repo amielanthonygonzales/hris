@@ -56,6 +56,7 @@ $route['default_controller'] = 'welcome';
 $route['employee/(:any)/(:any)'] = 'app/Employee_Controller/view/$1/$2';
 $route['register-employee'] = 'app/Employee_Controller/registerEmployee';
 $route['employee-list'] = 'app/Employee_Controller/employeeList';
+$route['employee-edit'] = 'app/Employee_Controller/employeeEdit';
 //api
 $route['get-all-department'] = 'api/Employee_Controller/getAllDepartment';
 $route['add-employee'] = 'api/Employee_Controller/addEmployee';

@@ -26,5 +26,12 @@
 			$this->load->view('app/header', $data);
 			$this->load->view('app/footer', $data);
 		}
+
+		public function employeeEdit(){
+			$data = array();
+			$data['content'] = $this->load->view('app/content/page-employee-edit', $data, true);
+			$this->load->view('app/header', $data);
+			$this->load->view('app/footer', $data);
+		}
 	}
 ?>

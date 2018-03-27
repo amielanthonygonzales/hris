@@ -84,5 +84,16 @@
 			header('Content-Type: application/json');
 			echo json_encode($ret);
 		}
+
+		public function editEmployeeInfo($id){
+			$this->benchmark->mark('start');
+			$editPost = $this->input->post();
+			$ret['success'] = $this->Employee_Model->editEmployeeInfo($id, $editPost);
+			$this->benchmark->mark('end');
+			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($ret);
+
+		}
 	}
 ?>
