@@ -66,7 +66,15 @@
 							password: $('.password').val()
 							},
 					success: function(result){
-						console.log(result);
+						if(result['query'] != ""){
+
+
+							//location.replace("<?php echo base_url('employee-edit')?>")
+							$.each(result['query'],function(key,value){
+								
+							});
+							console.log(result['query']);
+						}
 					}
 			});
 			//console.log(login_info);
