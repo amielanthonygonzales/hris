@@ -27,8 +27,8 @@
 			$this->load->view('app/footer', $data);
 		}
 
-		public function employeeEdit(){
-			$data = array();
+		public function employeeEdit($id){
+			$data = array("id" => $id);
 			$data['content'] = $this->load->view('app/content/page-employee-edit', $data, true);
 			$this->load->view('app/header', $data);
 			$this->load->view('app/footer', $data);

@@ -45,7 +45,7 @@
 		</div>
 		<div class="panel-body add-dept">
 			<div class="col-md-12">
-				<button type="button" class="btn btn-space btn-success md-trigger btn-dept-add"><i class="icon icon-left s7-plus"></i>ADD</button>
+				<button type="button" class="btn btn-space btn-success md-trigger btn-dept-add pull-right"><i class="icon icon-left s7-plus"></i>ADD</button>
 			</div>
 				<!-- <div class="input-group col-md-12">
 					<input type="text" name="dept_name" placeholder="Department Name" class="form-control dept_name"/>

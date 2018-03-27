@@ -71,9 +71,10 @@
 
 							//location.replace("<?php echo base_url('employee-edit')?>")
 							$.each(result['query'],function(key,value){
-								
+								//console.log(value['emp_id']);
+								location.replace("<?php echo base_url('employee-edit/')?>"+value['emp_id']);
 							});
-							console.log(result['query']);
+							
 						}
 					}
 			});

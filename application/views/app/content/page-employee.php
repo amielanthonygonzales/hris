@@ -24,7 +24,7 @@
 			<h3 class="emp-full-name"></h3>
 		</div>
 		<div class="panel-body">
-			<div class="row">
+			<div class="row pull-right">
 					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employee">
 
 						<i class="icon icon-left s7-back"></i>BACK
@@ -33,7 +33,7 @@
 							<i class="icon icon-left s7-diskette"></i>SAVE
 					</button>
 					<button type="button" name="btnDeleted" value="deleted" class ="btn btn-success btn-space btn-deleted-employee">
-							<i class="icon icon-left s7-trash"></i>DELETED
+							<i class="icon icon-left s7-trash"></i>DELETE
 					</button>
 				</div>	
 		</div>
@@ -161,7 +161,7 @@
 	</div>
 	<div class="panel panel-default">
 		<div class="panel-body">
-			<div class="row">
+			<div class="row pull-right">
 					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employee">
 
 						<i class="icon icon-left s7-back"></i>BACK
@@ -170,7 +170,7 @@
 							<i class="icon icon-left s7-diskette"></i>SAVE
 					</button>
 					<button type="button" name="btnDeleted" value="deleted" class ="btn btn-success btn-space btn-deleted-employee">
-							<i class="icon icon-left s7-trash"></i>DELETED
+							<i class="icon icon-left s7-trash"></i>DELETE
 					</button>
 				</div>	
 		</div>

@@ -21,10 +21,10 @@
 	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h3 class="emp-full-name">Juan Dela Cruz</h3>
+			<h3 class="emp-full-name"></h3>
 		</div>
 		<div class="panel-body">
-			<div class="row">
+			<div class="row pull-right">
 					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employeeEdit">
 
 						<i class="icon icon-left s7-back"></i>BACK
@@ -33,7 +33,7 @@
 							<i class="icon icon-left s7-diskette"></i>SAVE
 					</button>
 					<button type="button" name="btnDeleted" value="deleted" class ="btn btn-success btn-space btn-deleted-employeeEdit">
-							<i class="icon icon-left s7-trash"></i>DELETED
+							<i class="icon icon-left s7-trash"></i>DELETE
 					</button>
 				</div>	
 		</div>
@@ -94,7 +94,7 @@
 	</div>
 	<div class="panel panel-default">
 		<div class="panel-body">
-			<div class="row">
+			<div class="row pull-right">
 					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employeeEdit">
 
 						<i class="icon icon-left s7-back"></i>BACK
@@ -103,7 +103,7 @@
 							<i class="icon icon-left s7-diskette"></i>SAVE
 					</button>
 					<button type="button" name="btnDeleted" value="deleted" class ="btn btn-success btn-space btn-deleted-employeeEdit">
-							<i class="icon icon-left s7-trash"></i>DELETED
+							<i class="icon icon-left s7-trash"></i>DELETE
 					</button>
 				</div>	
 		</div>
@@ -115,6 +115,8 @@
 
 	pageEmployeeEdit.init = function(selector, callback){
 		pageEmployeeEdit.elem = $(selector);
+		pageEmployeeEdit.passId = <?php echo $id?>;
+		//console.log(pageEmployeeEdit.passId);
 
 		pageEmployeeEdit.elem.find('.btn-save-employeeEdit').off("click").click(function(event){
 			pageEmployeeEdit.content = {
@@ -173,10 +175,10 @@
 			pageEmployeeEdit.elem.find('.btn-no').show();
 			pageEmployeeEdit.elem.find('.modal-department').modal();
 		});
-		callback();
+		$.getJSON('<?php echo site_url('get-employee/')?>'+pageEmployeeEdit.passId, callback);
 	}
 
-	pageEmployeeEdit.init("#pageEmployeeEdit", function(){
+	pageEmployeeEdit.init("#pageEmployeeEdit", function(result){
 		pageEmployeeEdit.elem.find(".datetimepicker").datetimepicker({
             //startDate: date,
             autoclose: true,
@@ -185,6 +187,21 @@
                 rightIcon: 's7-angle-right',
                 leftIcon: 's7-angle-left'
             }
+        });
+
+		result = result['query'];
+        $.each(result, function(key, value){
+
+        	pageEmployeeEdit.elem.find('.emp-full-name').text(value['emp_last_name'] + ", " + value['emp_first_name'] + " " + value['emp_middle_name'] + " " + value['emp_ext_name']);
+
+        	pageEmployeeEdit.elem.find('.editEmp-fname').val(value['emp_first_name']);
+        	pageEmployeeEdit.elem.find('.editEmp-mname').val(value['emp_middle_name']);
+        	pageEmployeeEdit.elem.find('.editEmp-lname').val(value['emp_last_name']);
+        	pageEmployeeEdit.elem.find('.editEmp-extname').val(value['emp_ext_name']);
+        	pageEmployeeEdit.elem.find('.editEmp-birthday').val(value['emp_birthday']);
+        	pageEmployeeEdit.elem.find('.editEmp--email').val(value['emp_email']);
+        	pageEmployeeEdit.elem.find('.editEmp-Username').val(value['emp_username']);
+        	pageEmployeeEdit.elem.find('.empSalary').val(value['emp_salary']);
         });
     });
 </script>
