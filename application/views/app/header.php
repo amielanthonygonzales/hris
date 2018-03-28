@@ -96,7 +96,7 @@
 		<div class="am-wrapper">
 			<?php
 			echo $this->load->view("app/nav-head", $data, true);
-			echo $this->load->view("app/nav-leftsidebar", $data, true);
+			 echo $call;
 			?>
 			<div class="am-content">
 				<div class="main-content">

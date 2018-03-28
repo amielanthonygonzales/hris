@@ -71,8 +71,14 @@
 
 							//location.replace("<?php echo base_url('employee-edit')?>")
 							$.each(result['query'],function(key,value){
+								if(value['emp_position'] == "employee"){
+									location.replace("<?php echo base_url('employee-edit/')?>"+value['emp_id']);
+								}
+								else if(value['emp_position'] == 'admin'){
+									location.replace("<?php echo base_url('dashboard')?>");
+								}
 								//console.log(value['emp_id']);
-								location.replace("<?php echo base_url('employee-edit/')?>"+value['emp_id']);
+								
 							});
 							
 						}
