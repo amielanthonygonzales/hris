@@ -7,12 +7,17 @@
 		}
 		public function dashboard(){
 			$data = array();
+			//$_SESSION['rhev'] = "gay";
+			// print_r($_SESSION);
+			// exit();
 			$data['content'] = $this->load->view('app/content/page-dashboard', $data, true);
 			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
 			$this->load->view('app/header', $data);
 			$this->load->view('app/footer', $data);
 		}
 		public function department(){
+			print_r($_SESSION);
+			exit();
 			$data = array();
 			$data['content'] = $this->load->view('app/content/page-department', $data, true);
 			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);

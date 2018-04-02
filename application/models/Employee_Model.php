@@ -10,12 +10,17 @@
 
 		function checkLogin(){
 			if(isset($_POST['username']) && isset($_POST['password'])){
-				//$username = $_POST['username'];
 				$username = $_POST['username'];
 				$password = $_POST['password'];
-				// $sql = $this->db->query("SELECT * FROM employee WHERE emp_username =".$this->db->escape($username) AND "emp_password =" .$this->db->escape($password));
-				$sql = $this->db->query("SELECT * FROM `employee` WHERE `emp_username` = " .$this->db->escape($username).  "AND `emp_password` =" .$this->db->escape($password));
-				return $sql->result();
+				//$sql = $this->db->query("SELECT * FROM `employee` WHERE `emp_username` = " .$this->db->escape($username).  "AND `emp_password` =" .$this->db->escape($password));
+				$sql = $this->db->query("SELECT * FROM `employee` WHERE `emp_username` = " .$this->db->escape($username));
+				$row = $sql->row();
+				if(!password_verify($password, $row->emp_password)){
+					throw new UnexpectedValueException($row->emp_password);
+				}else{
+					return $row;	
+				}
+				
 			}
 		}
 
@@ -41,6 +46,7 @@
 		}
 
 		public function addEmployee($postEmployee){
+			$password = password_hash($postEmployee['emp_password'], PASSWORD_BCRYPT);
 			$this->db->query("
 				INSERT INTO 
 				employee 
@@ -64,7 +70,7 @@
 				".$this->db->escape($postEmployee['emp_last_name'])." ,
 				".$this->db->escape($postEmployee['emp_ext_name'])." ,
 				".$this->db->escape($postEmployee['emp_username'])." ,
-				".$this->db->escape($postEmployee['emp_password'])." ,
+				".$this->db->escape($password)." ,
 				".$this->db->escape($postEmployee['emp_position'])." 
 				)
 				");
@@ -174,9 +180,24 @@
 			SELECT * 
 			FROM `employee` 
 			WHERE `emp_deleted` = 0 
-			AND `emp_last_name` LIKE '%" .$this->db->escape_str($args['search']). "%' 
+			AND `emp_last_name` LIKE '%" .$this->db->escape_str($args['search']). "%'
+			ORDER BY ".$this->db->escape_str($args['orderby'])." ". $this->db->escape_str($args['dir'])." 
 			LIMIT " .$this->db->escape_str($args['count']). " 
 			OFFSET ".$this->db->escape_str($args['offset']);
+			// $sql = "select `employee`.`emp_id`,
+			// 		`employee`.`emp_first_name`,
+			// 		`employee`.`emp_last_name`,
+			// 		`employee`.`emp_middle_name`,
+			// 		`employee`.`emp_ext_name`
+			// 		from `employee`
+			// 		where `employee`.`emp_deleted` = 0 and 
+			// 		`employee`.`emp_first_name` like '%".$this->db->escape_str($args['search'])."%'
+			// 		or `employee`.`emp_last_name` like '%".$this->db->escape_str($args['search'])."%'
+			// 		";
+			// if($args['orderby']){
+			// 	$sql .= " order by `".$args['orderby']."` ".$args['dir'];
+			// }
+			// $sql .= " limit ".$args['offset'].", ".$args['count'];
 			return $this->db->query($sql)->result_array();
 
 		}

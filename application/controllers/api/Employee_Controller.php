@@ -7,11 +7,14 @@
 		}
 
 		public function getEmployeeSession(){
+			// print_r($_SESSION);
+			// exit();
 			$this->benchmark->mark('start');
 			$data;
 			$data['query'] = $this->Employee_Model->checkLogin();
 			$this->benchmark->mark('end');
 			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			$_SESSION['user'] = $data['query'];
 			header('Content-Type: application/json');
         	echo json_encode($data);
 		}
@@ -81,11 +84,23 @@
 		}
 
 		public function dataTable(){
+			$columns[0] = '';
+			$columns[1] = 'emp_id'; 
+			$columns[2] = 'emp_first_name';
+			$columns[3] = 'emp_last_name';
 			$args = array(
 	            "count" => $_GET['length'],
 	            "offset" =>  $_GET['start'],
-	            "search" =>  $_GET['search']['value']
+	            "search" =>  $_GET['search']['value'],
+	            "orderby" => $columns[$_GET['order'][0]['column']],
+	            "dir" => $_GET['order'][0]['dir']
        		 );
+			if($args['dir'] == ""){
+				$args['dir']	= "desc";
+			}
+			if($args['orderby'] == ""){
+				$args['orderby']	= "emp_id";
+			}
 			$ret=array();
 			$ret['draw'] = $_GET['draw'];
 			$ret['data'] = $this->Employee_Model->getEmployees($args);

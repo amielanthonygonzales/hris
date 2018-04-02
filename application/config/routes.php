@@ -105,6 +105,7 @@ $route['department-datatable'] = 'api/Department_Controller/datatableDepartment'
 // $route['register-employee'] = 'RegisterEmp_Controller/registerEmp';
 // $route['employee'] = 'RegisterEmp_Controller/employeeTable';
 $route['index'] = 'RegisterEmp_Controller/index';
+$route['logout'] = 'RegisterEmp_Controller/logout';
 $route['employee-view/(:any)'] = 'RegisterEmp_Controller/viewEmployee/$1';
 $route['changeStatus/(:any)'] = 'RegisterEmp_Controller/changeStatus/$1';
 

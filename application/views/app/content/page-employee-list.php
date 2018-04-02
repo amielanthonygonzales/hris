@@ -47,19 +47,59 @@
 		pageEmployeeList.elem = $(selector);
 
 		pageEmployeeList.elem.find('.employeeList').DataTable({
-			"autowidth":false,
+			"autowidth":true,
 			"paging" : true,
 			"searching": true,
 			"processing": true,
 			"serverSide": true,
 			"orderable": true,
 			"pagingType": "full_numbers",
+			"order": [[ 0, "desc" ]],
 			"ajax":{
 				"url": "<?php echo site_url('employee-datatable')?>",
 				"dataScr" : function( json ){
 					return json['data'];
 				}
 			},
+			"columnDefs": [
+				{
+					"targets": 0,
+					"orderable": true,
+					//"data":  "null",
+					//"defaultContent": ""
+				},
+				{
+					"targets": 1,
+					"orderable": true,
+				},
+				{
+					"targets": 2,
+					"orderable": true,
+				},
+				{
+					"targets": 3,
+					"orderable": false,
+				},
+				{
+					"targets": 4,
+					"orderable": false,
+				},
+				{
+					"width": "2%",
+					"targets": 5,
+					"orderable": false,
+				},
+				{
+					"width": "2%",
+					"targets": 6,
+					"orderable": false,
+				},
+				{
+					"width": "2%",
+					"targets": 7,
+					"orderable": false,
+				}
+			],
 			"columns" : [
 				{data: "emp_id"},
 				{data: "emp_last_name"},

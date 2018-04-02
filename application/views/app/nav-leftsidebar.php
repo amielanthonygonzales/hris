@@ -56,7 +56,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="<?php echo site_url(''); ?>"><i class="icon s7-power"></i><span>Sign Out</span></a>
+					<a href="<?php echo base_url('logout'); ?>"><i class="icon s7-power"></i><span>Sign Out</span></a>
 				</li>
 		</ul>
 		<!--Sidebar bottom content-->

@@ -1,42 +1,48 @@
 <?php 
 
 	class RegisterEmp_Controller extends CI_Controller{
-
 		public function __construct(){
 			parent::__construct();
 			$this->load->model('Employee_Model');
 		}
 
-		function index(){
+		public function index(){
 			$this->load->view('app/content/index');
 		}
 
-		function employeeTable(){
+		public function logout(){
+			session_destroy();
+			// print_r($_SESSION);
+			// exit();
+			$this->load->view('app/content/index');
+		}
+
+		public function employeeTable(){
 			$data['query']=$this->Employee_Model->getName();
 			$this->load->view('hris_views/employee/employeeTable',$data);
 		}
-		function viewEmployee($id){
+		public function viewEmployee($id){
 			$data['query']=$this->Employee_Model->viewEmployee($id);
 			$this->load->view('hris_views/employee/viewEmployee',$data);
 		}
 
-		function registerEmp(){
+		public function registerEmp(){
 			$data['query']=$this->Employee_Model->getName();
 			$this->load->view('hris_views/employee/registerEmp', $data);
 		}
 
-		function changeStatus($id){
+		public function changeStatus($id){
 			$this->Employee_Model->changeStatus($id);
 			redirect(base_url('employee'));
 		}
 
-		function getName(){
+		public function getName(){
 			$data['query']=$this->Employee_Model->getName();
 			header('Content-Type: application/json');
       		echo json_encode($data);
 		}
 
-		function add(){
+		public function add(){
 			if($this->input->method() === 'post' && $_POST != ""){
 
 				$dataPagibig = array(

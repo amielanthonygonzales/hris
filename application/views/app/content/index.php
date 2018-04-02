@@ -66,19 +66,21 @@
 							password: $('.password').val()
 							},
 					success: function(result){
+						console.log(result);
 						if(result['query'] != ""){
-
-
+							var id = "";
 							//location.replace("<?php echo base_url('employee-edit')?>")
 							$.each(result['query'],function(key,value){
-								if(value['emp_position'] == "employee"){
-									location.replace("<?php echo base_url('employee-edit/')?>"+value['emp_id']);
+								if(key == 'emp_id'){
+									id = value;
 								}
-								else if(value['emp_position'] == 'admin'){
-									location.replace("<?php echo base_url('dashboard')?>");
+								else if(key == 'emp_position' && value == 'employee'){
+									window.parent.location = "<?php echo base_url('employee-edit/')?>"+id;
+
 								}
-								//console.log(value['emp_id']);
-								
+								else if(key == 'emp_position' && value == 'admin'){
+									window.parent.location = "<?php echo base_url('dashboard')?>";
+								}
 							});
 							
 						}
