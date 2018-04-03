@@ -7,6 +7,9 @@
 		}
 
 		public function view($id, $action){
+			if(!isset($_SESSION['user'])){
+				redirect(site_url('index'));
+			}
 			$data = array("id"=>$id, "action"=>$action);
 			$data['content'] = $this->load->view('app/content/page-employee', $data, true);
 			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
@@ -15,6 +18,9 @@
 		}
 
 		public function registerEmployee(){
+			if(!isset($_SESSION['user'])){
+				redirect(site_url('index'));
+			}
 			$data = array();
 			$data['content'] = $this->load->view('app/content/page-register', $data, true);
 			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
@@ -23,6 +29,9 @@
 		}
 
 		public function employeeList(){
+			if(!isset($_SESSION['user'])){
+				redirect(site_url('index'));
+			}
 			$data = array();
 			$data['content'] = $this->load->view('app/content/page-employee-list', $data, true);
 			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
@@ -31,6 +40,9 @@
 		}
 
 		public function employeeEdit($id){
+			if(!isset($_SESSION['user'])){
+				redirect(site_url('index'));
+			}
 			$data = array("id" => $id);
 			$data['content'] = $this->load->view('app/content/page-employee-edit', $data, true);
 			$this->load->view('app/header', $data);

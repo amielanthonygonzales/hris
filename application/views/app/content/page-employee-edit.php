@@ -27,7 +27,7 @@
 			<div class="row pull-right">
 					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employeeEdit">
 
-						<i class="icon icon-left s7-power"></i>LOG OUT
+						<a href="<?php echo base_url('logout'); ?>"><i class="icon icon-left s7-power"></i>LOG OUT</a>
 					</button>
 					<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-employeeEdit">
 							<i class="icon icon-left s7-diskette"></i>SAVE
@@ -94,7 +94,7 @@
 			<div class="row pull-right">
 					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employeeEdit">
 
-						<i class="icon icon-left s7-power"></i>LOG OUT
+						<a href="<?php echo base_url('logout'); ?>"><i class="icon icon-left s7-power"></i>LOG OUT</a>
 					</button>
 					<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-employeeEdit">
 							<i class="icon icon-left s7-diskette"></i>SAVE

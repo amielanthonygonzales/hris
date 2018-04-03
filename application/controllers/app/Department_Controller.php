@@ -7,6 +7,9 @@
 		}
 
 		public function view(){
+			if(!isset($_SESSION['user'])){
+				redirect(site_url('index'));
+			}
 			$data = array();
 			$data['content'] = $this->load->view('app/content/page-department', $data, true);
 			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);

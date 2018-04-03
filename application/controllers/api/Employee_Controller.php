@@ -15,6 +15,7 @@
 			$this->benchmark->mark('end');
 			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
 			$_SESSION['user'] = $data['query'];
+			$_SESSION['login'] = true;
 			header('Content-Type: application/json');
         	echo json_encode($data);
 		}
@@ -84,10 +85,10 @@
 		}
 
 		public function dataTable(){
-			$columns[0] = '';
-			$columns[1] = 'emp_id'; 
+			//$columns[0] = '';
+			$columns[0] = 'emp_id'; 
+			$columns[1] = 'emp_last_name';
 			$columns[2] = 'emp_first_name';
-			$columns[3] = 'emp_last_name';
 			$args = array(
 	            "count" => $_GET['length'],
 	            "offset" =>  $_GET['start'],

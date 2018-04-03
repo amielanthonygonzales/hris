@@ -14,7 +14,7 @@
 <body class="login-body">
 	<div id="pageIndex" class="container login-form">
 		<div id="logo">
-			<img src = "assets/img/title-8.png" id="logo-image" alt="Logo">
+			<img src = "<?php echo base_url('assets/img/title-8.png'); ?>" id="logo-image" alt="Logo">
 		</div>
 		<form id="form-id">
 			<div class="form-group">
@@ -87,6 +87,14 @@
 					}
 			});
 			//console.log(login_info);
+		});
+
+		$(document).keypress(function(event){
+			var keycode = (event.keyCode ? event.keyCode : event.which);
+			if(keycode == '13'){
+				//alert('You pressed a "enter" key in somewhere');
+				$('.login-btn').trigger('click');
+			}
 		});
 
 	</script>

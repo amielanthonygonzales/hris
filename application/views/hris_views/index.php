@@ -14,7 +14,7 @@
 <body class="login-body">
 	<div class="container login-form">
 		<div id="logo">
-			<img src = "assets/img/title-8.png" id="logo-image" alt="Logo">
+			<img src = "<?php echo base_url('assets/img/title-8.png'); ?>" id="logo-image" alt="Logo">
 		</div>
 		<form>
 			<div class="form-group">
