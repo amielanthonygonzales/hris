@@ -6,7 +6,7 @@
 
     <link href="<?php echo base_url('bootstrap/bootstrap.min.css');?>"  rel = "stylesheet"/>
     <link rel = "stylesheet" href="<?php echo base_url('assets/css/style.css');?>"  />
-    <link rel = "icon" href="assets/img/logo.png"  />
+    <link rel = "icon" href="assets/img/hris-logo.png"  />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/font-awesome/css/font-awesome.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/stroke-7/style.css');?>"/>
 	<title>HR Information System</title>
