@@ -11,6 +11,7 @@
 		}
 
 		public function logout(){
+			unset($_SESSION['user']);
 			session_destroy();
 			// print_r($_SESSION);
 			// exit();

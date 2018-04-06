@@ -1,9 +1,22 @@
+.sss-form-img{
+  content: url("../../assets/app/img/Contributions_Payment_Form-4.png");
+  background-repeat: no-repeat;
+  min-width: 815px;
+  max-height: 750px;
+  padding: 0px;
+  margin: 0px;
+}
+.sss-form{
+  padding: 0;
+}
+.main-content{
+    padding: 0px!important;
+}
 .login-body{
 	background-image: url('../../assets/img/background2.jpg');
 	background-attachment: fixed;
 	background-size: cover;
 	background-repeat: no-repeat;
-
 }
 #logo-image{
 	width: 394px;
@@ -63,4 +76,34 @@ a:hover{
 
 .sss-panel, .pagibig-panel{
     min-height: 405px!important;
+}
+
+@media all {
+    .sss-form-img {
+        content: url("../../assets/app/img/Contributions_Payment_Form-4.png");
+        -webkit-print-color-adjust: exact!important;
+        display: block;
+        max-width: 890px!important;
+        max-height: 1034px!important;
+        padding: 0!important;
+        margin: 0!important;
+    }
+    @page{
+        size: letter portrait;
+        margin: 4.0cm;
+      }
+    .panel-heading{
+        display: none;
+    }
+    .am-scroll-top{
+        display: none!important;
+    }
+    .sss-form{
+        padding: 0!important;
+        margin: 0!important;
+    }
+    .main-content{
+        margin: 0!important;
+        padding: 0!important;
+    }
 }

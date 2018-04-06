@@ -20745,17 +20745,3 @@ div.dataTables_wrapper div.dataTables_length label select {
     margin-bottom: 0px !important;
   }
 }
-
-.sss-form-img{
-  background-image: url("../../app/img/Contributions_Payment_Form-4.png");
-  background-repeat: no-repeat;
-  background-position: cover; 
-  min-width: 1100px;
-  min-height: 890px;
-  padding: 0px;
-  margin: 0px;
-}
-
-.sss-form{
-  padding: 0;
-}
