@@ -83,6 +83,7 @@ $route['dashboard'] = 'app/Dashboard_Controller/dashboard';
 $route['dashboard-company'] = 'app/Dashboard_Controller/company';
 $route['employee-register'] = 'app/Dashboard_Controller/registerEmployee';
 $route['dashboard-department'] = 'app/Dashboard_Controller/department';
+$route['dashboard-sss'] = 'app/Dashboard_Controller/sss';
 
 
 

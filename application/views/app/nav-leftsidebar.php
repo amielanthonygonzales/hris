@@ -55,6 +55,31 @@
 						</li>
 					</ul>
 				</li>
+				<li class="parent">
+					<a href="#"><i class="icon s7-note2"></i><span>Contributions</span></a>
+					<ul class="sub-menu"><li class="title">Contributions</li>
+						<li class="nav-items">
+							<div class="am-scroller nano has-scrollbar">
+								<div class="content nano-content">
+									<ul>
+										<li>
+											<a href="<?php echo base_url('dashboard-sss')?>">SSS Contribution</a>
+										</li>
+										<li>
+											<a href="<?php echo base_url('employee-list')?>">Pag-Ibig Contrbution</a>
+										</li>
+										
+									</ul>
+								</div>
+								<div class="nano-pane">
+									<div class="nano-slider">
+
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</li>
 				<li>
 					<a href="<?php echo base_url('logout'); ?>"><i class="icon s7-power"></i><span>Sign Out</span></a>
 				</li>
