@@ -46,7 +46,7 @@
 		<div class="panel-body">
 			<form>
 				<div class="row form-group">
-					<div class="col-md-3 col-md-9 pull-right">
+					<div class="col-md-10 col-md-2 pull-right">
 						<button type="button" name="btnBack" value="back" class ="btn btn-space btn-success btnBack">
 							<i class="icon icon-left s7-back"></i>BACK
 						</button>
@@ -130,7 +130,7 @@
 					data: register_info,
 					success: function(result){
 						if(result.success == 1)	{
-							pageRegister.elem.find('.modal-department').modal();
+							pageRegister.elem.find('.modal-department').modal("show");
 						}
 						else if(result.success.error){
 							console.log(result.success.error);
