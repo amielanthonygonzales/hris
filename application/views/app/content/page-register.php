@@ -28,13 +28,13 @@
 				</div>
 				<div class="modal-body">
 					<div class="text-center">
-						<div class="i-circle text-warning"><i class="icon s7-close"></i></div>
+						<div class="i-circle text-danger"><i class="icon s7-close"></i></div>
 						<h4>Oh no!</h4>
 						<p></p>
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" data-dismiss="modal" class="btn btn-success">Proceed</button>
+					<button type="button" data-dismiss="modal" class="btn btn-danger">Proceed</button>
 				</div>
 			</div>
 		</div>
@@ -69,7 +69,7 @@
 				</div>
 				<div class="form-group">
 					<label for="mname">Middle Name</label>
-					<input class="form-control mname" type="text" name="mname" placeholder="Middle Name" required/>
+					<input class="form-control mname" type="text" name="mname" placeholder="Middle Name"/>
 				</div>
 				<div class="form-group">
 					<label for="extname">Extension Name</label>
@@ -132,8 +132,9 @@
 						if(result.success == 1)	{
 							pageRegister.elem.find('.modal-department').modal();
 						}
-						else if(result.success == "Please insert an ID"){
-							pageRegister.elem.find('modal-error .modal-body .text-center p').html("Please insert an ID");
+						else if(result.success.error){
+							console.log(result.success.error);
+							pageRegister.elem.find('.modal-error .modal-body p').html(result.success.error);
 							pageRegister.elem.find('.modal-error').modal("show");
 						}
 					}

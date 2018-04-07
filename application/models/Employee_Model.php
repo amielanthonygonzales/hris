@@ -47,8 +47,32 @@
 
 		public function addEmployee($postEmployee){
 			if($postEmployee['emp_id'] == ''){
-				$error = "Please insert an ID";
-				return $error;
+				$returndata['error'] = "Please input an ID!";
+				//return $error;
+			}
+			else if($postEmployee['emp_username'] == ''){
+				$returndata['error'] = "Please input a username!";
+				//return $error;
+			}
+			else if($postEmployee['emp_password'] == ''){
+				$returndata['error'] = "Please input a password!";
+				//return $error;
+			}
+			else if($postEmployee['emp_first_name'] == ''){
+				$returndata['error'] = "Please input a first name!";
+				//return $error;
+			}
+			else if($postEmployee['emp_last_name'] == ''){
+				$returndata['error'] = "Please input a last name!";
+				//return $error;
+			}
+			else if($postEmployee['emp_password'] == ''){
+				$returndata['error'] = "Please input a password!";
+				//return $error;
+			}
+			else if($postEmployee['emp_position'] == ''){
+				$returndata['error'] = "Please choose a position!";
+				//return $error;
 			}
 			else{
 				$password = password_hash($postEmployee['emp_password'], PASSWORD_BCRYPT);
@@ -79,14 +103,39 @@
 					".$this->db->escape($postEmployee['emp_position'])." 
 					)
 					");
-				return 1;
+				$returndata = 1;
 			}
+			return $returndata;
 		}
 
 		public function addEmployeeSSS($postEmployee){
 			if($postEmployee['emp_id'] == ''){
-				$error = "Please insert an ID";
-				return $error;
+				$returndata['error'] = "Please insert an ID";
+				//return $error;
+			}
+			else if($postEmployee['emp_username'] == ''){
+				$returndata['error'] = "Please input a username!";
+				//return $error;
+			}
+			else if($postEmployee['emp_password'] == ''){
+				$returndata['error'] = "Please input a password!";
+				//return $error;
+			}
+			else if($postEmployee['emp_first_name'] == ''){
+				$returndata['error'] = "Please input a first name!";
+				//return $error;
+			}
+			else if($postEmployee['emp_last_name'] == ''){
+				$returndata['error'] = "Please input a last name!";
+				//return $error;
+			}
+			else if($postEmployee['emp_password'] == ''){
+				$returndata['error'] = "Please input a password!";
+				//return $error;
+			}
+			else if($postEmployee['emp_position'] == ''){
+				$returndata['error'] = "Please choose a position!";
+				//return $error;
 			}
 			else{
 				$this->db->query("
@@ -99,14 +148,39 @@
 				(
 				".$this->db->escape($postEmployee['emp_id']). "
 				)");
-				return 1;
+				$returndata = 1;
 			}
+			return $returndata;
 		}
 
 		public function addEmployeePagibig($postEmployee){
 			if($postEmployee['emp_id'] == ''){
-				$error = "Please insert an ID";
-				return $error;
+				$returndata['error'] = "Please insert an ID";
+				//return $error;
+			}
+			else if($postEmployee['emp_username'] == ''){
+				$returndata['error'] = "Please input a username!";
+				//return $error;
+			}
+			else if($postEmployee['emp_password'] == ''){
+				$returndata['error'] = "Please input a password!";
+				//return $error;
+			}
+			else if($postEmployee['emp_first_name'] == ''){
+				$returndata['error'] = "Please input a first name!";
+				//return $error;
+			}
+			else if($postEmployee['emp_last_name'] == ''){
+				$returndata['error'] = "Please input a last name!";
+				//return $error;
+			}
+			else if($postEmployee['emp_password'] == ''){
+				$returndata['error'] = "Please input a password!";
+				//return $error;
+			}
+			else if($postEmployee['emp_position'] == ''){
+				$returndata['error'] = "Please choose a position!";
+				//return $error;
 			}
 			else{
 			$this->db->query("
@@ -119,8 +193,9 @@
 				(
 				".$this->db->escape($postEmployee['emp_id']). "
 				)");
-				return 1;	
+				$returndata = 1;
 			}
+			return $returndata;
 		}
 
 		public function getAllEmployee(){
