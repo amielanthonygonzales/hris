@@ -71,5 +71,16 @@
 			$this->load->view('app/header', $data);
 			$this->load->view('app/footer', $data);
 		}
+
+		public function pagibig(){
+			if(!isset($_SESSION['user'])){
+				redirect(site_url('index'));
+			}
+			$data = array();
+			$data['content'] = $this->load->view('app/content/page-pagibig-contri', $data, true);
+			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
+			$this->load->view('app/header', $data);
+			$this->load->view('app/footer', $data);
+		}
 	}
 ?>

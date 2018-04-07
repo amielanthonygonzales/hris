@@ -78,7 +78,34 @@ a:hover{
     min-height: 405px!important;
 }
 
-@media all {
+.form-pagibig{
+    display: block;
+    background-image: url("../../assets/app/img/FPF060_Member'sContributionRemittance_V01-3.png");
+    background-repeat: no-repeat;
+    min-height: 1450px;
+    min-width: 900px;
+}
+
+.print-form-pagibig{
+    display: none;
+}
+
+@media print {
+     @page{
+        size: letter portrait;
+        margin: 4.0cm;
+      }
+
+    
+    .form-pagibig{
+        display: none;
+    }
+    .print-form-pagibig{
+        display: block;
+    }
+    .panel-heading{
+        display: none;
+    }
     .sss-form-img {
         content: url("../../assets/app/img/Contributions_Payment_Form-4.png");
         -webkit-print-color-adjust: exact!important;
@@ -88,10 +115,7 @@ a:hover{
         padding: 0!important;
         margin: 0!important;
     }
-    @page{
-        size: letter portrait;
-        margin: 4.0cm;
-      }
+   
     .panel-heading{
         display: none;
     }

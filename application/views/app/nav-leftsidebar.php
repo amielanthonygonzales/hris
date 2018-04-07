@@ -66,7 +66,7 @@
 											<a href="<?php echo base_url('dashboard-sss')?>">SSS Contribution</a>
 										</li>
 										<li>
-											<a href="<?php echo base_url('employee-list')?>">Pag-Ibig Contrbution</a>
+											<a href="<?php echo base_url('dashboard-pagibig')?>">Pag-Ibig Contrbution</a>
 										</li>
 										
 									</ul>
