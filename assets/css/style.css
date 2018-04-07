@@ -86,9 +86,236 @@ a:hover{
     min-width: 900px;
 }
 
+
+/*display of pagibig form*/ 
 .print-form-pagibig{
     display: none;
 }
+
+.employerId{
+    border: 1px solid red;
+    background-color: transparent;
+    text-align: center;
+    margin-top: 110px;
+    margin-left: 750px;
+    width: 332px;
+    height: 46px;
+}
+
+.businessName{
+    border: 1px solid red;
+    margin-top: 55px;
+    margin-left: 50px;
+    height: 34px;
+    width: 692px;
+}
+
+.branch{
+    border: 1px solid red;
+    margin-left: 30px;
+    height: 34px;
+    width: 300px;
+}
+
+.roomNo{
+    border: 1px solid red;
+    margin-top: 32px;
+    margin-left: 40px;
+    height: 31px;
+    width: 190px;
+}
+
+.buildingName{
+    border: 1px solid red;
+    margin-top: 32px;
+    margin-left: 10px;
+    height: 31px;
+    width: 240px;
+}
+
+.blockNo{
+    border: 1px solid red;
+    margin-top: 32px;
+    margin-left: 20px;
+    height: 31px;
+    width: 240px;
+    margin-right: 280px;
+}
+
+.streetName{
+    border: 1px solid red;
+    margin-top: 17px;
+    margin-left: 30px;
+    height: 31px;
+    width: 130px;
+}
+
+.subdivision{
+    border: 1px solid red;
+    margin-top: 17px;
+    margin-left: 10px;
+    height: 31px;
+    width: 136px;
+}
+
+.barangay{
+    border: 1px solid red;
+    margin-top: 17px;
+    margin-left: 10px;
+    height: 31px;
+    width: 149px;
+}
+
+.city{
+    border: 1px solid red;
+    margin-top: 17px;
+    margin-left: 10px;
+    height: 31px;
+    width: 256px;
+}
+
+.province{
+    border: 1px solid red;
+    margin-top: 17px;
+    margin-left: 15px;
+    height: 31px;
+    width: 220px;
+}
+
+.zipCode{
+    border: 1px solid red;
+    margin-top: 17px;
+    margin-left: 13px;
+    height: 31px;
+    width: 84px;
+}
+
+.periodCovered{
+    border: 1px solid red;
+    margin-left: 770px;
+    margin-top: 17px;
+    height: 35px;
+    width: 300px;
+}
+.midNo1{
+    border: 1px solid red;
+    margin-top: 42px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+}
+
+.name1{
+    border: 1px solid red;
+    margin-top: 42px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo1{
+    border: 1px solid red;
+    margin-top: 42px;
+    height: 22px;
+    width: 114px;
+}
+
+.monthly1{
+    border: 1px solid red;
+    margin-top: 42px;
+    height: 22px;
+    width: 110px;
+}
+
+.employeeShare1{
+    border: 1px solid red;
+    margin-top: 42px;
+    height: 22px;
+    width: 74px;
+}
+
+.employerShare1{
+    border: 1px solid red;
+    margin-top: 42px;
+    height: 22px;
+    width: 70px;
+}
+
+.total1{
+    border: 1px solid red;
+    margin-top: 42px;
+    height: 22px;
+    width: 78px;
+}
+
+.remarks1{
+    border: 1px solid red;
+    margin-top: 42px;
+    height: 22px;
+    width: 96px;
+}
+
+.midNo2{
+    border: 1px solid red;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+}
+
+.name2{
+    border: 1px solid red;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo2{
+    border: 1px solid red;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+}
+
+.monthly2{
+    border: 1px solid red;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+}
+
+.employeeShare2{
+    border: 1px solid red;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+}
+
+.employerShare2{
+    border: 1px solid red;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+}
+
+.total2{
+    border: 1px solid red;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+}
+
+.remarks2{
+    border: 1px solid red;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+}
+
+
+
+/*end of pagibig display form*/
 
 @media print {
      @page{
