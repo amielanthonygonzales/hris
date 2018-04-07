@@ -1,4 +1,5 @@
 <div id="pageRegister">
+	<!-- Modal Success -->
 	<div tabindex="-1" role="dialog" class="modal fade in modal-department">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -10,6 +11,26 @@
 						<div class="i-circle text-success"><i class="icon s7-check"></i></div>
 						<h4>Awesome!</h4>
 						<p>Data has been saved successfully!</p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-success">Proceed</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal Error -->
+	<div tabindex="-1" role="dialog" class="modal fade in modal-error">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						<div class="i-circle text-warning"><i class="icon s7-close"></i></div>
+						<h4>Oh no!</h4>
+						<p></p>
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -108,8 +129,12 @@
 					url: "<?php echo base_url('add-employee')?>",
 					data: register_info,
 					success: function(result){
-						if(result.success){
+						if(result.success == 1)	{
 							pageRegister.elem.find('.modal-department').modal();
+						}
+						else if(result.success == "Please insert an ID"){
+							pageRegister.elem.find('modal-error .modal-body .text-center p').html("Please insert an ID");
+							pageRegister.elem.find('.modal-error').modal("show");
 						}
 					}
 			});
