@@ -37,7 +37,8 @@
 			$sql = "
 			SELECT * 
 			FROM `department` 
-			WHERE `dept_deleted` = 0 
+			WHERE `dept_deleted` = 0
+			AND `dept_name` LIKE '%" .$this->db->escape_str($args['search']). "%' 
 			LIMIT " .$this->db->escape_str($args['count']). " 
 			OFFSET ".$this->db->escape_str($args['offset']);
 			return $this->db->query($sql)->result_array();
