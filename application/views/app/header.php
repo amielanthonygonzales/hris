@@ -94,10 +94,12 @@
 		  <div class="sk-circle12 sk-circle"></div>
 		</div>
 		<div class="am-wrapper">
+			<div class="sidebar">
 			<?php
 			echo $this->load->view("app/nav-head", $data, true);
 			 echo $call;
 			?>
+			</div>
 			<div class="am-content">
 				<div class="main-content">
 					<?php echo $content?>

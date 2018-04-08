@@ -86,6 +86,10 @@ a:hover{
     min-width: 900px;
 }
 
+.button-print{
+    display: block;
+}
+
 
 /*display of pagibig form*/ 
 .print-form-pagibig{
@@ -104,6 +108,7 @@ a:hover{
 
 .businessName{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 55px;
     margin-left: 50px;
     height: 34px;
@@ -112,6 +117,7 @@ a:hover{
 
 .branch{
     border: 1px solid red;
+    background-color: transparent;
     margin-left: 30px;
     height: 34px;
     width: 300px;
@@ -119,6 +125,7 @@ a:hover{
 
 .roomNo{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 32px;
     margin-left: 40px;
     height: 31px;
@@ -127,23 +134,56 @@ a:hover{
 
 .buildingName{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 32px;
     margin-left: 10px;
     height: 31px;
     width: 240px;
+    text-align: center;
 }
 
 .blockNo{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 32px;
     margin-left: 20px;
     height: 31px;
     width: 240px;
-    margin-right: 280px;
+}
+
+.privateCompany{
+    border: 1px solid red;
+    background-color: transparent;
+    position: absolute;
+    margin-top: 27px;
+    margin-left: 27px;
+    width: 10px;
+    height: 10px;
+}
+
+.government{
+    border: 1px solid red;
+    background-color: transparent;
+    position: absolute;
+    margin-top: 43px;
+    height: 10px;
+    margin-left: 27px;
+    width: 10px;
+}
+
+.household{
+    border: 1px solid red;
+    background-color: transparent;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    margin-left: 156px;
+    margin-top: 28px;
 }
 
 .streetName{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 17px;
     margin-left: 30px;
     height: 31px;
@@ -152,6 +192,7 @@ a:hover{
 
 .subdivision{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 17px;
     margin-left: 10px;
     height: 31px;
@@ -160,6 +201,7 @@ a:hover{
 
 .barangay{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 17px;
     margin-left: 10px;
     height: 31px;
@@ -168,6 +210,7 @@ a:hover{
 
 .city{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 17px;
     margin-left: 10px;
     height: 31px;
@@ -176,6 +219,7 @@ a:hover{
 
 .province{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 17px;
     margin-left: 15px;
     height: 31px;
@@ -184,29 +228,66 @@ a:hover{
 
 .zipCode{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 17px;
     margin-left: 13px;
     height: 31px;
     width: 84px;
+    text-align: center;
+}
+
+.program1{
+    border: 1px solid red;
+    background-color: transparent;
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    margin-top: 29px;
+    margin-left: 33px;
+}
+
+.program2{
+    border: 1px solid red;
+    background-color: transparent;
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    margin-top: 29px;
+    margin-left: 326px;
+}
+
+.program3{
+    border: 1px solid red;
+    background-color: transparent;
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    margin: 29px;
+    margin-left: 491.6px;
 }
 
 .periodCovered{
     border: 1px solid red;
+    background-color: transparent;
     margin-left: 770px;
     margin-top: 17px;
     height: 35px;
     width: 300px;
+    
 }
 .midNo1{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 42px;
     margin-left: 22px;
     width: 132px;
     height: 22px;
+    text-align: center;
 }
 
 .name1{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 42px;
     height: 22px;
     width: 361px;
@@ -215,56 +296,71 @@ a:hover{
 
 .accountNo1{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 42px;
     height: 22px;
     width: 114px;
+    text-align: center;
 }
 
 .monthly1{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 42px;
     height: 22px;
     width: 110px;
+    text-align: center;
 }
 
 .employeeShare1{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 42px;
     height: 22px;
     width: 74px;
+    text-align: center;
 }
 
 .employerShare1{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 42px;
     height: 22px;
     width: 70px;
+    text-align: center;
 }
 
 .total1{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 42px;
     height: 22px;
     width: 78px;
+    text-align: center;
 }
 
 .remarks1{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 42px;
     height: 22px;
     width: 96px;
+    text-align: center;
 }
 
 .midNo2{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 2px;
     margin-left: 22px;
     width: 132px;
     height: 22px;
+    text-align: center;
 }
 
 .name2{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 2px;
     height: 22px;
     width: 361px;
@@ -273,67 +369,2262 @@ a:hover{
 
 .accountNo2{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 2px;
     height: 22px;
     width: 114px;
+    text-align: center;
 }
 
 .monthly2{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 2px;
     height: 22px;
     width: 110px;
+    text-align: center;
 }
 
 .employeeShare2{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 2px;
     height: 22px;
     width: 74px;
+    text-align: center;
 }
 
 .employerShare2{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 2px;
     height: 22px;
     width: 70px;
+    text-align: center;
 }
 
 .total2{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 2px;
     height: 22px;
     width: 78px;
+    text-align: center;
 }
 
 .remarks2{
     border: 1px solid red;
+    background-color: transparent;
     margin-top: 2px;
     height: 22px;
     width: 96px;
+    text-align: center;
 }
 
+.midNo3{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
 
+.name3{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo3{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly3{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare3{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare3{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total3{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks3{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo4{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 21px;
+    text-align: center;
+}
+
+.name4{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 361px;
+
+}
+
+.accountNo4{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly4{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare4{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare4{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 70px;
+    text-align: center;
+}
+
+.total4{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks4{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo5{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name5{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo5{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly5{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare5{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare5{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total5{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks5{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo6{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name6{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo6{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly6{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare6{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare6{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total6{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks6{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo7{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name7{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo7{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly7{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare7{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare7{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total7{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks7{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo8{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name8{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo8{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly8{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare8{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare8{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total8{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks8{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo9{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name9{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo9{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly9{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare9{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare9{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total9{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks9{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo10{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 21px;
+    text-align: center;
+}
+
+.name10{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 361px;
+
+}
+
+.accountNo10{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly10{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare10{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare10{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 70px;
+    text-align: center;
+}
+
+.total10{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks10{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo11{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name11{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo11{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly11{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare11{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare11{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total11{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks11{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo12{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name12{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo12{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly12{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare12{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare12{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total12{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks12{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo13{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 21px;
+    text-align: center;
+}
+
+.name13{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 361px;
+
+}
+
+.accountNo13{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly13{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare13{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare13{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 70px;
+    text-align: center;
+}
+
+.total13{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks13{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo14{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name14{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo14{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly14{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare14{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare14{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total14{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks14{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo15{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name15{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo15{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly15{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare15{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare15{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total15{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks15{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo16{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name16{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo16{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly16{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare16{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare16{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total16{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks16{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo17{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 21px;
+    text-align: center;
+}
+
+.name17{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 361px;
+
+}
+
+.accountNo17{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly17{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare17{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare17{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 70px;
+    text-align: center;
+}
+
+.total17{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks17{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo18{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name18{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo18{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly18{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare18{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare18{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total18{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks18{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo19{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name19{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo19{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly19{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare19{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare19{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total19{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks19{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo20{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 21px;
+    text-align: center;
+}
+
+.name20{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 361px;
+
+}
+
+.accountNo20{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly20{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare20{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare20{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 70px;
+    text-align: center;
+}
+
+.total20{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks20{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo21{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name21{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo21{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly21{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare21{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare21{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total21{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks21{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo22{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name22{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo22{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly22{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare22{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare22{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total22{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks22{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo23{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name23{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo23{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly23{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare23{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare23{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total23{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks23{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo24{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 21px;
+    text-align: center;
+}
+
+.name24{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 361px;
+
+}
+
+.accountNo24{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly24{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare24{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare24{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 70px;
+    text-align: center;
+}
+
+.total24{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks24{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo25{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name25{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo25{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly25{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare25{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare25{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total25{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks25{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo26{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name26{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo26{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly26{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare26{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare26{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total26{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks26{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo27{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name27{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo27{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly27{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare27{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare27{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total27{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks27{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo28{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 21px;
+    text-align: center;
+}
+
+.name28{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 361px;
+
+}
+
+.accountNo28{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly28{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare28{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare28{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 70px;
+    text-align: center;
+}
+
+.total28{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks28{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 21px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo29{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name29{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo29{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly29{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare29{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare29{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total29{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks29{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.midNo30{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-left: 22px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+}
+
+.name30{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 361px;
+
+}
+
+.accountNo30{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 114px;
+    text-align: center;
+}
+
+.monthly30{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.employeeShare30{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 74px;
+    text-align: center;
+}
+
+.employerShare30{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 70px;
+    text-align: center;
+}
+
+.total30{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 78px;
+    text-align: center;
+}
+
+.remarks30{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 2px;
+    height: 22px;
+    width: 96px;
+    text-align: center;
+}
+
+.totalEmployee{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 10px;
+    margin-left: 170px;
+    width: 110px;
+    height: 45px;
+    text-align: center;
+
+}
+
+.totalEmployeeLastPage{
+    border: 1px solid red;
+    background-color: transparent;
+    height: 45px;
+    width: 76px;
+    margin-left: 155px;
+    text-align: center;
+}
+
+.employeeShareTotal{
+    border: 1px solid red;
+    background-color: transparent;
+    position: absolute;
+    margin-left: 249px;
+    margin-top: 8px;
+    width: 60px;
+    height: 22px;
+
+}
+
+.employerShareTotal{
+    border: 1px solid red;
+    background-color: transparent;
+    position: absolute;
+    margin-left: 326px;
+    margin-top: 8px;
+    width: 57px;
+    height: 22px;
+}
+
+.totalThisPage{
+    border: 1px solid red;
+    background-color: transparent;
+    position: absolute;
+    margin-left: 399px;
+    margin-top: 8px;
+    width: 164px;
+    height: 22px;
+}
+
+.employeeShareGrandTotal{
+    border: 1px solid red;
+    background-color: transparent;
+    position: absolute;
+    margin-top: 41px;
+    margin-left: 248px;
+    width: 61px;
+    height: 22px;
+
+}
+
+.employerShareGrandTotal{
+    border: 1px solid red;
+    background-color: transparent;
+    position: absolute;
+    margin-top: 41px;
+    margin-left: 324px;
+    width: 59px;
+    height: 22px;
+}
+
+.grandTotal{
+    border: 1px solid red;
+    background-color: transparent;
+    position: absolute;
+    margin-top: 41px;
+    margin-left: 397px;
+    width: 166px;
+    height: 22px;
+}
+
+.representative{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 102px;
+    margin-left: 31px;
+    width: 420px;
+    height: 22px;
+    text-align: center;
+}
+
+.position{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 102px;
+    margin-left: 63px;
+    width: 274px;
+    height: 22px;
+    text-align: center;
+}
+
+.date{
+    border: 1px solid red;
+    background-color: transparent;
+    margin-top: 102px;
+    margin-left: 47px;
+    width: 202px;
+    height: 22px;
+    text-align: center;
+}
 
 /*end of pagibig display form*/
 
-@media print {
-     @page{
-        size: letter portrait;
-        margin: 4.0cm;
-      }
 
+@media print {
+    @page{
+        size: A4 portrait;
+        margin: 0;
+    }
+
+    body:before{
+        -webkit-print-color-adjust: exact;
+        width: 21cm;
+        height: 29.7cm;
+        padding-top: 50px;
+        content: url("../../assets/app/img/FPF060_Member'sContributionRemittance_V01-3.png");
+        position: absolute;
+        z-index: 1;
+    }
+    .sidebar{
+        display: none;
+    }
     
     .form-pagibig{
         display: none;
     }
-    .print-form-pagibig{
-        display: block;
+    .button-print{
+        display: none;
     }
+    .print-form-pagibig{
+        display: block;  
+        position: absolute;
+        z-index: 22;
+    }
+
     .panel-heading{
         display: none;
     }
-    .sss-form-img {
+
+    .printTotalEmployee{
+        border: 1px solid red;
+        background-color: transparent;
+        margin-top: 123px;
+        margin-left: 397px;
+        width: 166px;
+        height: 22px;
+    }
+
+    /*.sss-form-img {
         content: url("../../assets/app/img/Contributions_Payment_Form-4.png");
         -webkit-print-color-adjust: exact!important;
         display: block;
@@ -356,5 +2647,5 @@ a:hover{
     .main-content{
         margin: 0!important;
         padding: 0!important;
-    }
+    }*/
 }

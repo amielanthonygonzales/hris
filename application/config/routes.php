@@ -101,6 +101,10 @@ $route['update-department/(:any)'] = 'api/Department_Controller/updateDepartment
 $route['get-department-name/(:any)'] = 'api/Department_Controller/getDepartmentName/$1';
 $route['department-datatable'] = 'api/Department_Controller/datatableDepartment';
 
+//Pag-Ibig
+//api
+$route['get-data-pagibig'] = 'api/Pagibig_Controller/getData';
+
 
 
 
