@@ -82,6 +82,7 @@
 		pageDepartment.elem.find('.department-table').DataTable({
 			"autowidth":false,
 			"paging" : true,
+			"searching": true,
 			"processing": true,
 			"serverSide": true,
 			"pagingType": "full_numbers",

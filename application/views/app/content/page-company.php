@@ -25,12 +25,14 @@
 		<div class="panel-body panel-body-company ">
 			<form id="add-form" class="company-form">
 				<div class="row form-group">
-					<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-company">
-							<i class="icon icon-left s7-diskette"></i>SAVE
-					</button>
-					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-company">
-						<i class="icon icon-left s7-back"></i>BACK
-					</button>
+					<div class="col-md-10 col-md-2 pull-right">
+						<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-company">
+								<i class="icon icon-left s7-diskette"></i>SAVE
+						</button>
+						<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-company">
+							<i class="icon icon-left s7-back"></i>BACK
+						</button>
+					</div>
 				</div>
 
 				<div class="form-group">

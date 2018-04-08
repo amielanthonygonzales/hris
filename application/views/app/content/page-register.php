@@ -1,4 +1,5 @@
 <div id="pageRegister">
+	<!-- Modal Success -->
 	<div tabindex="-1" role="dialog" class="modal fade in modal-department">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -18,6 +19,26 @@
 			</div>
 		</div>
 	</div>
+	<!-- Modal Error -->
+	<div tabindex="-1" role="dialog" class="modal fade in modal-error">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						<div class="i-circle text-danger"><i class="icon s7-close"></i></div>
+						<h4>Oh no!</h4>
+						<p></p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-danger">Proceed</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3>Register Employee</h3>
@@ -25,7 +46,7 @@
 		<div class="panel-body">
 			<form>
 				<div class="row form-group">
-					<div class="col-md-3 col-md-9 pull-right">
+					<div class="col-md-10 col-md-2 pull-right">
 						<button type="button" name="btnBack" value="back" class ="btn btn-space btn-success btnBack">
 							<i class="icon icon-left s7-back"></i>BACK
 						</button>
@@ -48,7 +69,7 @@
 				</div>
 				<div class="form-group">
 					<label for="mname">Middle Name</label>
-					<input class="form-control mname" type="text" name="mname" placeholder="Middle Name" required/>
+					<input class="form-control mname" type="text" name="mname" placeholder="Middle Name"/>
 				</div>
 				<div class="form-group">
 					<label for="extname">Extension Name</label>
@@ -108,8 +129,13 @@
 					url: "<?php echo base_url('add-employee')?>",
 					data: register_info,
 					success: function(result){
-						if(result.success){
-							pageRegister.elem.find('.modal-department').modal();
+						if(result.success == 1)	{
+							pageRegister.elem.find('.modal-department').modal("show");
+						}
+						else if(result.success.error){
+							console.log(result.success.error);
+							pageRegister.elem.find('.modal-error .modal-body p').html(result.success.error);
+							pageRegister.elem.find('.modal-error').modal("show");
 						}
 					}
 			});
