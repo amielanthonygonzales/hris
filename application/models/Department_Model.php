@@ -38,7 +38,8 @@
 			SELECT * 
 			FROM `department` 
 			WHERE `dept_deleted` = 0
-			AND `dept_name` LIKE '%" .$this->db->escape_str($args['search']). "%' 
+			AND `dept_name` LIKE '%" .$this->db->escape_str($args['search']). "%'
+			ORDER BY ".$this->db->escape_str($args['orderby'])." ". $this->db->escape_str($args['dir'])." 
 			LIMIT " .$this->db->escape_str($args['count']). " 
 			OFFSET ".$this->db->escape_str($args['offset']);
 			return $this->db->query($sql)->result_array();

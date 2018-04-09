@@ -7,6 +7,8 @@
 		}
 
 		public function index(){
+			// print_r($_SESSION);
+			// exit();
 			$this->load->view('app/content/index');
 		}
 

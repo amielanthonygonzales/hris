@@ -6,14 +6,17 @@
 			<li>
 				<a href="<?php echo base_url('dashboard'); ?>"><i class="icon s7-monitor"></i><span>Dashboard</span></a>
 			</li>
+			<li class="parent">
+				<a class="profile" href="#"><i class="icon s7-user"></i><span>Profile</span></a>
+			</li>
 				<li class="parent">
-					<a class="company" href="#"><i class="icon s7-culture"></i><span>Company</span></a>
+					<a class="company" href="<?php echo base_url('dashboard-company')?>"><i class="icon s7-culture"></i><span>Company</span></a>
 					<ul class="sub-menu"><li class="title">Company</li>
 						<li class="nav-items">
 							<div class="am-scroller nano has-scrollbar">
 								<div class="content nano-content">
 									<ul>
-										<li class="active">
+										<li>
 											<a href="<?php echo base_url('dashboard-company')?>">Company Information</a>
 										</li>
 										<li>
@@ -31,7 +34,7 @@
 					</ul>
 				</li>
 				<li class="parent">
-					<a href="#"><i class="icon s7-users"></i><span>Employee</span></a>
+					<a href="<?php echo base_url('employee-list')?>"><i class="icon s7-users"></i><span>Employee</span></a>
 					<ul class="sub-menu"><li class="title">Employee</li>
 						<li class="nav-items">
 							<div class="am-scroller nano has-scrollbar">
@@ -43,7 +46,6 @@
 										<li>
 											<a href="<?php echo base_url('employee-list')?>">List of Employee</a>
 										</li>
-										
 									</ul>
 								</div>
 								<div class="nano-pane">
@@ -89,4 +91,11 @@
 </div>
 
 <script type="text/javascript">
+	$.getJSON('<?php echo base_url('profile');?>', function(data){
+		$.each(data, function(key,value){
+			if(key == "user"){
+				$('.profile').attr("href", '<?php echo base_url('employee/')?>'+value.emp_id+'/edit')
+			}
+		});	
+	});
 </script>

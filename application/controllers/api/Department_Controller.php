@@ -45,8 +45,16 @@
 			$args = array(
 	            "count" => $_GET['length'],
 	            "offset" =>  $_GET['start'],
-	            "search" =>  $_GET['search']['value']
-       		 );
+	            "search" =>  $_GET['search']['value'],
+	            "orderby" => $columns[$_GET['order'][0]['column']],
+	            "dir" => $_GET['order'][0]['dir']
+       		);
+       		if($args['dir'] == ""){
+				$args['dir']	= "desc";
+			}
+			if($args['orderby'] == ""){
+				$args['orderby']	= "dept_name";
+			}
 			$ret=array();
 			$ret['draw'] = $_GET['draw'];
 			$ret['data'] = $this->Department_Model->getDepartments($args);

@@ -82,14 +82,12 @@
 						console.log(result);
 						if(result['query'] != ""){
 							var id = "";
-							//location.replace("<?php echo base_url('employee-edit')?>")
 							$.each(result['query'],function(key,value){
 								if(key == 'emp_id'){	
 									id = value;
 								}
 								else if(key == 'emp_position' && value == 'employee'){
 									window.parent.location = "<?php echo base_url('employee-edit/')?>"+id;
-
 								}
 								else if(key == 'emp_position' && value == 'admin'){
 									window.parent.location = "<?php echo base_url('dashboard')?>";

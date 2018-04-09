@@ -6,6 +6,21 @@
 			$this->load->model('Employee_Model');
 		}
 
+		public function getEmployeeProfile(){
+			$data['user'] = $_SESSION['user'];
+			$this->benchmark->mark('start');
+			//$data['query'] = $this->Employee_Model->getAllDepartment();
+			/*foreach ($sess as $key => $value) {
+				if($key == "emp_id"){
+					$id = $value;
+				}
+			}*/
+			$this->benchmark->mark('end');
+			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($data);
+		}
+
 		public function getEmployeeSession(){
 			// print_r($_SESSION);
 			// exit();
