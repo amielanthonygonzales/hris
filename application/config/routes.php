@@ -104,6 +104,7 @@ $route['department-datatable'] = 'api/Department_Controller/datatableDepartment'
 //Pag-Ibig
 //api
 $route['get-data-pagibig'] = 'api/Pagibig_Controller/getData';
+$route['get-data-per-page/(:any)'] = 'api/Pagibig_Controller/getDataPerPage/$1';
 
 
 

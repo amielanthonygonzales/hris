@@ -10,21 +10,27 @@
 				</button>
 			</div>
 		</div>
+		<div class="panel-body">
+			<div class="pull-right pagination"></div>
+		</div>
 	</div>
 	<div class="panel panel-default">
 		
 		<div class="panel-body">
 			<div class="form-pagibig">
+
 				<input type="text" class="employerId" />
+
 				<input type="text" class="businessName" />
-				<input type="text" class="branch" />
+				<input type="text" class="branch" /><br/>
 				<input type="text" class="roomNo" />
 				<input type="text" class="buildingName" />
 				<input type="text" class="blockNo" />
 				<input type="text" class="privateCompany" />
 				<input type="text" class="government" />
 				<input type="text" class="household" /> <br/>
-				<input type="text" class="streetName" />
+				 <input type="text" class="streetName" />
+				
 				<input type="text" class="subdivision" />
 				<input type="text" class="barangay" />
 				<input type="text" class="city" />
@@ -315,10 +321,39 @@
 				<input type="text" class="grandTotal" /><br>
 				<input type="text" class="representative" />
 				<input type="text" class="position" />
-				<input type="text" class="date" />
+				<input type="text" class="dateFilled" /> 
 			</div>
 			<div class="print-form-pagibig">
-				<input type="text" class="printTotalEmployee" />
+				<div class="image-form">
+					
+				</div>
+
+				<div class="form-content">
+					<input type="text" class="employerId" />
+					<input type="text" class="businessName" />
+					<input type="text" class="branch" /><br/>
+					<input type="text" class="roomNo" />
+					<input type="text" class="buildingName" />
+					<!-- <input type="text" class="blockNo" />
+					<input type="text" class="privateCompany" />
+					<input type="text" class="government" />
+					<input type="text" class="household" /> <br/>
+					<input type="text" class="streetName" />
+					<input type="text" class="subdivision" />
+					<input type="text" class="barangay" />
+					<input type="text" class="city" />
+					<input type="text" class="province" />
+					<input type="text" class="zipCode" /><br/>
+					<input type="text" class="program1" />
+					<input type="text" class="program2" />
+					<input type="text" class="program3" />
+					<input type="text" class="periodCovered" /> -->
+
+				</div>
+				
+
+			</div>
+			<div class="back-form">
 			</div>
 		</div>
 	</div>
@@ -329,13 +364,65 @@
 
 	pagePagibigContri.init = function(selector, callback){
 		pagePagibigContri.elem = $(selector);
+		pagePagibigContri.pageInt = 0;
 
-		$.getJSON('<?php echo site_url('get-data-pagibig')?>', callback);
+
+		const monthNames = ["January", "February", "March", "April", "May", "June",
+							  "July", "August", "September", "October", "November", "December"
+							];
+		const monthNamesAbri = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+								  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+								];
+		pagePagibigContri.getDate = new Date();
+
+		pagePagibigContri.month = pagePagibigContri.getDate.getMonth();
+		pagePagibigContri.day = pagePagibigContri.getDate.getDate();
+		pagePagibigContri.monthlyCompen = monthNamesAbri[pagePagibigContri.month] + " " 
+										+ pagePagibigContri.getDate.getFullYear();
+
+		pagePagibigContri.currentDate = monthNames[pagePagibigContri.month] + " " 
+										+ (pagePagibigContri.day<10 ? '0' : '') + pagePagibigContri.day + ", " 
+										+ pagePagibigContri.getDate.getFullYear();
+
+		pagePagibigContri.elem.find('.btn-print').off("click").click(function(e){
+			window.print();
+		});
+
+		pagePagibigContri.pageNumber = 0;
+
+		if(pagePagibigContri.pageNumber <= 0){
+			pagePagibigContri.pageNumber = 1;
+		}
+
+		pagePagibigContri.elem.find('.paginationButton').off("click").click(function(e){
+				pagePagibigContri.pageNumber = $(this).text();
+				$.getJSON('<?php echo site_url('get-data-per-page')?>' + "/" + pagePagibigContri.pageNumber, callback);
+			});
+
+		$.getJSON('<?php echo site_url('get-data-per-page')?>' + "/" + pagePagibigContri.pageNumber, callback);
 	}
 
 	pagePagibigContri.init("#pagePagibigContri", function(result){
+		pagePagibigContri.page = parseInt(result.count);
+		pagePagibigContri.page = Math.ceil(pagePagibigContri.pageNumber/30);
+
+		for(pagePagibigContri.pageInt = 1; pagePagibigContri.pageInt<= pagePagibigContri.page;pagePagibigContri.pageInt++){
+			pagePagibigContri.createButton = $('<button></button>');
+			pagePagibigContri.createButton.attr('type','button');
+			pagePagibigContri.createButton.attr('class','btn btn-success btn-space paginationButton')
+			if(result.page == pagePagibigContri.pageInt){
+				pagePagibigContri.createButton.addClass('active');
+			}
+			pagePagibigContri.createButton.html(pagePagibigContri.pageInt);
+			pagePagibigContri.elem.find('.pagination').append(pagePagibigContri.createButton);
+
+		}
+
+		
+
 		pagePagibigContri.companyInfo = result['company'];
 		pagePagibigContri.employeeInfo = result['employee'];
+		console.log(pagePagibigContri.employeeInfo);
 		
 
 		$.each(pagePagibigContri.companyInfo, function(keyCompany, valueCompany){
@@ -374,11 +461,14 @@
 			pagePagibigContri.totalER += +parseInt(valueEmployee['pagibig_er_share']);
 			pagePagibigContri.totalEE += parseInt(valueEmployee['pagibig_ee_share']);
 			// console.log(valueEmployee);
+
+			pagePagibigContri.elem.find('.monthly'+keyEmployee).val(pagePagibigContri.monthlyCompen);
 		});
 		pagePagibigContri.total = pagePagibigContri.totalER + pagePagibigContri.totalEE;
 
 		pagePagibigContri.elem.find('.employeeShareTotal').val(pagePagibigContri.totalEE);
 		pagePagibigContri.elem.find('.employerShareTotal').val(pagePagibigContri.totalER);
 		pagePagibigContri.elem.find('.totalThisPage').val(pagePagibigContri.total);
+		pagePagibigContri.elem.find('.dateFilled').val(pagePagibigContri.currentDate);
 	});
 </script>
