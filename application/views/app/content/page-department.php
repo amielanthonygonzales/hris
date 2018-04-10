@@ -86,24 +86,49 @@
 			"processing": true,
 			"serverSide": true,
 			"pagingType": "full_numbers",
+			"order": [[ 0, "desc" ]],
 			"ajax":{
 				"url": "<?php echo site_url('department-datatable')?>",
 				"dataScr" : function( json ){
 					return json['data'];
 				}
 			},
+			"columnDefs": [
+				{
+					"targets": 0,
+					"orderable": true,
+					//"data":  "null",
+					//"defaultContent": ""
+				},
+				{
+					"targets": 1,
+					"orderable": false,
+				},
+				{
+					"targets": 2,
+					"orderable": false
+				}
+			],
 			"columns" : [
 				{data: "dept_name"},
 				{data: "dept_Id"},
 				{data: "dept_Id"}
 			],
 			"drawCallback":function(settings){
+					// var len = pageDepartment.elem.find(".department-table td:nth-child(1)").length;
+					// var tablepagesinfo = pageDepartment.dataTable.page.info();
+					// pageDepartment.elem.find(".department-table td:nth-child(1)").each(function (key){
+					// 	var elem = $(this);
+					// 	if ( pageDepartment.dataTable.data().any() ) {
+					// 		 elem.html(key+1+tablepagesinfo.start);
+					// 	}
+					// });
 					
 					pageDepartment.elem.find('.department-table td:nth-child(2)').each(function(){
 
 						var elem = $(this);
 						var data = JSON.parse(elem.html());
-						 elem.html(data);
+						elem.html(data);
 						elem.html("<a class='icon icon-left s7-note text-success'></a>").off("click").click(function(){
 							pageDepartment.elem.find('.btn-save').removeClass('btn-dept-save').addClass('btn-dept-edit');
 							pageDepartment.elem.find('.modal-title').text('Edit Department');

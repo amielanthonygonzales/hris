@@ -76,6 +76,10 @@
 					<input class="form-control extname" type="text" name="extname" placeholder="Extension Name"/>
 				</div>
 				<div class="form-group">
+					<label for="email">Email</label>
+					<input class="form-control email" type="email" name="email" placeholder="Email" required />
+				</div>
+				<div class="form-group">
 					<label for="username">Username</label>
 					<input class="form-control usernameRegister" type="text" name="username" placeholder="Username" required/>
 				</div>
@@ -111,6 +115,7 @@
 	var pageRegister = {};
 	pageRegister.init = function(selector, callback){
 		pageRegister.elem = $(selector);
+		var valid;
 		pageRegister.elem.find('.btn-add-register').off("click").click(function(event){
 			var register_info = {
 				"emp_id" : pageRegister.elem.find('.employeeID').val(),
@@ -119,25 +124,80 @@
 				"emp_first_name" : pageRegister.elem.find('.first-name').val(),
 				"emp_middle_name" : pageRegister.elem.find('.mname').val(),
 				"emp_ext_name" : pageRegister.elem.find('.extname').val(),
+				"emp_email" : pageRegister.elem.find('.email').val(),
 				"emp_username" : pageRegister.elem.find('.usernameRegister').val(),
 				"emp_password" : pageRegister.elem.find('.passwordRegister').val(),
 				"emp_position" : pageRegister.elem.find('.position-radio:checked').val()
 			};
-
-			$.ajax({
-				method: "POST",
-					url: "<?php echo base_url('add-employee')?>",
-					data: register_info,
-					success: function(result){
-						if(result.success == 1)	{
-							pageRegister.elem.find('.modal-department').modal("show");
-						}
-						else if(result.success.error){
-							console.log(result.success.error);
-							pageRegister.elem.find('.modal-error .modal-body p').html(result.success.error);
-							pageRegister.elem.find('.modal-error').modal("show");
+			$.getJSON("<?php echo site_url('get-all-employee')?>", function(data){
+				//console.log("All -> " + JSON.stringify(data));
+				$.each(data, function(key, value){
+					if(key == "query"){
+						console.log("Value query ->" + value.length);
+						var len = value.length;
+						var username = pageRegister.elem.find('.usernameRegister').val();
+						var email = pageRegister.elem.find('.email').val();
+						var id = pageRegister.elem.find('.employeeID').val();
+						for(var i=0; i<len; i++){
+							//console.log("username -> " + username);
+							if(value[i]['emp_username'] == username){
+								valid = false;
+								console.log("Same username!: " + valid);
+								console.log("Retrieved Username: " + value[i]['emp_username']);
+								console.log("Username from field: " + username);
+								pageRegister.elem.find('.modal-error .modal-body p').html("Username already exists!");
+								pageRegister.elem.find('.modal-error').modal("show");
+								break;
+							}
+							else if(value[i]['emp_email'] == email && email != ''){
+								valid = false;
+								console.log("Same username!: " + valid);
+								console.log("Retrieved Email: " + value[i]['emp_email']);
+								console.log("Email from field: " + email);
+								pageRegister.elem.find('.modal-error .modal-body p').html("Email already exists!");
+								pageRegister.elem.find('.modal-error').modal("show");
+								break;
+							}
+							else if(value[i]['emp_id'] == id){
+								valid = false;
+								console.log("Same id!: " + valid);
+								console.log("Retrieved id: " + value[i]['emp_id']);
+								console.log("ID from field: " + id);
+								pageRegister.elem.find('.modal-error .modal-body p').html("ID already exists!");
+								pageRegister.elem.find('.modal-error').modal("show");
+								break;
+							}				
+							else{
+								valid = true;
+								console.log("Valid username!: " + valid);
+								console.log("Retrieved Username: " + value[i]['emp_username']);
+								console.log("Username from field: " + username);
+								console.log("Retrieved Email: " + value[i]['emp_email']);
+								console.log("Email from field: " + email);
+								console.log("Retrieved id: " + value[i]['emp_id']);
+								console.log("ID from field: " + id);
+								if(i == len-1){
+									$.ajax({
+										method: "POST",
+											url: "<?php echo base_url('add-employee')?>",
+											data: register_info,
+											success: function(result){
+												if(result.success == 1)	{
+													pageRegister.elem.find('.modal-department').modal("show");
+												}
+												else if(result.success.error){
+													console.log(result.success.error);
+													pageRegister.elem.find('.modal-error .modal-body p').html(result.success.error);
+													pageRegister.elem.find('.modal-error').modal("show");
+												}
+											}
+									});
+								}	
+								// break;
+							}
 						}
 					}
+				});
 			});
 		});
 

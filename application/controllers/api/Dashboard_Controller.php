@@ -7,6 +7,7 @@
 		}
 
 		public function getAllHrInfo(){
+			//print_r($_SESSION['user']);
 			$this->benchmark->mark('start');
 			$data['employeeQuery'] = $this->Dashboard_Model->getAllEmployee();
 			$data['sssQuery'] = $this->Dashboard_Model->getAllSSS();

@@ -50,6 +50,10 @@
 				$returndata['error'] = "Please input an ID!";
 				//return $error;
 			}
+			else if($postEmployee['emp_email'] == ''){
+				$returndata['error'] = "Please input an email!";
+				//return $error;
+			}
 			else if($postEmployee['emp_username'] == ''){
 				$returndata['error'] = "Please input a username!";
 				//return $error;
@@ -85,7 +89,8 @@
 					emp_first_name,
 					emp_middle_name,
 					emp_last_name,
-					emp_ext_name, 
+					emp_ext_name,
+					emp_email, 
 					emp_username, 
 					emp_password, 
 					emp_position
@@ -98,6 +103,7 @@
 					".$this->db->escape($postEmployee['emp_middle_name'])." ,
 					".$this->db->escape($postEmployee['emp_last_name'])." ,
 					".$this->db->escape($postEmployee['emp_ext_name'])." ,
+					".$this->db->escape($postEmployee['emp_email'])." ,
 					".$this->db->escape($postEmployee['emp_username'])." ,
 					".$this->db->escape($password)." ,
 					".$this->db->escape($postEmployee['emp_position'])." 
@@ -111,6 +117,10 @@
 		public function addEmployeeSSS($postEmployee){
 			if($postEmployee['emp_id'] == ''){
 				$returndata['error'] = "Please insert an ID";
+				//return $error;
+			}
+			else if($postEmployee['emp_email'] == ''){
+				$returndata['error'] = "Please input an email!";
 				//return $error;
 			}
 			else if($postEmployee['emp_username'] == ''){
@@ -156,6 +166,10 @@
 		public function addEmployeePagibig($postEmployee){
 			if($postEmployee['emp_id'] == ''){
 				$returndata['error'] = "Please insert an ID";
+				//return $error;
+			}
+			else if($postEmployee['emp_email'] == ''){
+				$returndata['error'] = "Please input an email!";
 				//return $error;
 			}
 			else if($postEmployee['emp_username'] == ''){
