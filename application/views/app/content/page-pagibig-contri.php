@@ -1,3 +1,4 @@
+
 <div id="pagePagibigContri">
 	<div class="panel panel-default">
 		<div class="panel-heading">
@@ -16,19 +17,22 @@
 	</div>
 	<div class="panel panel-default">
 		
-		<div class="panel-body">
-			<div class="form-pagibig">
-
+		<div class="panel-body form-body">
+			<div class="form-pagibig"></div>
+			<div class="test-relative">
 				<input type="text" class="employerId" />
 
 				<input type="text" class="businessName" />
 				<input type="text" class="branch" /><br/>
+				
 				<input type="text" class="roomNo" />
 				<input type="text" class="buildingName" />
 				<input type="text" class="blockNo" />
 				<input type="text" class="privateCompany" />
 				<input type="text" class="government" />
-				<input type="text" class="household" /> <br/>
+				<input type="text" class="household" />
+
+				<br/>
 				 <input type="text" class="streetName" />
 				
 				<input type="text" class="subdivision" />

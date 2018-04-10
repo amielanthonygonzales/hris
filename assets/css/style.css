@@ -78,7 +78,25 @@ a:hover{
     min-height: 405px!important;
 }
 
-.form-pagibig{
+#pagePagibigContri .form-pagibig{
+        position: absolute;
+    }
+
+    #pagePagibigContri .test-relative{
+        position: absolute;
+        width: 900px;
+    }
+
+    #pagePagibigContri .panel-body.form-body {
+        width: 100%;
+        max-width: 980px;
+        min-height: 1230px;
+        overflow: auto;
+        position: relative;
+        margin: 0 auto;
+    }
+
+#pagePagibigContri .form-pagibig{
     display: block;
     background-image: url("../../assets/app/img/FPF060_Member'sContributionRemittance_V01-3.png");
     background-repeat: no-repeat;
