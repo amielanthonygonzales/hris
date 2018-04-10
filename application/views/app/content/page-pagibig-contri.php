@@ -10,7 +10,7 @@
 				</button>
 			</div>
 		</div>
-		<div class="panel-body">
+		<div class="panel-body button-print">
 			<div class="pull-right pagination"></div>
 		</div>
 	</div>
