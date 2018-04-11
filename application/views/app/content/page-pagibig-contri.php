@@ -338,6 +338,8 @@
 					<input type="text" class="branch" /><br/>
 					<input type="text" class="roomNo" />
 					<input type="text" class="buildingName" />
+
+					<input type="text" class="name1" />
 					<!-- <input type="text" class="blockNo" />
 					<input type="text" class="privateCompany" />
 					<input type="text" class="government" />
@@ -369,6 +371,7 @@
 	pagePagibigContri.init = function(selector, callback){
 		pagePagibigContri.elem = $(selector);
 		pagePagibigContri.pageInt = 0;
+		pagePagibigContri.inputCount = 0;
 
 
 		const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -397,18 +400,18 @@
 		if(pagePagibigContri.pageNumber <= 0){
 			pagePagibigContri.pageNumber = 1;
 		}
-
-		pagePagibigContri.elem.find('.paginationButton').off("click").click(function(e){
-				pagePagibigContri.pageNumber = $(this).text();
-				$.getJSON('<?php echo site_url('get-data-per-page')?>' + "/" + pagePagibigContri.pageNumber, callback);
-			});
-
 		$.getJSON('<?php echo site_url('get-data-per-page')?>' + "/" + pagePagibigContri.pageNumber, callback);
 	}
 
 	pagePagibigContri.init("#pagePagibigContri", function(result){
+		pagePagibigContri.populate(result)
+	});
+
+	pagePagibigContri.populate = function(result){
 		pagePagibigContri.page = parseInt(result.count);
-		pagePagibigContri.page = Math.ceil(pagePagibigContri.pageNumber/30);
+		
+		pagePagibigContri.page = Math.ceil(pagePagibigContri.page/30);
+			pagePagibigContri.elem.find('.pagination').html('');
 
 		for(pagePagibigContri.pageInt = 1; pagePagibigContri.pageInt<= pagePagibigContri.page;pagePagibigContri.pageInt++){
 			pagePagibigContri.createButton = $('<button></button>');
@@ -418,22 +421,80 @@
 				pagePagibigContri.createButton.addClass('active');
 			}
 			pagePagibigContri.createButton.html(pagePagibigContri.pageInt);
+			pagePagibigContri.createButton.off("click").click(function(e){
+			
+				pagePagibigContri.pageNumber = $(this).text();
+
+				for(pagePagibigContri.inputCount = 1; pagePagibigContri.inputCount <= 30 ; pagePagibigContri.inputCount++){
+					pagePagibigContri.elem.find('.midNo'+pagePagibigContri.inputCount).val('');
+					pagePagibigContri.elem.find('.name'+pagePagibigContri.inputCount).val('');
+					pagePagibigContri.elem.find('.accountNo'+pagePagibigContri.inputCount).val('');
+					pagePagibigContri.elem.find('.employeeShare'+pagePagibigContri.inputCount).val('');
+					pagePagibigContri.elem.find('.employerShare'+pagePagibigContri.inputCount).val('');
+					pagePagibigContri.elem.find('.monthly'+pagePagibigContri.inputCount).val('');
+					pagePagibigContri.elem.find('.total'+pagePagibigContri.inputCount).val('');
+					pagePagibigContri.elem.find('.remarks'+pagePagibigContri.inputCount).val('');
+				}
+				pagePagibigContri.elem.find('.totalEmployeeLastPage').val('');
+				pagePagibigContri.elem.find('.employeeShareGrandTotal'). val('');
+				pagePagibigContri.elem.find('.employerShareGrandTotal').val('');
+				pagePagibigContri.elem.find('.grandTotal').val('');
+				 $.getJSON('<?php echo site_url('get-data-per-page')?>' + "/" + pagePagibigContri.pageNumber, pagePagibigContri.populate);
+				
+			});
 			pagePagibigContri.elem.find('.pagination').append(pagePagibigContri.createButton);
 
 		}
 
-		
+
 
 		pagePagibigContri.companyInfo = result['company'];
 		pagePagibigContri.employeeInfo = result['employee'];
-		console.log(pagePagibigContri.employeeInfo);
+		pagePagibigContri.allEmployeeInfo = result['allEmployee'];
 		
 
 		$.each(pagePagibigContri.companyInfo, function(keyCompany, valueCompany){
+
 			pagePagibigContri.elem.find('.employerId').val(valueCompany['company_pagibig_id']);
 			pagePagibigContri.elem.find('.businessName').val(valueCompany['company_name'].toUpperCase());
+			pagePagibigContri.elem.find('.branch').val(valueCompany['company_branch'].toUpperCase());
+			pagePagibigContri.elem.find('.periodCovered').val(valueCompany['company_period_cov'].toUpperCase());
+
+			pagePagibigContri.businessType = valueCompany['type_of_company'];
+			if(pagePagibigContri.businessType == 'private'){
+				pagePagibigContri.elem.find('.privateCompany').val('/');
+				pagePagibigContri.elem.find('.government').val('');
+				pagePagibigContri.elem.find('.household').val('');
+			}else if(pagePagibigContri.businessType == 'government'){
+				pagePagibigContri.elem.find('.privateCompany').val('');
+				pagePagibigContri.elem.find('.government').val('/');
+				pagePagibigContri.elem.find('.household').val('');
+			}else if(pagePagibigContri.businessType == 'household'){
+				pagePagibigContri.elem.find('.privateCompany').val('');
+				pagePagibigContri.elem.find('.government').val('');
+				pagePagibigContri.elem.find('.household').val('/');
+			}
+
+			pagePagibigContri.memberProgram = valueCompany['company_pagibig_program'];
+			if(pagePagibigContri.memberProgram == 'pagibig1'){
+				pagePagibigContri.elem.find('.program1').val('/');
+				pagePagibigContri.elem.find('.program2').val('');
+				pagePagibigContri.elem.find('.program3').val('');
+			}else if(pagePagibigContri.memberProgram == 'pagibig2'){
+				pagePagibigContri.elem.find('.program1').val('');
+				pagePagibigContri.elem.find('.program2').val('/');
+				pagePagibigContri.elem.find('.program3').val('');
+			}else if(pagePagibigContri.memberProgram == 'pagibig3'){
+				pagePagibigContri.elem.find('.program1').val('');
+				pagePagibigContri.elem.find('.program2').val('');
+				pagePagibigContri.elem.find('.program3').val('/');
+			}
+
+			pagePagibigContri.elem.find('.representative').val(valueCompany['company_representative'].toUpperCase());
+			pagePagibigContri.elem.find('.position').val(valueCompany['company_rep_pos'].toUpperCase());
 
 			pagePagibigContri.companyAddress = jQuery.parseJSON(valueCompany['company_address']);
+			pagePagibigContri.elem.find('.roomNo').val(pagePagibigContri.companyAddress['room_no'].toUpperCase());
 			pagePagibigContri.elem.find('.buildingName').val(pagePagibigContri.companyAddress['bldg_name'].toUpperCase());
 			pagePagibigContri.elem.find('.blockNo').val(pagePagibigContri.companyAddress['house'].toUpperCase());
 			pagePagibigContri.elem.find('.streetName').val(pagePagibigContri.companyAddress['street_name'].toUpperCase());
@@ -452,11 +513,14 @@
 			keyEmployee += +1;
 			pagePagibigContri.totalContri = 0;
 
+
 			pagePagibigContri.elem.find('.midNo'+keyEmployee).val(valueEmployee['pagibig_mid_no']);
 			pagePagibigContri.elem.find('.name'+keyEmployee).val(valueEmployee['emp_last_name'].toUpperCase() + ", " + valueEmployee['emp_first_name'].toUpperCase() + " " + valueEmployee['emp_ext_name'].toUpperCase() + " " + valueEmployee['emp_middle_name'].toUpperCase());
 			pagePagibigContri.elem.find('.accountNo'+keyEmployee).val(valueEmployee['pagibig_no']);
 			pagePagibigContri.elem.find('.employeeShare'+keyEmployee).val(valueEmployee['pagibig_ee_share']);
 			pagePagibigContri.elem.find('.employerShare'+keyEmployee).val(valueEmployee['pagibig_er_share']);
+
+			pagePagibigContri.elem.find('.remarks'+keyEmployee).val(valueEmployee['pagibig_remarks']);
 
 			pagePagibigContri.totalContri = parseInt(valueEmployee['pagibig_ee_share']) + parseInt(valueEmployee['pagibig_er_share']);
 			pagePagibigContri.elem.find('.total'+keyEmployee).val(pagePagibigContri.totalContri);
@@ -474,5 +538,22 @@
 		pagePagibigContri.elem.find('.employerShareTotal').val(pagePagibigContri.totalER);
 		pagePagibigContri.elem.find('.totalThisPage').val(pagePagibigContri.total);
 		pagePagibigContri.elem.find('.dateFilled').val(pagePagibigContri.currentDate);
-	});
+
+		pagePagibigContri.grandTotalER = 0;
+		pagePagibigContri.grandTotalEE = 0;
+		pagePagibigContri.grandTotalContri = 0;
+
+		$.each(pagePagibigContri.allEmployeeInfo, function(keyAllEmp, valueAllEmp){
+			pagePagibigContri.grandTotalER += +parseInt(valueAllEmp['pagibig_er_share']);
+			pagePagibigContri.grandTotalEE += parseInt(valueAllEmp['pagibig_ee_share']);
+		});
+		pagePagibigContri.grandTotalContri = pagePagibigContri.grandTotalER + pagePagibigContri.grandTotalEE;
+
+		if(pagePagibigContri.pageNumber == pagePagibigContri.page){
+			pagePagibigContri.elem.find('.totalEmployeeLastPage').val(result.count);
+			pagePagibigContri.elem.find('.employeeShareGrandTotal'). val(pagePagibigContri.grandTotalEE);
+			pagePagibigContri.elem.find('.employerShareGrandTotal').val(pagePagibigContri.grandTotalER);
+			pagePagibigContri.elem.find('.grandTotal').val(pagePagibigContri.grandTotalContri);
+		}
+	}
 </script>
