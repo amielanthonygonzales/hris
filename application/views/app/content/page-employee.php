@@ -128,18 +128,6 @@
 							<label for="pagibig-number">Pag-Ibig Number</label>
 							<input class="form-control pagibig-number" type="text" name="pagibigNumber" placeholder="Pag-Ibig Number" required />
 						</div>
-						<div class="form-group">
-							<label for="membership-program">Membership Program</label>
-							<input class="form-control membership-program" type="text" name="membershipProgram" placeholder="Membership Program" required />
-						</div>
-						<div class="form-group">
-							<label for="pagibig-periodCov">Pag-Ibig Period Covered</label>
-							<input class="form-control periodCov" type="text" name="periodCov" placeholder="Pag-Ibig Period Covered" required />
-						</div>
-						<div class="form-group">
-							<label for="pagibig-monthly">Pag-Ibig Monthly Compensation</label>
-							<input class="form-control pagibig-monthly" type="text" name="pagibig-monthly" placeholder="Pag-Ibig Monthly Compensation" required />
-						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
@@ -153,6 +141,10 @@
 									<input class="form-control er-share" type="text" name="erShare" placeholder="ER Share" required />
 								</div>
 							</div>
+						</div>
+						<div class="form-group">
+							<label for="pagibig-monthly">Remarks</label>
+							<input class="form-control pagibig-remarks" type="text" name="pagibig-remarks" placeholder="Remarks" required />
 						</div>
 					</div>
 				</div>
@@ -206,11 +198,9 @@
 				"ec_contribution" : pageEmployee.elem.find('.ec-Contribution').val(),
 				"pagibig_no" : pageEmployee.elem.find('.pagibig-number').val(),
 				"pagibig_mid_no" : pageEmployee.elem.find('.pagibig-mid-number').val(),
-				"pagibig_member_prog" : pageEmployee.elem.find('.membership-program').val(),
-				"pagibig_period_cov" : pageEmployee.elem.find('.periodCov').val(),
-				"pagibig_monthly_compen" : pageEmployee.elem.find('.pagibig-monthly').val(),
 				"pagibig_ee_share" : pageEmployee.elem.find('.ee-share').val(),
-				"pagibig_er_share" : pageEmployee.elem.find('.er-share').val()
+				"pagibig_er_share" : pageEmployee.elem.find('.er-share').val(),
+				"pagibig_remarks" : pageEmployee.elem.find('.pagibig-remarks').val()
 			};
 			$.ajax({
 				method: "POST",
@@ -305,11 +295,9 @@
 
 			pageEmployee.elem.find('.pagibig-mid-number').val(value['pagibig_mid_no']);
 			pageEmployee.elem.find('.pagibig-number').val(value['pagibig_no']);
-			pageEmployee.elem.find('.membership-program').val(value['pagibig_member_prog']);
-			pageEmployee.elem.find('.periodCov').val(value['pagibig_period_cov']);
-			pageEmployee.elem.find('.pagibig-monthly').val(value['pagibig_monthly_compen']);
 			pageEmployee.elem.find('.ee-share').val(value['pagibig_ee_share']);
 			pageEmployee.elem.find('.er-share').val(value['pagibig_er_share']);
+			pageEmployee.elem.find('.pagibig-remarks').val(value['pagibig_remarks']);
 		});
 
 		pageEmployee.elem.find('.empSalary').keyup(function(e){

@@ -254,11 +254,9 @@
 				SET 
 				pagibig_mid_no = ".$this->db->escape($updatePost['pagibig_mid_no'])." ,
 				pagibig_no = ".$this->db->escape($updatePost['pagibig_no'])." , 
-				pagibig_member_prog = ".$this->db->escape($updatePost['pagibig_member_prog'])." ,
-				pagibig_period_cov = ".$this->db->escape($updatePost['pagibig_period_cov'])." ,
-				pagibig_monthly_compen = ".$this->db->escape($updatePost['pagibig_monthly_compen'])." ,
 				pagibig_ee_share = ".$this->db->escape($updatePost['pagibig_ee_share'])." ,
-				pagibig_er_share = ".$this->db->escape($updatePost['pagibig_er_share'])." 
+				pagibig_er_share = ".$this->db->escape($updatePost['pagibig_er_share'])." ,
+				pagibig_remarks = ".$this->db->escape($updatePost['pagibig_remarks'])." 
 				WHERE 
 				pagibig_emp_id = ".$this->db->escape($id));
 			return 1;

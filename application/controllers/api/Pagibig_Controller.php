@@ -20,6 +20,7 @@
 			$data['page'] = $page;
 			$data['employee'] = $this->Pagibig_Model->getAllData($page);
 			$data['company'] = $this->Pagibig_Model->getCompanyData();
+			$data['allEmployee'] = $this->Pagibig_Model->getEmployeeData();
 			$data['count'] = $this->Pagibig_Model->countData();
 			$this->benchmark->mark('end');
 			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
