@@ -291,7 +291,7 @@ a:hover{
     position: absolute;
     width: 8px;
     height: 8px;
-    margin-top: 21px;
+    margin-top: 22px;
     margin-left: 26.9px;
 }
 
@@ -301,7 +301,7 @@ a:hover{
     position: absolute;
     width: 8px;
     height: 8px;
-    margin-top: 21px;
+    margin-top: 22px;
     margin-left: 266px;
 }
 
@@ -311,7 +311,7 @@ a:hover{
     position: absolute;
     width: 8px;
     height: 8px;
-    margin-top: 21px;
+    margin-top: 22px;
     margin-left: 401px;
 }
 
@@ -3157,6 +3157,10 @@ a:hover{
        
     }
 
+    #pagePagibigContri .test-relative{
+        display: none;
+    }
+
     .back-form{
         display: block;
         width: 20cm;
@@ -3174,7 +3178,7 @@ a:hover{
     /*start of printing layout pagibig*/
 
     #pagePagibigContri .employerId{
-        border: 1px solid red;
+        border: 1px solid transparent;
         background-color: transparent;
         text-align: center;
         margin-top: 78px;
@@ -3184,2477 +3188,2987 @@ a:hover{
     }
 
     #pagePagibigContri .businessName{
-        border: 1px solid red;
+        border: 1px solid transparent;
         background-color: transparent;
         margin-top: 40px;
         margin-left: 30px;
         height: 23px;
         width: 480px;
+        font-size: 10px;
     }
 
     #pagePagibigContri .branch{
-        border: 1px solid red;
+        border: 1px solid transparent;
         margin-top: 40px;
         background-color: transparent;
         margin-left: 17px;
         height: 23px;
         width: 208px;
+        font-size: 10px;
     }
 
     #pagePagibigContri .roomNo{
-        border: 1px solid red;
+        border: 1px solid transparent;
         background-color: transparent;
         margin-top: 24px;
         margin-left: 27px;
         height: 22px;
         width: 132px;
+        font-size: 10px;
     }
 
     #pagePagibigContri .buildingName{
-        border: 1px solid red;
+        border: 1px solid transparent;
         background-color: transparent;
         margin-top: 24px;
         margin-left: 165px;
         height: 22px;
         width: 160px;
         text-align: center;
-        font-size: 11px;
+        font-size: 10px;
     }
 
-    .blockNo{
-        border: 1px solid red;
+    #pagePagibigContri .blockNo{
+        border: 1px solid transparent;
         background-color: transparent;
         margin-top: 24px;
-        margin-left: 20px;
+        margin-left: 340px;
         height: 22px;
-        width: 30px;
+        width: 170px;
+        font-size: 10px;
     }
 
-    .privateCompany{
-        border: 1px solid red;
+    #pagePagibigContri .privateCompany{
+        border: 1px solid transparent;
         background-color: transparent;
         position: absolute;
-        margin-top: 28px;
+        margin-top: 21px;
+        margin-left: 532.5px;
+        width: 6px;
+        height: 6.5px;
+    }
+
+    #pagePagibigContri .government{
+        border: 1px solid transparent;
+        background-color: transparent;
+        position: absolute;
+        margin-top: 32.5px;
+        height: 6.5px;
+        margin-left: 532.5px;
+        width: 6px;
+    }
+
+    #pagePagibigContri .household{
+        border: 1px solid transparent;
+        background-color: transparent;
+        position: absolute;
+        width: 6.5px;
+        height: 6.5px;
+        margin-left: 621.4px;
+        margin-top: 21px;
+    }
+
+    #pagePagibigContri .streetName{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 40px;
         margin-left: 27px;
-        width: 10px;
-        height: 10px;
+        height: 24px;
+        width: 91px;
+        font-size: 10px;
     }
 
-    .government{
-        border: 1px solid red;
+    #pagePagibigContri .subdivision{
+        border: 1px solid transparent;
         background-color: transparent;
-        position: absolute;
-        margin-top: 43px;
-        height: 10px;
-        margin-left: 27px;
-        width: 10px;
-    }
-
-    .household{
-        border: 1px solid red;
-        background-color: transparent;
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        margin-left: 156px;
-        margin-top: 28px;
-    }
-
-    .streetName{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 17px;
-        margin-left: 9px;
-        height: 31px;
-        width: 130px;
-    }
-
-    .subdivision{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 17px;
+        margin-top: 40px;
         margin-left: 10px;
-        height: 31px;
-        width: 136px;
+        height: 24px;
+        width: 86px;
+        font-size: 10px;
     }
 
-    .barangay{
-        border: 1px solid red;
+    #pagePagibigContri .barangay{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 17px;
+        margin-top: 40px;
         margin-left: 10px;
-        height: 31px;
-        width: 149px;
+        height: 24px;
+        width: 98px;
+        font-size: 10px;
     }
 
-    .city{
-        border: 1px solid red;
+    #pagePagibigContri .city{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 17px;
+        margin-top: 40px;
         margin-left: 10px;
-        height: 31px;
-        width: 256px;
+        height: 24px;
+        width: 170px;
+        font-size: 10px;
     }
 
-    .province{
-        border: 1px solid red;
+    #pagePagibigContri .province{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 17px;
+        margin-top: 40px;
         margin-left: 15px;
-        height: 31px;
-        width: 220px;
+        height: 24px;
+        width: 135px;
+        font-size: 10px;
     }
 
-    .zipCode{
-        border: 1px solid red;
+    #pagePagibigContri .zipCode{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 17px;
+        margin-top: 40px;
         margin-left: 13px;
-        height: 31px;
-        width: 84px;
+        height: 24px;
+        width: 56px;
         text-align: center;
+        font-size: 10px;
     }
 
-    .program1{
-        border: 1px solid red;
+    #pagePagibigContri .program1{
+        border: 1px solid transparent;
         background-color: transparent;
         position: absolute;
-        width: 9px;
-        height: 9px;
-        margin-top: 30px;
-        margin-left: 13px;
+        width: 6.6px;
+        height: 6.5px;
+        margin-top: 20px;
+        margin-left: 22px;
     }
 
-    .program2{
-        border: 1px solid red;
+    #pagePagibigContri .program2{
+        border: 1px solid transparent;
         background-color: transparent;
         position: absolute;
-        width: 9px;
-        height: 9px;
-        margin-top: 30px;
-        margin-left: 306px;
+        width: 6.6px;
+        height: 6.5px;
+        margin-top: 20px;
+        margin-left: 223.2px;
     }
 
-    .program3{
-        border: 1px solid red;
+    #pagePagibigContri .program3{
+        border: 1px solid transparent;
         background-color: transparent;
         position: absolute;
-        width: 9px;
-        height: 9px;
-        margin: 30px;
-        margin-left: 471.5px;
+        width: 6.6px;
+        height: 6.6px;
+        margin-top: 20px;
+        margin-left: 336.5px;
     }
 
-    .periodCovered{
-        border: 1px solid red;
+    #pagePagibigContri .periodCovered{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-left: 753px;
-        margin-top: 17px;
-        height: 35px;
-        width: 300px;
+        margin-left: 527px;
+        margin-top: 11px;
+        height: 26px;
+        width: 210px;
         
     }
 
-    .midNo1{
-        border: 1px solid red;
+    #pagePagibigContri .midNo1{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 42px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
+        margin-top: 30px;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
         text-align: center;
+        font-size: 9px;
     }
 
-    .name1{
-        border: 1px solid red;
+    #pagePagibigContri .name1{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 42px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo1{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 42px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly1{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 42px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare1{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 42px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare1{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 42px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total1{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 42px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks1{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 42px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo2{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name2{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo2{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly2{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare2{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare2{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total2{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks2{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo3{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name3{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo3{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly3{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare3{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare3{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total3{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks3{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo4{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 21px;
-        text-align: center;
-    }
-
-    .name4{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 361px;
-
-    }
-
-    .accountNo4{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly4{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare4{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare4{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total4{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks4{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo5{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name5{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo5{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly5{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare5{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare5{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total5{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks5{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo6{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name6{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo6{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly6{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare6{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare6{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total6{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks6{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo7{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name7{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo7{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly7{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare7{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare7{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total7{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks7{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo8{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name8{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo8{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly8{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare8{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare8{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total8{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks8{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo9{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name9{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo9{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly9{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare9{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare9{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total9{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks9{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo10{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 21px;
-        text-align: center;
-    }
-
-    .name10{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 361px;
-
-    }
-
-    .accountNo10{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly10{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare10{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare10{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total10{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks10{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo11{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name11{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo11{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly11{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare11{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare11{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total11{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks11{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo12{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name12{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo12{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly12{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare12{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare12{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total12{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks12{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo13{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 21px;
-        text-align: center;
-    }
-
-    .name13{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 361px;
-
-    }
-
-    .accountNo13{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly13{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare13{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare13{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total13{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks13{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo14{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name14{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo14{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly14{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare14{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare14{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total14{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks14{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo15{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name15{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo15{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly15{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare15{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare15{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total15{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks15{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo16{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name16{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo16{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly16{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare16{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare16{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total16{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks16{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo17{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 21px;
-        text-align: center;
-    }
-
-    .name17{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 361px;
-
-    }
-
-    .accountNo17{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly17{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare17{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare17{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total17{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks17{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo18{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name18{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo18{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly18{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare18{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare18{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total18{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks18{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo19{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name19{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo19{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly19{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare19{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare19{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total19{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks19{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo20{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 21px;
-        text-align: center;
-    }
-
-    .name20{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 361px;
-
-    }
-
-    .accountNo20{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly20{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare20{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare20{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total20{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks20{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo21{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name21{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo21{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly21{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare21{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare21{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total21{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks21{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo22{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name22{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo22{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly22{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare22{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare22{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total22{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks22{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo23{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name23{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo23{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly23{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare23{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare23{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total23{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks23{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo24{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 21px;
-        text-align: center;
-    }
-
-    .name24{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 361px;
-
-    }
-
-    .accountNo24{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly24{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare24{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare24{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total24{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks24{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo25{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name25{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo25{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly25{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare25{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare25{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total25{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks25{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo26{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name26{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo26{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly26{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare26{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare26{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total26{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks26{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo27{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name27{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo27{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly27{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare27{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare27{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total27{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks27{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo28{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 21px;
-        text-align: center;
-    }
-
-    .name28{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 361px;
-
-    }
-
-    .accountNo28{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly28{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare28{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare28{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total28{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 78px;
-        text-align: center;
-    }
-
-    .remarks28{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 21px;
-        width: 96px;
-        text-align: center;
-    }
-
-    .midNo29{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
-        text-align: center;
-    }
-
-    .name29{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
-    }
-
-    .accountNo29{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
-        text-align: center;
-    }
-
-    .monthly29{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
-        text-align: center;
-    }
-
-    .employeeShare29{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
-        text-align: center;
-    }
-
-    .employerShare29{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
-        text-align: center;
-    }
-
-    .total29{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
-        text-align: center;
+        margin-top: 30px;
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
     }
 
-    .remarks29{
-        border: 1px solid red;
+    #pagePagibigContri .accountNo1{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
+        margin-top: 30px;
+        margin-left: -2px;
+        height: 17px;
+        width: 79.4px;
         text-align: center;
+        font-size: 9px;
     }
 
-    .midNo30{
-        border: 1px solid red;
+    #pagePagibigContri .monthly1{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 2px;
-        margin-left: 2px;
-        width: 132px;
-        height: 22px;
+        margin-top: 30px;
+        margin-left: -2px;
+        height: 17px;
+        width: 76.5px;
         text-align: center;
-    }
-
-    .name30{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 361px;
-
+        font-size: 9px;
     }
 
-    .accountNo30{
-        border: 1px solid red;
+    #pagePagibigContri .employeeShare1{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 114px;
+        margin-top: 30px;
+        margin-left: -3px;
+        height: 17px;
+        width: 52.3px;
         text-align: center;
+        font-size: 9px;
     }
 
-    .monthly30{
-        border: 1px solid red;
+    #pagePagibigContri .employerShare1{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 110px;
+        margin-top: 30px;
+        height: 17px;
+        width: 49.2px;
         text-align: center;
+        font-size: 9px;
     }
 
-    .employeeShare30{
-        border: 1px solid red;
+    #pagePagibigContri .total1{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 74px;
+        margin-top: 30px;
+        margin-left: -3px;
+        height: 17px;
+        width: 55px;
         text-align: center;
+        font-size: 9px;
     }
 
-    .employerShare30{
-        border: 1px solid red;
+    #pagePagibigContri .remarks1{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 70px;
+        margin-top: 30px;
+        height: 17px;
+        width: 68px;
         text-align: center;
+        font-size: 9px;
     }
 
-    .total30{
-        border: 1px solid red;
+    #pagePagibigContri .midNo2{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 78px;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
         text-align: center;
+        font-size: 9px;
+        position: absolute;
     }
 
-    .remarks30{
-        border: 1px solid red;
+    #pagePagibigContri .name2{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 2px;
-        height: 22px;
-        width: 96px;
-        text-align: center;
+        margin-left: 110px;
+        /*margin-top: -2px;*/
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+        position: absolute;
     }
 
-    .totalEmployee{
-        border: 1px solid red;
+    #pagePagibigContri .accountNo2{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 10px;
-        margin-left: 150px;
-        width: 110px;
-        height: 45px;
+        /*margin-top: 30px;*/
+        margin-left: 357px;
+        height: 17px;
+        width: 79.5px;
         text-align: center;
-
+        font-size: 9px;
+        position: absolute;
     }
 
-    .totalEmployeeLastPage{
-        border: 1px solid red;
+    #pagePagibigContri .monthly2{
+        border: 1px solid transparent;
         background-color: transparent;
-        height: 45px;
+        /*margin-top: 30px;*/
+        margin-left: 438px;
+        height: 17px;
         width: 76px;
-        margin-left: 155px;
         text-align: center;
-    }
-
-    .employeeShareTotal{
-        border: 1px solid red;
-        background-color: transparent;
+        font-size: 9px;
         position: absolute;
-        margin-left: 249px;
-        margin-top: 8px;
-        width: 60px;
-        height: 22px;
-
     }
 
-    .employerShareTotal{
-        border: 1px solid red;
+    #pagePagibigContri .employeeShare2{
+        border: 1px solid transparent;
         background-color: transparent;
-        position: absolute;
-        margin-left: 326px;
-        margin-top: 8px;
-        width: 57px;
-        height: 22px;
-    }
-
-    .totalThisPage{
-        border: 1px solid red;
-        background-color: transparent;
-        position: absolute;
-        margin-left: 399px;
-        margin-top: 8px;
-        width: 164px;
-        height: 22px;
-    }
-
-    .employeeShareGrandTotal{
-        border: 1px solid red;
-        background-color: transparent;
-        position: absolute;
-        margin-top: 41px;
-        margin-left: 248px;
-        width: 61px;
-        height: 22px;
-
-    }
-
-    .employerShareGrandTotal{
-        border: 1px solid red;
-        background-color: transparent;
-        position: absolute;
-        margin-top: 41px;
-        margin-left: 324px;
-        width: 59px;
-        height: 22px;
-    }
-
-    .grandTotal{
-        border: 1px solid red;
-        background-color: transparent;
-        position: absolute;
-        margin-top: 41px;
-        margin-left: 397px;
-        width: 166px;
-        height: 22px;
-    }
-
-    .representative{
-        border: 1px solid red;
-        background-color: transparent;
-        margin-top: 102px;
-        margin-left: 11px;
-        width: 420px;
-        height: 22px;
+        /*margin-top: 30px;*/
+        margin-left: 515px;
+        height: 17px;
+        width: 52.3px;
         text-align: center;
+        font-size: 9px;
+        position: absolute;
     }
 
-    .position{
-        border: 1px solid red;
+    #pagePagibigContri .employerShare2{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 102px;
-        margin-left: 63px;
-        width: 274px;
-        height: 22px;
+        margin-left: 568px;
+        /*margin-top: 30px;*/
+        height: 17px;
+        width: 49.2px;
         text-align: center;
+        font-size: 9px;
+        position: absolute;
     }
 
-    .dateFilled{
-        border: 1px solid red;
+    #pagePagibigContri .total2{
+        border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 102px;
-        margin-left: 47px;
-        width: 202px;
-        height: 22px;
+        /*margin-top: 30px;*/
+        margin-left: 618px;
+        height: 17px;
+        width: 55px;
         text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .remarks2{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 50px;*/
+        margin-left: 674px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .midNo3{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .name3{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .accountNo3{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 79.4px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .monthly3{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 76.5px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employeeShare3{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employerShare3{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .total3{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .remarks3{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .midNo4{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .name4{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 110px;
+        /*margin-top: -2px;*/
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .accountNo4{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 357px;
+        height: 17px;
+        width: 79.5px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .monthly4{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 438px;
+        height: 17px;
+        width: 76px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employeeShare4{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 515px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employerShare4{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 568px;
+        /*margin-top: 30px;*/
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .total4{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 618px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .remarks4{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 50px;*/
+        margin-left: 674px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .midNo5{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .name5{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .accountNo5{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 79.4px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .monthly5{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 76.5px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employeeShare5{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employerShare5{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .total5{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .remarks5{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .midNo6{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .name6{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 110px;
+        /*margin-top: -2px;*/
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .accountNo6{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 357px;
+        height: 17px;
+        width: 79.5px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .monthly6{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 438px;
+        height: 17px;
+        width: 76px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employeeShare6{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 515px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employerShare6{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 568px;
+        /*margin-top: 30px;*/
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .total6{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 618px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .remarks6{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 50px;*/
+        margin-left: 674px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .midNo7{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .name7{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .accountNo7{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 79.4px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .monthly7{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 76.5px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employeeShare7{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employerShare7{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .total7{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .remarks7{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .midNo8{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .name8{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 110px;
+        /*margin-top: -2px;*/
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .accountNo8{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 357px;
+        height: 17px;
+        width: 79.5px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .monthly8{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 438px;
+        height: 17px;
+        width: 76px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employeeShare8{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 515px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employerShare8{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 568px;
+        /*margin-top: 30px;*/
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .total8{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 618px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .remarks8{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 50px;*/
+        margin-left: 674px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .midNo9{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .name9{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .accountNo9{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 79.4px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .monthly9{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 76.5px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employeeShare9{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employerShare9{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .total9{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .remarks9{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .midNo10{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .name10{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 110px;
+        /*margin-top: -2px;*/
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .accountNo10{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 357px;
+        height: 17px;
+        width: 79.5px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .monthly10{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 438px;
+        height: 17px;
+        width: 76px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employeeShare10{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 515px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employerShare10{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 568px;
+        /*margin-top: 30px;*/
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .total10{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 618px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .remarks10{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 50px;*/
+        margin-left: 674px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .midNo11{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .name11{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .accountNo11{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 79.4px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .monthly11{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 76.5px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employeeShare11{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employerShare11{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .total11{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .remarks11{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .midNo12{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .name12{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 110px;
+        /*margin-top: -2px;*/
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .accountNo12{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 357px;
+        height: 17px;
+        width: 79.5px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .monthly12{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 438px;
+        height: 17px;
+        width: 76px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employeeShare12{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 515px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employerShare12{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 568px;
+        /*margin-top: 30px;*/
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .total12{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 618px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .remarks12{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 50px;*/
+        margin-left: 674px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .midNo13{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .name13{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .accountNo13{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 79.4px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .monthly13{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 76.5px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employeeShare13{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employerShare13{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .total13{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .remarks13{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .midNo14{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .name14{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 110px;
+        /*margin-top: -2px;*/
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .accountNo14{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 357px;
+        height: 17px;
+        width: 79.5px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .monthly14{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 438px;
+        height: 17px;
+        width: 76px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employeeShare14{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 515px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employerShare14{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 568px;
+        /*margin-top: 30px;*/
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .total14{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 618px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .remarks14{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 50px;*/
+        margin-left: 674px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .midNo15{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 16.5px;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .name15{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 16.5px;
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .accountNo15{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 16.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 79.4px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .monthly15{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 16.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 76.5px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employeeShare15{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 16.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employerShare15{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 16.5px;
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .total15{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 16.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .remarks15{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 16.5px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .midNo16{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .name16{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 110px;
+        /*margin-top: -2px;*/
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .accountNo16{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 357px;
+        height: 17px;
+        width: 79.5px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .monthly16{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 438px;
+        height: 17px;
+        width: 76px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employeeShare16{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 515px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employerShare16{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 568px;
+        /*margin-top: 30px;*/
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .total16{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 618px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .remarks16{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 50px;*/
+        margin-left: 674px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+    
+    #pagePagibigContri .midNo17{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .name17{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .accountNo17{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 79.4px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .monthly17{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 76.5px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employeeShare17{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employerShare17{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .total17{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .remarks17{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .midNo18{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .name18{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 110px;
+        /*margin-top: -2px;*/
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .accountNo18{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 357px;
+        height: 17px;
+        width: 79.5px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .monthly18{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 438px;
+        height: 17px;
+        width: 76px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employeeShare18{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 515px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employerShare18{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 568px;
+        /*margin-top: 30px;*/
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .total18{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 618px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .remarks18{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 50px;*/
+        margin-left: 674px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .midNo19{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.4px;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .name19{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.4px;
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .accountNo19{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.4px;
+        margin-left: -2px;
+        height: 17px;
+        width: 79.4px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .monthly19{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.4px;
+        margin-left: -2px;
+        height: 17px;
+        width: 76.5px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employeeShare19{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.4px;
+        margin-left: -3px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employerShare19{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.4px;
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .total19{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.4px;
+        margin-left: -3px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .remarks19{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.4px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .midNo20{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .name20{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 110px;
+        /*margin-top: -2px;*/
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .accountNo20{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 357px;
+        height: 17px;
+        width: 79.5px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .monthly20{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 438px;
+        height: 17px;
+        width: 76px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employeeShare20{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 515px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employerShare20{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 568px;
+        /*margin-top: 30px;*/
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .total20{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 618px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .remarks20{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 50px;*/
+        margin-left: 674px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .midNo21{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .name21{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .accountNo21{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 79.4px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .monthly21{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 76.5px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employeeShare21{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employerShare21{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .total21{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .remarks21{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .midNo22{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .name22{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 110px;
+        /*margin-top: -2px;*/
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .accountNo22{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 357px;
+        height: 17px;
+        width: 79.5px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .monthly22{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 438px;
+        height: 17px;
+        width: 76px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employeeShare22{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 515px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employerShare22{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 568px;
+        /*margin-top: 30px;*/
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .total22{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 618px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .remarks22{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 50px;*/
+        margin-left: 674px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .midNo23{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .name23{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .accountNo23{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 79.4px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .monthly23{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 76.5px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employeeShare23{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employerShare23{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .total23{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .remarks23{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .midNo24{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .name24{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 110px;
+        /*margin-top: -2px;*/
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .accountNo24{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 357px;
+        height: 17px;
+        width: 79.5px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .monthly24{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 438px;
+        height: 17px;
+        width: 76px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employeeShare24{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 515px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employerShare24{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 568px;
+        /*margin-top: 30px;*/
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .total24{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 618px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .remarks24{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 50px;*/
+        margin-left: 674px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .midNo25{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .name25{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .accountNo25{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 79.4px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .monthly25{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 76.5px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employeeShare25{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employerShare25{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .total25{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .remarks25{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .midNo26{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .name26{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 110px;
+        /*margin-top: -2px;*/
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .accountNo26{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 357px;
+        height: 17px;
+        width: 79.5px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .monthly26{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 438px;
+        height: 17px;
+        width: 76px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employeeShare26{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 515px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employerShare26{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 568px;
+        /*margin-top: 30px;*/
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .total26{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 618px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .remarks26{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 50px;*/
+        margin-left: 674px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .midNo27{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .name27{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .accountNo27{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 79.4px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .monthly27{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 76.5px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employeeShare27{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employerShare27{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .total27{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .remarks27{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .midNo28{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .name28{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 110px;
+        /*margin-top: -2px;*/
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .accountNo28{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 357px;
+        height: 17px;
+        width: 79.5px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .monthly28{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 438px;
+        height: 17px;
+        width: 76px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employeeShare28{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 515px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employerShare28{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 568px;
+        /*margin-top: 30px;*/
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .total28{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 618px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .remarks28{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 50px;*/
+        margin-left: 674px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .midNo29{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .name29{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .accountNo29{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 79.4px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .monthly29{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -2px;
+        height: 17px;
+        width: 76.5px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employeeShare29{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .employerShare29{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .total29{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        margin-left: -3px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .remarks29{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 17.5px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+    }
+
+    #pagePagibigContri .midNo30{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 15px;
+        width: 90.5px;
+        height: 17px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .name30{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 110px;
+        /*margin-top: -2px;*/
+        height: 17px;
+        width: 246px;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .accountNo30{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 357px;
+        height: 17px;
+        width: 79.5px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .monthly30{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 438px;
+        height: 17px;
+        width: 76px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employeeShare30{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 515px;
+        height: 17px;
+        width: 52.3px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employerShare30{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-left: 568px;
+        /*margin-top: 30px;*/
+        height: 17px;
+        width: 49.2px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .total30{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 30px;*/
+        margin-left: 618px;
+        height: 17px;
+        width: 55px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .remarks30{
+        border: 1px solid transparent;
+        background-color: transparent;
+        /*margin-top: 50px;*/
+        margin-left: 674px;
+        height: 17px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .totalEmployee{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 20px;
+        margin-left: 120px;
+        height: 40px;
+        width: 68px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .totalEmployeeLastPage{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 20px;
+        margin-left: 300px;
+        height: 40px;
+        width: 52px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employeeShareTotal{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 20px;
+        margin-left: 526px;
+        height: 19px;
+        width: 41px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employerShareTotal{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 20px;
+        margin-left: 579px;
+        height: 19px;
+        width: 38px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .totalThisPage{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 20px;
+        margin-left: 629px;
+        height: 19px;
+        width: 111px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employeeShareGrandTotal{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 43.5px;
+        margin-left: 526px;
+        height: 19px;
+        width: 41px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .employerShareGrandTotal{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 43.5px;
+        margin-left: 577px;
+        height: 19px;
+        width: 40px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .grandTotal{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 43.5px;
+        margin-left: 629px;
+        height: 19px;
+        width: 111px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .representative{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 110px;
+        margin-left: 22px;
+        height: 18px;
+        width: 286.5px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .position{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 110px;
+        margin-left: 354.5px;
+        height: 18px;
+        width: 187px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
+    }
+
+    #pagePagibigContri .dateFilled{
+        border: 1px solid transparent;
+        background-color: transparent;
+        margin-top: 110px;
+        margin-left: 577px;
+        height: 18px;
+        width: 139px;
+        text-align: center;
+        font-size: 9px;
+        position: absolute;
     }
 
     /*end of printing layout pagibig*/
