@@ -127,6 +127,7 @@
 					var elem = $(this);
 					var data = JSON.parse(elem.html());
 					console.log(data);
+					console.log(jQuery.type(data));
 					elem.html("<a class='icon icon-left s7-trash text-danger employee-delete'></a>").off("click").click(function(e){
 							pageEmployeeList.elem.find('.i-circle').removeClass('text-success').addClass('text-danger');
 							pageEmployeeList.elem.find('.symbol').removeClass('s7-check').addClass('s7-attention');

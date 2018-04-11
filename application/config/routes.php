@@ -67,6 +67,7 @@ $route['delete-employee/(:any)'] = 'api/Employee_Controller/deleteEmployeeInfo/$
 $route['employee-datatable'] = 'api/Employee_Controller/dataTable';
 $route['get-session'] = 'api/Employee_Controller/getEmployeeSession';
 $route['profile'] = 'api/Employee_Controller/getEmployeeProfile';
+$route['email'] = 'api/Employee_Controller/sendEmail';
 
 //Company
 //app

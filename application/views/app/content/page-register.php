@@ -52,20 +52,23 @@
 						</button>
 						<button type="button" name="btnAdd" value="add" class ="btn btn-space btn-success btn-add-register">
 							<i class="icon icon-left s7-plus"></i>ADD
-						</button>	
+						</button>
+						<button class="btn btn-space btn-success btn-email">
+							<a id="email-anchor"></a>SEND EMAIL
+						</button>
 					</div>
 				</div>	
 				<div class="form-group">
 					<label for="employeeID">Employee ID</label>
-					<input class="form-control employeeID" type="text" name="empId" placeholder="Employee ID" required />
+					<input class="form-control employeeID" type="text" name="empId" placeholder="Employee ID"  />
 				</div>
 				<div class="form-group">
 					<label for="lname">Last Name</label>
-					<input class="form-control lname" type="text" name="lname" placeholder="Last Name" required/>
+					<input class="form-control lname" type="text" name="lname" placeholder="Last Name" />
 				</div>
 				<div class="form-group">
 					<label for="first-name">First Name</label>
-					<input class="form-control first-name" type="text" name="fname" placeholder="First Name" required />
+					<input class="form-control first-name" type="text" name="fname" placeholder="First Name"  />
 				</div>
 				<div class="form-group">
 					<label for="mname">Middle Name</label>
@@ -77,15 +80,15 @@
 				</div>
 				<div class="form-group">
 					<label for="email">Email</label>
-					<input class="form-control email" type="email" name="email" placeholder="Email" required />
+					<input class="form-control email" type="email" name="email" placeholder="Email"  />
 				</div>
 				<div class="form-group">
 					<label for="username">Username</label>
-					<input class="form-control usernameRegister" type="text" name="username" placeholder="Username" required/>
+					<input class="form-control usernameRegister" type="text" name="username" placeholder="Username" />
 				</div>
 				<div class="form-group">
 					<label for="password">Password</label>
-					<input class="form-control passwordRegister" type="password" name="password" placeholder="Password" required/>
+					<input class="form-control passwordRegister" type="password" name="password" placeholder="Password" />
 				</div>
 				<div class="form-group">
 					<div class="horizontal">
@@ -130,13 +133,14 @@
 				"emp_position" : pageRegister.elem.find('.position-radio:checked').val()
 			};
 			$.getJSON("<?php echo site_url('get-all-employee')?>", function(data){
+				var username = pageRegister.elem.find('.usernameRegister').val();
+				var email = pageRegister.elem.find('.email').val();
+				var password = pageRegister.elem.find('.passwordRegister').val();
 				//console.log("All -> " + JSON.stringify(data));
 				$.each(data, function(key, value){
 					if(key == "query"){
 						console.log("Value query ->" + value.length);
 						var len = value.length;
-						var username = pageRegister.elem.find('.usernameRegister').val();
-						var email = pageRegister.elem.find('.email').val();
 						var id = pageRegister.elem.find('.employeeID').val();
 						for(var i=0; i<len; i++){
 							//console.log("username -> " + username);
@@ -177,6 +181,11 @@
 								console.log("Retrieved id: " + value[i]['emp_id']);
 								console.log("ID from field: " + id);
 								if(i == len-1){
+									var args = {email: email, password: password, username: username};
+									// args['email'] = pageRegister.elem.find('.email').val();
+									// args['username'] = pageRegister.elem.find('.usernameRegister').val();
+									// args['password'] = pageRegister.elem.find('.passwordRegister').val();
+									console.log(args);
 									$.ajax({
 										method: "POST",
 											url: "<?php echo base_url('add-employee')?>",
@@ -184,6 +193,22 @@
 											success: function(result){
 												if(result.success == 1)	{
 													pageRegister.elem.find('.modal-department').modal("show");
+													/*console.log("Username " + username + " Email: " + email + " Password: " + password);
+													pageRegister.elem.find('#email-anchor').attr('href', '<?php echo base_url('email/')?>'+email+'/'+username+'/'+password);
+													pageRegister.elem.find('.btn-email').click(function(){
+														console.log("Clicked");
+													});*/
+													$.ajax({
+														method: "POST",
+															url: '<?php echo base_url('email')?>',
+															data: args,
+															dataType: "json",
+															success: function(data){
+																console.log(data);
+															}
+													});
+													return false;
+
 												}
 												else if(result.success.error){
 													console.log(result.success.error);

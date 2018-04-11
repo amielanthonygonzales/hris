@@ -6,6 +6,42 @@
 			$this->load->model('Employee_Model');
 		}
 
+		public function sendEmail(){
+			// $data = $_POST;
+			// echo $data;
+			$password = $this->input->post('password');
+			$username = $this->input->post('username');
+			$email = $this->input->post('email');
+			echo $email;
+			// $username = "username";
+			// $password = "passwordsss";
+			$config = Array(
+				'protocol' => 'smtp',
+				'smtp_host' => 'ssl://smtp.gmail.com',
+				'smtp_port' => '465',
+				'smp_timeout' => '30',
+				'smp_mailpath' => '/usr/sbin/sendmail',
+				'smtp_user' => 'jrpg99@gmail.com',
+				'smtp_pass' => 'pass1020',
+				'mailtype' => 'html',
+				'charset' => 'utf-8',
+				'wordwrap' => TRUE
+			);
+			$this->load->library('email', $config);
+			$this->email->from('jrpg99@gmail.com', 'admin');
+			$this->email->to('jrpgutierrez@gmail.com');
+			$this->email->subject('Company Login Credentials');
+			$this->email->message("Welcome! <br> Here is your username and password for the company: <br> Username: ".$username."<br>Password: ".$password."<br>Please do change your password immediately for a more secure account");
+			$this->email->set_newline("\r\n");
+
+			$result = $this->email->send();
+			if(!$result){
+				$debugger = $this->email->print_debugger();
+				//echo $debugger;
+			}
+			
+		}
+
 		public function getEmployeeProfile(){
 			$data['user'] = $_SESSION['user'];
 			$this->benchmark->mark('start');
