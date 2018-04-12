@@ -256,6 +256,8 @@
 				pagibig_no = ".$this->db->escape($updatePost['pagibig_no'])." , 
 				pagibig_ee_share = ".$this->db->escape($updatePost['pagibig_ee_share'])." ,
 				pagibig_er_share = ".$this->db->escape($updatePost['pagibig_er_share'])." ,
+				pagibig_mem_prog = ".$this->db->escape($updatePost['pagibig_mem_prog'])." ,
+				monthly_compen = ".$this->db->escape($updatePost['monthly_compen'])." ,
 				pagibig_remarks = ".$this->db->escape($updatePost['pagibig_remarks'])." 
 				WHERE 
 				pagibig_emp_id = ".$this->db->escape($id));

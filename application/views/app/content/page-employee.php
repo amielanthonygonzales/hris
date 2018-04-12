@@ -128,6 +128,14 @@
 							<label for="pagibig-number">Pag-Ibig Number</label>
 							<input class="form-control pagibig-number" type="text" name="pagibigNumber" placeholder="Pag-Ibig Number" required />
 						</div>
+						<div class="form-group">
+							<label>Membership Program</label>
+							<input class="form-control mem-program" type="text" name="mem-program" placeholder="Membership Program" required />
+						</div>
+						<div class="form-group">
+							<label for="pagibig-number">Monthly Compensation</label>
+							<input class="form-control monthly-compen" type="text" name="monthly-compen" placeholder="Monthly Compensation" required />
+						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
@@ -200,7 +208,9 @@
 				"pagibig_mid_no" : pageEmployee.elem.find('.pagibig-mid-number').val(),
 				"pagibig_ee_share" : pageEmployee.elem.find('.ee-share').val(),
 				"pagibig_er_share" : pageEmployee.elem.find('.er-share').val(),
-				"pagibig_remarks" : pageEmployee.elem.find('.pagibig-remarks').val()
+				"pagibig_remarks" : pageEmployee.elem.find('.pagibig-remarks').val(),
+				"pagibig_mem_prog" : pageEmployee.elem.find('.mem-program').val(),
+				"monthly_compen" : pageEmployee.elem.find('.monthly-compen').val()
 			};
 			$.ajax({
 				method: "POST",
@@ -298,6 +308,8 @@
 			pageEmployee.elem.find('.ee-share').val(value['pagibig_ee_share']);
 			pageEmployee.elem.find('.er-share').val(value['pagibig_er_share']);
 			pageEmployee.elem.find('.pagibig-remarks').val(value['pagibig_remarks']);
+			pageEmployee.elem.find('.monthly-compen').val(value['monthly_compen']);
+			pageEmployee.elem.find('.mem-program').val(value['pagibig_mem_prog']);
 		});
 
 		pageEmployee.elem.find('.empSalary').keyup(function(e){

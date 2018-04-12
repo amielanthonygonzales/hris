@@ -43,18 +43,6 @@
 					<input class="form-control employername" type="text" name="employername" placeholder="Employer/Business Name" required/>
 				</div>
 				<div class="form-group">
-					<label>Type of Business</label>
-					<select class="form-control business-type">
-						<option value="private">Private</option>
-						<option value="government">Governemt</option>
-						<option value="household">Household</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label for="employername">Branch/Office</label>
-					<input class="form-control branch" type="text" name="branch" placeholder="Branch/Office" required/>
-				</div>
-				<div class="form-group">
 					<div class = "row form-group">
 						<div class="col-md-4">
 							<label for="lname">Unit/Room No.,Floor</label>
@@ -163,18 +151,6 @@
 					<div class="form-group">
 						<label for="sssnum">Pag-IBIG Employer Number</label>
 						<input class="form-control pagibignum" type="number" name="pagibignum" placeholder="Pag-IBIG Employer Number" required />
-					</div>	
-					<div class="form-group">
-						<label>Membership Program</label>
-						<select class="form-control mem-program">
-							<option value="pagibig1">Pag-Ibig I</option>
-							<option value="pagibig2">Pag-Ibig II</option>
-							<option value="pagibig3">Modified Pag-Ibig II</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label>Period Covered</label>
-						<input class="form-control period-covered" type="number" name="period-covered" placeholder="Period Covered" required />
 					</div>
 				</div>
 				
@@ -228,10 +204,6 @@
 					"company_cel_no": pageCompany.elem.find('.cellnum').val()
 					}),
 				"company_email": pageCompany.elem.find('.email').val(),
-				"company_branch": pageCompany.elem.find('.branch').val(),
-				"type_of_company": pageCompany.elem.find('.business-type').val(),
-				"company_pagibig_program": pageCompany.elem.find('.mem-program').val(),
-				"company_period_cov": pageCompany.elem.find('.period-covered').val(),
 				"company_representative": pageCompany.elem.find('.rep-name').val(),
 				"company_rep_pos": pageCompany.elem.find('.rep-position').val()
 			};
@@ -258,10 +230,6 @@
 			pageCompany.elem.find('.sssnum').val(value['company_sss_id']);
 			pageCompany.elem.find('.pagibignum').val(value['company_pagibig_id']);
 			pageCompany.elem.find('.employername').val(value['company_name']);
-			pageCompany.elem.find('.branch').val(value['company_branch']);
-			pageCompany.elem.find('.business-type').val(value['type_of_company']);
-			pageCompany.elem.find('.mem-program').val(value['company_pagibig_program']);
-			pageCompany.elem.find('.period-covered').val(value['company_period_cov']);
 			pageCompany.elem.find('.rep-name').val(value['company_representative']);
 			pageCompany.elem.find('.rep-position').val(value['company_rep_pos']);
 
