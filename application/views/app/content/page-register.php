@@ -88,7 +88,7 @@
 				</div>
 				<div class="form-group">
 					<label for="password">Password</label>
-					<input class="form-control passwordRegister" type="password" name="password" placeholder="Password" />
+					<input class="form-control passwordRegister" type="password" name="password" placeholder="Password"  pattern=".{8,}" title="Password must contain at least 8 characters" />
 				</div>
 				<div class="form-group">
 					<div class="horizontal">

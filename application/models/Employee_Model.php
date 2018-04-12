@@ -50,6 +50,17 @@
 				$returndata['error'] = "Please input an ID!";
 				//return $error;
 			}
+			else if(strlen($postEmployee['emp_password']) < 8){
+				$returndata['error'] = "Please input at least 8 characters for the password";
+				//return $error;
+			}
+			else if (!preg_match('/[\'^£$%&*()}!{@#~?><>,|=_+¬-]/', $postEmployee['emp_password'])){
+			    // one or more of the 'special characters' found in $string
+			    $returndata['error'] = "Please input at least 1 (one) special character in your password";
+			}
+			else if(!preg_match('~[0-9]~', $postEmployee['emp_password'])){
+				$returndata['error'] = "Please input at least 1 (one) digit in your password";
+			}
 			else if($postEmployee['emp_email'] == ''){
 				$returndata['error'] = "Please input an email!";
 				//return $error;
@@ -119,6 +130,17 @@
 				$returndata['error'] = "Please insert an ID";
 				//return $error;
 			}
+			else if(strlen($postEmployee['emp_password']) < 8){
+				$returndata['error'] = "Please input at least 8 characters for the password";
+				//return $error;
+			}
+			else if (!preg_match('/[\'^£$%&*()}!{@#~?><>,|=_+¬-]/', $postEmployee['emp_password'])){
+			    // one or more of the 'special characters' found in $string
+			    $returndata['error'] = "Please input at least 1 (one) special character in your password";
+			}
+			else if(!preg_match('~[0-9]~', $postEmployee['emp_password'])){
+				$returndata['error'] = "Please input at least 1 (one) digit in your password";
+			}
 			else if($postEmployee['emp_email'] == ''){
 				$returndata['error'] = "Please input an email!";
 				//return $error;
@@ -167,6 +189,17 @@
 			if($postEmployee['emp_id'] == ''){
 				$returndata['error'] = "Please insert an ID";
 				//return $error;
+			}
+			else if(strlen($postEmployee['emp_password']) < 8){
+				$returndata['error'] = "Please input at least 8 characters for the password";
+				//return $error;
+			}
+			else if (!preg_match('/[\'^£$%&*()}!{@#~?><>,|=_+¬-]/', $postEmployee['emp_password'])){
+			    // one or more of the 'special characters' found in $string
+			    $returndata['error'] = "Please input at least 1 (one) special character in your password";
+			}
+			else if(!preg_match('~[0-9]~', $postEmployee['emp_password'])){
+				$returndata['error'] = "Please input at least 1 (one) digit in your password";
 			}
 			else if($postEmployee['emp_email'] == ''){
 				$returndata['error'] = "Please input an email!";

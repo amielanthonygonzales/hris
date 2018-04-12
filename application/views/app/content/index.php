@@ -20,20 +20,20 @@
             <div class="panel panel-default">
               <div class="panel-heading"><img src = "<?php echo base_url('assets/img/title-8.png'); ?>" alt="logo" width="150px" height="39px" class="logo-img"><span>Please enter your user information.</span></div>
               <div class="panel-body">
-                <form id="form-id" class="form-horizontal">
+                <form id="form-id" method="POST" class="form-horizontal">
                   <div class="login-form">
                     <div class="form-group">
                       <div class="input-group"><span class="input-group-addon"><i class="icon s7-user"></i></span>
-                        <input id="username" type="text" placeholder="Username" autocomplete="off" class="form-control username" name="username">
+                        <input id="username" autocomplete="off" type="text" placeholder="Username" autocomplete="off" class="form-control username" name="username">
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="input-group"><span class="input-group-addon"><i class="icon s7-lock"></i></span>
-                        <input id="password" type="password" placeholder="Password" name="login" class="form-control password">
+                        <input id="password" autocomplete="off" type="password" placeholder="Password" name="login" class="form-control password">
                       </div>
                     </div>
                     <div class="form-group login-submit">
-                      <button data-dismiss="modal" type="submit" class ="btn btn-primary form-control login-btn">LOGIN</button>
+                      <button data-dismiss="modal" class ="btn btn-primary form-control login-btn">LOGIN</button>
                     </div>
                   </div>
                 </form>
