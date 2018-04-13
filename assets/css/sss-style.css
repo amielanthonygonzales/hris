@@ -8,7 +8,7 @@
   padding: 0px;
   margin: 0px;
 }
-.sss-form{
+#pageSSSContri .sss-form{
   padding: 0;
 }
 .sss-panel, .pagibig-panel{
@@ -20,6 +20,15 @@
     }
 
     #pageSSSContri .test-relative{
+        position: absolute;
+        width: 900px;
+    }
+
+    #pageSSSContri .form-sss-second{
+        position: absolute;
+    }
+
+    #pageSSSContri .test-relative-second{
         position: absolute;
         width: 900px;
     }
@@ -44,14 +53,25 @@
 
 }
 
+#pageSSSContri .form-sss-second{
+    display: block;
+    background-image: url("../../assets/app/img/BS50318000105995-removeBack.png");
+    background-repeat: no-repeat;
+    min-height: 1184px;
+    width: 900px;
+    margin: 0 auto;
+    background-size: contain;
 
-.button-print{
+}
+
+
+#pageSSSContri .button-print{
     display: block;
 }
 
 
 /*display of pagibig form*/ 
-.print-form-sss{
+#pageSSSContri .print-form-sss{
     display: none;
 }
 
@@ -261,10 +281,109 @@
     font-weight: bold;
     position: absolute;
 }
+/*end of sss display form*/
 
-/*end of pagibig display form*/
+/*sss second page */
+#pageSSSContri .secondPageEmployerId{
+    border: 1px solid red;
+    background-color: transparent;
+    text-align: justify;
+    margin-top: 105px;
+    margin-left: 47px;
+    width: 79px;
+    height: 14px;
+    font-size: 9px;
+    font-family: Calibri;
+    font-weight: bold;
+    position: absolute;
+}
 
-.back-form{
+#pageSSSContri .secondPageSummaryMonth{
+    border: 1px solid red;
+    background-color: transparent;
+    text-align: justify;
+    margin-top: 105px;
+    margin-left: 126px;
+    width: 167px;
+    height: 14px;
+    font-size: 10px;
+    font-family: Calibri;
+    font-weight: bold;
+    position: absolute;
+}
+
+#pageSSSContri table{
+    position: absolute;
+    font-family: Calibri;
+    margin-top: 122px;
+    margin-left: 46px;
+}
+
+#pageSSSContri .table-bordered tr td{
+    border: 2px solid #c2ddf2;
+    padding: 0;
+}
+
+#pageSSSContri .table-bordered th{
+    border: 1px solid #21619f;
+    padding: 0;
+    text-align: center;
+}
+
+#pageSSSContri .table-striped{
+    background-color: #d7e5f2;
+}
+
+#pageSSSContri thead{
+    background-color: #195997;
+    color: white;
+}
+
+#pageSSSContri .amountContri{
+    text-align: right;
+    
+}
+
+#pageSSSContri .tableAccountNo{
+    text-align: center;
+    width: 101.5px;
+}
+
+#pageSSSContri .tableCountNo{
+    width: 37px;
+}
+
+#pageSSSContri .tableName{
+    width: 215.5px;
+}
+
+#pageSSSContri .tableSSContri{
+    width: 108px;
+}
+
+#pageSSSContri .tableECContri{
+    width: 106.5px;
+}
+
+#pageSSSContri .tableTotalContri{
+    width: 111px;
+}
+
+#pageSSSContri tfoot{
+}
+
+#pageSSSContri .tableFooter{
+    background-color: #195997;
+    color: #195997;
+}
+
+/*end of second page*/
+
+#pageSSSContri .back-form{
+    display: none;
+}
+
+#pageSSSContri .print-second-page{
     display: none;
 }
 
@@ -273,6 +392,7 @@
     @page{
         size: A4 portrait;
         margin:0;
+
     }
 
     body:before{
@@ -283,43 +403,61 @@
         display: none;
     }
     
-    .form-sss{
+    #pageSSSContri .form-sss{
         display: none;
     }
-    .button-print{
+    #pageSSSContri .button-print{
         display: none;
-    }
-    .print-form-sss{
-        display: block;  
-        page-break-after: always;
-    }
-
-    .sss-image-form{
-        padding: 0;
-        margin: 0;
-        width: 20cm;
-        height: 27.7cm;
-        content: url("../../assets/app/img/BS50318000105995-1.jpg");
-        position: absolute;
-    }
-
-    .sss-form-content{
-        position: absolute;
-        z-index: 22;
-       
     }
 
     #pageSSSContri .test-relative{
         display: none;
     }
+    
+    #pageSSSContri .test-relative-second{
+        display: none;
+    }
 
-    .sss-back-form{
-        display: block;
+    #pageSSSContri .form-sss-second{
+        display: none;
+    }
+
+    #pageSSSContri .print-form-sss{
+        display: block;  
+        page-break-after: always;
+    }
+
+    #pageSSSContri .sss-image-form{
+        padding: 0;
+        margin: 0;
         width: 20cm;
         height: 27.7cm;
-        padding-top: 85px;
+        content: url("../../assets/app/img/BS50318000105995-removeData.png");
+        position: absolute;
+    }
+
+    #pageSSSContri .sss-form-content{
+        position: absolute;
+        z-index: 22;
+       
+    }
+
+    #pageSSSContri .print-second-page{
+        display: block;
+    }
+
+    #pageSSSContri .print-form-sss-second{
+        padding: 0;
+        margin: 0;
+        width: 20cm;
+        height: 27.7cm;
         content: url("../../assets/app/img/BS50318000105995-2.jpg");
-        margin-bottom: 0;
+        position: absolute;
+    }
+
+    #pageSSSContri .print-test-relative-second{
+        position: absolute;
+        z-index: 22;
     }
 
 
@@ -333,141 +471,308 @@
     border: 1px solid red;
     background-color: transparent;
     text-align: justify;
-    margin-top: 170px;
-    margin-left: 55px;
+    margin-top: 174px;
+    margin-left: 59px;
     width: 320px;
     height: 20px;
-    font-size: 11px; 
+    font-size: 11px;
+    font-weight: bold;
+    font-family: calibri;
+    position: absolute;
 }
 #pageSSSContri .employerAddress{
     border: 1px solid red;
     background-color: transparent;
     text-align: justify;
-    margin-top: 0px;
-    margin-left: 55px;
+    margin-top: 172px;
+    margin-left: 59px;
     width: 320px;
-    height: 20px;
-    font-size: 11px; 
+    height: 23px;
+    font-size: 11px;
+    position: absolute;
+    font-weight: bold;
+    font-family: Calibri;
 }
 #pageSSSContri .amountDue{
     border: 1px solid red;
     background-color: transparent;
     text-align: justify;
-    margin-top: 0px;
-    margin-left: 75px;
-    width: 120px;
-    height: 20px;
-    font-size: 11px; 
+    margin-top: 174px;
+    margin-left: 451px;
+    width: 122px;
+    height: 14px;
+    font-size: 11px;
+    position: absolute;
+    font-family: Calibri;
+    font-weight: bold;
 }
 #pageSSSContri .employerZip{
     border: 1px solid red;
     background-color: transparent;
     text-align: justify;
-    margin-top: 0px;
-    margin-left: 55px;
+    margin-top: 176px;
+    margin-left: 59px;
     width: 320px;
-    height: 20px;
-    font-size: 11px; 
+    height: 17px;
+    font-size: 11px;
+    position: absolute;
+    font-family: Calibri;
+    font-weight: bold;
 }
 #pageSSSContri .dueDate{
     border: 1px solid red;
     background-color: transparent;
     text-align: justify;
-    margin-top: 0px;
-    margin-left: 60px;
+    margin-top: 177px;
+    margin-left: 429px;
     width: 150px;
-    height: 20px;
-    font-size: 11px; 
+    height: 16px;
+    font-size: 11px;
+    position: absolute;
+    font-family: Calibri;
+    font-weight: bold;
 }
 #pageSSSContri .employerId{
     border: 1px solid red;
     background-color: transparent;
     text-align: justify;
-    margin-top: 0px;
-    margin-left: 55px;
+    margin-top: 174px;
+    margin-left: 59px;
     width: 320px;
-    height: 20px;
-    font-size: 11px; 
+    height: 15px;
+    font-size: 11px;
+    font-family: Calibri;
+    font-weight: bold;
+    position: absolute;
 }
 #pageSSSContri .generationDate{
     border: 1px solid red;
     background-color: transparent;
     text-align: justify;
-    margin-top: 0px;
-    margin-left: 95px;
-    width: 120px;
-    height: 20px;
-    font-size: 11px; 
+    margin-top: 173.4px;
+    margin-left: 463px;
+    width: 123px;
+    height: 15px;
+    font-size: 11px;
+    position: absolute;
+    font-weight: bold;
+    font-family: Calibri;
 }
 #pageSSSContri .listSummary{
     border: 1px solid red;
     background-color: transparent;
     text-align: justify;
-    margin-top: 14px;
-    margin-left: 44px;
-    margin-bottom: 0px;
-    width: 680px;
-    height: 20px;
-    color: white;
-    font-size: 14px; 
+    margin-top: 194px;
+    margin-left: 46px;
+    width: 665px;
+    height: 19px;
+    color: #fff !important;
+    font-size: 15px;
+    font-family: calibri;
+    position: absolute;
+    font-weight: bold;
+    -webkit-print-color-adjust: exact;
+
 }
 #pageSSSContri .totalEmployees{
     border: 1px solid red;
     background-color: transparent;
     text-align: justify;
-    margin-top: 0px;
-    margin-left: 177px;
-    width: 60px;
-    height: 10px;
-    padding-top: 0px;
-    font-size: 9px; 
+    margin-top: 209.5px;
+    margin-left: 175px;
+    width: 65px;
+    height: 14px;
+    font-size: 10px;
     position: absolute;
 }
 #pageSSSContri .socialSecurity{
     border: 1px solid red;
     background-color: transparent;
     text-align: justify;
-    margin-top: 7px;
-    margin-left: 657px;
-    margin-bottom: 0px;
-    width: 70px;
-    height: 20px;
-    font-size: 10px; 
+    margin-top: 238px;
+    margin-left: 583px;
+    width: 128px;
+    height: 14px;
+    font-size: 10px;
+    position: absolute;
+    text-align: right;
 }
 #pageSSSContri .employeeCompensation{
     border: 1px solid red;
     background-color: transparent;
     text-align: justify;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 657px;
-    width: 70px;
-    height: 20px;
-    font-size: 10px; 
+    margin-top: 251px;
+    margin-left: 583px;
+    width: 128px;
+    height: 14px;
+    font-size: 9px;
+    position: absolute;
+    text-align: right;
 }
 #pageSSSContri .total{
-    border: 1px solid red;
+        border: 1px solid red;
     background-color: transparent;
     text-align: justify;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 657px;
-    width: 70px;
-    height: 20px;
-    font-size: 10px; 
+    margin-top: 264px;
+    margin-left: 583px;
+    width: 128px;
+    height: 14px;
+    font-size: 10px;
+    position: absolute;
+    text-align: right;
+    font-weight: bold;
 }
 #pageSSSContri .grandTotal{
     border: 1px solid red;
     background-color: transparent;
     text-align: justify;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 657px;
-    width: 70px;
-    height: 20px;
-    font-size: 10px; 
+    margin-top: 282px;
+    margin-left: 530px;
+    width: 181px;
+    height: 15px;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: right;
+    position: absolute;
+}
+#pageSSSContri .bankCopyName{
+    border: 1px solid red;
+    background-color: transparent;
+    text-align: justify;
+    margin-top: 538px;
+    margin-left: 47px;
+    width: 264px;
+    height: 16px;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: calibri;
+    position: absolute;
+}
+
+#pageSSSContri .bankCopyEmployerId{
+    border: 1px solid red;
+    background-color: transparent;
+    text-align: justify;
+    margin-top: 535px;
+    margin-left: 45px;
+    width: 92px;
+    height: 15px;
+    font-size: 11px;
+    font-family: Calibri;
+    font-weight: bold;
+    position: absolute;
+}
+
+#pageSSSContri .bankCopySummaryMonth{
+    border: 1px solid red;
+    background-color: transparent;
+    text-align: justify;
+    margin-top: 535px;
+    margin-left: 138px;
+    width: 167px;
+    height: 15px;
+    font-size: 11px;
+    font-family: Calibri;
+    font-weight: bold;
+    position: absolute;
 }
     /*end of printing layout pagibig*/
+
+    /*sss second page */
+#pageSSSContri .secondPageEmployerId{
+    border: 1px solid red;
+    background-color: transparent;
+    text-align: justify;
+    margin-top: 105px;
+    margin-left: 47px;
+    width: 79px;
+    height: 14px;
+    font-size: 9px;
+    font-family: Calibri;
+    font-weight: bold;
+    position: absolute;
+}
+
+#pageSSSContri .secondPageSummaryMonth{
+    border: 1px solid red;
+    background-color: transparent;
+    text-align: justify;
+    margin-top: 105px;
+    margin-left: 126px;
+    width: 167px;
+    height: 14px;
+    font-size: 10px;
+    font-family: Calibri;
+    font-weight: bold;
+    position: absolute;
+}
+
+#pageSSSContri table{
+    position: absolute;
+    font-family: Calibri;
+    margin-top: 122px;
+    margin-left: 46px;
+}
+
+#pageSSSContri .table-bordered tr td{
+    border: 2px solid #c2ddf2;
+    padding: 0;
+}
+
+#pageSSSContri .table-bordered th{
+    border: 1px solid #21619f;
+    padding: 0;
+    text-align: center;
+}
+
+#pageSSSContri .table-striped{
+    background-color: #d7e5f2;
+}
+
+#pageSSSContri thead{
+    background-color: #195997;
+    color: white;
+}
+
+#pageSSSContri .amountContri{
+    text-align: right;
+    
+}
+
+#pageSSSContri .tableAccountNo{
+    text-align: center;
+    width: 101.5px;
+}
+
+#pageSSSContri .tableCountNo{
+    width: 37px;
+}
+
+#pageSSSContri .tableName{
+    width: 215.5px;
+}
+
+#pageSSSContri .tableSSContri{
+    width: 108px;
+}
+
+#pageSSSContri .tableECContri{
+    width: 106.5px;
+}
+
+#pageSSSContri .tableTotalContri{
+    width: 111px;
+}
+
+#pageSSSContri tfoot{
+}
+
+#pageSSSContri .tableFooter{
+    background-color: #195997;
+    color: #195997;
+}
+
+/*end of second page*/
 
     .am-scroll-top{
         display: none!important;

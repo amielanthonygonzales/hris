@@ -110,7 +110,7 @@ $route['get-data-per-page/(:any)'] = 'api/Pagibig_Controller/getDataPerPage/$1';
 
 //SSS
 //api
-$route['get-data-sss'] = 'api/SSS_Controller/getData';
+$route['get-data-sss/(:any)'] = 'api/SSS_Controller/getDataPerPage/$1';
 
 
 

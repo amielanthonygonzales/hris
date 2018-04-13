@@ -740,12 +740,12 @@
 	}
 
 	pagePagibigContri.init("#pagePagibigContri", function(result){
-		pagePagibigContri.populate(result)
+		pagePagibigContri.populate(result);
 	});
 
 	pagePagibigContri.populate = function(result){
 		pagePagibigContri.page = parseInt(result.count);
-		
+		console.log(result.count);
 		pagePagibigContri.page = Math.ceil(pagePagibigContri.page/28);
 			pagePagibigContri.elem.find('.pagination').html('');
 
