@@ -34,6 +34,10 @@
 				<input type="text" class="employeeCompensation" /><br/>
 				<input type="text" class="total" /><br/>
 				<input type="text" class="grandTotal" /><br/>
+
+				<input type="text" class="employerName bankCopyName" /><br/>
+				<input type="text" class="employerId bankCopyEmployerId"/> 
+				<input type="text" class="bankCopySummaryMonth"/> 
 				<!-- <input type="text" class="employerAddress" /><br/>
 				<input type="text" class="employerZip" /><br/>
 				-->
@@ -97,15 +101,15 @@
 										+ pageSSSContri.getDate.getFullYear();
 		pageSSSContri.lastDayOnly = new Date(pageSSSContri.getDate.getFullYear(), pageSSSContri.month + 1, 0);
 		pageSSSContri.lastDay = monthNames[pageSSSContri.month]+ " " + pageSSSContri.lastDayOnly.getDate() + ", " + pageSSSContri.getDate.getFullYear();
-		pageSSSContri.monthYear = monthNames[pageSSSContri.month] + pageSSSContri.getDate.getFullYear();
+		pageSSSContri.monthYear = monthNames[pageSSSContri.month] + " " + pageSSSContri.getDate.getFullYear();
 		$.getJSON('<?php echo site_url('get-data-sss')?>', function(data){
 			console.log(data['employee'][0]);
 			var address = data['company'][0]['company_address'];
 			var countData = data['countData'];
 			address = JSON.parse(address);
 			var employeedata = data['employee'];
-			pageSSSContri.elem.find('.employerName').val(data['company'][0]['company_name']);
-			pageSSSContri.elem.find('.employerAddress').val(address.bldg_name+" "+address.house+" "+address.street_name+" "+address.subdivision+" "+address.barangay+" "+address.city);
+			pageSSSContri.elem.find('.employerName').val(data['company'][0]['company_name'].toUpperCase());
+			pageSSSContri.elem.find('.employerAddress').val(address.bldg_name.toUpperCase()+" "+address.house.toUpperCase()+" "+address.street_name.toUpperCase()+" "+address.subdivision.toUpperCase()+" "+address.barangay.toUpperCase()+" "+address.city.toUpperCase());
 			pageSSSContri.elem.find('.employerZip').val(address.zip_code);
 			pageSSSContri.elem.find('.employerId').val(data['company'][0]['company_sss_id']);
 			pageSSSContri.elem.find('.totalEmployees').val(countData);
@@ -120,10 +124,11 @@
 			pageSSSContri.elem.find('.employeeCompensation').val(pageSSSContri.ecContri);
 			pageSSSContri.elem.find('.amountDue').val(pageSSSContri.totalContri);
 			pageSSSContri.elem.find('.total').val(pageSSSContri.totalContri);
-			pageSSSContri.elem.find('.grandTotal').val("Php" + pageSSSContri.totalContri);
+			pageSSSContri.elem.find('.grandTotal').val("Php " + pageSSSContri.totalContri);
 			pageSSSContri.elem.find('.generationDate').val(pageSSSContri.currentDate);
 			pageSSSContri.elem.find('.dueDate').val(pageSSSContri.lastDay);
 			pageSSSContri.elem.find('.listSummary').val("Collection List Summary for the Month of " + pageSSSContri.monthYear);
+			pageSSSContri.elem.find('.bankCopySummaryMonth').val(pageSSSContri.monthYear);
 			console.log(pageSSSContri.lastDay);
 		});
 	}
