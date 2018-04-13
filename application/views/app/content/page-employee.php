@@ -19,6 +19,26 @@
 			</div>
 		</div>
 	</div>
+	<!-- Modal Error -->
+	<div tabindex="-1" role="dialog" class="modal fade in modal-error">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						<div class="i-circle text-danger"><i class="icon s7-close"></i></div>
+						<h4>Oh no!</h4>
+						<p></p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-danger">Proceed</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h2 class="username-header"></h2>
@@ -181,6 +201,7 @@
 <script type="text/javascript">
 
 	var pageEmployee = {};
+	var globalUser = '';
 	pageEmployee.init = function(selector, callback){
 		pageEmployee.elem = $(selector);
 		pageEmployee.action = "<?php echo $action?>";
@@ -200,6 +221,7 @@
 
 		pageEmployee.elem.find('.btn-save-employee').off("click").click(function(event){
 			pageEmployee.employee_content = {
+				"emp_birthday" : pageEmployee.elem.find('.engagement-date').val(),
 				"emp_dept" : pageEmployee.elem.find('.listDepartment').val(),
 				"emp_salary": pageEmployee.elem.find('.empSalary').val(),
 				"sss_no" : pageEmployee.elem.find('.sss-number').val(),
@@ -233,7 +255,6 @@
 		});
 
 		pageEmployee.elem.find('.btn-deleted-employee').off("click").click(function(event){
-			
 			pageEmployee.elem.find('.i-circle').removeClass('text-success').addClass('text-danger');
 			pageEmployee.elem.find('.symbol').removeClass('s7-check').addClass('s7-attention');
 			pageEmployee.elem.find('.message').html('Are you sure you want to delete this data!');
@@ -322,7 +343,8 @@
 					if(username == sessionUsername){
 						pageEmployee.elem.find('.required-textfield').removeAttr('readonly');
 						pageEmployee.elem.find('.email-group').hide();
-						pageEmployee.elem.find('.username-group').hide();
+						globalUser = sessionUsername;
+						//pageEmployee.elem.find('.username-group').hide();
 					}
 					else{
 						pageEmployee.elem.find('.employee-panel').hide();
