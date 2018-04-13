@@ -1,4 +1,10 @@
 /*@import url("<?php echo base_url()?>");*/
+h1 { font-size: 2em!important; }
+h2 { font-size: 1.5em!important; }
+h3 { font-size: 1.17em!important; }
+h4 { font-size: 1.12em!important; }
+h5 { font-size: .83em!important; }
+h6 { font-size: .75em!important; }
 
 .sss-form-img{
   content: url("../../assets/app/img/Contributions_Payment_Form-4.png");
@@ -63,6 +69,7 @@
 a:hover{
 	text-decoration: none;
     outline: none;
+    border: none;
     color: #89fae9;
 }
 
@@ -74,6 +81,10 @@ a:hover{
 .btn-success{
     background-color: #8EC63F;
     border-color: #8EC63F;
+}
+
+.message{
+    color: #ec4b4b;
 }
 
 .sss-panel, .pagibig-panel{

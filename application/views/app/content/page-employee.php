@@ -21,6 +21,7 @@
 	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
+			<h2 class="username-header"></h2>
 			<h3 class="emp-full-name"></h3>
 		</div>
 		<div class="panel-body">
@@ -41,7 +42,7 @@
 	<div class="panel panel-default">
 		
 		
-		<div class="panel-body">
+		<div class="panel-body employee-panel">
 			<form>
 				
 				<div class="form-group">
@@ -76,11 +77,11 @@
 					<label for="empSalary">Salary</label>
 					<input class="form-control empSalary" type="number" name="salary" placeholder="Salary" required />
 				</div>
-				<div class="form-group">
+				<div class="form-group email-group">
 					<label for="email">Email</label>
-					<input class="form-control emp-email required-textfield" type="email" name="email" placeholder="Email" readonly required/>
+					<input class="form-control empEmail required-textfield" type="email" name="email" placeholder="Email" readonly required/>
 				</div>
-				<div class="form-group">
+				<div class="form-group username-group">
 					<label for="username">Username</label>
 					<input class="form-control empUsername" type="text" name="username" placeholder="Username" required/>
 				</div>
@@ -287,6 +288,7 @@
 				+ value['emp_first_name'] + " " 
 				+ value['emp_middle_name'] + " " 
 				+ value['emp_ext_name']);
+			pageEmployee.elem.find('.username-header').html(value['emp_username']);
 
 			pageEmployee.elem.find('.fname').val(value['emp_first_name']);
 			pageEmployee.elem.find('.mname').val(value['emp_middle_name']);
@@ -296,7 +298,7 @@
 
 			pageEmployee.elem.find('.engagement-date').val(value['emp_birthday']);
 			pageEmployee.elem.find('.empSalary').val(value['emp_salary']);
-			pageEmployee.elem.find('.emp-email').val(value['emp_email']);
+			pageEmployee.elem.find('.empEmail').val(value['emp_email']);
 			pageEmployee.elem.find('.empUsername').val(value['emp_username']);
 
 			pageEmployee.elem.find('.sss-number').val(value['sss_no']);
@@ -319,6 +321,11 @@
 					var sessionUsername = value.emp_username;
 					if(username == sessionUsername){
 						pageEmployee.elem.find('.required-textfield').removeAttr('readonly');
+						pageEmployee.elem.find('.email-group').hide();
+						pageEmployee.elem.find('.username-group').hide();
+					}
+					else{
+						pageEmployee.elem.find('.employee-panel').hide();
 					}
 				}
 			});	
