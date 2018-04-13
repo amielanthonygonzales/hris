@@ -70,22 +70,6 @@
 						<label for="empSalary">Salary</label>
 						<input class="form-control empSalary" type="number" name="salary" placeholder="Salary" required readonly />
 					</div>
-					<div class="form-group">
-						<label for="email">Email</label>
-						<input class="form-control editEmp--email " type="email" name="email" placeholder="Email" required/>
-					</div>
-					<div class="form-group">
-						<label for="username">Username</label>
-						<input class="form-control editEmp-Username" type="text" name="username" placeholder="Username" required/>
-					</div>
-					<div class="form-group">
-						<label for="password">Password</label>
-						<input class="form-control editEmp-Password" type="password" name="password" placeholder="Password" required/>
-					</div>
-					<div class="form-group">
-						<label for="confirmPassword">Confirm Password</label>
-						<input class="form-control empConfirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password" required/>
-					</div>
 			</form>
 		</div>
 	</div>
@@ -119,9 +103,6 @@
 				"emp_last_name" : pageEmployeeEdit.elem.find('.editEmp-lname').val(),
 				"emp_ext_name" : pageEmployeeEdit.elem.find('.editEmp-extname').val(),
 				"emp_birthday" : pageEmployeeEdit.elem.find('.editEmp-birthday').val(),
-				"emp_email" : pageEmployeeEdit.elem.find('.editEmp--email').val(),
-				"emp_username" : pageEmployeeEdit.elem.find('.editEmp-Username').val(),
-				"emp_password" : pageEmployeeEdit.elem.find('.editEmp-Password').val()
 			};
 
 			$.ajax({
@@ -193,9 +174,6 @@
         	pageEmployeeEdit.elem.find('.editEmp-lname').val(value['emp_last_name']);
         	pageEmployeeEdit.elem.find('.editEmp-extname').val(value['emp_ext_name']);
         	pageEmployeeEdit.elem.find('.editEmp-birthday').val(value['emp_birthday']);
-        	pageEmployeeEdit.elem.find('.editEmp--email').val(value['emp_email']);
-        	pageEmployeeEdit.elem.find('.editEmp-Username').val(value['emp_username']);
-        	pageEmployeeEdit.elem.find('.empSalary').val(value['emp_salary']);
         });
     });
 </script>
