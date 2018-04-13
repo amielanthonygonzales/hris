@@ -19,8 +19,29 @@
 			</div>
 		</div>
 	</div>
+	<!-- Modal Error -->
+	<div tabindex="-1" role="dialog" class="modal fade in modal-error">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						<div class="i-circle text-danger"><i class="icon s7-close"></i></div>
+						<h4>Oh no!</h4>
+						<p></p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-danger">Proceed</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
+			<h2 class="username-header"></h2>
 			<h3 class="emp-full-name"></h3>
 		</div>
 		<div class="panel-body">
@@ -41,7 +62,7 @@
 	<div class="panel panel-default">
 		
 		
-		<div class="panel-body">
+		<div class="panel-body employee-panel">
 			<form>
 				
 				<div class="form-group">
@@ -76,11 +97,11 @@
 					<label for="empSalary">Salary</label>
 					<input class="form-control empSalary" type="number" name="salary" placeholder="Salary" required />
 				</div>
-				<div class="form-group">
+				<div class="form-group email-group">
 					<label for="email">Email</label>
-					<input class="form-control emp-email required-textfield" type="email" name="email" placeholder="Email" readonly required/>
+					<input class="form-control empEmail required-textfield" type="email" name="email" placeholder="Email" readonly required/>
 				</div>
-				<div class="form-group">
+				<div class="form-group username-group">
 					<label for="username">Username</label>
 					<input class="form-control empUsername" type="text" name="username" placeholder="Username" required/>
 				</div>
@@ -180,6 +201,7 @@
 <script type="text/javascript">
 
 	var pageEmployee = {};
+	var globalUser = '';
 	pageEmployee.init = function(selector, callback){
 		pageEmployee.elem = $(selector);
 		pageEmployee.action = "<?php echo $action?>";
@@ -199,6 +221,7 @@
 
 		pageEmployee.elem.find('.btn-save-employee').off("click").click(function(event){
 			pageEmployee.employee_content = {
+				"emp_birthday" : pageEmployee.elem.find('.engagement-date').val(),
 				"emp_dept" : pageEmployee.elem.find('.listDepartment').val(),
 				"emp_salary": pageEmployee.elem.find('.empSalary').val(),
 				"sss_no" : pageEmployee.elem.find('.sss-number').val(),
@@ -232,7 +255,6 @@
 		});
 
 		pageEmployee.elem.find('.btn-deleted-employee').off("click").click(function(event){
-			
 			pageEmployee.elem.find('.i-circle').removeClass('text-success').addClass('text-danger');
 			pageEmployee.elem.find('.symbol').removeClass('s7-check').addClass('s7-attention');
 			pageEmployee.elem.find('.message').html('Are you sure you want to delete this data!');
@@ -287,6 +309,7 @@
 				+ value['emp_first_name'] + " " 
 				+ value['emp_middle_name'] + " " 
 				+ value['emp_ext_name']);
+			pageEmployee.elem.find('.username-header').html(value['emp_username']);
 
 			pageEmployee.elem.find('.fname').val(value['emp_first_name']);
 			pageEmployee.elem.find('.mname').val(value['emp_middle_name']);
@@ -296,7 +319,7 @@
 
 			pageEmployee.elem.find('.engagement-date').val(value['emp_birthday']);
 			pageEmployee.elem.find('.empSalary').val(value['emp_salary']);
-			pageEmployee.elem.find('.emp-email').val(value['emp_email']);
+			pageEmployee.elem.find('.empEmail').val(value['emp_email']);
 			pageEmployee.elem.find('.empUsername').val(value['emp_username']);
 
 			pageEmployee.elem.find('.sss-number').val(value['sss_no']);
@@ -319,6 +342,12 @@
 					var sessionUsername = value.emp_username;
 					if(username == sessionUsername){
 						pageEmployee.elem.find('.required-textfield').removeAttr('readonly');
+						pageEmployee.elem.find('.email-group').hide();
+						globalUser = sessionUsername;
+						//pageEmployee.elem.find('.username-group').hide();
+					}
+					else{
+						pageEmployee.elem.find('.employee-panel').hide();
 					}
 				}
 			});	

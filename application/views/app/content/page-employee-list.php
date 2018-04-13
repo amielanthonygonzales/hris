@@ -115,13 +115,13 @@
 					var elem = $(this);
 					var data = JSON.parse(elem.html());
 					console.log(data);
-					elem.html("<a href='<?php echo base_url('employee/')?>"+data+"/view"+"' class='icon icon-left s7-look text-info'></a>");
+					elem.html("<a href='<?php echo base_url('employee/')?>"+"view/"+data+"' class='icon icon-left s7-look text-info'></a>");
 				});
 				pageEmployeeList.elem.find('.employeeList td:nth-child(7)').each(function(){
 					var elem = $(this);
 					var data = JSON.parse(elem.html());
 					console.log(data);
-					elem.html("<a href='<?php echo base_url('employee/')?>"+data+"/edit"+"' class='icon icon-left s7-note text-success'></a>");
+					elem.html("<a href='<?php echo base_url('employee/')?>"+"edit/"+data+"' class='icon icon-left s7-note text-success'></a>");
 				});
 				pageEmployeeList.elem.find('.employeeList td:nth-child(8)').each(function(){
 					var elem = $(this);

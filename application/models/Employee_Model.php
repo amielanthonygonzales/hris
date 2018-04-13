@@ -259,7 +259,8 @@
 			$sql = $this->db->query("
 				UPDATE 
 				employee 
-				SET 
+				SET
+				emp_birthday = " .$this->db->escape($updatePost['emp_birthday']). " ,
 				emp_dept = " .$this->db->escape($updatePost['emp_dept']). " ,
 				emp_salary = " .$this->db->escape($updatePost['emp_salary']). " 
 				WHERE 
@@ -356,10 +357,7 @@
 					`emp_middle_name` = " .$this->db->escape($editPost['emp_middle_name']). ", 
 					`emp_last_name` = " .$this->db->escape($editPost['emp_last_name']). ", 
 					`emp_ext_name = " .$this->db->escape($editPost['emp_ext_name']). ", 
-					`emp_birthday` = " .$this->db->escape($editPost['emp_birthday']). ", 
-					`emp_email` = " .$this->db->escape($editPost['emp_email']). ", 
-					`emp_username = " .$this->db->escape($editPost['emp_username']). ", 
-					`emp_password = " .$this->db->escape($editPost['emp_password']). " 
+					`emp_birthday` = " .$this->db->escape($editPost['emp_birthday']). "
 				WHERE 
 				`emp_id` = " .$this->db->escape($id));
 			return 1;

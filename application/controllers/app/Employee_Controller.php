@@ -6,7 +6,7 @@
 			$this->load->model('Employee_Model');
 		}
 
-		public function view($id, $action){
+		public function view($action,$id){
 			if(!isset($_SESSION['user'])){
 				redirect(site_url('index'));
 			}
