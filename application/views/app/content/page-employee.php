@@ -46,19 +46,19 @@
 				
 				<div class="form-group">
 					<label for="fname">First Name</label>
-					<input class="form-control fname" type="text" name="fname" placeholder="First Name" required readonly />
+					<input class="form-control fname required-textfield" type="text" name="fname" placeholder="First Name" required readonly />
 				</div>
 				<div class="form-group">
 					<label for="mname">Middle Name</label>
-					<input class="form-control mname" type="text" name="mname" placeholder="Middle Name" required readonly/>
+					<input class="form-control mname required-textfield" type="text" name="mname" placeholder="Middle Name" required readonly/>
 				</div>
 				<div class="form-group">
 					<label for="lname">Last Name</label>
-					<input class="form-control lname" type="text" name="lname" placeholder="Last Name" required readonly/>
+					<input class="form-control lname required-textfield" type="text" name="lname" placeholder="Last Name" required readonly/>
 				</div>
 				<div class="form-group">
 					<label for="extname">Extension Name</label>
-					<input class="form-control extname" type="text" name="extname" placeholder="Extension Name" readonly/>
+					<input class="form-control extname required-textfield" type="text" name="extname" placeholder="Extension Name" readonly/>
 				</div>
                 <div class="form-group">
                     <div class="form-group">
@@ -67,7 +67,7 @@
                             <span class="input-group-addon btn btn-primary">
                             	<i class="icon-left icon-th s7-date"></i>
                             </span>
-                            <input type="datetime" size="16" type="text" class="form-control engagement-date" name="engagement-date read" readonly>
+                            <input type="datetime" size="16" type="text" class="form-control required-textfield engagement-date" name="engagement-date read" readonly>
                             
                         </div>
                     </div>
@@ -78,11 +78,11 @@
 				</div>
 				<div class="form-group">
 					<label for="email">Email</label>
-					<input class="form-control emp-email" type="email" name="email" placeholder="Email" readonly required/>
+					<input class="form-control emp-email required-textfield" type="email" name="email" placeholder="Email" readonly required/>
 				</div>
 				<div class="form-group">
 					<label for="username">Username</label>
-					<input class="form-control empUsername" type="text" name="username" placeholder="Username" readonly required/>
+					<input class="form-control empUsername" type="text" name="username" placeholder="Username" required/>
 				</div>
 				<div class="form-group">
 					<label class="control-label">Department</label>
@@ -310,6 +310,18 @@
 			pageEmployee.elem.find('.pagibig-remarks').val(value['pagibig_remarks']);
 			pageEmployee.elem.find('.monthly-compen').val(value['monthly_compen']);
 			pageEmployee.elem.find('.mem-program').val(value['pagibig_mem_prog']);
+		});
+
+		$.getJSON('<?php echo base_url('profile');?>', function(data){
+			$.each(data, function(key,value){
+				if(key == "user"){
+					var username = pageEmployee.elem.find('.empUsername').val();
+					var sessionUsername = value.emp_username;
+					if(username == sessionUsername){
+						pageEmployee.elem.find('.required-textfield').removeAttr('readonly');
+					}
+				}
+			});	
 		});
 
 		pageEmployee.elem.find('.empSalary').keyup(function(e){

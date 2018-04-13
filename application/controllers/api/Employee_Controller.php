@@ -31,7 +31,7 @@
 			$this->email->from('jrpg99@gmail.com', 'admin');
 			$this->email->to('amielanthonygonzales4@gmail.com');
 			$this->email->subject('Company Login Credentials');
-			$this->email->message("Welcome! <br> Here is your username and password for the company: <br> Username: ".$username."<br>Password: ".$password."<br>Please do change your password immediately for a more secure account");
+			$this->email->message("Welcome! <br> Here is your username and password for the company: <br> Username: ".$username."<br>Password: ".$password."<br>Please note that updating of passwords is not yet supported so keep these credentials as secure as possible");
 			$this->email->set_newline("\r\n");
 
 			$result = $this->email->send();

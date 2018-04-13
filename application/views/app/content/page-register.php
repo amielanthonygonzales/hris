@@ -59,15 +59,15 @@
 					</div>
 				</div>	
 				<div class="form-group">
-					<label for="employeeID">Employee ID</label>
+					<label for="employeeID">Employee ID <code>*</code></label>
 					<input class="form-control employeeID" type="text" name="empId" placeholder="Employee ID"  />
 				</div>
 				<div class="form-group">
-					<label for="lname">Last Name</label>
+					<label for="lname">Last Name <code>*</code></label>
 					<input class="form-control lname" type="text" name="lname" placeholder="Last Name" />
 				</div>
 				<div class="form-group">
-					<label for="first-name">First Name</label>
+					<label for="first-name">First Name <code>*</code></label>
 					<input class="form-control first-name" type="text" name="fname" placeholder="First Name"  />
 				</div>
 				<div class="form-group">
@@ -79,20 +79,20 @@
 					<input class="form-control extname" type="text" name="extname" placeholder="Extension Name"/>
 				</div>
 				<div class="form-group">
-					<label for="email">Email</label>
+					<label for="email">Email <code>*</code></label>
 					<input class="form-control email" type="email" name="email" placeholder="Email"  />
 				</div>
 				<div class="form-group">
-					<label for="username">Username</label>
+					<label for="username">Username <code>*</code></label>
 					<input class="form-control usernameRegister" type="text" name="username" placeholder="Username" />
 				</div>
 				<div class="form-group">
-					<label for="password">Password</label>
-					<input class="form-control passwordRegister" type="password" name="password" placeholder="Password" />
+					<label for="password">Password (at least 8 alphanumeric characters w/special characters) <code>*</code></label>
+					<input class="form-control passwordRegister" type="password" name="password" placeholder="Password"  pattern=".{8,}" title="Password must contain at least 8 characters" />
 				</div>
 				<div class="form-group">
 					<div class="horizontal">
-						<label>Position</label>
+						<label>Position <code>*</code></label>
 						<div class="col-md-12">
 							<div class="am-radio inline">
 								<input type="radio" class="position-radio" name="position-radio" id="hr-radio" value="admin">
@@ -106,7 +106,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label">Department</label>
+					<label class="control-label">Department <code>*</code></label>
 					<select class="form-control listDepartment"></select>
 				</div>
 			</form>
