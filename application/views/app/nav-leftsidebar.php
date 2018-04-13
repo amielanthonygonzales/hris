@@ -94,7 +94,7 @@
 	$.getJSON('<?php echo base_url('profile');?>', function(data){
 		$.each(data, function(key,value){
 			if(key == "user"){
-				$('.profile').attr("href", '<?php echo base_url('employee/')?>'+value.emp_id+'/edit')
+				$('.profile').attr("href", '<?php echo base_url('employee/')?>'+'edit/'+value.emp_id)
 			}
 		});	
 	});
