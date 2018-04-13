@@ -76,7 +76,7 @@
 }
 
 #pageSSSContri .employerName{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 199px;
@@ -392,7 +392,6 @@
     @page{
         size: A4 portrait;
         margin:0;
-
     }
 
     body:before{
@@ -444,6 +443,9 @@
 
     #pageSSSContri .print-second-page{
         display: block;
+        position: relative;
+        height: 27.7cm;
+        width: 20cm;
     }
 
     #pageSSSContri .print-form-sss-second{
@@ -451,8 +453,9 @@
         margin: 0;
         width: 20cm;
         height: 27.7cm;
-        content: url("../../assets/app/img/BS50318000105995-2.jpg");
+        content: url("../../assets/app/img/BS50318000105995-removeBack.png");
         position: absolute;
+        z-index: -1;
     }
 
     #pageSSSContri .print-test-relative-second{
@@ -468,7 +471,7 @@
     /*start of printing layout pagibig*/
 
 #pageSSSContri .employerName{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 174px;
@@ -481,7 +484,7 @@
     position: absolute;
 }
 #pageSSSContri .employerAddress{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 172px;
@@ -494,7 +497,7 @@
     font-family: Calibri;
 }
 #pageSSSContri .amountDue{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 174px;
@@ -507,7 +510,7 @@
     font-weight: bold;
 }
 #pageSSSContri .employerZip{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 176px;
@@ -520,7 +523,7 @@
     font-weight: bold;
 }
 #pageSSSContri .dueDate{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 177px;
@@ -533,7 +536,7 @@
     font-weight: bold;
 }
 #pageSSSContri .employerId{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 174px;
@@ -546,7 +549,7 @@
     position: absolute;
 }
 #pageSSSContri .generationDate{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 173.4px;
@@ -559,7 +562,7 @@
     font-family: Calibri;
 }
 #pageSSSContri .listSummary{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 194px;
@@ -575,7 +578,7 @@
 
 }
 #pageSSSContri .totalEmployees{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 209.5px;
@@ -586,7 +589,7 @@
     position: absolute;
 }
 #pageSSSContri .socialSecurity{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 238px;
@@ -598,7 +601,7 @@
     text-align: right;
 }
 #pageSSSContri .employeeCompensation{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 251px;
@@ -610,7 +613,7 @@
     text-align: right;
 }
 #pageSSSContri .total{
-        border: 1px solid red;
+        border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 264px;
@@ -623,7 +626,7 @@
     font-weight: bold;
 }
 #pageSSSContri .grandTotal{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 282px;
@@ -636,7 +639,7 @@
     position: absolute;
 }
 #pageSSSContri .bankCopyName{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 538px;
@@ -650,7 +653,7 @@
 }
 
 #pageSSSContri .bankCopyEmployerId{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 535px;
@@ -664,7 +667,7 @@
 }
 
 #pageSSSContri .bankCopySummaryMonth{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
     margin-top: 535px;
@@ -680,12 +683,12 @@
 
     /*sss second page */
 #pageSSSContri .secondPageEmployerId{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
-    margin-top: 105px;
+    margin-top: 91px;
     margin-left: 47px;
-    width: 79px;
+    width: 75px;
     height: 14px;
     font-size: 9px;
     font-family: Calibri;
@@ -694,11 +697,11 @@
 }
 
 #pageSSSContri .secondPageSummaryMonth{
-    border: 1px solid red;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: justify;
-    margin-top: 105px;
-    margin-left: 126px;
+    margin-top: 91.5px;
+    margin-left: 122px;
     width: 167px;
     height: 14px;
     font-size: 10px;
@@ -710,28 +713,34 @@
 #pageSSSContri table{
     position: absolute;
     font-family: Calibri;
-    margin-top: 122px;
-    margin-left: 46px;
+    margin-top: 107px;
+    margin-left: 44px;
 }
 
 #pageSSSContri .table-bordered tr td{
-    border: 2px solid #c2ddf2;
+    -webkit-print-color-adjust: exact;
+    border: 2px solid #c2ddf2 !important;
     padding: 0;
+    
 }
 
 #pageSSSContri .table-bordered th{
-    border: 1px solid #21619f;
+    -webkit-print-color-adjust: exact;  
+    border: 1px solid #21619f !important;
     padding: 0;
     text-align: center;
+    
 }
 
 #pageSSSContri .table-striped{
-    background-color: #d7e5f2;
+    background-color: #d7e5f2 !important;
+    -webkit-print-color-adjust: exact;
 }
 
 #pageSSSContri thead{
-    background-color: #195997;
+    background-color: #195997 !important;
     color: white;
+    -webkit-print-color-adjust: exact;
 }
 
 #pageSSSContri .amountContri{
@@ -741,35 +750,36 @@
 
 #pageSSSContri .tableAccountNo{
     text-align: center;
-    width: 101.5px;
+    min-width: 98.3px;
 }
 
 #pageSSSContri .tableCountNo{
-    width: 37px;
+    min-width: 36.3px;
 }
 
 #pageSSSContri .tableName{
-    width: 215.5px;
+    min-width: 210px;
 }
 
 #pageSSSContri .tableSSContri{
-    width: 108px;
+    min-width: 105px;
 }
 
 #pageSSSContri .tableECContri{
-    width: 106.5px;
+    min-width: 105px;
 }
 
 #pageSSSContri .tableTotalContri{
-    width: 111px;
+    min-width: 111px;
 }
 
 #pageSSSContri tfoot{
 }
 
 #pageSSSContri .tableFooter{
-    background-color: #195997;
-    color: #195997;
+    background-color: #195997 !important;
+    color: #195997 !important;
+    -webkit-print-color-adjust: exact;
 }
 
 /*end of second page*/

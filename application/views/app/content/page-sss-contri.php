@@ -97,8 +97,10 @@
 				</div>
 
 			</div>
+
 			<div class="print-second-page">
-				<div class="print-form-sss-second"></div>
+				<div class="print-form-sss-second">
+				</div>
 				<div class="print-test-relative-second">
 					<input type="text" class="employerId secondPageEmployerId" /> 
 					<input type="text" class="bankCopySummaryMonth secondPageSummaryMonth"/> 
