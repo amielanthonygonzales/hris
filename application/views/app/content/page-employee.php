@@ -113,6 +113,15 @@
 			</div>
 		</div>
 
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="empSalary">Salary</label>
+					<input class="form-control empSalary" type="number" name="salary" placeholder="Salary" required />
+				</div>
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="col-md-6">
 				<div class="panel panel-default">
@@ -120,10 +129,7 @@
 						<h3>SSS Contribution</h3>
 					</div>
 					<div class="panel-body sss-panel">
-						<div class="form-group">
-							<label for="empSalary">Salary</label>
-							<input class="form-control empSalary" type="number" name="salary" placeholder="Salary" required />
-						</div>
+						
 						<div class="form-group">
 							<label for="sss-number">SSS Number</label>
 							<input class="form-control sss-number" type="text" name="sssNumber" placeholder="SSS Number" required />
