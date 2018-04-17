@@ -53,9 +53,6 @@
 						<button type="button" name="btnAdd" value="add" class ="btn btn-space btn-success btn-add-register">
 							<i class="icon icon-left s7-plus"></i>ADD
 						</button>
-						<button class="btn btn-space btn-success btn-email">
-							<a id="email-anchor"></a>SEND EMAIL
-						</button>
 					</div>
 				</div>	
 				<div class="form-group">
@@ -146,40 +143,24 @@
 							//console.log("username -> " + username);
 							if(value[i]['emp_username'] == username){
 								valid = false;
-								console.log("Same username!: " + valid);
-								console.log("Retrieved Username: " + value[i]['emp_username']);
-								console.log("Username from field: " + username);
 								pageRegister.elem.find('.modal-error .modal-body p').html("Username already exists!");
 								pageRegister.elem.find('.modal-error').modal("show");
 								break;
 							}
 							else if(value[i]['emp_email'] == email && email != ''){
 								valid = false;
-								console.log("Same username!: " + valid);
-								console.log("Retrieved Email: " + value[i]['emp_email']);
-								console.log("Email from field: " + email);
 								pageRegister.elem.find('.modal-error .modal-body p').html("Email already exists!");
 								pageRegister.elem.find('.modal-error').modal("show");
 								break;
 							}
 							else if(value[i]['emp_id'] == id){
 								valid = false;
-								console.log("Same id!: " + valid);
-								console.log("Retrieved id: " + value[i]['emp_id']);
-								console.log("ID from field: " + id);
 								pageRegister.elem.find('.modal-error .modal-body p').html("ID already exists!");
 								pageRegister.elem.find('.modal-error').modal("show");
 								break;
 							}				
 							else{
 								valid = true;
-								console.log("Valid username!: " + valid);
-								console.log("Retrieved Username: " + value[i]['emp_username']);
-								console.log("Username from field: " + username);
-								console.log("Retrieved Email: " + value[i]['emp_email']);
-								console.log("Email from field: " + email);
-								console.log("Retrieved id: " + value[i]['emp_id']);
-								console.log("ID from field: " + id);
 								if(i == len-1){
 									var args = {email: email, password: password, username: username};
 									// args['email'] = pageRegister.elem.find('.email').val();
