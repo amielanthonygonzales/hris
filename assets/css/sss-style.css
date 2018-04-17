@@ -729,6 +729,7 @@
     border: 1px solid #21619f !important;
     padding: 0;
     text-align: center;
+    color: #fff !important;
     
 }
 
@@ -739,7 +740,7 @@
 
 #pageSSSContri thead{
     background-color: #195997 !important;
-    color: white;
+    color: #fff !important;
     -webkit-print-color-adjust: exact;
 }
 
@@ -778,6 +779,7 @@
 
 #pageSSSContri .tableFooter{
     background-color: #195997 !important;
+    -webkit-print-color-adjust: exact;
     color: #195997 !important;
     -webkit-print-color-adjust: exact;
 }

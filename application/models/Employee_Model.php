@@ -15,6 +15,7 @@
 				//$sql = $this->db->query("SELECT * FROM `employee` WHERE `emp_username` = " .$this->db->escape($username).  "AND `emp_password` =" .$this->db->escape($password));
 				$sql = $this->db->query("SELECT * FROM `employee` WHERE `emp_username` = " .$this->db->escape($username));
 				$row = $sql->row();
+				$error = 'error';
 				if(!password_verify($password, $row->emp_password)){
 					throw new UnexpectedValueException($row->emp_password);
 				}else{
@@ -317,14 +318,36 @@
 			if(!isset($args['offset'])){
 				$args['offset'] = 0;
 			}
-			$sql = "
-			SELECT * 
-			FROM `employee` 
-			WHERE `emp_deleted` = 0 
-			AND `emp_last_name` LIKE '%" .$this->db->escape_str($args['search']). "%'
-			ORDER BY ".$this->db->escape_str($args['orderby'])." ". $this->db->escape_str($args['dir'])." 
-			LIMIT " .$this->db->escape_str($args['count']). " 
-			OFFSET ".$this->db->escape_str($args['offset']);
+			// $sql = "
+			// SELECT * 
+			// FROM `employee` 
+			// WHERE `emp_last_name` LIKE '%" .$this->db->escape_str($args['search']). "%' AND `emp_deleted` = 0 
+			// OR `emp_first_name` LIKE '%" .$this->db->escape_str($args['search']). "%'
+		
+			// ORDER BY ".$this->db->escape_str($args['orderby'])." ". $this->db->escape_str($args['dir'])." 
+			// LIMIT " .$this->db->escape_str($args['count']). " 
+			// OFFSET ".$this->db->escape_str($args['offset']);
+
+			$sql= "
+			SELECT 
+			* 
+			FROM 
+				`employee` 
+			WHERE 
+				`emp_deleted` = 0 
+			AND  
+				CONCAT(`emp_first_name`, ' ', `emp_last_name`) 
+			LIKE
+				'%" .$this->db->escape_str($args['search']). "%' 
+			ORDER BY 
+				".$this->db->escape_str($args['orderby'])." ". $this->db->escape_str($args['dir'])." 
+			LIMIT 
+				" .$this->db->escape_str($args['count']). " 
+			OFFSET 
+				".$this->db->escape_str($args['offset']);
+
+
+			
 			// $sql = "select `employee`.`emp_id`,
 			// 		`employee`.`emp_first_name`,
 			// 		`employee`.`emp_last_name`,

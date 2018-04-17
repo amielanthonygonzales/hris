@@ -13,6 +13,24 @@
 </head>
 
 <body class="am-splash-screen">
+	<div tabindex="-1" role="dialog" class="modal fade in modal-index">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						<div class="i-circle text-danger"><i class="icon s7-attention"></i></div>
+						<p class="message">Invalid username or password</p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-success btn-proceed">Proceed</button>
+				</div>
+			</div>
+		</div>
+	</div>
     <div class="am-wrapper am-login">
       <div class="am-content">
         <div class="main-content">
@@ -79,7 +97,6 @@
 							password: $('.password').val()
 							},
 					success: function(result){
-						console.log(result);
 						if(result['query'] != ""){
 							var id = "";
 							$.each(result['query'],function(key,value){
@@ -94,7 +111,7 @@
 								}
 							});
 							
-						}
+						} 	
 					}
 			});
 			//console.log(login_info);

@@ -7,6 +7,8 @@
 		}
 
 		public function index(){
+			// unset($_SESSION['user']);
+			// session_destroy();
 			// print_r($_SESSION);
 			// exit();
 			$this->load->view('app/content/index');

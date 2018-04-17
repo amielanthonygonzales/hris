@@ -13,6 +13,7 @@
 			$data = array("id"=>$id, "action"=>$action);
 			$data['content'] = $this->load->view('app/content/page-employee', $data, true);
 			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
+			$data['callHead'] = $this->load->view("app/nav-head", $data, true);
 			$this->load->view('app/header', $data);
 			$this->load->view('app/footer', $data);
 		}
@@ -24,6 +25,7 @@
 			$data = array();
 			$data['content'] = $this->load->view('app/content/page-register', $data, true);
 			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
+			$data['callHead'] = $this->load->view("app/nav-head", $data, true);
 			$this->load->view('app/header', $data);
 			$this->load->view('app/footer', $data);
 		}
@@ -35,6 +37,7 @@
 			$data = array();
 			$data['content'] = $this->load->view('app/content/page-employee-list', $data, true);
 			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
+			$data['callHead'] = $this->load->view("app/nav-head", $data, true);
 			$this->load->view('app/header', $data);
 			$this->load->view('app/footer', $data);
 		}
@@ -45,6 +48,7 @@
 			}
 			$data = array("id" => $id);
 			$data['content'] = $this->load->view('app/content/page-employee-edit', $data, true);
+			$data['callHead'] = $this->load->view("app/nav-head-employee", $data, true);
 			$this->load->view('app/header', $data);
 			$this->load->view('app/footer', $data);
 		}

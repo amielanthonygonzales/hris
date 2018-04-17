@@ -97,7 +97,8 @@
 		<div class="am-wrapper">
 			<div class="sidebar">
 			<?php
-			echo $this->load->view("app/nav-head", $data, true);
+			// echo $this->load->view("app/nav-head", $data, true);
+			echo $callHead;
 			 echo $call;
 			?>
 			</div>
