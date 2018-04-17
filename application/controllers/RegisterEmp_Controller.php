@@ -6,7 +6,7 @@
 			$this->load->model('Employee_Model');
 		}
 
-		public function index(){
+		public function login(){
 			// unset($_SESSION['user']);
 			// session_destroy();
 			// print_r($_SESSION);
@@ -15,8 +15,11 @@
 		}
 
 		public function logout(){
-			unset($_SESSION['user']);
-			session_destroy();
+			if(isset($_SESSION['user'])){
+				unset($_SESSION['user']);	
+			}
+			/*unset($_SESSION['user']);
+			session_destroy();*/
 			// print_r($_SESSION);
 			// exit();
 			$this->load->view('app/content/index');

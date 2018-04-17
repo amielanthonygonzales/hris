@@ -116,8 +116,7 @@ $route['get-data-sss/(:any)'] = 'api/SSS_Controller/getDataPerPage/$1';
 
 // $route['register-employee'] = 'RegisterEmp_Controller/registerEmp';
 // $route['employee'] = 'RegisterEmp_Controller/employeeTable';
-$route['index'] = 'RegisterEmp_Controller/index';
-$route['login'] = 'RegisterEmp_Controller/index';
+$route['index'] = 'RegisterEmp_Controller/login';
 $route['logout'] = 'RegisterEmp_Controller/logout';
 $route['employee-view/(:any)'] = 'RegisterEmp_Controller/viewEmployee/$1';
 $route['changeStatus/(:any)'] = 'RegisterEmp_Controller/changeStatus/$1';
