@@ -93,10 +93,10 @@
                         </div>
                     </div>
                 </div>
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<label for="empSalary">Salary</label>
 					<input class="form-control empSalary" type="number" name="salary" placeholder="Salary" required />
-				</div>
+				</div> -->
 				<div class="form-group email-group">
 					<label for="email">Email</label>
 					<input class="form-control empEmail required-textfield" type="email" name="email" placeholder="Email" readonly required/>
@@ -120,6 +120,10 @@
 						<h3>SSS Contribution</h3>
 					</div>
 					<div class="panel-body sss-panel">
+						<div class="form-group">
+							<label for="empSalary">Salary</label>
+							<input class="form-control empSalary" type="number" name="salary" placeholder="Salary" required />
+						</div>
 						<div class="form-group">
 							<label for="sss-number">SSS Number</label>
 							<input class="form-control sss-number" type="text" name="sssNumber" placeholder="SSS Number" required />
@@ -219,6 +223,16 @@
 			pageEmployee.elem.find(".panel-body").find("*").remove("disabled");
 		}	
 
+		pageEmployee.elem.find(".datetimepicker").datetimepicker({
+            //startDate: date,
+            autoclose: true,
+            componentIcon: '.s7-date',
+            navIcons:{
+                rightIcon: 's7-angle-right',
+                leftIcon: 's7-angle-left'
+            }
+        });
+
 		pageEmployee.elem.find('.btn-save-employee').off("click").click(function(event){
 			pageEmployee.employee_content = {
 				"emp_birthday" : pageEmployee.elem.find('.engagement-date').val(),
@@ -285,15 +299,7 @@
 	}
 
 	pageEmployee.init("#pageEmployee", function(result){
-		pageEmployee.elem.find(".datetimepicker").datetimepicker({
-            //startDate: date,
-            autoclose: true,
-            componentIcon: '.s7-date',
-            navIcons:{
-                rightIcon: 's7-angle-right',
-                leftIcon: 's7-angle-left'
-            }
-        });
+		
 		pageEmployee.result = result['query'];
 		pageEmployee.departmentResult = result['departmentQuery'];
 		$.each(pageEmployee.departmentResult, function(key, value){
@@ -355,6 +361,7 @@
 
 		pageEmployee.elem.find('.empSalary').keyup(function(e){
 			pageEmployee.salary = pageEmployee.elem.find('.empSalary').val();
+			console.log(pageEmployee.salary);
 			if(pageEmployee.salary < 1000){
 				pageEmployee.elem.find('.sss-Contribution').val('0.00');
 				pageEmployee.elem.find('.ec-Contribution').val('0.00');
