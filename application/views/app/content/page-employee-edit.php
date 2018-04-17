@@ -25,9 +25,9 @@
 		</div>
 		<div class="panel-body">
 			<div class="row pull-right">
-					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-logout-employeeEdit">
+					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employeeEdit">
 
-						<i class="icon icon-left s7-power"></i>LOG OUT
+						<a href="<?php echo base_url('logout'); ?>"><i class="icon icon-left s7-power"></i>LOG OUT</a>
 					</button>
 					<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-employeeEdit">
 							<i class="icon icon-left s7-diskette"></i>SAVE
@@ -76,9 +76,9 @@
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="row pull-right">
-					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-logout-employeeEdit">
+					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employeeEdit">
 
-						<i class="icon icon-left s7-power"></i>LOG OUT
+						<a href="<?php echo base_url('logout'); ?>"><i class="icon icon-left s7-power"></i>LOG OUT</a>
 					</button>
 					<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-employeeEdit">
 							<i class="icon icon-left s7-diskette"></i>SAVE
@@ -126,10 +126,32 @@
 			});
 		});
 
-		pageEmployeeEdit.elem.find('.btn-logout-employeeEdit').off("click").click(function(e){
-			window.parent.location = "<?php echo base_url('logout')?>";
-		});
-
+		// pageEmployeeEdit.elem.find('.btn-deleted-employeeEdit').off("click").click(function(event){
+		// 	pageEmployeeEdit.elem.find('.i-circle').removeClass('text-success').addClass('text-danger');
+		// 	pageEmployeeEdit.elem.find('.symbol').removeClass('s7-check').addClass('s7-attention');
+		// 	pageEmployeeEdit.elem.find('.message').html('Are you sure you want to delete this data!');
+		// 	pageEmployeeEdit.elem.find('.btn-proceed').hide();
+		// 	pageEmployeeEdit.elem.find('.btn-yes').show().off("click").click(function(e){
+		// 		$.ajax({
+		// 			method: "POST",
+		// 			url: "<?php echo base_url('delete-employee/')?>" + pageEmployeeEdit.id,
+		// 			success: function(result){
+		// 				if(result.success){
+		// 					pageEmployeeEdit.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
+		// 					pageEmployeeEdit.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
+		// 					pageEmployeeEdit.elem.find('.btn-proceed').show();
+		// 					pageEmployeeEdit.elem.find('.btn-yes').hide();
+		// 					pageEmployeeEdit.elem.find('.btn-no').hide();
+		// 					pageEmployeeEdit.elem.find('.message').html('Data successfully deleted!');
+		// 					pageEmployeeEdit.elem.find('.modal-department').modal();
+							
+		// 				}
+		// 			}
+		// 		});
+		// 	});
+		// 	pageEmployeeEdit.elem.find('.btn-no').show();
+		// 	pageEmployeeEdit.elem.find('.modal-department').modal();
+		// });
 		$.getJSON('<?php echo site_url('get-employee/')?>'+pageEmployeeEdit.passId, callback);
 	}
 
