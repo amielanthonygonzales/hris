@@ -94,7 +94,7 @@
 		  <div class="sk-circle11 sk-circle"></div>
 		  <div class="sk-circle12 sk-circle"></div>
 		</div>
-		<div class="am-wrapper">
+		<div class="am-fixed-sidebar am-wrapper">
 			<div class="sidebar">
 			<?php
 			// echo $this->load->view("app/nav-head", $data, true);
