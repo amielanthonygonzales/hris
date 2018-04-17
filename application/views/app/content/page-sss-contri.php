@@ -247,19 +247,16 @@
 			pageSSSContri.elem.find('.socialSecurity').val(pageSSSContri.ssContri);
 			pageSSSContri.elem.find('.employeeCompensation').val(pageSSSContri.ecContri);
 			pageSSSContri.elem.find('.employeeCompensation').val(pageSSSContri.ecContri);
-			pageSSSContri.elem.find('.amountDue').val(pageSSSContri.totalContri);
-			pageSSSContri.elem.find('.total').val(pageSSSContri.totalContri);
-			pageSSSContri.elem.find('.grandTotal').val("Php " + pageSSSContri.totalContri);
 			pageSSSContri.elem.find('.generationDate').val(pageSSSContri.currentDate);
 			pageSSSContri.elem.find('.dueDate').val(pageSSSContri.lastDay);
 			pageSSSContri.elem.find('.listSummary').val("Collection List Summary for the Month of " + pageSSSContri.monthYear);
 			pageSSSContri.elem.find('.bankCopySummaryMonth').val(pageSSSContri.monthYear);
 
 			pageSSSContri.employeeInfo = data['employee'];
+			pageSSSContri.allEmployeeInfo = data['allEmployee'];
 
 			$.each(pageSSSContri.employeeInfo, function(keyEmployee, valueEmployee){
 				keyEmployee += +1;
-				console.log(valueEmployee);
 
 				pageSSSContri.trEmployee = $('<tr></tr>');
 				pageSSSContri.trEmployee.attr('class', 'clearField tableTr'+keyEmployee);
@@ -272,7 +269,7 @@
 
 				pageSSSContri.tdEmployeeName = $('<td></td>');
 				pageSSSContri.tdEmployeeName.attr('class', 'tableName');
-				pageSSSContri.tdEmployeeName.html(valueEmployee['emp_last_name'].toUpperCase() + " ," 
+				pageSSSContri.tdEmployeeName.html(valueEmployee['emp_last_name'].toUpperCase() + ", " 
 												+ valueEmployee['emp_first_name'].toUpperCase() + " " 
 												+ valueEmployee['emp_ext_name'].toUpperCase() + " " 
 												+ valueEmployee['emp_middle_name'].toUpperCase());
@@ -303,5 +300,22 @@
 				pageSSSContri.tdEmployeeTotalContri.html(pageSSSContri.employeeTotalContri + ".00");
 				pageSSSContri.elem.find('.tableTr'+keyEmployee).append(pageSSSContri.tdEmployeeTotalContri);
 			});
+
+			pageSSSContri.ssContribution = 0;
+			pageSSSContri.ecContribution = 0;
+			pageSSSContri.totalSSContri = 0;
+			$.each(pageSSSContri.allEmployeeInfo, function(keyAll, valueAll){
+				console.log(valueAll);
+				pageSSSContri.ssContribution += +parseInt(valueAll['ss_contribution']);
+				pageSSSContri.ecContribution += + parseInt(valueAll['ec_contribution']);
+			});
+			pageSSSContri.totalSSContri = pageSSSContri.ssContribution + pageSSSContri.ecContribution;
+
+			pageSSSContri.elem.find('.amountDue').val(pageSSSContri.totalSSContri + ".00");
+			pageSSSContri.elem.find('.grandTotal').val("Php " + pageSSSContri.totalSSContri + ".00");
+			pageSSSContri.elem.find('.total').val(pageSSSContri.totalSSContri + ".00");
+			pageSSSContri.elem.find('.employeeCompensation').val(pageSSSContri.ecContribution + ".00");
+			pageSSSContri.elem.find('.socialSecurity').val(pageSSSContri.ssContribution + ".00");
+
 	}
 </script>

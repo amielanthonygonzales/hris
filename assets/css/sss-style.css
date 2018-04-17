@@ -225,6 +225,7 @@
     height: 14px;
     font-size: 10px;
     position: absolute;
+    font-weight: bold;
     text-align: right;
 }
 #pageSSSContri .grandTotal{

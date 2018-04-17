@@ -105,9 +105,11 @@
 				"emp_birthday" : pageEmployeeEdit.elem.find('.editEmp-birthday').val(),
 			};
 
+			console.log(pageEmployeeEdit.passId);
+
 			$.ajax({
 				method: "POST",
-					url: "<?php echo base_url('update-employee/')?>" + pageEmployee.id,
+					url: "<?php echo base_url('update-employee/')?>" + pageEmployeeEdit.passId,
 					data: pageEmployeeEdit.content,
 					success: function(result){
 						if(result.success){
