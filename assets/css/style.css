@@ -83,6 +83,13 @@ a:hover{
     border-color: #8EC63F;
 }
 
+#pageEmployee .dash-container{
+    border-width: 0;
+    box-shadow: none;
+    padding: 1px 1px;
+    font-size: 26px;
+}
+
 /*.message{
     color: #ec4b4b;
 }*/

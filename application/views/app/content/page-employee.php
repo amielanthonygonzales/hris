@@ -153,8 +153,29 @@
 					<div class="panel-body pagibig-panel">
 						<div class="form-group">
 							<label for="pagibig-mid-number">Pag-Ibig MID No</label>
-							<input class="form-control pagibig-mid-number" type="text" name="pagibigMidNumber" placeholder="Pag-Ibig Mid Number" required />
+							<div class="row form-group">
+								<div class="col-md-3">
+									<input class="form-control pagibig-mid-number1" type="text" name="pagibigMidNumber" required />
+								</div>
+								<div class="col-md-1">
+									<div class="dash-container">-</div>
+								</div>
+								<div class="col-md-3">
+									<input class="form-control pagibig-mid-number2" type="text" name="pagibigMidNumber" required />
+								</div>
+								<div class="col-md-1">
+									<div class="dash-container">-</div>
+								</div>
+								<div class="col-md-3">
+									<input class="form-control pagibig-mid-number3" type="text" name="pagibigMidNumber" required />
+								</div>
+							</div>
 						</div>
+						
+						<!-- <div class="form-group">
+							<label for="pagibig-mid-number">Pag-Ibig MID No</label>
+							<input class="form-control pagibig-mid-number" type="text" name="pagibigMidNumber" placeholder="Pag-Ibig Mid Number" required />
+						</div> -->
 						<div class="form-group">
 							<label for="pagibig-number">Pag-Ibig Number</label>
 							<input class="form-control pagibig-number" type="text" name="pagibigNumber" placeholder="Pag-Ibig Number" required />
@@ -239,6 +260,91 @@
             }
         });
 
+		pageEmployee.countNumberMid1 = pageEmployee.elem.find('.pagibig-mid-number1').val().length;
+        pageEmployee.elem.find('.pagibig-mid-number1').keydown(function(e){
+        	if(e.which == 8 || e.which == 46){
+        		if(pageEmployee.countNumberMid1 != 0 && !(pageEmployee.countNumberMid1 < 0)){
+        				pageEmployee.countNumberMid1 -= 1;
+        			console.log(pageEmployee.countNumberMid1);
+        		}
+        		return true;
+        	}else if(pageEmployee.countNumberMid1 == 4){
+        		pageEmployee.elem.find('.pagibig-mid-number2').focus();
+        		return false;
+        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+        		
+        		if(pageEmployee.countNumberMid1 < 4){
+        			pageEmployee.countNumberMid1 += 1;
+        			console.log(pageEmployee.countNumberMid1);
+        			return true;
+        		}
+        		else{
+        			return false;
+        		}
+        	}
+        	else if(e.which == 9 || e.which == 189){
+        		return true;
+        	}else{
+        		return false;
+        	}
+        });
+        pageEmployee.countNumberMid2 = pageEmployee.elem.find('.pagibig-mid-number2').val().length;
+        pageEmployee.elem.find('.pagibig-mid-number2').keydown(function(e){
+        	if(e.which == 8 || e.which == 46){
+        		if(pageEmployee.countNumberMid2 != 0 && !(pageEmployee.countNumberMid2 < 0)){
+        				pageEmployee.countNumberMid2 -= 1;
+        			console.log(pageEmployee.countNumberMid2);
+        		}
+        		return true;
+        	}else if(pageEmployee.countNumberMid2 == 4){
+        		pageEmployee.elem.find('.pagibig-mid-number3').focus();
+        		return false;
+        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+        		
+        		if(pageEmployee.countNumberMid2 < 4){
+        			pageEmployee.countNumberMid2 += 1;
+        			console.log(pageEmployee.countNumberMid2);
+        			return true;
+        		}
+        		else{
+        			return false;
+        		}
+        	}
+        	else if(e.which == 9 || e.which == 189){
+        		return true;
+        	}else{
+        		return false;
+        	}
+        });
+
+        pageEmployee.countNumberMid3 = pageEmployee.elem.find('.pagibig-mid-number3').val().length;
+        pageEmployee.elem.find('.pagibig-mid-number3').keydown(function(e){
+        	if(e.which == 8 || e.which == 46){
+        		if(pageEmployee.countNumberMid3 != 0 && !(pageEmployee.countNumberMid3 < 0)){
+        				pageEmployee.countNumberMid3 -= 1;
+        			console.log(pageEmployee.countNumberMid3);
+        		}
+        		return true;
+        	}else if(pageEmployee.countNumberMid3 == 4){
+        		return false;
+        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+        		
+        		if(pageEmployee.countNumberMid3 < 4){
+        			pageEmployee.countNumberMid3 += 1;
+        			console.log(pageEmployee.countNumberMid3);
+        			return true;
+        		}
+        		else{
+        			return false;
+        		}
+        	}
+        	else if(e.which == 9 || e.which == 189){
+        		return true;
+        	}else{
+        		return false;
+        	}
+        });
+
 		pageEmployee.elem.find('.btn-save-employee').off("click").click(function(event){
 			pageEmployee.employee_content = {
 				"emp_birthday" : pageEmployee.elem.find('.engagement-date').val(),
@@ -248,7 +354,11 @@
 				"ss_contribution" : pageEmployee.elem.find('.sss-Contribution').val(),
 				"ec_contribution" : pageEmployee.elem.find('.ec-Contribution').val(),
 				"pagibig_no" : pageEmployee.elem.find('.pagibig-number').val(),
-				"pagibig_mid_no" : pageEmployee.elem.find('.pagibig-mid-number').val(),
+				"pagibig_mid_no" : pageEmployee.elem.find('.pagibig-mid-number1').val() 
+								  + "-" 
+								  + pageEmployee.elem.find('.pagibig-mid-number2').val()
+								  + "-"
+								  + pageEmployee.elem.find('.pagibig-mid-number3').val(),
 				"pagibig_ee_share" : pageEmployee.elem.find('.ee-share').val(),
 				"pagibig_er_share" : pageEmployee.elem.find('.er-share').val(),
 				"pagibig_remarks" : pageEmployee.elem.find('.pagibig-remarks').val(),
