@@ -137,20 +137,20 @@
 						</table>
 				</div>
 				<div class="contri-content">
-					<span class="description">Total Social Security Contribution</span>
+					<span class="description">SSS Contribution</span>
 						<table class="no-border no-strip skills">
 							<tbody class="no-border-x no-border-y">
 		                        <tr>
-		                          <td class="item">Total Employer Contribution<span class="icon s7-culture"></span></td>
-		                          <td class="er-contribution amount-contri"></td>
+		                          <td class="item">Total Social Security Contribution<span class="icon s7-culture"></span></td>
+		                          <td class="ss-contribution amount-contri"></td>
 		                        </tr>
 		                        <tr class="end-of-formula">
-		                          <td class="item">Total Employee Contribution<span class="icon s7-users"></span></td>
-		                          <td class="ee-contribution amount-contri"></td>
+		                          <td class="item">Total Employee Compensation Contribution<span class="icon s7-users"></span></td>
+		                          <td class="ec-contribution amount-contri"></td>
 		                        </tr>
 		                        <tr>
-		                          <td class="item total-item">Total<span class="icon s7-cash total-icon"></span></td>
-		                          <td class="ss-contribution amount-contri total-contri"></td>
+		                          <td class="item total-item">Total SSS Contribution<span class="icon s7-cash total-icon"></span></td>
+		                          <td class="sss-total-contribution amount-contri total-contri"></td>
 		                        </tr>
 		                    </tbody>
 						</table>
@@ -257,6 +257,8 @@
 		pageDashboard.elem.find('.ss-contribution').text(pageDashboard.ss_contribution);
 		pageDashboard.elem.find('.ee-contribution').text(pageDashboard.ee_contribution);
 		pageDashboard.elem.find('.er-contribution').text(pageDashboard.er_contribution);
+		pageDashboard.elem.find('.ec-contribution').text(pageDashboard.ec_contribution);
+		pageDashboard.elem.find('.sss-total-contribution').text(pageDashboard.sss_total);
 
 		pageDashboard.pagibig_er_share = 0;
 		pageDashboard.pagibig_ee_share = 0;
