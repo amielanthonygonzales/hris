@@ -90,6 +90,80 @@ a:hover{
     font-size: 26px;
 }
 
+#pageEmployee .dash-container-sss{
+    border-width: 0;
+    box-shadow: none;
+    padding: 1px 1px;
+    font-size: 26px;
+    margin-top: 32px;
+}
+
+#pageDashboard .info-block .description {
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #e6e6e6;
+    display: block;
+    color: #7b7b7b;
+}
+
+#pageDashboard .info-block table tr td.item {
+    width: 60%;
+    color: #7b7b7b;
+}
+
+#pageDashboard .info-block table tr td.total-item {
+    width: 60%;
+    color: #8ec63f;
+}
+
+#pageDashboard .info-block table tr td {
+    padding: 15px 0;
+}
+
+#pageDashboard .info-block table tr td {
+    padding: 15px 0;
+}
+
+/*#pageDashboard .info-block table tr {
+    line-height: 23px;
+    border-bottom: 1px solid #e6e6e6;
+}*/
+
+#pageDashboard .info-block table tr td.item .icon {
+    float: left;
+    margin-right: 5px;
+    font-size: 20px;
+    color: #302f2f;
+}
+
+#pageDashboard .info-block table tr td.item .total-icon {
+    float: left;
+    margin-right: 5px;
+    font-size: 20px;
+    color: #8ec63f;
+
+}
+
+#pageDashboard .info-block table {
+    width: 100%;
+}
+
+#pageDashboard .amount-contri{
+    text-align: right;
+}
+
+#pageDashboard .total-contri{
+    color: #8ec63f;
+}
+
+#pageDashboard .info-block table tr.end-of-formula{
+    border-bottom: 3px solid #dddddd;
+}
+
+#pageDashboard .contri-content{
+    padding: 20px;
+    border: 2px solid #dddddd;
+}
+
 /*.message{
     color: #ec4b4b;
 }*/

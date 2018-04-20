@@ -111,17 +111,52 @@
 </div>
 		
 <div class="row">
-	<div class="col-md-6">
-		<div class="panel panel-default">
+	<div class="col-sm-6">
+		<div class="info-block panel panel-default">
 			<div class="panel-heading">
 				<h3>SSS Contribution</h3>
 			</div>
 			<div class="panel-body">
-				<div class="form-group">
-					<label for="sss-total-contribution">Total Contribution</label>
-					<input class="form-control sss-total-contribution" type="text" name="sss-total-contribution" placeholder="Total Contribution" readonly/>
+				<div class="contri-content">
+					<span class="description">Social Security Contribution</span>
+						<table class="no-border no-strip skills">
+							<tbody class="no-border-x no-border-y">
+		                        <tr>
+		                          <td class="item">Total Employer Contribution<span class="icon s7-culture"></span></td>
+		                          <td class="er-contribution amount-contri"></td>
+		                        </tr>
+		                        <tr class="end-of-formula">
+		                          <td class="item">Total Employee Contribution<span class="icon s7-users"></span></td>
+		                          <td class="ee-contribution amount-contri"></td>
+		                        </tr>
+		                        <tr>
+		                          <td class="item total-item">Total Social Security Contribution<span class="icon s7-cash total-icon"></span></td>
+		                          <td class="ss-contribution amount-contri total-contri"></td>
+		                        </tr>
+		                    </tbody>
+						</table>
+				</div>
+				<div class="contri-content">
+					<span class="description">Total Social Security Contribution</span>
+						<table class="no-border no-strip skills">
+							<tbody class="no-border-x no-border-y">
+		                        <tr>
+		                          <td class="item">Total Employer Contribution<span class="icon s7-culture"></span></td>
+		                          <td class="er-contribution amount-contri"></td>
+		                        </tr>
+		                        <tr class="end-of-formula">
+		                          <td class="item">Total Employee Contribution<span class="icon s7-users"></span></td>
+		                          <td class="ee-contribution amount-contri"></td>
+		                        </tr>
+		                        <tr>
+		                          <td class="item total-item">Total<span class="icon s7-cash total-icon"></span></td>
+		                          <td class="ss-contribution amount-contri total-contri"></td>
+		                        </tr>
+		                    </tbody>
+						</table>
 				</div>
 			</div>
+
 		</div>
 	</div>
 	<div class="col-md-6">
@@ -179,7 +214,7 @@
 		pageDashboard.pagibig = result['pagibigQuery'];
 		pageDashboard.company = result['companyQuery'];
 
-		console.log(pageDashboard.employee);
+		
 
 		$.each(pageDashboard.company, function(key, value){
 			pageDashboard.elem.find('.company-sss-num').val(value['company_sss_id']);
@@ -205,43 +240,23 @@
 			pageDashboard.elem.find('.company-email').val(value['company_email']);
 		});
 
-		// $.each(pageDashboard.employee, function(key, value){
-		// 	pageDashboard.employee_name = jQuery.parseJSON(value['emp_name']);
-
-		// 	pageDashboard.trEmployee = $('<tr></tr>');
-		// 	pageDashboard.trEmployee.attr('class', key);
-		// 	pageDashboard.elem.find('.employee-info-table tbody').append(pageDashboard.trEmployee);
-
-		// 	pageDashboard.tdIdEmployee = $('<td></td>');
-		// 	pageDashboard.tdIdEmployee.html(value['emp_id']);
-		// 	pageDashboard.elem.find('.'+key).append(pageDashboard.tdIdEmployee);
-
-		// 	pageDashboard.tdLastNameEmployee = $('<td></td>');
-		// 	pageDashboard.tdLastNameEmployee.html(pageDashboard.employee_name['last_name']);
-		// 	pageDashboard.elem.find('.'+key).append(pageDashboard.tdLastNameEmployee);
-
-		// 	pageDashboard.tdFirstNameEmployee = $('<td></td>');
-		// 	pageDashboard.tdFirstNameEmployee.html(pageDashboard.employee_name['first_name']);
-		// 	pageDashboard.elem.find('.'+key).append(pageDashboard.tdFirstNameEmployee);
-
-		// 	pageDashboard.tdMiddleNameEmployee = $('<td></td>');
-		// 	pageDashboard.tdMiddleNameEmployee.html(pageDashboard.employee_name['middle_name']);
-		// 	pageDashboard.elem.find('.'+key).append(pageDashboard.tdMiddleNameEmployee);
-
-		// 	pageDashboard.tdExtNameEmployee = $('<td></td>');
-		// 	pageDashboard.tdExtNameEmployee.html(pageDashboard.employee_name['ext_name']);
-		// 	pageDashboard.elem.find('.'+key).append(pageDashboard.tdExtNameEmployee);
-		// });
-
 		pageDashboard.ss_contribution = 0;
 		pageDashboard.ec_contribution = 0;
+		pageDashboard.ee_contribution = 0;
+		pageDashboard.er_contribution = 0;
 		pageDashboard.sss_total = 0;
 		$.each(pageDashboard.sss, function(key, value){
 			pageDashboard.ss_contribution +=  parseInt(value['ss_contribution']); 
 			pageDashboard.ec_contribution +=  parseInt(value['ec_contribution']); 
+			pageDashboard.ee_contribution +=  parseInt(value['ee_contribution']);
+			pageDashboard.er_contribution +=  parseInt(value['er_contribution']);
+
+			console.log(pageDashboard.er_contribution);
 		});
 		pageDashboard.sss_total = pageDashboard.ss_contribution + pageDashboard.ec_contribution;
-		pageDashboard.elem.find('.sss-total-contribution').val(pageDashboard.sss_total);
+		pageDashboard.elem.find('.ss-contribution').text(pageDashboard.ss_contribution);
+		pageDashboard.elem.find('.ee-contribution').text(pageDashboard.ee_contribution);
+		pageDashboard.elem.find('.er-contribution').text(pageDashboard.er_contribution);
 
 		pageDashboard.pagibig_er_share = 0;
 		pageDashboard.pagibig_ee_share = 0;

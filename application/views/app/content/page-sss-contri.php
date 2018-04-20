@@ -1,4 +1,24 @@
 <div id="pageSSSContri">
+	<div tabindex="-1" role="dialog" class="modal fade in modal-sss">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						<div class="i-circle"><i class="icon symbol"></i></div>
+						<p class="message"></p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-success btn-proceed">Proceed</button>
+					<button type="button" class="btn btn-success btn-yes">YES</button>
+					<button type="button" data-dismiss="modal" class="btn btn-default btn-no">NO</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3>SSS Contribution Form</h3>
@@ -10,6 +30,9 @@
 				</button>
 				<button type="button" name="btnPageTwo" value="page-two" class ="btn btn-success btn-space btn-page-two">
 						<i class="icon icon-left s7-file"></i>PAGE 2
+				</button>
+				<button type="button" name="btnPrint" value="print" class ="btn btn-success btn-space btn-paid">
+						<i class="icon icon-left s7-cash"></i>PAID CONTRIBUTION
 				</button>
 				<button type="button" name="btnPrint" value="print" class ="btn btn-success btn-space btn-print">
 						<i class="icon icon-left s7-print"></i>PRINT
@@ -195,6 +218,34 @@
 			pageSSSContri.pageNumber = 1;
 		}
 
+		pageSSSContri.elem.find('.btn-paid').off("click").click(function(e){
+			pageSSSContri.contribution = {
+				"month" : pageSSSContri.month + 1,
+				"year" : pageSSSContri.getDate.getFullYear(),
+				"amount" : pageSSSContri.totalSSContri,
+				"gov_agency" : "SSS"
+			};
+
+			$.ajax({
+				method: "POST",
+					url: "<?php echo base_url('saved-contribution')?>",
+					data: pageSSSContri.contribution,
+					success: function(result){
+						if(result.success){
+							pageSSSContri.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
+							pageSSSContri.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
+							pageSSSContri.elem.find('.btn-proceed').show();
+							pageSSSContri.elem.find('.btn-yes').hide();
+							pageSSSContri.elem.find('.btn-no').hide();
+							pageSSSContri.elem.find('.message').html('Data has been saved recorded!');
+							pageSSSContri.elem.find('.modal-sss').modal();
+							pageSSSContri.elem.find('.btn-paid').hide();
+							
+						}
+					}
+			});
+		});
+
 		$.getJSON('<?php echo site_url('get-data-sss')?>' + "/" + pageSSSContri.pageNumber, callback);
 	}
 
@@ -254,6 +305,7 @@
 
 			pageSSSContri.employeeInfo = data['employee'];
 			pageSSSContri.allEmployeeInfo = data['allEmployee'];
+			pageSSSContri.getPaidContri = data['paid-contribution'];
 
 			$.each(pageSSSContri.employeeInfo, function(keyEmployee, valueEmployee){
 				keyEmployee += +1;
@@ -316,6 +368,17 @@
 			pageSSSContri.elem.find('.total').val(pageSSSContri.totalSSContri + ".00");
 			pageSSSContri.elem.find('.employeeCompensation').val(pageSSSContri.ecContribution + ".00");
 			pageSSSContri.elem.find('.socialSecurity').val(pageSSSContri.ssContribution + ".00");
+
+			$.each(pageSSSContri.getPaidContri, function(keyPaid, valPaid){
+			if(valPaid['month'] != (pageSSSContri.month + 1) && valPaid['year'] != pageSSSContri.getDate.getFullYear() && valPaid['gov_agency'] == 'SSS'){
+				pageSSSContri.elem.find('.btn-paid').show();
+				return true;
+			}
+			if(valPaid['month'] == (pageSSSContri.month + 1) && valPaid['year'] == pageSSSContri.getDate.getFullYear() && valPaid['gov_agency'] == 'SSS'){
+				pageSSSContri.elem.find('.btn-paid').hide();
+				return false;
+			}
+		});
 
 	}
 </script>

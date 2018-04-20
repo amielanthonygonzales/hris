@@ -22,6 +22,7 @@
 			$data['employee'] = $this->SSS_Model->getAllData($page);
 			$data['company'] = $this->SSS_Model->getCompanyData();
 			$data['allEmployee'] = $this->SSS_Model->getEmployeeData();
+			$data['paid-contribution'] = $this->SSS_Model->getPaidContribution();
 			$data['count'] = $this->SSS_Model->countData();
 			$this->benchmark->mark('end');
 			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');

@@ -13,6 +13,11 @@
 			return $sql->result();
 		}
 
+		public function getPaidContribution(){
+			$sql = $this->db->query("SELECT * FROM paid_contribution");
+			return $sql->result();
+		}
+
 		public function getEmployeeData(){
 			$sql = $this->db->query("
 				SELECT 

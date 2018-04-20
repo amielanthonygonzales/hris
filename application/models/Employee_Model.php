@@ -272,13 +272,15 @@
 		public function updateSSSInfo($id, $updatePost){
 			$sql = $this->db->query("
 				UPDATE 
-				sss 
+					`sss` 
 				SET 
-				sss_no = " .$this->db->escape($updatePost['sss_no']). " ,
-				ss_contribution = " .$this->db->escape($updatePost['ss_contribution']). " ,
-				ec_contribution = " .$this->db->escape($updatePost['ec_contribution']). " 
+					`sss_no` = " .$this->db->escape($updatePost['sss_no']). " ,
+					`ss_contribution` = " .$this->db->escape($updatePost['ss_contribution']). " ,
+					`ec_contribution` = " .$this->db->escape($updatePost['ec_contribution']). " ,
+					`er_contribution` = " .$this->db->escape($updatePost['er_contribution']). " ,
+					`ee_contribution` = " .$this->db->escape($updatePost['ee_contribution']). " 
 				WHERE 
-				sss_emp_id = ".$this->db->escape($id));
+					`sss_emp_id` = ".$this->db->escape($id));
 			return 1;
 		}
 

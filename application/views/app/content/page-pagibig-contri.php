@@ -1,11 +1,34 @@
 
 <div id="pagePagibigContri">
+	<div tabindex="-1" role="dialog" class="modal fade in modal-pagibig">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						<div class="i-circle"><i class="icon symbol"></i></div>
+						<p class="message"></p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-success btn-proceed">Proceed</button>
+					<button type="button" class="btn btn-success btn-yes">YES</button>
+					<button type="button" data-dismiss="modal" class="btn btn-default btn-no">NO</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3>Pag-Ibig Contribution Form</h3>
 		</div>
 		<div class="panel-body button-print">
 			<div class="pull-right">
+				<button type="button" name="btnPrint" value="print" class ="btn btn-success btn-space btn-paid">
+						<i class="icon icon-left s7-cash"></i>PAID CONTRIBUTION
+				</button>
 				<button type="button" name="btnPrint" value="print" class ="btn btn-success btn-space btn-print">
 						<i class="icon icon-left s7-print"></i>PRINT
 				</button>
@@ -736,6 +759,34 @@
 		if(pagePagibigContri.pageNumber <= 0){
 			pagePagibigContri.pageNumber = 1;
 		}
+
+		pagePagibigContri.elem.find('.btn-paid').off("click").click(function(e){
+			pagePagibigContri.contribution = {
+				"month" : pagePagibigContri.month + 1,
+				"year" : pagePagibigContri.getDate.getFullYear(),
+				"amount" : pagePagibigContri.grandTotalContri,
+				"gov_agency" : "Pag-Ibig"
+			};
+
+			$.ajax({
+				method: "POST",
+					url: "<?php echo base_url('saved-contribution')?>",
+					data: pagePagibigContri.contribution,
+					success: function(result){
+						if(result.success){
+							pagePagibigContri.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
+							pagePagibigContri.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
+							pagePagibigContri.elem.find('.btn-proceed').show();
+							pagePagibigContri.elem.find('.btn-yes').hide();
+							pagePagibigContri.elem.find('.btn-no').hide();
+							pagePagibigContri.elem.find('.message').html('Data has been saved recorded!');
+							pagePagibigContri.elem.find('.modal-pagibig').modal();
+							pagePagibigContri.elem.find('.btn-paid').hide();
+							
+						}
+					}
+			});
+		});
 		$.getJSON('<?php echo site_url('get-data-per-page')?>' + "/" + pagePagibigContri.pageNumber, callback);
 	}
 
@@ -774,6 +825,7 @@
 		pagePagibigContri.companyInfo = result['company'];
 		pagePagibigContri.employeeInfo = result['employee'];
 		pagePagibigContri.allEmployeeInfo = result['allEmployee'];
+		pagePagibigContri.getPaidContri = result['paid-contribution'];
 		
 
 		$.each(pagePagibigContri.companyInfo, function(keyCompany, valueCompany){
@@ -850,5 +902,20 @@
 			pagePagibigContri.elem.find('.employerShareGrandTotal').val(pagePagibigContri.grandTotalER);
 			pagePagibigContri.elem.find('.grandTotal').val(pagePagibigContri.grandTotalContri);
 		}
+
+		$.each(pagePagibigContri.getPaidContri, function(keyPaid, valPaid){
+			if(valPaid['month'] != (pagePagibigContri.month + 1) 
+				&& valPaid['year'] != pagePagibigContri.getDate.getFullYear() 
+				&& valPaid['gov_agency'] == 'Pag-Ibig'){
+				pagePagibigContri.elem.find('.btn-paid').show();
+				return true;
+			}
+			if(valPaid['month'] == (pagePagibigContri.month + 1) 
+				&& valPaid['year'] == pagePagibigContri.getDate.getFullYear() 
+				&& valPaid['gov_agency'] == 'Pag-Ibig'){
+				pagePagibigContri.elem.find('.btn-paid').hide();
+				return false;
+			}
+		});
 	}
 </script>

@@ -112,6 +112,9 @@ $route['get-data-per-page/(:any)'] = 'api/Pagibig_Controller/getDataPerPage/$1';
 //api
 $route['get-data-sss/(:any)'] = 'api/SSS_Controller/getDataPerPage/$1';
 
+//Payed Contribution
+//api
+$route['saved-contribution'] = 'api/Paid_Controller/addContribution';
 
 
 // $route['register-employee'] = 'RegisterEmp_Controller/registerEmp';
