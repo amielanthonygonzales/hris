@@ -9,34 +9,19 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/stroke-7/style.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/jquery.nanoscroller/css/nanoscroller.css');?>"/>
     <link rel="stylesheet" href="<?php echo base_url('amaretti/html/assets/css/style.css');?>" type="text/css"/>
+    <!-- <link rel="stylesheet" href="<?php echo base_url("assets/css") ?>/style.css" type="text/css"/> -->
+	<link rel="stylesheet" href="<?php echo base_url("assets/app") ?>/css/style.css" type="text/css"/>
 	<title>HR Information System</title>
 </head>
 
 <body class="am-splash-screen">
-	<div tabindex="-1" role="dialog" class="modal fade in modal-index">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
-				</div>
-				<div class="modal-body">
-					<div class="text-center">
-						<div class="i-circle text-danger"><i class="icon s7-attention"></i></div>
-						<p class="message">Invalid username or password</p>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" data-dismiss="modal" class="btn btn-success btn-proceed">Proceed</button>
-				</div>
-			</div>
-		</div>
-	</div>
     <div class="am-wrapper am-login">
       <div class="am-content">
         <div class="main-content">
           <div class="login-container">
             <div class="panel panel-default">
               <div class="panel-heading"><img src = "<?php echo base_url('assets/img/title-8.png'); ?>" alt="logo" width="150px" height="39px" class="logo-img"><span>Please enter your user information.</span></div>
+              <div class="text-center message" style="display: none; color: #ec4b4b;"><i class="icon icon-left s7-attention"></i> Incorrect username or password!</div>
               <div class="panel-body">
                 <form id="form-id" method="POST" class="form-horizontal">
                   <div class="login-form">
@@ -85,11 +70,13 @@
 				callback();
 			});
 		}*/
-		$('.login-btn').click(function(){
-			// var login_info = [];
-			// login_info.push($('.username').val());
-			// login_info.push($('.password').val());
-			// login_info = JSON.stringify(login_info);
+		$('.login-btn').off().click(function(e){
+			e.preventDefault();
+			var formdata = $('#form-id').serializeArray();
+			var login_info = [];
+			login_info.push($('.username').val());
+			login_info.push($('.password').val());
+			login_info = JSON.stringify(login_info);
 			$.ajax({
 				method: "POST",
 					url: "<?php echo base_url('get-session')?>",
@@ -109,9 +96,12 @@
 								else if(key == 'emp_position' && value == 'admin'){
 									window.parent.location = "<?php echo base_url('dashboard')?>";
 								}
+
 							});
-							
-						} 	
+						}
+					},
+					error: function(result){
+						$('.message').show();
 					}
 			});
 			//console.log(login_info);
