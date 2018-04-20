@@ -6,10 +6,40 @@
 					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
 				</div>
 				<div class="modal-body">
-					<div class="text-center">
+					<!-- <div class="text-center">
 						<div class="i-circle"><i class="icon symbol"></i></div>
 						<p class="message"></p>
+					</div> -->
+					<div class="form-group">
+						<label for="oldpassword">Old Password</label>
+						<input class="form-control editEmp-oldpassword" type="password" name="oldpassword" placeholder="Old Password" />
 					</div>
+					<div class="form-group">
+						<label for="newpassword">New Password</label>
+						<input class="form-control editEmp-newpassword" type="password" name="newpassword" placeholder="New Password" />
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-success btn-proceed">Proceed</button>
+					<button type="button" class="btn btn-success btn-yes">YES</button>
+					<button type="button" data-dismiss="modal" class="btn btn-default btn-no">NO</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal Password -->
+	<div tabindex="-1" role="dialog" class="modal fade in modal-department">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
+				</div>
+				<div class="modal-body">
+					<!-- <div class="text-center">
+						<div class="i-circle"><i class="icon symbol"></i></div>
+						<p class="message"></p>
+					</div> -->
+
 				</div>
 				<div class="modal-footer">
 					<button type="button" data-dismiss="modal" class="btn btn-success btn-proceed">Proceed</button>
@@ -93,10 +123,6 @@
                         </div>
                     </div>
                 </div>
-				<!-- <div class="form-group">
-					<label for="empSalary">Salary</label>
-					<input class="form-control empSalary" type="number" name="salary" placeholder="Salary" required />
-				</div> -->
 				<div class="form-group email-group">
 					<label for="email">Email</label>
 					<input class="form-control empEmail required-textfield" type="email" name="email" placeholder="Email" readonly required/>
@@ -104,6 +130,14 @@
 				<div class="form-group username-group">
 					<label for="username">Username</label>
 					<input class="form-control empUsername" type="text" name="username" placeholder="Username" required/>
+				</div>
+				<div class="form-group">
+					<label for="oldpassword">Old Password</label>
+					<input class="form-control oldpassword" type="password" name="oldpassword" placeholder="Old Password" />
+				</div>
+				<div class="form-group">
+					<label for="newpassword">New Password</label>
+					<input class="form-control newpassword" type="password" name="newpassword" placeholder="New Password" />
 				</div>
 				<div class="form-group">
 					<label class="control-label">Department</label>
@@ -465,6 +499,7 @@
 			pageEmployee.elem.find('.empSalary').val(value['emp_salary']);
 			pageEmployee.elem.find('.empEmail').val(value['emp_email']);
 			pageEmployee.elem.find('.empUsername').val(value['emp_username']);
+			pageEmployee.elem.find('.oldpassword').val(value['emp_password']);
 
 			pageEmployee.elem.find('.sss-number').val(value['sss_no']);
 			pageEmployee.elem.find('.sss-Contribution').val(value['ss_contribution']);

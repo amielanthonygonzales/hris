@@ -70,7 +70,9 @@
 										<li>
 											<a href="<?php echo base_url('dashboard-pagibig')?>">Pag-Ibig Contrbution</a>
 										</li>
-										
+										<li>
+											<a href="<?php echo base_url('dashboard-pagibig')?>">Paid Contributions</a>
+										</li>
 									</ul>
 								</div>
 								<div class="nano-pane">
