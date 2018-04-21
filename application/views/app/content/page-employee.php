@@ -224,18 +224,16 @@
 								</div>
 							</div>
 						</div>
-						
-						<!-- <div class="form-group">
-							<label for="pagibig-mid-number">Pag-Ibig MID No</label>
-							<input class="form-control pagibig-mid-number" type="text" name="pagibigMidNumber" placeholder="Pag-Ibig Mid Number" required />
-						</div> -->
 						<div class="form-group">
 							<label for="pagibig-number">Pag-Ibig Number</label>
 							<input class="form-control pagibig-number" type="text" name="pagibigNumber" placeholder="Pag-Ibig Number" required />
 						</div>
 						<div class="form-group">
 							<label>Membership Program</label>
-							<input class="form-control mem-program" type="text" name="mem-program" placeholder="Membership Program" required />
+							<select class=" form-control mem-program">
+								<option value="MP1">MP1</option>
+								<option value="MP2">MP2</option>
+							</select>
 						</div>
 						<div class="form-group">
 							<label for="pagibig-number">Monthly Compensation</label>
@@ -255,9 +253,29 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group">
-							<label for="pagibig-monthly">Remarks</label>
-							<input class="form-control pagibig-remarks" type="text" name="pagibig-remarks" placeholder="Remarks" required />
+						<div class="row form-group">
+							<div class="col-md-6">
+								<label for="pagibig-monthly">Remarks</label>
+								<select class="form-control pagibig-remarks">
+									<option value="N">Newly Hired</option>
+									<option value="L">Leave Without Pay/ AWOL</option>
+									<option value="RS">Resigned/Separated</option>
+									<option value="RT">Retired</option>
+									<option value="D">Deceased</option>
+									<option value="O">Other</option>
+								</select>
+							</div>
+							<div class="col-md-6">
+								<label>Specify the date (mm/dd/yyyy)</label>
+		                        <div data-min-view="2" data-date-format="mm/dd/yyyy" class="input-group date datetimepicker col-md-12" id="engagement-datepicker">
+		                            <span class="input-group-addon btn btn-primary">
+		                            	<i class="icon-left icon-th s7-date"></i>
+		                            </span>
+		                            <input type="datetime" size="16" type="text" class="form-control required-textfield remarks-date" name="engagement-date read" readonly>
+		                            
+		                        </div>
+							</div>
+							<!-- <input class="form-control pagibig-remarks" type="text" name="pagibig-remarks" placeholder="Remarks" required /> -->
 						</div>
 					</div>
 				</div>
@@ -399,6 +417,7 @@
         });
 
 		pageEmployee.elem.find('.btn-save-employee').off("click").click(function(event){
+
 			pageEmployee.employee_content = {
 				"emp_birthday" : pageEmployee.elem.find('.engagement-date').val(),
 				"emp_dept" : pageEmployee.elem.find('.listDepartment').val(),
@@ -417,6 +436,7 @@
 				"pagibig_ee_share" : pageEmployee.elem.find('.ee-share').val(),
 				"pagibig_er_share" : pageEmployee.elem.find('.er-share').val(),
 				"pagibig_remarks" : pageEmployee.elem.find('.pagibig-remarks').val(),
+				"pagibig_remarks_date" : pageEmployee.elem.find('.remarks-date').val(),
 				"pagibig_mem_prog" : pageEmployee.elem.find('.mem-program').val(),
 				"monthly_compen" : pageEmployee.elem.find('.monthly-compen').val()
 			};
@@ -514,6 +534,7 @@
 			pageEmployee.elem.find('.pagibig-remarks').val(value['pagibig_remarks']);
 			pageEmployee.elem.find('.monthly-compen').val(value['monthly_compen']);
 			pageEmployee.elem.find('.mem-program').val(value['pagibig_mem_prog']);
+			pageEmployee.elem.find('.remarks-date').val(value['pagibig_remarks_date']);
 		});
 
 		$.getJSON('<?php echo base_url('profile');?>', function(data){

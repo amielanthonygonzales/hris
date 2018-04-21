@@ -68,7 +68,10 @@
 											<a href="<?php echo base_url('dashboard-sss')?>">SSS Contribution</a>
 										</li>
 										<li>
-											<a href="<?php echo base_url('dashboard-pagibig')?>">Pag-Ibig Contrbution</a>
+											<a href="<?php echo base_url('dashboard-sss-reference')?>">SSS Contribution Reference</a>
+										</li>
+										<li>
+											<a href="<?php echo base_url('dashboard-pagibig')?>">Pag-Ibig Contribution</a>
 										</li>
 										<li>
 											<a href="<?php echo base_url('dashboard-pagibig')?>">Paid Contributions</a>

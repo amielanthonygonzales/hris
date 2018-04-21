@@ -164,6 +164,28 @@ a:hover{
     border: 2px solid #dddddd;
 }
 
+#sss-graph{
+    width: 100%;
+}
+
+.modebar{
+    display: none;
+} 
+
+#pageSSSReference .table-title{
+    vertical-align: middle;
+    text-align: center;
+}
+
+#pageSSSReference .table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #8ec63fb0;
+ }
+
+ #pageSSSReference .table{
+    vertical-align: middle;
+    text-align: center;
+ }
 /*.message{
     color: #ec4b4b;
 }*/
@@ -437,7 +459,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
 }
 
 #pagePagibigContri .midNo2{
@@ -556,7 +578,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
     position: absolute;
 }
 
@@ -667,7 +689,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
 }
 
 #pagePagibigContri .midNo4{
@@ -786,7 +808,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
     position: absolute;
 }
 
@@ -897,7 +919,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
 }
 
 #pagePagibigContri .midNo6{
@@ -1016,7 +1038,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
     position: absolute;
 }
 
@@ -1127,7 +1149,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
 }
 
 #pagePagibigContri .midNo8{
@@ -1246,7 +1268,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
     position: absolute;
 }
 
@@ -1357,7 +1379,7 @@ a:hover{
     height: 22px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
 }
 
 #pagePagibigContri .midNo10{
@@ -1476,7 +1498,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
     position: absolute;
 }
 
@@ -1587,7 +1609,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
 }
 
 #pagePagibigContri .midNo12{
@@ -1706,7 +1728,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
     position: absolute;
 }
 
@@ -1817,7 +1839,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
 }
 
 #pagePagibigContri .midNo14{
@@ -1936,7 +1958,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
     position: absolute;
 }
 
@@ -2047,7 +2069,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
 }
 
 #pagePagibigContri .midNo16{
@@ -2166,7 +2188,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
     position: absolute;
 }
 
@@ -2277,7 +2299,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
 }
 
 #pagePagibigContri .midNo18{
@@ -2396,7 +2418,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
     position: absolute;
 }
 
@@ -2507,7 +2529,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
 }
 
 #pagePagibigContri .midNo20{
@@ -2626,7 +2648,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
     position: absolute;
 }
 
@@ -2737,7 +2759,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
 }
 
 #pagePagibigContri .midNo22{
@@ -2856,7 +2878,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
     position: absolute;
 }
 
@@ -2967,7 +2989,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
 }
 
 #pagePagibigContri .midNo24{
@@ -3086,7 +3108,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
     position: absolute;
 }
 
@@ -3197,7 +3219,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
 }
 
 #pagePagibigContri .midNo26{
@@ -3316,7 +3338,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
     position: absolute;
 }
 
@@ -3427,7 +3449,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
 }
 
 #pagePagibigContri .midNo28{
@@ -3546,7 +3568,7 @@ a:hover{
     height: 19px;
     width: 55px;
     text-align: center;
-    font-size: 8px;
+    font-size: 7px;
     position: absolute;
 }
 
@@ -3939,7 +3961,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
     }
 
     #pagePagibigContri .midNo2{
@@ -4058,7 +4080,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
         position: absolute;
     }
 
@@ -4169,7 +4191,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
     }
 
     #pagePagibigContri .midNo4{
@@ -4288,7 +4310,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
         position: absolute;
     }
 
@@ -4399,7 +4421,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
     }
 
     #pagePagibigContri .midNo6{
@@ -4518,7 +4540,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
         position: absolute;
     }
 
@@ -4629,7 +4651,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
     }
 
     #pagePagibigContri .midNo8{
@@ -4748,7 +4770,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
         position: absolute;
     }
 
@@ -4859,7 +4881,7 @@ a:hover{
         height: 20px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
     }
 
     #pagePagibigContri .midNo10{
@@ -4978,7 +5000,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
         position: absolute;
     }
     
@@ -5089,7 +5111,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
     }
 
     #pagePagibigContri .midNo12{
@@ -5208,7 +5230,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
         position: absolute;
     }
 
@@ -5319,7 +5341,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
     }
 
     #pagePagibigContri .midNo14{
@@ -5438,7 +5460,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
         position: absolute;
     }
 
@@ -5549,7 +5571,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
     }
 
     #pagePagibigContri .midNo16{
@@ -5668,7 +5690,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
         position: absolute;
     }
 
@@ -5779,7 +5801,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
     }
 
     #pagePagibigContri .midNo18{
@@ -5898,7 +5920,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
         position: absolute;
     }
 
@@ -6009,7 +6031,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
     }
 
     #pagePagibigContri .midNo20{
@@ -6128,7 +6150,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
         position: absolute;
     }
 
@@ -6239,7 +6261,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
     }
 
     #pagePagibigContri .midNo22{
@@ -6358,7 +6380,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
         position: absolute;
     }
 
@@ -6469,7 +6491,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
     }
 
     #pagePagibigContri .midNo24{
@@ -6588,7 +6610,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
         position: absolute;
     }
 
@@ -6699,7 +6721,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
     }
 
     #pagePagibigContri .midNo26{
@@ -6818,7 +6840,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
         position: absolute;
     }
 
@@ -6929,7 +6951,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
     }
 
     #pagePagibigContri .midNo28{
@@ -7048,7 +7070,7 @@ a:hover{
         height: 17px;
         width: 45px;
         text-align: center;
-        font-size: 7px;
+        font-size: 5px;
         position: absolute;
     }
     

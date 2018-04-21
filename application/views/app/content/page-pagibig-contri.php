@@ -865,7 +865,7 @@
 			pagePagibigContri.elem.find('.employeeShare'+keyEmployee).val(valueEmployee['pagibig_ee_share']);
 			pagePagibigContri.elem.find('.employerShare'+keyEmployee).val(valueEmployee['pagibig_er_share']);
 
-			pagePagibigContri.elem.find('.remarks'+keyEmployee).val(valueEmployee['pagibig_remarks']);
+			pagePagibigContri.elem.find('.remarks'+keyEmployee).val(valueEmployee['pagibig_remarks'] + ": " + valueEmployee['pagibig_remarks_date']);
 			pagePagibigContri.elem.find('.member-program'+keyEmployee).val(valueEmployee['pagibig_mem_prog']);
 			pagePagibigContri.elem.find('.monthly'+keyEmployee).val(valueEmployee['monthly_compen']);
 

@@ -117,6 +117,7 @@
 				<h3>SSS Contribution</h3>
 			</div>
 			<div class="panel-body">
+				<div id="sss-graph"></div>
 				<div class="contri-content">
 					<span class="description">Social Security Contribution</span>
 						<table class="no-border no-strip skills">
@@ -160,16 +161,33 @@
 		</div>
 	</div>
 	<div class="col-md-6">
-		<div class="panel panel-default">
+		<div class="info-block panel panel-default">
 			<div class="panel-heading">
-				<h3>Pag-ibig Contribution</h3>
+				<h3>Pag-Ibig Contribution</h3>
 			</div>
 			<div class="panel-body">
-				<div class="form-group">
-					<label for="pagibig-total-contribution">Total Contribution</label>
-					<input class="form-control pagibig-total-contribution" type="text" name="pagibig-total-contribution" placeholder="Total Contribution" readonly/>
+				<div id="pagibig-graph"></div>
+				<div class="contri-content">
+					<span class="description">Pag-Ibig Contribution</span>
+						<table class="no-border no-strip skills">
+							<tbody class="no-border-x no-border-y">
+		                        <tr>
+		                          <td class="item">Total Employer Share<span class="icon s7-culture"></span></td>
+		                          <td class="er-share amount-contri"></td>
+		                        </tr>
+		                        <tr class="end-of-formula">
+		                          <td class="item">Total Employee Share<span class="icon s7-users"></span></td>
+		                          <td class="ee-share amount-contri"></td>
+		                        </tr>
+		                        <tr>
+		                          <td class="item total-item">Total Pag-Ibig Contribution<span class="icon s7-cash total-icon"></span></td>
+		                          <td class="pagibig-total-contribution amount-contri total-contri"></td>
+		                        </tr>
+		                    </tbody>
+						</table>
 				</div>
 			</div>
+
 		</div>
 	</div>
 </div>
@@ -179,6 +197,8 @@
 	var pageDashboard = {};
 	pageDashboard.init = function(selector, callback){
 		pageDashboard.elem = $(selector);
+
+		
 
 		pageDashboard.elem.find('.employee-info-table').DataTable({
 			"autowidth":false,
@@ -213,6 +233,129 @@
 		pageDashboard.sss = result['sssQuery'];
 		pageDashboard.pagibig = result['pagibigQuery'];
 		pageDashboard.company = result['companyQuery'];
+		pageDashboard.paidContri = result['paidContriQuery'];
+		pageDashboard.sssPaidMonth = [];
+		pageDashboard.sssPaidAmount = [];
+		pageDashboard.pagibigPaidMonth = [];
+		pageDashboard.pagibigPaidAmount = [];
+
+		const monthNamesAbri = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+								  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+								];
+		pageDashboard.getDate = new Date();
+
+		pageDashboard.getDate.getFullYear();
+
+		$.each(pageDashboard.paidContri, function(keyPaid, valuePaid){
+
+			if(pageDashboard.getDate.getFullYear() == valuePaid['year'] && valuePaid['gov_agency'] == "SSS"){
+				pageDashboard.sssPaidMonth.push(valuePaid['month']);
+				pageDashboard.sssPaidAmount.push(valuePaid['amount']);
+			}
+
+			if(pageDashboard.getDate.getFullYear() == valuePaid['year'] && valuePaid['gov_agency'] == "Pag-Ibig"){
+				pageDashboard.pagibigPaidMonth.push(valuePaid['month']);
+				pageDashboard.pagibigPaidAmount.push(valuePaid['amount']);
+			}
+			
+		});
+		if(jQuery.inArray('1', pageDashboard.sssPaidMonth) == -1){
+			pageDashboard.sssPaidMonth.splice(0,0, "1");
+			pageDashboard.sssPaidAmount.splice(0,0, "0");
+		}
+		if(jQuery.inArray('2', pageDashboard.sssPaidMonth) == -1){
+			pageDashboard.sssPaidMonth.splice(1,0, "2");
+			pageDashboard.sssPaidAmount.splice(1,0, "0");
+		}
+		if(jQuery.inArray('3', pageDashboard.sssPaidMonth) == -1){
+			pageDashboard.sssPaidMonth.splice(2,0, "3");
+			pageDashboard.sssPaidAmount.splice(2,0, "0");
+		}
+		if(jQuery.inArray('4', pageDashboard.sssPaidMonth) == -1){
+			pageDashboard.sssPaidMonth.splice(3,0, "4");
+			pageDashboard.sssPaidAmount.splice(3,0, "0");
+		}
+		if(jQuery.inArray('5', pageDashboard.sssPaidMonth) == -1){
+			pageDashboard.sssPaidMonth.splice(4,0, "5");
+			pageDashboard.sssPaidAmount.splice(4,0, "0");
+		}
+		if(jQuery.inArray('6', pageDashboard.sssPaidMonth) == -1){
+			pageDashboard.sssPaidMonth.splice(5,0, "6");
+			pageDashboard.sssPaidAmount.splice(5,0, "0");
+		}
+		if(jQuery.inArray('7', pageDashboard.sssPaidMonth) == -1){
+			pageDashboard.sssPaidMonth.splice(6,0, "7");
+			pageDashboard.sssPaidAmount.splice(6,0, "0");
+		}
+		if(jQuery.inArray('8', pageDashboard.sssPaidMonth) == -1){
+			pageDashboard.sssPaidMonth.splice(7,0, "8");
+			pageDashboard.sssPaidAmount.splice(7,0, "0");
+		}
+		if(jQuery.inArray('9', pageDashboard.sssPaidMonth) == -1){
+			pageDashboard.sssPaidMonth.splice(8,0, "9");
+			pageDashboard.sssPaidAmount.splice(8,0, "0");
+		}
+		if(jQuery.inArray('10', pageDashboard.sssPaidMonth) == -1){
+			pageDashboard.sssPaidMonth.splice(9,0, "10");
+			pageDashboard.sssPaidAmount.splice(9,0, "0");
+		}
+		if(jQuery.inArray('11', pageDashboard.sssPaidMonth) == -1){
+			pageDashboard.sssPaidMonth.splice(10,0, "11");
+			pageDashboard.sssPaidAmount.splice(10,0, "0");
+		}
+		if(jQuery.inArray('12', pageDashboard.sssPaidMonth) == -1){
+			pageDashboard.sssPaidMonth.splice(11,0, "12");
+			pageDashboard.sssPaidAmount.splice(11,0, "0");
+		}
+		if(jQuery.inArray('1', pageDashboard.pagibigPaidMonth) == -1){
+			pageDashboard.pagibigPaidMonth.splice(0,0, "1");
+			pageDashboard.pagibigPaidAmount.splice(0,0, "0");
+		}
+		if(jQuery.inArray('2', pageDashboard.pagibigPaidMonth) == -1){
+			pageDashboard.pagibigPaidMonth.splice(1,0, "2");
+			pageDashboard.pagibigPaidAmount.splice(1,0, "0");
+		}
+		if(jQuery.inArray('3', pageDashboard.pagibigPaidMonth) == -1){
+			pageDashboard.pagibigPaidMonth.splice(2,0, "3");
+			pageDashboard.pagibigPaidAmount.splice(2,0, "0");
+		}
+		if(jQuery.inArray('4', pageDashboard.pagibigPaidMonth) == -1){
+			pageDashboard.pagibigPaidMonth.splice(3,0, "4");
+			pageDashboard.pagibigPaidAmount.splice(3,0, "0");
+		}
+		if(jQuery.inArray('5', pageDashboard.pagibigPaidMonth) == -1){
+			pageDashboard.pagibigPaidMonth.splice(4,0, "5");
+			pageDashboard.pagibigPaidAmount.splice(4,0, "0");
+		}
+		if(jQuery.inArray('6', pageDashboard.pagibigPaidMonth) == -1){
+			pageDashboard.pagibigPaidMonth.splice(5,0, "6");
+			pageDashboard.pagibigPaidAmount.splice(5,0, "0");
+		}
+		if(jQuery.inArray('7', pageDashboard.pagibigPaidMonth) == -1){
+			pageDashboard.pagibigPaidMonth.splice(6,0, "7");
+			pageDashboard.pagibigPaidAmount.splice(6,0, "0");
+		}
+		if(jQuery.inArray('8', pageDashboard.pagibigPaidMonth) == -1){
+			pageDashboard.pagibigPaidMonth.splice(7,0, "8");
+			pageDashboard.pagibigPaidAmount.splice(7,0, "0");
+		}
+		if(jQuery.inArray('9', pageDashboard.pagibigPaidMonth) == -1){
+			pageDashboard.pagibigPaidMonth.splice(8,0, "9");
+			pageDashboard.pagibigPaidAmount.splice(8,0, "0");
+		}
+		if(jQuery.inArray('10', pageDashboard.pagibigPaidMonth) == -1){
+			pageDashboard.pagibigPaidMonth.splice(9,0, "10");
+			pageDashboard.pagibigPaidAmount.splice(9,0, "0");
+		}
+		if(jQuery.inArray('11', pageDashboard.pagibigPaidMonth) == -1){
+			pageDashboard.pagibigPaidMonth.splice(10,0, "11");
+			pageDashboard.pagibigPaidAmount.splice(10,0, "0");
+		}
+		if(jQuery.inArray('12', pageDashboard.pagibigPaidMonth) == -1){
+			pageDashboard.pagibigPaidMonth.splice(11,0, "12");
+			pageDashboard.pagibigPaidAmount.splice(11,0, "0");
+		}
+		console.log(pageDashboard.pagibigPaidAmount);
 
 		
 
@@ -246,29 +389,77 @@
 		pageDashboard.er_contribution = 0;
 		pageDashboard.sss_total = 0;
 		$.each(pageDashboard.sss, function(key, value){
-			pageDashboard.ss_contribution +=  parseInt(value['ss_contribution']); 
-			pageDashboard.ec_contribution +=  parseInt(value['ec_contribution']); 
-			pageDashboard.ee_contribution +=  parseInt(value['ee_contribution']);
-			pageDashboard.er_contribution +=  parseInt(value['er_contribution']);
+			pageDashboard.ss_contribution +=  parseFloat(value['ss_contribution']); 
+			pageDashboard.ec_contribution +=  parseFloat(value['ec_contribution']); 
+			pageDashboard.ee_contribution +=  parseFloat(value['ee_contribution']);
+			pageDashboard.er_contribution +=  parseFloat(value['er_contribution']);
 
 			console.log(pageDashboard.er_contribution);
 		});
 		pageDashboard.sss_total = pageDashboard.ss_contribution + pageDashboard.ec_contribution;
-		pageDashboard.elem.find('.ss-contribution').text(pageDashboard.ss_contribution);
-		pageDashboard.elem.find('.ee-contribution').text(pageDashboard.ee_contribution);
-		pageDashboard.elem.find('.er-contribution').text(pageDashboard.er_contribution);
-		pageDashboard.elem.find('.ec-contribution').text(pageDashboard.ec_contribution);
-		pageDashboard.elem.find('.sss-total-contribution').text(pageDashboard.sss_total);
+		pageDashboard.elem.find('.ss-contribution').text(pageDashboard.ss_contribution.toFixed(2));
+		pageDashboard.elem.find('.ee-contribution').text(pageDashboard.ee_contribution.toFixed(2));
+		pageDashboard.elem.find('.er-contribution').text(pageDashboard.er_contribution.toFixed(2));
+		pageDashboard.elem.find('.ec-contribution').text(pageDashboard.ec_contribution.toFixed(2));
+		pageDashboard.elem.find('.sss-total-contribution').text(pageDashboard.sss_total.toFixed(2));
 
 		pageDashboard.pagibig_er_share = 0;
 		pageDashboard.pagibig_ee_share = 0;
 		pageDashboard.pagibig_total = 0;
-		$.each(pageDashboard.pagibig, function(key, value){
-			pageDashboard.pagibig_er_share += parseInt(value['pagibig_er_share']);
-			pageDashboard.pagibig_ee_share += parseInt(value['pagibig_ee_share']);
+		$.each(pageDashboard.pagibig, function(keyPagibig, valuePagibig){
+
+			pageDashboard.pagibig_er_share += parseInt(valuePagibig['pagibig_er_share']);
+			pageDashboard.pagibig_ee_share += parseInt(valuePagibig['pagibig_ee_share']);
 		});
 		pageDashboard.pagibig_total = pageDashboard.pagibig_er_share + pageDashboard.pagibig_ee_share;
-		pageDashboard.elem.find('.pagibig-total-contribution').val(pageDashboard.pagibig_total);
+		pageDashboard.elem.find('.er-share').text(pageDashboard.pagibig_er_share.toFixed(2));
+		pageDashboard.elem.find('.ee-share').text(pageDashboard.pagibig_ee_share.toFixed(2));
+		pageDashboard.elem.find('.pagibig-total-contribution').text(pageDashboard.pagibig_total.toFixed(2));
+
+
+		pageDashboard.sss_graph_content = {
+		  x: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], 
+		  y: pageDashboard.sssPaidAmount,
+		  type: 'bar',
+		  marker: {
+		    color: '#8EC63F',
+		    opacity: 0.7
+		  }
+		};
+
+		pageDashboard.sss_graph_data = [pageDashboard.sss_graph_content];
+
+		pageDashboard.sss_graph_layout = {
+		  title: 'SSS Contributions for the Year '+pageDashboard.getDate.getFullYear(),
+		  xaxis: {
+		    tickangle: -45
+		  },
+		  barmode: 'group'
+		};
+
+		Plotly.newPlot('sss-graph', pageDashboard.sss_graph_data, pageDashboard.sss_graph_layout);
+
+		pageDashboard.pagibig_graph_content = {
+		  x: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], 
+		  y: pageDashboard.pagibigPaidAmount,
+		  type: 'bar',
+		  marker: {
+		    color: '#8EC63F',
+		    opacity: 0.7
+		  }
+		};
+
+		pageDashboard.pagibig_graph_data = [pageDashboard.pagibig_graph_content];
+
+		pageDashboard.pagibig_graph_layout = {
+		  title: 'Pag-Ibig Contributions for the Year '+pageDashboard.getDate.getFullYear(),
+		  xaxis: {
+		    tickangle: -45
+		  },
+		  barmode: 'group'
+		};
+
+		Plotly.newPlot('pagibig-graph', pageDashboard.pagibig_graph_data, pageDashboard.pagibig_graph_layout);
 	});
 
 </script>

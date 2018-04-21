@@ -13,6 +13,7 @@
 			$data['sssQuery'] = $this->Dashboard_Model->getAllSSS();
 			$data['pagibigQuery'] = $this->Dashboard_Model->getAllPagibig();
 			$data['companyQuery'] = $this->Dashboard_Model->getCompany();
+			$data['paidContriQuery'] = $this->Dashboard_Model->getPaidContri();
 			$this->benchmark->mark('end');
 			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
 			header('Content-Type: application/json');

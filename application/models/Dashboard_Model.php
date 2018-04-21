@@ -21,6 +21,11 @@
 			return $sqlCompany->result();
 		}
 
+		public function getPaidContri(){
+			$sqlPaid = $this->db->query("SELECT * FROM paid_contribution ORDER BY month");
+			return $sqlPaid->result();
+		}
+
 		public function getEmployeesInfo($args){
 			if(!isset($args['offset'])){
 				$args['offset'] = 0;

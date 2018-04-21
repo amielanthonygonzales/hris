@@ -27,7 +27,9 @@
 				WHERE 
 					`pagibig_emp_id` = `emp_id` 
 				AND 
-					`emp_deleted` = 0
+					`emp_deleted` = 0 
+				AND 
+					`pagibig_deleted` = 0
 				ORDER BY 
 					`emp_last_name` ASC
 				");
@@ -41,7 +43,7 @@
 
 		public function getAllData($page){
 			$pageNo = ($page - 1)*28;
-			$sql = $this->db->query("SELECT * FROM `employee`, `pag_ibig` where `emp_deleted` = 0 AND `pagibig_emp_id` = `emp_id` ORDER BY `emp_last_name` ASC LIMIT 28 OFFSET ". $this->db->escape($pageNo));
+			$sql = $this->db->query("SELECT * FROM `employee`, `pag_ibig` where `emp_deleted` = 0 AND `pagibig_emp_id` = `emp_id` AND `pagibig_deleted` = 0 ORDER BY `emp_last_name` ASC LIMIT 28 OFFSET ". $this->db->escape($pageNo));
 			return $sql->result();
 		}
 	}
