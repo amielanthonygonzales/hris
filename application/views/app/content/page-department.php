@@ -28,7 +28,7 @@
           </div>
           <div class="modal-body form">
             <div class="form-group">
-              <label>Your name</label>
+              <label>Department Name</label>
               <input type="text" placeholder="Department name" class="form-control dept_name">
             </div>
           </div>

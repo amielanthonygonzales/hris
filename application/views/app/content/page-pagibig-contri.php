@@ -743,8 +743,7 @@
 
 		pagePagibigContri.month = pagePagibigContri.getDate.getMonth();
 		pagePagibigContri.day = pagePagibigContri.getDate.getDate();
-		pagePagibigContri.monthlyCompen = monthNamesAbri[pagePagibigContri.month] + " " 
-										+ pagePagibigContri.getDate.getFullYear();
+		pagePagibigContri.monthlyCompen = pagePagibigContri.getDate.getFullYear() + " " + parseInt(pagePagibigContri.month + 1);
 
 		pagePagibigContri.currentDate = monthNames[pagePagibigContri.month] + " " 
 										+ (pagePagibigContri.day<10 ? '0' : '') + pagePagibigContri.day + ", " 
