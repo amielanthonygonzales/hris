@@ -14,5 +14,12 @@
 			header('Content-Type: application/json');
         	echo json_encode($ret);
 		}
+		public function getContributions(){
+			$this->benchmark->mark('start');
+			$data['contributions'] = $this->Paid_Model->getContributions();
+			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+			echo json_encode($data);
+		}
 	} 
 ?>

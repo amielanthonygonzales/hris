@@ -53,6 +53,9 @@
 						<button type="button" name="btnAdd" value="add" class ="btn btn-space btn-success btn-add-register">
 							<i class="icon icon-left s7-plus"></i>ADD
 						</button>
+						<button type="button" name="btnEmail" class ="btn btn-space btn-success btn-email">
+							<i class="icon icon-left s7-mail"></i>EMAIL
+						</button>
 					</div>
 				</div>	
 				<div class="form-group">
@@ -185,7 +188,7 @@
 															data: args,
 															dataType: "json",
 															success: function(data){
-																console.log(data);
+																console.log("Success");
 															}
 													});
 													return false;

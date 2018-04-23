@@ -21,5 +21,25 @@
 				);
 			return 1;
 		}
+		public function getContributions(){
+			$sql = $this->db->query("
+				SELECT 
+				* FROM 
+					`employee`, 
+					`pag_ibig`,
+					`sss` 
+				WHERE 
+					`pagibig_emp_id` = `emp_id`
+				AND
+					`sss_emp_id`  = `emp_id`
+				AND 
+					`emp_deleted` = 0 
+				AND 
+					`pagibig_deleted` = 0
+				ORDER BY 
+					`emp_last_name` ASC
+				");
+			return $sql->result();
+		}
 	}
 ?>
