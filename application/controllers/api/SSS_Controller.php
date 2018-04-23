@@ -29,5 +29,47 @@
 			header('Content-Type: application/json');
       		echo json_encode($data);
 		}
+
+		public function addReference(){
+			$this->benchmark->mark('start');
+			$postReference = $this->input->post();
+			$ret['success'] = $this->SSS_Model->addReference($postReference);
+			$this->benchmark->mark('end');
+			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($ret);
+		}
+
+		public function getAllReference(){
+			$this->benchmark->mark('start');
+			$ret['query'] = $this->SSS_Model->getAllReference();
+			$this->benchmark->mark('end');
+			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($ret);
+		}
+
+		public function datatableSSS(){
+			$args = array(
+	            "count" => $_GET['length'],
+	            "offset" =>  $_GET['start'],
+	            "search" =>  $_GET['search']['value'],
+	            "orderby" => $columns[$_GET['order'][0]['column']],
+	            "dir" => $_GET['order'][0]['dir']
+       		);
+       		if($args['dir'] == ""){
+				$args['dir']	= "asc";
+			}
+			if($args['orderby'] == ""){
+				$args['orderby']	= "ref_range_start";
+			}
+			$ret=array();
+			$ret['draw'] = $_GET['draw'];
+			$ret['data'] = $this->SSS_Model->getSSSRef($args);
+			$ret['recordsTotal'] = $this->SSS_Model->countSSSRef();
+			$ret['recordsFiltered'] = $ret['recordsTotal'];
+			header('Content-Type: application/json');
+			echo json_encode($ret);
+		}
 	}
  ?>

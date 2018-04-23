@@ -63,12 +63,12 @@ h6 { font-size: .75em!important; }
 }
 
 
-#pageSSSReference .input-group-addon{
+ #pageSSSReferenceEdit .input-group-addon{
     font-size: 12px;
     color: black;
 }
 
-#pageSSSReference .input-group{
+ #pageSSSReferenceEdit .input-group{
     border-bottom: none;
     padding: 10px 0;
 } 
@@ -197,39 +197,39 @@ a:hover{
     text-align: center;
  }
 
- #pageSSSReference .label-range{
+ #pageSSSReferenceEdit .label-range{
     margin-top: 11px;
  }
 
- #pageSSSReference .modal-edit-sss-ref .description {
+ #pageSSSReferenceEdit .description {
     padding-bottom: 15px;
     border-bottom: 1px dashed #e6e6e6;
     display: block;
     color: #7b7b7b;
 }
 
-#pageSSSReference .modal-edit-sss-ref table tr td.item {
+#pageSSSReferenceEdit table tr td.item {
     width: 60%;
     color: #7b7b7b;
 }
 
-#pageSSSReference .modal-edit-sss-ref table tr td.total-item {
+#pageSSSReferenceEdit table tr td.total-item {
     width: 60%;
     color: #8ec63f;
 }
 
-#pageSSSReference .modal-edit-sss-ref table tr td {
+#pageSSSReferenceEdit table tr td {
     padding: 7px 0;
 }
 
- #pageSSSReference .modal-edit-sss-ref table tr td.item .icon {
+ #pageSSSReferenceEdit table tr td.item .icon {
     float: left;
     margin-right: 5px;
     font-size: 20px;
     color: #302f2f;
 }
 
-#pageSSSReference .modal-edit-sss-ref table tr td.item .total-icon {
+#pageSSSReferenceEdit table tr td.item .total-icon {
     float: left;
     margin-right: 5px;
     font-size: 20px;
@@ -237,30 +237,36 @@ a:hover{
 
 }
 
-#pageSSSReference .modal-edit-sss-ref table {
+#pageSSSReferenceEdit table {
     width: 100%;
 }
 
-#pageSSSReference .modal-edit-sss-ref .amount-contri{
+#pageSSSReferenceEdit .amount-contri{
     text-align: right;
 }
 
-#pageSSSReference .modal-edit-sss-ref .total-contri{
+#pageSSSReferenceEdit .sss-ref-total-contri{
     color: #8ec63f;
 }
 
-#pageSSSReference .modal-edit-sss-ref table tr.end-of-formula{
+#pageSSSReferenceEdit table tr.end-of-formula{
     border-bottom: 3px solid #dddddd;
 }
 
-#pageSSSReference .modal-edit-sss-ref .contri-content{
+#pageSSSReferenceEdit .contri-content{
     padding: 20px;
     border: 2px solid #dddddd;
     margin-bottom: 16px;
 }
 
-#pageSSSReference .sss-ref-input{
+#pageSSSReferenceEdit .sss-ref-input{
     height: 30px;
+    text-align: right;
+}
+
+#pageSSSReferenceEdit .end-over{
+    padding: 6px;
+    padding-left: 12px;
 }
 /*.message{
     color: #ec4b4b;

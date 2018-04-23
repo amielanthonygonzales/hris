@@ -61,5 +61,69 @@
 		    $arr['return']=$arrData;
 		    return $arr;
 		}
+
+		function addReference($postReference){
+			if($postReference['ref_range_start'] == ''){
+				$returndata['error'] = "Please input a start range!";
+			}else if($postReference['ref_range_end'] == ''){
+				$returndata['error'] = "Please input an end range!";
+			}else if($postReference['ref_monthly_salary'] == ''){
+				$returndata['error'] = "Please input a monthly salary!";
+			}else if($postReference['ref_er'] == ''){
+				$returndata['error'] = "Please input an ER!";
+			}else if($postReference['ref_ee'] == ''){
+				$returndata['error'] = "Please input an EE!";
+			}else if($postReference['ref_ec'] == ''){
+				$returndata['error'] = "Please input an EC!";
+			}else{
+				$sql = $this->db->query("
+					INSERT INTO 
+						`sss_reference` 
+							(
+								`ref_range_start`, 
+								`ref_range_end`, 
+								`ref_monthly_salary`, 
+								`ref_er`, 
+								`ref_ee`, 
+								`ref_ec`
+							) 
+					VALUES
+						(
+							".$this->db->escape($postReference['ref_range_start']).", 
+							".$this->db->escape($postReference['ref_range_end']).", 
+							".$this->db->escape($postReference['ref_monthly_salary']).", 
+							".$this->db->escape($postReference['ref_er']).", 
+							".$this->db->escape($postReference['ref_ee']).", 
+							".$this->db->escape($postReference['ref_ec'])."
+						)"
+					);
+				return $returndata = 1;
+			}
+			return $returndata;
+		}
+
+		function getAllReference(){
+			$sql = $this->db->query("SELECT * FROM `sss_reference` WHERE `ref_deleted` = 0");
+			return $sql->result();
+		}
+		public function getSSSRef($args){
+			if(!isset($args['offset'])){
+				$args['offset'] = 0;
+			}
+			$sql = "
+			SELECT * 
+			FROM `sss_reference` 
+			WHERE `ref_deleted` = 0
+			AND `ref_range_start` LIKE '%" .$this->db->escape_str($args['search']). "%'
+			ORDER BY ".$this->db->escape_str($args['orderby'])." ASC
+			LIMIT " .$this->db->escape_str($args['count']). " 
+			OFFSET ".$this->db->escape_str($args['offset']);
+			return $this->db->query($sql)->result_array();
+		}
+
+		public function countSSSRef(){
+			$sql = "SELECT COUNT(*) AS `count` FROM `sss_reference` WHERE `ref_deleted` = 0";
+			return $this->db->query($sql)->result_array()[0]["count"];
+		}
 	}
 ?>

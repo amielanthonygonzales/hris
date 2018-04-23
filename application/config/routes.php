@@ -70,6 +70,7 @@ $route['profile'] = 'api/Employee_Controller/getEmployeeProfile';
 $route['email'] = 'api/Employee_Controller/sendEmail';
 $route['notification'] = 'api/Employee_Controller/sendNotification';
 
+
 //Company
 //app
 $route['company'] = 'app/Company_Controller/view';
@@ -113,11 +114,17 @@ $route['get-data-per-page/(:any)'] = 'api/Pagibig_Controller/getDataPerPage/$1';
 //SSS
 //api
 $route['get-data-sss/(:any)'] = 'api/SSS_Controller/getDataPerPage/$1';
+$route['get-all-reference'] = 'api/SSS_Controller/getAllReference';
+$route['add-reference'] = 'api/SSS_Controller/addReference';
+$route['sss-datatable'] = 'api/SSS_Controller/datatableSSS';
+//app
+$route['add-sss-reference'] = 'app/SSS_Controller/viewAddReference';
 
 //Payed Contribution
 //api
 $route['saved-contribution'] = 'api/Paid_Controller/addContribution';
 $route['get-contributions'] = 'api/Paid_Controller/getContributions';
+
 
 
 // $route['register-employee'] = 'RegisterEmp_Controller/registerEmp';

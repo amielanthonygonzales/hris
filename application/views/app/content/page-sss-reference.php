@@ -1,63 +1,45 @@
 <div id = "pageSSSReference">
-	<div id="form-bp1" tabindex="-1" role="dialog" class="modal fade modal-colored-header in modal-edit-sss-ref">
-      <div class="modal-dialog custom-width">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" data-dismiss="modal" aria-hidden="true" class="close md-close"><i class="icon s7-close"></i></button>
-            <h3 class="modal-title"></h3>
-          </div>
-          <div class="modal-body form">
-          	<div class="form-group row">
-          		<label class="col-xs-12">Range of Compensation</label>
-          		<div class="form-group">
-          			<label class="col-xs-1 label-range">From</label>
-          			<div class="col-xs-5">
-          				<input type="name" placeholder="From" class="form-control sss-ref-from"/>
-          			</div>
-          		</div>
-          		<div class="form-group">
-          			<label class="col-xs-1 label-range">To</label>
-          			<div class="col-xs-5">
-          				<input type="name" placeholder="To" class="form-control sss-ref-to"/>
-          			</div>
-          		</div>
-            </div>
-
-            <div class="form-group">
-            	<label>Monthly Salary Credit</label>
-            	<input type="name" placeholder="Monthly Salary Credit" class="form-control sss-ref-monthly"/>
-            </div>
-            <div class="contri-content">
-				<span class="description">Social Security</span>
-				<table class="no-border no-strip skills">
-					<tbody class="no-border-x no-border-y">
-                        <tr>
-                          <td class="item">Employer Contribution<span class="icon s7-culture"></span></td>
-                          <td><input type="name" class="form-control sss-ref-input sss-ref-er"/></td>
-                        </tr>
-                        <tr class="end-of-formula">
-                          <td class="item">Employee Contribution<span class="icon s7-users"></span></td>
-                          <td><input type="name" class="form-control sss-ref-input sss-ref-ee"/></td>
-                        </tr>
-                        <tr>
-                          <td class="item total-item">Total Social Security<span class="icon s7-cash total-icon"></span></td>
-                          <td class="ss-contribution amount-contri sss-ref-total-contri "></td>
-                        </tr>
-                    </tbody>
-				</table>
+	
+	<div tabindex="-1" role="dialog" class="modal fade in modal-sss-ref">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						<div class="i-circle"><i class="icon symbol"></i></div>
+						<p class="sss-ref-message"></p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-success btn-proceed">Proceed</button>
+					<button type="button" class="btn btn-success btn-yes">YES</button>
+					<button type="button" data-dismiss="modal" class="btn btn-default btn-no">NO</button>
+				</div>
 			</div>
-			<div class="form-group">
-            	<label>Employee Compensation</label>
-            	<input type="name" placeholder="Employee Compensation" class="form-control sss-ref-ec"/>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" data-dismiss="modal" class="btn btn-default md-close">Cancel</button>
-            <button type="button" data-dismiss="modal" class="btn btn-primary btn-save">Save</button>
-          </div>
-        </div>
-      </div>
-    </div>
+		</div>
+	</div>
+	<div tabindex="-1" role="dialog" class="modal fade in modal-error">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						<div class="i-circle text-danger"><i class="icon s7-close"></i></div>
+						<h4>Oh no!</h4>
+						<p></p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-danger">Proceed</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3>SSS Contribution Reference</h3>
@@ -111,29 +93,58 @@
 	var pageSSSReference = {};
 	pageSSSReference.init = function(selector, callback){
 		pageSSSReference.elem = $(selector);
+		pageSSSReference.elem.find('.table-sss-reference').DataTable({
+			"autowidth":false,
+			"paging" : true,
+			"searching": true,
+			"processing": true,
+			"serverSide": true,
+			"pagingType": "full_numbers",
+			"order": [[ 0, "desc" ]],
+			"ajax":{
+				"url": "<?php echo site_url('sss-datatable')?>",
+				"dataScr" : function( json ){
+					return json['data'];
+				}
+			},
+			"columnDefs": [
+				{
+					"targets": 0,
+					"orderable": true,
+					//"data":  "null",
+					//"defaultContent": ""
+				},
+				{
+					"targets": 1,
+					"orderable": false,
+				},
+				{
+					"targets": 2,
+					"orderable": false
+				}
+			],
+			"columns" : [
+				{data: "ref_range_start"},
+				{data: "ref_range_end"},
+				{data: "ref_monthly_salary"},
+				{data: "ref_er"},
+				{data: "ref_ee"},
+				{data: "ref_ec"},	
+				{data: "ref_id"},
+				{data: "ref_id"}
+			],
+			"drawCallback":function(settings){
 
-		// pageSSSReference.elem.find('.table-sss-reference').DataTable({
-
-		// });
+			},
+			dom:  	"<'row am-datatable-header'<'col-sm-6'l><'col-sm-6'f>>" +
+					"<'row am-datatable-body'<'col-sm-12'tr>>" +
+					"<'row am-datatable-footer'<'col-sm-5'i><'col-sm-7'p>>"
+		});
 
 		
 
 		pageSSSReference.elem.find('.btn-add').off("click").click(function(e){
-			pageSSSReference.elem.find('.btn-save').removeClass('btn-ref-edit').addClass('btn-ref-save');
-			pageSSSReference.elem.find('.modal-title').text('Add SSS Reference');
-			pageSSSReference.elem.find('.modal-edit-sss-ref').modal();
-
-			pageSSSReference.elem.find('.btn-ref-save').off("click").click(function(event){
-				pageSSSReference.content = {
-					"ref_range_start" : pageSSSReference.elem.find('.sss-ref-from').val(),
-					"ref_range_end" : pageSSSReference.elem.find('.sss-ref-to').val(),
-					"ref_monthly_salary" : pageSSSReference.elem.find('.sss-ref-monthly').val(),
-					"ref_er" : pageSSSReference.elem.find('.sss-ref-er').val(),
-					"ref_ee" : pageSSSReference.elem.find('.sss-ref-ee').val(),
-					"ref_ec" : pageSSSReference.elem.find('.sss-ref-ec').val()
-				};
-				console.log(pageSSSReference.content);
-			});	
+			window.parent.location = "<?php echo base_url('add-sss-reference')?>";
 		});
 		callback();
 	}
