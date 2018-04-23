@@ -6,40 +6,10 @@
 					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
 				</div>
 				<div class="modal-body">
-					<!-- <div class="text-center">
+					<div class="text-center">
 						<div class="i-circle"><i class="icon symbol"></i></div>
 						<p class="message"></p>
-					</div> -->
-					<div class="form-group">
-						<label for="oldpassword">Old Password</label>
-						<input class="form-control editEmp-oldpassword" type="password" name="oldpassword" placeholder="Old Password" />
 					</div>
-					<div class="form-group">
-						<label for="newpassword">New Password</label>
-						<input class="form-control editEmp-newpassword" type="password" name="newpassword" placeholder="New Password" />
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" data-dismiss="modal" class="btn btn-success btn-proceed">Proceed</button>
-					<button type="button" class="btn btn-success btn-yes">YES</button>
-					<button type="button" data-dismiss="modal" class="btn btn-default btn-no">NO</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Modal Password -->
-	<div tabindex="-1" role="dialog" class="modal fade in modal-department">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
-				</div>
-				<div class="modal-body">
-					<!-- <div class="text-center">
-						<div class="i-circle"><i class="icon symbol"></i></div>
-						<p class="message"></p>
-					</div> -->
-
 				</div>
 				<div class="modal-footer">
 					<button type="button" data-dismiss="modal" class="btn btn-success btn-proceed">Proceed</button>

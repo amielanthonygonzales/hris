@@ -32,6 +32,9 @@
 				<button type="button" name="btnPrint" value="print" class ="btn btn-success btn-space btn-print">
 						<i class="icon icon-left s7-print"></i>PRINT
 				</button>
+				<button type="button" name="btnMail" value="mail" class ="btn btn-success btn-space btn-mail">
+						<i class="icon icon-left s7-mail"></i>EMAIL
+				</button>
 			</div>
 		</div>
 		<div class="panel-body button-print">
@@ -794,9 +797,38 @@
 		pagePagibigContri.populate(result);
 	});
 
+	pagePagibigContri.elem.find('.btn-mail').off().click(function(){
+		pagePagibigContri.dataArray = [];
+		pagePagibigContri.dataObj = {};
+		var args;
+		$.getJSON('<?php echo site_url('get-contributions')?>', function(result){
+			var len = result.contributions.length;
+			for(var i=0; i<len; i++){
+				var total = 0;
+				total = parseInt(result.contributions[i].pagibig_ee_share) + parseInt(result.contributions[i].pagibig_er_share);
+				pagePagibigContri.dataObj = {'email': result.contributions[i].emp_email, 'eeshare': result.contributions[i].pagibig_ee_share, 'ershare': result.contributions[i].pagibig_er_share, 'total': total};
+				pagePagibigContri.dataArray.push(pagePagibigContri.dataObj);
+				if(i == len-1){
+					console.log(pagePagibigContri.dataArray);
+					args = {'data': pagePagibigContri.dataArray};
+					$.ajax({
+						method: "POST",
+							url: '<?php echo base_url('notification')?>',
+							data: args,
+							dataType: "json",
+							success: function(data){
+								console.log("Success");
+							}
+					});
+				}
+			}
+		});
+	});
+
 	pagePagibigContri.populate = function(result){
 		pagePagibigContri.page = parseInt(result.count);
 		console.log(result.count);
+		console.log(result);
 		pagePagibigContri.page = Math.ceil(pagePagibigContri.page/28);
 			pagePagibigContri.elem.find('.pagination').html('');
 
@@ -854,10 +886,12 @@
 		pagePagibigContri.totalER = 0;
 		pagePagibigContri.totalEE = 0;
 		pagePagibigContri.total = 0;
+		
 		$.each(pagePagibigContri.employeeInfo, function(keyEmployee, valueEmployee){
 			keyEmployee += +1;
 			pagePagibigContri.totalContri = 0;
 
+			//console.log(valueEmployee);
 
 			pagePagibigContri.elem.find('.midNo'+keyEmployee).val(valueEmployee['pagibig_mid_no']);
 			pagePagibigContri.elem.find('.name'+keyEmployee).val(valueEmployee['emp_last_name'].toUpperCase() + ", " + valueEmployee['emp_first_name'].toUpperCase() + " " + valueEmployee['emp_ext_name'].toUpperCase() + " " + valueEmployee['emp_middle_name'].toUpperCase());

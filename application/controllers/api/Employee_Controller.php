@@ -7,14 +7,10 @@
 		}
 
 		public function sendEmail(){
-			// $data = $_POST;
-			// echo $data;
 			$password = $this->input->post('password');
 			$username = $this->input->post('username');
 			$email = $this->input->post('email');
 			echo $email;
-			// $username = "username";
-			// $password = "passwordsss";
 			$config = Array(
 				'protocol' => 'smtp',
 				'smtp_host' => 'ssl://smtp.gmail.com',
@@ -42,15 +38,65 @@
 			
 		}
 
+		public function sendNotification(){
+			$data = $this->input->post();	
+			$config = Array(
+				'protocol' => 'smtp',
+				'smtp_host' => 'ssl://smtp.gmail.com',
+				'smtp_port' => '465',
+				'smp_timeout' => '30',
+				'smp_mailpath' => '/usr/sbin/sendmail',
+				'smtp_user' => 'jrpg99@gmail.com',
+				'smtp_pass' => 'pass1020',
+				'mailtype' => 'html',
+				'charset' => 'utf-8',
+				'wordwrap' => TRUE
+			);
+			$email;
+			$eeshare;
+			$ershare;
+			$total;
+			$i=0;
+			foreach ($data as $key => $value) {
+				foreach ($value as $k => $v) {
+					foreach ($v as $index => $result) {
+						if($i%4 == 0){
+							$email = $result;
+						}
+						else if($i%4 == 1){
+							$eeshare = $result;
+						}
+						else if($i%4 == 2){
+							$ershare = $result;
+						}
+						else if($i%4 == 3){
+							$total = $result;
+						}
+						$i++;
+					}
+					$this->load->library('email', $config);
+					$this->email->from('jrpg99@gmail.com', 'admin');
+					$this->email->to($email);
+					$this->email->subject('Pag-IBIG Contribution Payment');
+					$this->email->message("Your Pag-IBIG Contribution for this month has been paid. <br>Here are the breakdown of your contribution for this month: <br>EE Share: ".$eeshare."<br>ER Share: ".$ershare."<br>Total: ".$total);
+					$this->email->set_newline("\r\n");
+
+					$result = $this->email->send();
+					if(!$result){
+						$debugger = $this->email->print_debugger();
+						//echo $debugger;
+					}
+					if($result){
+						echo $result;
+					}
+					$this->email->clear();
+				}
+			}
+		}
+
 		public function getEmployeeProfile(){
 			$data['user'] = $_SESSION['user'];
 			$this->benchmark->mark('start');
-			//$data['query'] = $this->Employee_Model->getAllDepartment();
-			/*foreach ($sess as $key => $value) {
-				if($key == "emp_id"){
-					$id = $value;
-				}
-			}*/
 			$this->benchmark->mark('end');
 			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
 			header('Content-Type: application/json');
