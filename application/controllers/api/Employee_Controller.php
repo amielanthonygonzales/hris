@@ -40,6 +40,8 @@
 
 		public function sendNotification(){
 			$data = $this->input->post();	
+			$now = new \DateTime('now');
+			$month = $now->format('F');
 			$config = Array(
 				'protocol' => 'smtp',
 				'smtp_host' => 'ssl://smtp.gmail.com',
@@ -78,7 +80,7 @@
 					$this->email->from('jrpg99@gmail.com', 'admin');
 					$this->email->to($email);
 					$this->email->subject('Pag-IBIG Contribution Payment');
-					$this->email->message("Your Pag-IBIG Contribution for this month has been paid. <br>Here are the breakdown of your contribution for this month: <br>EE Share: ".$eeshare."<br>ER Share: ".$ershare."<br>Total: ".$total);
+					$this->email->message("Your Pag-IBIG Contribution for this month of ".$month." has been paid. <br>Here are the breakdown of your contribution for this month: <br>EE Share: ".$eeshare."<br>ER Share: ".$ershare."<br>Total: ".$total);
 					$this->email->set_newline("\r\n");
 
 					$result = $this->email->send();
