@@ -68,6 +68,7 @@ $route['employee-datatable'] = 'api/Employee_Controller/dataTable';
 $route['get-session'] = 'api/Employee_Controller/getEmployeeSession';
 $route['profile'] = 'api/Employee_Controller/getEmployeeProfile';
 $route['email'] = 'api/Employee_Controller/sendEmail';
+$route['notification'] = 'api/Employee_Controller/sendNotification';
 
 //Company
 //app
@@ -116,6 +117,7 @@ $route['get-data-sss/(:any)'] = 'api/SSS_Controller/getDataPerPage/$1';
 //Payed Contribution
 //api
 $route['saved-contribution'] = 'api/Paid_Controller/addContribution';
+$route['get-contributions'] = 'api/Paid_Controller/getContributions';
 
 
 // $route['register-employee'] = 'RegisterEmp_Controller/registerEmp';
