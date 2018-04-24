@@ -10,11 +10,11 @@
 					<div class="row form-group">
 						<div class="col-md-6">
 							<label for="sssnum">SSS Employer Number</label>
-							<input class="form-control company-sss-num" type="number" name="sssnum" placeholder="SSS Employer Number" title="Numbers only" readonly />
+							<input class="form-control company-sss-num" type="text" name="sssnum" placeholder="SSS Employer Number" title="Numbers only" readonly />
 						</div>
 						<div class="col-md-6">
 							<label for="sssnum">Pag-IBIG Employer Number</label>
-							<input class="form-control company-pagibig-num" type="number" name="pagibignum" placeholder="Pag-IBIG Employer Number" readonly/>
+							<input class="form-control company-pagibig-num" type="text" name="pagibignum" placeholder="Pag-IBIG Employer Number" readonly/>
 						</div>
 					</div>
 				</div>
@@ -358,11 +358,12 @@
 		console.log(pageDashboard.pagibigPaidAmount);
 
 		
-
+		console.log(pageDashboard.company);
 		$.each(pageDashboard.company, function(key, value){
+			
+			pageDashboard.elem.find('.company-employer-name').val(value['company_name']);
 			pageDashboard.elem.find('.company-sss-num').val(value['company_sss_id']);
 			pageDashboard.elem.find('.company-pagibig-num').val(value['company_pagibig_id']);
-			pageDashboard.elem.find('.company-employer-name').val(value['company_name']);
 
 			pageDashboard.company_address = jQuery.parseJSON(value['company_address']);
 			pageDashboard.elem.find('.rm').val(pageDashboard.company_address['bldg_name']);

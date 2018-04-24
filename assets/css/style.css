@@ -108,6 +108,22 @@ a:hover{
     margin-top: 32px;
 }
 
+#pageCompany .dash-container{
+    border-width: 0;
+    box-shadow: none;
+    padding: 1px 1px;
+    font-size: 26px;
+    text-align: center;
+}
+
+#pageCompany .dash-container-sss{
+    border-width: 0;
+    box-shadow: none;
+    padding: 1px 1px;
+    font-size: 26px;
+    margin-top: 32px;
+}
+
 #pageDashboard .info-block .description {
     padding-bottom: 15px;
     border-bottom: 1px dashed #e6e6e6;
@@ -132,6 +148,8 @@ a:hover{
 #pageDashboard .info-block table tr td {
     padding: 15px 0;
 }
+
+
 
 /*#pageDashboard .info-block table tr {
     line-height: 23px;
@@ -185,12 +203,13 @@ a:hover{
 #pageSSSReference .table-title{
     vertical-align: middle;
     text-align: center;
+    border-right: 1px solid #efefef;
 }
 
-#pageSSSReference .table-striped>tbody>tr:nth-child(odd)>td, 
+/*#pageSSSReference .table-striped>tbody>tr:nth-child(odd)>td, 
 .table-striped>tbody>tr:nth-child(odd)>th {
    background-color: #8ec63fb0;
- }
+ }*/
 
  #pageSSSReference .table{
     vertical-align: middle;
@@ -308,6 +327,21 @@ a:hover{
 
 .button-print{
     display: block;
+}
+
+#pageSSSReference table.dataTable thead>tr>th.sorting_asc,
+#pageSSSReference table.dataTable thead>tr>th.sorting_desc,
+#pageSSSReference table.dataTable thead>tr>th.sorting,
+#pageSSSReference table.dataTable thead>tr>td.sorting_asc,
+#pageSSSReference table.dataTable thead>tr>td.sorting_desc,
+#pageSSSReference table.dataTable thead>tr>td.sorting {
+    padding-right: 8px;
+}
+ 
+#pageSSSReference th.sorting_asc::after,
+#pageSSSReference th.sorting::after,
+#pageSSSReference th.sorting_desc::after {
+   content:"" !important;
 }
 
 
@@ -547,7 +581,7 @@ a:hover{
 #pagePagibigContri .midNo2{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 33px;
     width: 67px;
     height: 19px;
@@ -559,7 +593,7 @@ a:hover{
 #pagePagibigContri .accountNo2{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     height: 19px;
     width: 67px;
     margin-left: 99px;
@@ -571,7 +605,7 @@ a:hover{
 #pagePagibigContri .member-program2{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     height: 19px;
     width: 80px;
     margin-left: 165px;
@@ -583,7 +617,7 @@ a:hover{
 #pagePagibigContri .name2{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     height: 19px;
     margin-left: 253px;
     width: 279px;
@@ -594,7 +628,7 @@ a:hover{
 #pagePagibigContri .period-covered2{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     height: 19px;
     width: 62px;
     margin-left: 530px;
@@ -606,7 +640,7 @@ a:hover{
 #pagePagibigContri .monthly2{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 591px;
     height: 19px;
     width: 92px;
@@ -618,7 +652,7 @@ a:hover{
 #pagePagibigContri .employeeShare2{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 682px;
     height: 19px;
     width: 44px;
@@ -630,7 +664,7 @@ a:hover{
 #pagePagibigContri .employerShare2{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 725px;
     height: 19px;
     width: 42px;
@@ -642,7 +676,7 @@ a:hover{
 #pagePagibigContri .total2{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 766px;
     height: 19px;
     width: 48px;
@@ -655,7 +689,7 @@ a:hover{
 #pagePagibigContri .remarks2{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 813px;
     height: 19px;
     width: 55px;
@@ -667,7 +701,7 @@ a:hover{
 #pagePagibigContri .midNo3{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 21px;
+    margin-top: 20px;
     margin-left: 33px;
     width: 67px;
     height: 19px;
@@ -678,7 +712,7 @@ a:hover{
 #pagePagibigContri .accountNo3{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 21px;
+    margin-top: 20px;
     height: 19px;
     width: 67px;
     margin-left: -4px;
@@ -689,7 +723,7 @@ a:hover{
 #pagePagibigContri .member-program3{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 21px;
+    margin-top: 20px;
     height: 19px;
     width: 80px;
     margin-left: -4px;
@@ -700,7 +734,7 @@ a:hover{
 #pagePagibigContri .name3{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 21px;
+    margin-top: 20px;
     height: 19px;
     margin-left: 4px;
     width: 279px;
@@ -710,7 +744,7 @@ a:hover{
 #pagePagibigContri .period-covered3{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 21px;
+    margin-top: 20px;
     height: 19px;
     width: 62px;
     margin-left: -5px;
@@ -721,7 +755,7 @@ a:hover{
 #pagePagibigContri .monthly3{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 21px;
+    margin-top: 20px;
     margin-left: -5px;
     height: 19px;
     width: 92px;
@@ -732,7 +766,7 @@ a:hover{
 #pagePagibigContri .employeeShare3{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 21px;
+    margin-top: 20px;
     margin-left: -4px;
     height: 19px;
     width: 44px;
@@ -743,7 +777,7 @@ a:hover{
 #pagePagibigContri .employerShare3{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 21px;
+    margin-top: 20px;
     margin-left: -5px;
     height: 19px;
     width: 42px;
@@ -754,7 +788,7 @@ a:hover{
 #pagePagibigContri .total3{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 21px;
+    margin-top: 20px;
     margin-left: -4px;
     height: 19px;
     width: 48px;
@@ -766,7 +800,7 @@ a:hover{
 #pagePagibigContri .remarks3{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 21px;
+    margin-top: 20px;
     margin-left: -4px;
     height: 19px;
     width: 55px;
@@ -777,7 +811,7 @@ a:hover{
 #pagePagibigContri .midNo4{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: -1px;
+    margin-top: 0px;
     margin-left: 33px;
     width: 67px;
     height: 19px;
@@ -789,7 +823,7 @@ a:hover{
 #pagePagibigContri .accountNo4{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: -1px;
+    margin-top: 0px;
     height: 19px;
     width: 67px;
     margin-left: 99px;
@@ -801,7 +835,7 @@ a:hover{
 #pagePagibigContri .member-program4{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: -1px;
+    margin-top: 0px;
     height: 19px;
     width: 80px;
     margin-left: 165px;
@@ -813,7 +847,7 @@ a:hover{
 #pagePagibigContri .name4{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: -1px;
+    margin-top: 0px;
     height: 19px;
     margin-left: 253px;
     width: 279px;
@@ -824,7 +858,7 @@ a:hover{
 #pagePagibigContri .period-covered4{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: -1px;
+    margin-top: 0px;
     height: 19px;
     width: 62px;
     margin-left: 530px;
@@ -836,7 +870,7 @@ a:hover{
 #pagePagibigContri .monthly4{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: -1px;
+    margin-top: 0px;
     margin-left: 591px;
     height: 19px;
     width: 92px;
@@ -848,7 +882,7 @@ a:hover{
 #pagePagibigContri .employeeShare4{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: -1px;
+    margin-top: 0px;
     margin-left: 682px;
     height: 19px;
     width: 44px;
@@ -860,7 +894,7 @@ a:hover{
 #pagePagibigContri .employerShare4{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: -1px;
+    margin-top: 0px;
     margin-left: 725px;
     height: 19px;
     width: 42px;
@@ -872,7 +906,7 @@ a:hover{
 #pagePagibigContri .total4{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: -1px;
+    margin-top: 0px;
     margin-left: 766px;
     height: 19px;
     width: 48px;
@@ -885,7 +919,7 @@ a:hover{
 #pagePagibigContri .remarks4{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: -1px;
+    margin-top: 0px;
     margin-left: 813px;
     height: 19px;
     width: 55px;
@@ -897,7 +931,7 @@ a:hover{
 #pagePagibigContri .midNo5{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 19px;
+    margin-top: 20px;
     margin-left: 33px;
     width: 67px;
     height: 19px;
@@ -908,7 +942,7 @@ a:hover{
 #pagePagibigContri .accountNo5{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 19px;
+    margin-top: 20px;
     height: 19px;
     width: 67px;
     margin-left: -4px;
@@ -919,7 +953,7 @@ a:hover{
 #pagePagibigContri .member-program5{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 19px;
+    margin-top: 20px;
     height: 19px;
     width: 80px;
     margin-left: -4px;
@@ -930,7 +964,7 @@ a:hover{
 #pagePagibigContri .name5{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 19px;
+    margin-top: 20px;
     height: 19px;
     margin-left: 4px;
     width: 279px;
@@ -940,7 +974,7 @@ a:hover{
 #pagePagibigContri .period-covered5{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 19px;
+    margin-top: 20px;
     height: 19px;
     width: 62px;
     margin-left: -5px;
@@ -951,7 +985,7 @@ a:hover{
 #pagePagibigContri .monthly5{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 19px;
+    margin-top: 20px;
     margin-left: -5px;
     height: 19px;
     width: 92px;
@@ -962,7 +996,7 @@ a:hover{
 #pagePagibigContri .employeeShare5{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 19px;
+    margin-top: 20px;
     margin-left: -4px;
     height: 19px;
     width: 44px;
@@ -973,7 +1007,7 @@ a:hover{
 #pagePagibigContri .employerShare5{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 19px;
+    margin-top: 20px;
     margin-left: -5px;
     height: 19px;
     width: 42px;
@@ -984,7 +1018,7 @@ a:hover{
 #pagePagibigContri .total5{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 19px;
+    margin-top: 20px;
     margin-left: -4px;
     height: 19px;
     width: 48px;
@@ -996,7 +1030,7 @@ a:hover{
 #pagePagibigContri .remarks5{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 19px;
+    margin-top: 20px;
     margin-left: -4px;
     height: 19px;
     width: 55px;
@@ -1007,7 +1041,7 @@ a:hover{
 #pagePagibigContri .midNo6{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 33px;
     width: 67px;
     height: 19px;
@@ -1019,7 +1053,7 @@ a:hover{
 #pagePagibigContri .accountNo6{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     height: 19px;
     width: 67px;
     margin-left: 99px;
@@ -1031,7 +1065,7 @@ a:hover{
 #pagePagibigContri .member-program6{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     height: 19px;
     width: 80px;
     margin-left: 165px;
@@ -1043,7 +1077,7 @@ a:hover{
 #pagePagibigContri .name6{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     height: 19px;
     margin-left: 253px;
     width: 279px;
@@ -1054,7 +1088,7 @@ a:hover{
 #pagePagibigContri .period-covered6{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     height: 19px;
     width: 62px;
     margin-left: 530px;
@@ -1066,7 +1100,7 @@ a:hover{
 #pagePagibigContri .monthly6{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 591px;
     height: 19px;
     width: 92px;
@@ -1078,7 +1112,7 @@ a:hover{
 #pagePagibigContri .employeeShare6{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 682px;
     height: 19px;
     width: 44px;
@@ -1090,7 +1124,7 @@ a:hover{
 #pagePagibigContri .employerShare6{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 725px;
     height: 19px;
     width: 42px;
@@ -1102,7 +1136,7 @@ a:hover{
 #pagePagibigContri .total6{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 766px;
     height: 19px;
     width: 48px;
@@ -1115,7 +1149,7 @@ a:hover{
 #pagePagibigContri .remarks6{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 813px;
     height: 19px;
     width: 55px;
@@ -1127,7 +1161,7 @@ a:hover{
 #pagePagibigContri .midNo7{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: 33px;
     width: 67px;
     height: 19px;
@@ -1138,7 +1172,7 @@ a:hover{
 #pagePagibigContri .accountNo7{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 67px;
     margin-left: -4px;
@@ -1149,7 +1183,7 @@ a:hover{
 #pagePagibigContri .member-program7{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 80px;
     margin-left: -4px;
@@ -1160,7 +1194,7 @@ a:hover{
 #pagePagibigContri .name7{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     margin-left: 4px;
     width: 279px;
@@ -1170,7 +1204,7 @@ a:hover{
 #pagePagibigContri .period-covered7{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 62px;
     margin-left: -5px;
@@ -1181,7 +1215,7 @@ a:hover{
 #pagePagibigContri .monthly7{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -5px;
     height: 19px;
     width: 92px;
@@ -1192,7 +1226,7 @@ a:hover{
 #pagePagibigContri .employeeShare7{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 44px;
@@ -1203,7 +1237,7 @@ a:hover{
 #pagePagibigContri .employerShare7{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -5px;
     height: 19px;
     width: 42px;
@@ -1214,7 +1248,7 @@ a:hover{
 #pagePagibigContri .total7{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 48px;
@@ -1226,7 +1260,7 @@ a:hover{
 #pagePagibigContri .remarks7{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 55px;
@@ -1467,7 +1501,7 @@ a:hover{
 #pagePagibigContri .midNo10{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 33px;
     width: 67px;
     height: 19px;
@@ -1479,7 +1513,7 @@ a:hover{
 #pagePagibigContri .accountNo10{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     height: 19px;
     width: 67px;
     margin-left: 99px;
@@ -1491,7 +1525,7 @@ a:hover{
 #pagePagibigContri .member-program10{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     height: 19px;
     width: 80px;
     margin-left: 165px;
@@ -1503,7 +1537,7 @@ a:hover{
 #pagePagibigContri .name10{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     height: 19px;
     margin-left: 253px;
     width: 279px;
@@ -1514,7 +1548,7 @@ a:hover{
 #pagePagibigContri .period-covered10{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     height: 19px;
     width: 62px;
     margin-left: 530px;
@@ -1526,7 +1560,7 @@ a:hover{
 #pagePagibigContri .monthly10{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 591px;
     height: 19px;
     width: 92px;
@@ -1538,7 +1572,7 @@ a:hover{
 #pagePagibigContri .employeeShare10{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 682px;
     height: 19px;
     width: 44px;
@@ -1550,7 +1584,7 @@ a:hover{
 #pagePagibigContri .employerShare10{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 725px;
     height: 19px;
     width: 42px;
@@ -1562,7 +1596,7 @@ a:hover{
 #pagePagibigContri .total10{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 766px;
     height: 19px;
     width: 48px;
@@ -1575,7 +1609,7 @@ a:hover{
 #pagePagibigContri .remarks10{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 813px;
     height: 19px;
     width: 55px;
@@ -1587,7 +1621,7 @@ a:hover{
 #pagePagibigContri .midNo11{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: 33px;
     width: 67px;
     height: 19px;
@@ -1598,7 +1632,7 @@ a:hover{
 #pagePagibigContri .accountNo11{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 67px;
     margin-left: -4px;
@@ -1609,7 +1643,7 @@ a:hover{
 #pagePagibigContri .member-program11{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 80px;
     margin-left: -4px;
@@ -1620,7 +1654,7 @@ a:hover{
 #pagePagibigContri .name11{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     margin-left: 4px;
     width: 279px;
@@ -1630,7 +1664,7 @@ a:hover{
 #pagePagibigContri .period-covered11{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 62px;
     margin-left: -5px;
@@ -1641,7 +1675,7 @@ a:hover{
 #pagePagibigContri .monthly11{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -5px;
     height: 19px;
     width: 92px;
@@ -1652,7 +1686,7 @@ a:hover{
 #pagePagibigContri .employeeShare11{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 44px;
@@ -1663,7 +1697,7 @@ a:hover{
 #pagePagibigContri .employerShare11{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -5px;
     height: 19px;
     width: 42px;
@@ -1674,7 +1708,7 @@ a:hover{
 #pagePagibigContri .total11{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 48px;
@@ -1686,7 +1720,7 @@ a:hover{
 #pagePagibigContri .remarks11{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 55px;
@@ -2047,7 +2081,7 @@ a:hover{
 #pagePagibigContri .midNo15{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: 33px;
     width: 67px;
     height: 19px;
@@ -2058,7 +2092,7 @@ a:hover{
 #pagePagibigContri .accountNo15{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 67px;
     margin-left: -4px;
@@ -2069,7 +2103,7 @@ a:hover{
 #pagePagibigContri .member-program15{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 80px;
     margin-left: -4px;
@@ -2080,7 +2114,7 @@ a:hover{
 #pagePagibigContri .name15{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     margin-left: 4px;
     width: 279px;
@@ -2090,7 +2124,7 @@ a:hover{
 #pagePagibigContri .period-covered15{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 62px;
     margin-left: -5px;
@@ -2101,7 +2135,7 @@ a:hover{
 #pagePagibigContri .monthly15{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -5px;
     height: 19px;
     width: 92px;
@@ -2112,7 +2146,7 @@ a:hover{
 #pagePagibigContri .employeeShare15{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 44px;
@@ -2123,7 +2157,7 @@ a:hover{
 #pagePagibigContri .employerShare15{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -5px;
     height: 19px;
     width: 42px;
@@ -2134,7 +2168,7 @@ a:hover{
 #pagePagibigContri .total15{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 48px;
@@ -2146,7 +2180,7 @@ a:hover{
 #pagePagibigContri .remarks15{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 55px;
@@ -2737,7 +2771,7 @@ a:hover{
 #pagePagibigContri .midNo21{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: 33px;
     width: 67px;
     height: 19px;
@@ -2748,7 +2782,7 @@ a:hover{
 #pagePagibigContri .accountNo21{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 67px;
     margin-left: -4px;
@@ -2759,7 +2793,7 @@ a:hover{
 #pagePagibigContri .member-program21{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 80px;
     margin-left: -4px;
@@ -2770,7 +2804,7 @@ a:hover{
 #pagePagibigContri .name21{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     margin-left: 4px;
     width: 279px;
@@ -2780,7 +2814,7 @@ a:hover{
 #pagePagibigContri .period-covered21{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 62px;
     margin-left: -5px;
@@ -2791,7 +2825,7 @@ a:hover{
 #pagePagibigContri .monthly21{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -5px;
     height: 19px;
     width: 92px;
@@ -2802,7 +2836,7 @@ a:hover{
 #pagePagibigContri .employeeShare21{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 44px;
@@ -2813,7 +2847,7 @@ a:hover{
 #pagePagibigContri .employerShare21{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -5px;
     height: 19px;
     width: 42px;
@@ -2824,7 +2858,7 @@ a:hover{
 #pagePagibigContri .total21{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 48px;
@@ -2847,7 +2881,7 @@ a:hover{
 #pagePagibigContri .midNo22{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 0px;
+    margin-top: -1px;
     margin-left: 33px;
     width: 67px;
     height: 19px;
@@ -2859,7 +2893,7 @@ a:hover{
 #pagePagibigContri .accountNo22{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 0px;
+    margin-top: -1px;
     height: 19px;
     width: 67px;
     margin-left: 99px;
@@ -2871,7 +2905,7 @@ a:hover{
 #pagePagibigContri .member-program22{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 0px;
+    margin-top: -1px;
     height: 19px;
     width: 80px;
     margin-left: 165px;
@@ -2883,7 +2917,7 @@ a:hover{
 #pagePagibigContri .name22{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 0px;
+    margin-top: -1px;
     height: 19px;
     margin-left: 253px;
     width: 279px;
@@ -2894,7 +2928,7 @@ a:hover{
 #pagePagibigContri .period-covered22{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 0px;
+    margin-top: -1px;
     height: 19px;
     width: 62px;
     margin-left: 530px;
@@ -2906,7 +2940,7 @@ a:hover{
 #pagePagibigContri .monthly22{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 0px;
+    margin-top: -1px;
     margin-left: 591px;
     height: 19px;
     width: 92px;
@@ -2918,7 +2952,7 @@ a:hover{
 #pagePagibigContri .employeeShare22{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 0px;
+    margin-top: -1px;
     margin-left: 682px;
     height: 19px;
     width: 44px;
@@ -2930,7 +2964,7 @@ a:hover{
 #pagePagibigContri .employerShare22{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 0px;
+    margin-top: -1px;
     margin-left: 725px;
     height: 19px;
     width: 42px;
@@ -2942,7 +2976,7 @@ a:hover{
 #pagePagibigContri .total22{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 0px;
+    margin-top: -1px;
     margin-left: 766px;
     height: 19px;
     width: 48px;
@@ -2955,7 +2989,7 @@ a:hover{
 #pagePagibigContri .remarks22{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 0px;
+    margin-top: -1px;
     margin-left: 813px;
     height: 19px;
     width: 55px;
@@ -3197,7 +3231,7 @@ a:hover{
 #pagePagibigContri .midNo25{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: 33px;
     width: 67px;
     height: 19px;
@@ -3208,7 +3242,7 @@ a:hover{
 #pagePagibigContri .accountNo25{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 67px;
     margin-left: -4px;
@@ -3219,7 +3253,7 @@ a:hover{
 #pagePagibigContri .member-program25{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 80px;
     margin-left: -4px;
@@ -3230,7 +3264,7 @@ a:hover{
 #pagePagibigContri .name25{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     margin-left: 4px;
     width: 279px;
@@ -3240,7 +3274,7 @@ a:hover{
 #pagePagibigContri .period-covered25{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 62px;
     margin-left: -5px;
@@ -3251,7 +3285,7 @@ a:hover{
 #pagePagibigContri .monthly25{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -5px;
     height: 19px;
     width: 92px;
@@ -3262,7 +3296,7 @@ a:hover{
 #pagePagibigContri .employeeShare25{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 44px;
@@ -3273,7 +3307,7 @@ a:hover{
 #pagePagibigContri .employerShare25{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -5px;
     height: 19px;
     width: 42px;
@@ -3284,7 +3318,7 @@ a:hover{
 #pagePagibigContri .total25{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 48px;
@@ -3296,7 +3330,7 @@ a:hover{
 #pagePagibigContri .remarks25{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 55px;
@@ -3427,7 +3461,7 @@ a:hover{
 #pagePagibigContri .midNo27{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: 33px;
     width: 67px;
     height: 19px;
@@ -3438,7 +3472,7 @@ a:hover{
 #pagePagibigContri .accountNo27{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 67px;
     margin-left: -4px;
@@ -3449,7 +3483,7 @@ a:hover{
 #pagePagibigContri .member-program27{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 80px;
     margin-left: -4px;
@@ -3460,7 +3494,7 @@ a:hover{
 #pagePagibigContri .name27{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     margin-left: 4px;
     width: 279px;
@@ -3470,7 +3504,7 @@ a:hover{
 #pagePagibigContri .period-covered27{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     height: 19px;
     width: 62px;
     margin-left: -5px;
@@ -3481,7 +3515,7 @@ a:hover{
 #pagePagibigContri .monthly27{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -5px;
     height: 19px;
     width: 92px;
@@ -3492,7 +3526,7 @@ a:hover{
 #pagePagibigContri .employeeShare27{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 44px;
@@ -3503,7 +3537,7 @@ a:hover{
 #pagePagibigContri .employerShare27{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -5px;
     height: 19px;
     width: 42px;
@@ -3514,7 +3548,7 @@ a:hover{
 #pagePagibigContri .total27{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 48px;
@@ -3526,7 +3560,7 @@ a:hover{
 #pagePagibigContri .remarks27{
     border: 1px solid transparent;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 19px;
     margin-left: -4px;
     height: 19px;
     width: 55px;
@@ -3789,7 +3823,7 @@ a:hover{
         page-break-after: always;
     }
 
-    .image-form{
+    #pagePagibigContri .image-form{
         padding: 0;
         margin: 0;
         width: 20cm;
@@ -3798,7 +3832,7 @@ a:hover{
         position: absolute;
     }
 
-    .form-content{
+    #pagePagibigContri .form-content{
         position: absolute;
         z-index: 22;
        
@@ -3808,7 +3842,7 @@ a:hover{
         display: none;
     }
 
-    .back-form{
+    #pagePagibigContri .back-form{
         display: block;
         width: 20cm;
         height: 27.7cm;
@@ -4049,7 +4083,7 @@ a:hover{
     #pagePagibigContri .midNo2{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0px;
         margin-left: 28px;
         width: 55px;
         height: 17px;
@@ -4061,7 +4095,7 @@ a:hover{
     #pagePagibigContri .accountNo2{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0px;
         height: 17px;
         width: 55px;
         margin-left: 84px;
@@ -4073,7 +4107,7 @@ a:hover{
     #pagePagibigContri .member-program2{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0px;
         height: 17px;
         width: 67px;
         margin-left: 139px;
@@ -4085,7 +4119,7 @@ a:hover{
     #pagePagibigContri .name2{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0px;
         height: 17px;
         margin-left: 213px;
         width: 233px;
@@ -4096,7 +4130,7 @@ a:hover{
     #pagePagibigContri .period-covered2{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0px;
         height: 17px;
         width: 51px;
         margin-left: 445px;
@@ -4108,7 +4142,7 @@ a:hover{
     #pagePagibigContri .monthly2{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0px;
         margin-left: 497px;
         height: 17px;
         width: 76px;
@@ -4120,7 +4154,7 @@ a:hover{
     #pagePagibigContri .employeeShare2{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0px;
         margin-left: 573px;
         height: 17px;
         width: 36px;
@@ -4132,7 +4166,7 @@ a:hover{
     #pagePagibigContri .employerShare2{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0px;
         margin-left: 610px;
         height: 17px;
         width: 33px;
@@ -4144,7 +4178,7 @@ a:hover{
     #pagePagibigContri .total2{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0px;
         margin-left: 644px;
         height: 17px;
         width: 39px;
@@ -4157,7 +4191,7 @@ a:hover{
     #pagePagibigContri .remarks2{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0px;
         margin-left: 683px;
         height: 17px;
         width: 45px;
@@ -4169,7 +4203,7 @@ a:hover{
     #pagePagibigContri .midNo3{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: 28px;
         width: 55px;
         height: 17px;
@@ -4191,7 +4225,7 @@ a:hover{
     #pagePagibigContri .member-program3{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         width: 67px;
         margin-left: -4px;
@@ -4202,7 +4236,7 @@ a:hover{
     #pagePagibigContri .name3{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         margin-left: 4px;
         width: 233px;
@@ -4212,7 +4246,7 @@ a:hover{
     #pagePagibigContri .period-covered3{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         width: 51px;
         margin-left: -4px;
@@ -4223,7 +4257,7 @@ a:hover{
     #pagePagibigContri .monthly3{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 76px;
@@ -4234,7 +4268,7 @@ a:hover{
     #pagePagibigContri .employeeShare3{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 36px;
@@ -4245,7 +4279,7 @@ a:hover{
     #pagePagibigContri .employerShare3{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -2px;
         height: 17px;
         width: 33px;
@@ -4256,7 +4290,7 @@ a:hover{
     #pagePagibigContri .total3{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 39px;
@@ -4268,7 +4302,7 @@ a:hover{
     #pagePagibigContri .remarks3{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 45px;
@@ -4509,7 +4543,7 @@ a:hover{
     #pagePagibigContri .midNo6{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 28px;
         width: 55px;
         height: 17px;
@@ -4521,7 +4555,7 @@ a:hover{
     #pagePagibigContri .accountNo6{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         height: 17px;
         width: 55px;
         margin-left: 84px;
@@ -4533,7 +4567,7 @@ a:hover{
     #pagePagibigContri .member-program6{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         height: 17px;
         width: 67px;
         margin-left: 139px;
@@ -4545,7 +4579,7 @@ a:hover{
     #pagePagibigContri .name6{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         height: 17px;
         margin-left: 213px;
         width: 233px;
@@ -4556,7 +4590,7 @@ a:hover{
     #pagePagibigContri .period-covered6{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         height: 17px;
         width: 51px;
         margin-left: 445px;
@@ -4568,7 +4602,7 @@ a:hover{
     #pagePagibigContri .monthly6{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 497px;
         height: 17px;
         width: 76px;
@@ -4580,7 +4614,7 @@ a:hover{
     #pagePagibigContri .employeeShare6{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 573px;
         height: 17px;
         width: 36px;
@@ -4592,7 +4626,7 @@ a:hover{
     #pagePagibigContri .employerShare6{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 610px;
         height: 17px;
         width: 33px;
@@ -4604,7 +4638,7 @@ a:hover{
     #pagePagibigContri .total6{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 644px;
         height: 17px;
         width: 39px;
@@ -4617,7 +4651,7 @@ a:hover{
     #pagePagibigContri .remarks6{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 683px;
         height: 17px;
         width: 45px;
@@ -4629,7 +4663,7 @@ a:hover{
     #pagePagibigContri .midNo7{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 17.5px;
+        margin-top: 16.7px;
         margin-left: 28px;
         width: 55px;
         height: 17px;
@@ -4640,7 +4674,7 @@ a:hover{
     #pagePagibigContri .accountNo7{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 17.5px;
+        margin-top: 16.7px;
         height: 17px;
         width: 55px;
         margin-left: -2px;
@@ -4651,7 +4685,7 @@ a:hover{
     #pagePagibigContri .member-program7{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 17.5px;
+        margin-top: 16.7px;
         height: 17px;
         width: 67px;
         margin-left: -4px;
@@ -4662,7 +4696,7 @@ a:hover{
     #pagePagibigContri .name7{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 17.5px;
+        margin-top: 16.7px;
         height: 17px;
         margin-left: 4px;
         width: 233px;
@@ -4672,7 +4706,7 @@ a:hover{
     #pagePagibigContri .period-covered7{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 17.5px;
+        margin-top: 16.7px;
         height: 17px;
         width: 51px;
         margin-left: -4px;
@@ -4683,7 +4717,7 @@ a:hover{
     #pagePagibigContri .monthly7{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 17.5px;
+        margin-top: 16.7px;
         margin-left: -3px;
         height: 17px;
         width: 76px;
@@ -4694,7 +4728,7 @@ a:hover{
     #pagePagibigContri .employeeShare7{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 17.5px;
+        margin-top: 16.7px;
         margin-left: -3px;
         height: 17px;
         width: 36px;
@@ -4705,7 +4739,7 @@ a:hover{
     #pagePagibigContri .employerShare7{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 17.5px;
+        margin-top: 16.7px;
         margin-left: -2px;
         height: 17px;
         width: 33px;
@@ -4716,7 +4750,7 @@ a:hover{
     #pagePagibigContri .total7{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 17.5px;
+        margin-top: 16.7px;
         margin-left: -3px;
         height: 17px;
         width: 39px;
@@ -4728,7 +4762,7 @@ a:hover{
     #pagePagibigContri .remarks7{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 17.5px;
+        margin-top: 16.7px;
         margin-left: -3px;
         height: 17px;
         width: 45px;
@@ -4969,7 +5003,7 @@ a:hover{
     #pagePagibigContri .midNo10{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0.3px;
         margin-left: 28px;
         width: 55px;
         height: 17px;
@@ -4981,7 +5015,7 @@ a:hover{
     #pagePagibigContri .accountNo10{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0.3px;
         height: 17px;
         width: 55px;
         margin-left: 84px;
@@ -4993,7 +5027,7 @@ a:hover{
     #pagePagibigContri .member-program10{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0.3px;
         height: 17px;
         width: 67px;
         margin-left: 139px;
@@ -5005,7 +5039,7 @@ a:hover{
     #pagePagibigContri .name10{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0.3px;
         height: 17px;
         margin-left: 213px;
         width: 233px;
@@ -5016,7 +5050,7 @@ a:hover{
     #pagePagibigContri .period-covered10{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0.3px;
         height: 17px;
         width: 51px;
         margin-left: 445px;
@@ -5028,7 +5062,7 @@ a:hover{
     #pagePagibigContri .monthly10{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0.3px;
         margin-left: 497px;
         height: 17px;
         width: 76px;
@@ -5040,7 +5074,7 @@ a:hover{
     #pagePagibigContri .employeeShare10{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0.3px;
         margin-left: 573px;
         height: 17px;
         width: 36px;
@@ -5052,7 +5086,7 @@ a:hover{
     #pagePagibigContri .employerShare10{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0.3px;
         margin-left: 610px;
         height: 17px;
         width: 33px;
@@ -5064,7 +5098,7 @@ a:hover{
     #pagePagibigContri .total10{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0.3px;
         margin-left: 644px;
         height: 17px;
         width: 39px;
@@ -5077,7 +5111,7 @@ a:hover{
     #pagePagibigContri .remarks10{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0.5px;
+        margin-top: 0.3px;
         margin-left: 683px;
         height: 17px;
         width: 45px;
@@ -5199,7 +5233,7 @@ a:hover{
     #pagePagibigContri .midNo12{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 28px;
         width: 55px;
         height: 17px;
@@ -5211,7 +5245,7 @@ a:hover{
     #pagePagibigContri .accountNo12{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         height: 17px;
         width: 55px;
         margin-left: 84px;
@@ -5223,7 +5257,7 @@ a:hover{
     #pagePagibigContri .member-program12{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         height: 17px;
         width: 67px;
         margin-left: 139px;
@@ -5235,7 +5269,7 @@ a:hover{
     #pagePagibigContri .name12{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         height: 17px;
         margin-left: 213px;
         width: 233px;
@@ -5246,7 +5280,7 @@ a:hover{
     #pagePagibigContri .period-covered12{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         height: 17px;
         width: 51px;
         margin-left: 445px;
@@ -5258,7 +5292,7 @@ a:hover{
     #pagePagibigContri .monthly12{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 497px;
         height: 17px;
         width: 76px;
@@ -5270,7 +5304,7 @@ a:hover{
     #pagePagibigContri .employeeShare12{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 573px;
         height: 17px;
         width: 36px;
@@ -5282,7 +5316,7 @@ a:hover{
     #pagePagibigContri .employerShare12{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 610px;
         height: 17px;
         width: 33px;
@@ -5294,7 +5328,7 @@ a:hover{
     #pagePagibigContri .total12{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 644px;
         height: 17px;
         width: 39px;
@@ -5307,7 +5341,7 @@ a:hover{
     #pagePagibigContri .remarks12{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 683px;
         height: 17px;
         width: 45px;
@@ -5319,7 +5353,7 @@ a:hover{
     #pagePagibigContri .midNo13{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: 28px;
         width: 55px;
         height: 17px;
@@ -5330,7 +5364,7 @@ a:hover{
     #pagePagibigContri .accountNo13{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         width: 55px;
         margin-left: -2px;
@@ -5341,7 +5375,7 @@ a:hover{
     #pagePagibigContri .member-program13{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         width: 67px;
         margin-left: -4px;
@@ -5352,7 +5386,7 @@ a:hover{
     #pagePagibigContri .name13{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         margin-left: 4px;
         width: 233px;
@@ -5362,7 +5396,7 @@ a:hover{
     #pagePagibigContri .period-covered13{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         width: 51px;
         margin-left: -4px;
@@ -5373,7 +5407,7 @@ a:hover{
     #pagePagibigContri .monthly13{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 76px;
@@ -5384,7 +5418,7 @@ a:hover{
     #pagePagibigContri .employeeShare13{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 36px;
@@ -5395,7 +5429,7 @@ a:hover{
     #pagePagibigContri .employerShare13{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -2px;
         height: 17px;
         width: 33px;
@@ -5406,7 +5440,7 @@ a:hover{
     #pagePagibigContri .total13{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 39px;
@@ -5418,7 +5452,7 @@ a:hover{
     #pagePagibigContri .remarks13{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 45px;
@@ -5659,7 +5693,7 @@ a:hover{
     #pagePagibigContri .midNo16{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0px;
         margin-left: 28px;
         width: 55px;
         height: 17px;
@@ -5671,7 +5705,7 @@ a:hover{
     #pagePagibigContri .accountNo16{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0px;
         height: 17px;
         width: 55px;
         margin-left: 84px;
@@ -5683,7 +5717,7 @@ a:hover{
     #pagePagibigContri .member-program16{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0px;
         height: 17px;
         width: 67px;
         margin-left: 139px;
@@ -5695,7 +5729,7 @@ a:hover{
     #pagePagibigContri .name16{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0px;
         height: 17px;
         margin-left: 213px;
         width: 233px;
@@ -5706,7 +5740,7 @@ a:hover{
     #pagePagibigContri .period-covered16{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0px;
         height: 17px;
         width: 51px;
         margin-left: 445px;
@@ -5718,7 +5752,7 @@ a:hover{
     #pagePagibigContri .monthly16{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0px;
         margin-left: 497px;
         height: 17px;
         width: 76px;
@@ -5730,7 +5764,7 @@ a:hover{
     #pagePagibigContri .employeeShare16{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0px;
         margin-left: 573px;
         height: 17px;
         width: 36px;
@@ -5742,7 +5776,7 @@ a:hover{
     #pagePagibigContri .employerShare16{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0px;
         margin-left: 610px;
         height: 17px;
         width: 33px;
@@ -5754,7 +5788,7 @@ a:hover{
     #pagePagibigContri .total16{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0px;
         margin-left: 644px;
         height: 17px;
         width: 39px;
@@ -5767,7 +5801,7 @@ a:hover{
     #pagePagibigContri .remarks16{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0px;
         margin-left: 683px;
         height: 17px;
         width: 45px;
@@ -5779,7 +5813,7 @@ a:hover{
     #pagePagibigContri .midNo17{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: 28px;
         width: 55px;
         height: 17px;
@@ -5790,7 +5824,7 @@ a:hover{
     #pagePagibigContri .accountNo17{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         width: 55px;
         margin-left: -2px;
@@ -5801,7 +5835,7 @@ a:hover{
     #pagePagibigContri .member-program17{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         width: 67px;
         margin-left: -4px;
@@ -5812,7 +5846,7 @@ a:hover{
     #pagePagibigContri .name17{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         margin-left: 4px;
         width: 233px;
@@ -5822,7 +5856,7 @@ a:hover{
     #pagePagibigContri .period-covered17{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         width: 51px;
         margin-left: -4px;
@@ -5833,7 +5867,7 @@ a:hover{
     #pagePagibigContri .monthly17{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 76px;
@@ -5844,7 +5878,7 @@ a:hover{
     #pagePagibigContri .employeeShare17{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 36px;
@@ -5855,7 +5889,7 @@ a:hover{
     #pagePagibigContri .employerShare17{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -2px;
         height: 17px;
         width: 33px;
@@ -5866,7 +5900,7 @@ a:hover{
     #pagePagibigContri .total17{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 39px;
@@ -5878,7 +5912,7 @@ a:hover{
     #pagePagibigContri .remarks17{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 45px;
@@ -5889,7 +5923,7 @@ a:hover{
     #pagePagibigContri .midNo18{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0.5px;
         margin-left: 28px;
         width: 55px;
         height: 17px;
@@ -5901,7 +5935,7 @@ a:hover{
     #pagePagibigContri .accountNo18{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0.5px;
         height: 17px;
         width: 55px;
         margin-left: 84px;
@@ -5913,7 +5947,7 @@ a:hover{
     #pagePagibigContri .member-program18{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0.5px;
         height: 17px;
         width: 67px;
         margin-left: 139px;
@@ -5925,7 +5959,7 @@ a:hover{
     #pagePagibigContri .name18{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0.5px;
         height: 17px;
         margin-left: 213px;
         width: 233px;
@@ -5936,7 +5970,7 @@ a:hover{
     #pagePagibigContri .period-covered18{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0.5px;
         height: 17px;
         width: 51px;
         margin-left: 445px;
@@ -5948,7 +5982,7 @@ a:hover{
     #pagePagibigContri .monthly18{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0.5px;
         margin-left: 497px;
         height: 17px;
         width: 76px;
@@ -5960,7 +5994,7 @@ a:hover{
     #pagePagibigContri .employeeShare18{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0.5px;
         margin-left: 573px;
         height: 17px;
         width: 36px;
@@ -5972,7 +6006,7 @@ a:hover{
     #pagePagibigContri .employerShare18{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0.5px;
         margin-left: 610px;
         height: 17px;
         width: 33px;
@@ -5984,7 +6018,7 @@ a:hover{
     #pagePagibigContri .total18{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0.5px;
         margin-left: 644px;
         height: 17px;
         width: 39px;
@@ -5997,7 +6031,7 @@ a:hover{
     #pagePagibigContri .remarks18{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: 0.5px;
         margin-left: 683px;
         height: 17px;
         width: 45px;
@@ -6119,7 +6153,7 @@ a:hover{
     #pagePagibigContri .midNo20{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: -1px;
         margin-left: 28px;
         width: 55px;
         height: 17px;
@@ -6131,7 +6165,7 @@ a:hover{
     #pagePagibigContri .accountNo20{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: -1px;
         height: 17px;
         width: 55px;
         margin-left: 84px;
@@ -6143,7 +6177,7 @@ a:hover{
     #pagePagibigContri .member-program20{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: -1px;
         height: 17px;
         width: 67px;
         margin-left: 139px;
@@ -6155,7 +6189,7 @@ a:hover{
     #pagePagibigContri .name20{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: -1px;
         height: 17px;
         margin-left: 213px;
         width: 233px;
@@ -6166,7 +6200,7 @@ a:hover{
     #pagePagibigContri .period-covered20{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: -1px;
         height: 17px;
         width: 51px;
         margin-left: 445px;
@@ -6178,7 +6212,7 @@ a:hover{
     #pagePagibigContri .monthly20{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: -1px;
         margin-left: 497px;
         height: 17px;
         width: 76px;
@@ -6190,7 +6224,7 @@ a:hover{
     #pagePagibigContri .employeeShare20{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: -1px;
         margin-left: 573px;
         height: 17px;
         width: 36px;
@@ -6202,7 +6236,7 @@ a:hover{
     #pagePagibigContri .employerShare20{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: -1px;
         margin-left: 610px;
         height: 17px;
         width: 33px;
@@ -6214,7 +6248,7 @@ a:hover{
     #pagePagibigContri .total20{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: -1px;
         margin-left: 644px;
         height: 17px;
         width: 39px;
@@ -6227,7 +6261,7 @@ a:hover{
     #pagePagibigContri .remarks20{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 1px;
+        margin-top: -1px;
         margin-left: 683px;
         height: 17px;
         width: 45px;
@@ -6239,7 +6273,7 @@ a:hover{
     #pagePagibigContri .midNo21{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: 28px;
         width: 55px;
         height: 17px;
@@ -6261,7 +6295,7 @@ a:hover{
     #pagePagibigContri .member-program21{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         width: 67px;
         margin-left: -4px;
@@ -6272,7 +6306,7 @@ a:hover{
     #pagePagibigContri .name21{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         margin-left: 4px;
         width: 233px;
@@ -6282,7 +6316,7 @@ a:hover{
     #pagePagibigContri .period-covered21{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         width: 51px;
         margin-left: -4px;
@@ -6293,7 +6327,7 @@ a:hover{
     #pagePagibigContri .monthly21{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 76px;
@@ -6304,7 +6338,7 @@ a:hover{
     #pagePagibigContri .employeeShare21{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 36px;
@@ -6315,7 +6349,7 @@ a:hover{
     #pagePagibigContri .employerShare21{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -2px;
         height: 17px;
         width: 33px;
@@ -6326,7 +6360,7 @@ a:hover{
     #pagePagibigContri .total21{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 39px;
@@ -6338,7 +6372,7 @@ a:hover{
     #pagePagibigContri .remarks21{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 45px;
@@ -6469,7 +6503,7 @@ a:hover{
     #pagePagibigContri .midNo23{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: 28px;
         width: 55px;
         height: 17px;
@@ -6480,7 +6514,7 @@ a:hover{
     #pagePagibigContri .accountNo23{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         width: 55px;
         margin-left: -2px;
@@ -6491,7 +6525,7 @@ a:hover{
     #pagePagibigContri .member-program23{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         width: 67px;
         margin-left: -4px;
@@ -6502,7 +6536,7 @@ a:hover{
     #pagePagibigContri .name23{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         margin-left: 4px;
         width: 233px;
@@ -6512,7 +6546,7 @@ a:hover{
     #pagePagibigContri .period-covered23{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         height: 17px;
         width: 51px;
         margin-left: -4px;
@@ -6523,7 +6557,7 @@ a:hover{
     #pagePagibigContri .monthly23{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 76px;
@@ -6534,7 +6568,7 @@ a:hover{
     #pagePagibigContri .employeeShare23{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 36px;
@@ -6545,7 +6579,7 @@ a:hover{
     #pagePagibigContri .employerShare23{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -2px;
         height: 17px;
         width: 33px;
@@ -6556,7 +6590,7 @@ a:hover{
     #pagePagibigContri .total23{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 39px;
@@ -6568,7 +6602,7 @@ a:hover{
     #pagePagibigContri .remarks23{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 17px;
         margin-left: -3px;
         height: 17px;
         width: 45px;
@@ -6579,7 +6613,7 @@ a:hover{
     #pagePagibigContri .midNo24{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 28px;
         width: 55px;
         height: 17px;
@@ -6591,7 +6625,7 @@ a:hover{
     #pagePagibigContri .accountNo24{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         height: 17px;
         width: 55px;
         margin-left: 84px;
@@ -6603,7 +6637,7 @@ a:hover{
     #pagePagibigContri .member-program24{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         height: 17px;
         width: 67px;
         margin-left: 139px;
@@ -6615,7 +6649,7 @@ a:hover{
     #pagePagibigContri .name24{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         height: 17px;
         margin-left: 213px;
         width: 233px;
@@ -6626,7 +6660,7 @@ a:hover{
     #pagePagibigContri .period-covered24{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         height: 17px;
         width: 51px;
         margin-left: 445px;
@@ -6638,7 +6672,7 @@ a:hover{
     #pagePagibigContri .monthly24{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 497px;
         height: 17px;
         width: 76px;
@@ -6650,7 +6684,7 @@ a:hover{
     #pagePagibigContri .employeeShare24{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 573px;
         height: 17px;
         width: 36px;
@@ -6662,7 +6696,7 @@ a:hover{
     #pagePagibigContri .employerShare24{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 610px;
         height: 17px;
         width: 33px;
@@ -6674,7 +6708,7 @@ a:hover{
     #pagePagibigContri .total24{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 644px;
         height: 17px;
         width: 39px;
@@ -6687,7 +6721,7 @@ a:hover{
     #pagePagibigContri .remarks24{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 0px;
+        margin-top: -1px;
         margin-left: 683px;
         height: 17px;
         width: 45px;
@@ -6699,7 +6733,7 @@ a:hover{
     #pagePagibigContri .midNo25{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 16px;
         margin-left: 28px;
         width: 55px;
         height: 17px;
@@ -6710,7 +6744,7 @@ a:hover{
     #pagePagibigContri .accountNo25{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 16px;
         height: 17px;
         width: 55px;
         margin-left: -2px;
@@ -6721,7 +6755,7 @@ a:hover{
     #pagePagibigContri .member-program25{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 16px;
         height: 17px;
         width: 67px;
         margin-left: -4px;
@@ -6732,7 +6766,7 @@ a:hover{
     #pagePagibigContri .name25{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 16px;
         height: 17px;
         margin-left: 4px;
         width: 233px;
@@ -6742,7 +6776,7 @@ a:hover{
     #pagePagibigContri .period-covered25{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 16px;
         height: 17px;
         width: 51px;
         margin-left: -4px;
@@ -6753,7 +6787,7 @@ a:hover{
     #pagePagibigContri .monthly25{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 16px;
         margin-left: -3px;
         height: 17px;
         width: 76px;
@@ -6764,7 +6798,7 @@ a:hover{
     #pagePagibigContri .employeeShare25{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 16px;
         margin-left: -3px;
         height: 17px;
         width: 36px;
@@ -6775,7 +6809,7 @@ a:hover{
     #pagePagibigContri .employerShare25{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 16px;
         margin-left: -2px;
         height: 17px;
         width: 33px;
@@ -6786,7 +6820,7 @@ a:hover{
     #pagePagibigContri .total25{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 16px;
         margin-left: -3px;
         height: 17px;
         width: 39px;
@@ -6798,7 +6832,7 @@ a:hover{
     #pagePagibigContri .remarks25{
         border: 1px solid transparent;
         background-color: transparent;
-        margin-top: 18px;
+        margin-top: 16px;
         margin-left: -3px;
         height: 17px;
         width: 45px;

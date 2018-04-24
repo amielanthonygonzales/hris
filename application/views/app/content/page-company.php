@@ -128,35 +128,73 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-6">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3>Company SSS Information</h3>
-				</div>
-				<div class="panel-body">
-					<div class="form-group">
-						<label for="sssnum">SSS Employer Number</label>
-						<input class="form-control sssnum" type="number" name="sssnum" placeholder="SSS Employer Number" maxlength="10" pattern="/*d" title="Numbers only" required />
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3>Company SSS Information</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="sssnum">SSS Number</label>
+					<div class="row form-group">
+						<div class="col-md-2">
+							<input class="form-control sssnum1" type="text" name="sssnum" required />
+						</div>
+						<div class="col-md-1">
+							<div class="dash-container">-</div>
+						</div>
+						<div class="col-md-3">
+							<input class="form-control sssnum2" type="text" name="sssnum" required />
+						</div>
+						<div class="col-md-1">
+							<div class="dash-container">-</div>
+						</div>
+						<div class="col-md-2">
+							<input class="form-control sssnum3" type="text" name="sssnum" required />
+						</div>
+						<div class="col-md-1">
+							<div class="dash-container">-</div>
+						</div>
+						<div class="col-md-2">
+							<input class="form-control sssnum4" type="text" name="sssnum" required />
+						</div>
 					</div>
 				</div>
+				<!-- <div class="form-group">
+					<label for="sssnum">SSS Employer Number</label>
+					<input class="form-control sssnum" type="number" name="sssnum" placeholder="SSS Employer Number" maxlength="10" pattern="/*d" title="Numbers only" required />
+				</div> -->
 			</div>
 		</div>
-		<div class="col-md-6">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3>Company Pag-Ibig Information</h3>
-				</div>
-				<div class="panel-body">
-					<div class="form-group">
-						<label for="sssnum">Pag-IBIG Employer Number</label>
-						<input class="form-control pagibignum" type="number" name="pagibignum" placeholder="Pag-IBIG Employer Number" required />
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3>Company Pag-Ibig Information</h3>
+			</div>
+			<div class="panel-body">
+				<label for="sssnum">Pag-IBIG Employer Number</label>
+				<div class="row form-group">
+					<div class="col-md-3">
+						<input class="form-control pagibignum1" type="text" name="pagibigNumber" required />
+					</div>
+					<div class="col-md-1">
+						<div class="dash-container">-</div>
+					</div>
+					<div class="col-md-3">
+						<input class="form-control pagibignum2" type="text" name="pagibigNumber" required />
+					</div>
+					<div class="col-md-1">
+						<div class="dash-container">-</div>
+					</div>
+					<div class="col-md-3">
+						<input class="form-control pagibignum3" type="text" name="pagibigNumber" required />
 					</div>
 				</div>
-				
+				<!-- <div class="form-group">
+					
+					<input class="form-control pagibignum" type="number" name="pagibignum" placeholder="Pag-IBIG Employer Number" required />
+				</div> -->
 			</div>
+			
 		</div>
-	</div>
 </div>
 
 <script>
@@ -164,28 +202,219 @@
 
 	pageCompany.init = function(selector, callback){
 		pageCompany.elem = $(selector);
+
+		pageCompany.countSSSNumber1 = pageCompany.elem.find('.sssnum1').val().length;
+	        pageCompany.elem.find('.sssnum1').keydown(function(e){
+	        	if(e.which == 8 || e.which == 46){
+	        		if(pageCompany.countSSSNumber1 != 0 && !(pageCompany.countSSSNumber1 < 0)){
+	        				pageCompany.countSSSNumber1 -= 1;
+	        			console.log(pageCompany.countSSSNumber1);
+	        		}
+	        		return true;
+	        	}else if(pageCompany.countSSSNumber1 == 2){
+	        		pageCompany.elem.find('.sssnum2').focus();
+	        		return false;
+	        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+	        		
+	        		if(pageCompany.countSSSNumber1 < 2){
+	        			pageCompany.countSSSNumber1 += 1;
+	        			console.log(pageCompany.countSSSNumber1);
+	        			return true;
+	        		}
+	        		else{
+	        			return false;
+	        		}
+	        	}
+	        	else if(e.which == 9 || e.which == 189){
+	        		return true;
+	        	}else{
+	        		return false;
+	        	}
+	        });
+	        pageCompany.countSSSNumber2 = pageCompany.elem.find('.sssnum2').val().length;
+	        pageCompany.elem.find('.sssnum2').keydown(function(e){
+	        	if(e.which == 8 || e.which == 46){
+	        		if(pageCompany.countSSSNumber2 != 0 && !(pageCompany.countSSSNumber2 < 0)){
+	        				pageCompany.countSSSNumber2 -= 1;
+	        			console.log(pageCompany.countSSSNumber2);
+	        		}
+	        		return true;
+	        	}else if(pageCompany.countSSSNumber2 == 7){
+	        		pageCompany.elem.find('.sssnum3').focus();
+	        		return false;
+	        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+	        		
+	        		if(pageCompany.countSSSNumber2 < 7){
+	        			pageCompany.countSSSNumber2 += 1;
+	        			console.log(pageCompany.countSSSNumber2);
+	        			return true;
+	        		}
+	        		else{
+	        			return false;
+	        		}
+	        	}
+	        	else if(e.which == 9 || e.which == 189){
+	        		return true;
+	        	}else{
+	        		return false;
+	        	}
+	        });
+
+	        pageCompany.countSSSNumber3 = pageCompany.elem.find('.sssnum3').val().length;
+	        pageCompany.elem.find('.sssnum3').keydown(function(e){
+	        	if(e.which == 8 || e.which == 46){
+	        		if(pageCompany.countSSSNumber3 != 0 && !(pageCompany.countSSSNumber3 < 0)){
+	        				pageCompany.countSSSNumber3 -= 1;
+	        			console.log(pageCompany.countSSSNumber3);
+	        		}
+	        		return true;
+	        	}else if(pageCompany.countSSSNumber3 == 1){
+	        		pageCompany.elem.find('.sssnum4').focus();
+	        		return false;
+	        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+	        		
+	        		if(pageCompany.countSSSNumber3 < 1){
+	        			pageCompany.countSSSNumber3 += 1;
+	        			console.log(pageCompany.countSSSNumber3);
+	        			return true;
+	        		}
+	        		else{
+	        			return false;
+	        		}
+	        	}
+	        	else if(e.which == 9 || e.which == 189){
+	        		return true;
+	        	}else{
+	        		return false;
+	        	}
+	        });
+
+	        pageCompany.countSSSNumber4 = pageCompany.elem.find('.sssnum4').val().length;
+	        pageCompany.elem.find('.sssnum4').keydown(function(e){
+	        	if(e.which == 8 || e.which == 46){
+	        		if(pageCompany.countSSSNumber4 != 0 && !(pageCompany.countSSSNumber4 < 0)){
+	        				pageCompany.countSSSNumber4 -= 1;
+	        			console.log(pageCompany.countSSSNumber4);
+	        		}
+	        		return true;
+	        	}else if(pageCompany.countSSSNumber4 == 3){
+	        		return false;
+	        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+	        		
+	        		if(pageCompany.countSSSNumber4 < 3){
+	        			pageCompany.countSSSNumber4 += 1;
+	        			console.log(pageCompany.countSSSNumber4);
+	        			return true;
+	        		}
+	        		else{
+	        			return false;
+	        		}
+	        	}
+	        	else if(e.which == 9 || e.which == 189){
+	        		return true;
+	        	}else{
+	        		return false;
+	        	}
+	        });
+
+	        pageCompany.countPagibigNo1 = pageCompany.elem.find('.pagibignum1').val().length;
+	        pageCompany.elem.find('.pagibignum1').keydown(function(e){
+	        	if(e.which == 8 || e.which == 46){
+	        		if(pageCompany.countPagibigNo1 != 0 && !(pageCompany.countPagibigNo1 < 0)){
+	        				pageCompany.countPagibigNo1 -= 1;
+	        			console.log(pageCompany.countPagibigNo1);
+	        		}
+	        		return true;
+	        	}else if(pageCompany.countPagibigNo1 == 4){
+	        		pageCompany.elem.find('.pagibignum2').focus();
+	        		return false;
+	        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+	        		
+	        		if(pageCompany.countPagibigNo1 < 4){
+	        			pageCompany.countPagibigNo1 += 1;
+	        			console.log(pageCompany.countPagibigNo1);
+	        			return true;
+	        		}
+	        		else{
+	        			return false;
+	        		}
+	        	}
+	        	else if(e.which == 9 || e.which == 189){
+	        		return true;
+	        	}else{
+	        		return false;
+	        	}
+	        });
+	        pageCompany.countPagibigNo2 = pageCompany.elem.find('.pagibignum2').val().length;
+	        pageCompany.elem.find('.pagibignum2').keydown(function(e){
+	        	if(e.which == 8 || e.which == 46){
+	        		if(pageCompany.countPagibigNo2 != 0 && !(pageCompany.countPagibigNo2 < 0)){
+	        				pageCompany.countPagibigNo2 -= 1;
+	        			console.log(pageCompany.countPagibigNo2);
+	        		}
+	        		return true;
+	        	}else if(pageCompany.countPagibigNo2 == 4){
+	        		pageCompany.elem.find('.pagibignum3').focus();
+	        		return false;
+	        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+	        		
+	        		if(pageCompany.countPagibigNo2 < 4){
+	        			pageCompany.countPagibigNo2 += 1;
+	        			console.log(pageCompany.countPagibigNo2);
+	        			return true;
+	        		}
+	        		else{
+	        			return false;
+	        		}
+	        	}
+	        	else if(e.which == 9 || e.which == 189){
+	        		return true;
+	        	}else{
+	        		return false;
+	        	}
+	        });
+
+	        pageCompany.countPagibigNo3 = pageCompany.elem.find('.pagibignum3').val().length;
+	        pageCompany.elem.find('.pagibignum3').keydown(function(e){
+	        	if(e.which == 8 || e.which == 46){
+	        		if(pageCompany.countPagibigNo3 != 0 && !(pageCompany.countPagibigNo3 < 0)){
+	        				pageCompany.countPagibigNo3 -= 1;
+	        			console.log(pageCompany.countPagibigNo3);
+	        		}
+	        		return true;
+	        	}else if(pageCompany.countPagibigNo3 == 4){
+	        		return false;
+	        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+	        		
+	        		if(pageCompany.countPagibigNo3 < 4){
+	        			pageCompany.countPagibigNo3 += 1;
+	        			console.log(pageCompany.countPagibigNo3);
+	        			return true;
+	        		}
+	        		else{
+	        			return false;
+	        		}
+	        	}
+	        	else if(e.which == 9 || e.which == 189){
+	        		return true;
+	        	}else{
+	        		return false;
+	        	}
+	        });
 		pageCompany.elem.find('.btn-save-company').off("click").click(function(event){
-			// var company_address = {
-			// 	"bldg_name": pageCompany.elem.find('.rm').val(), 
-			// 	"house": pageCompany.elem.find('.house').val(),
-			// 	"street_name": pageCompany.elem.find('.street').val(),
-			// 	"subdivision": pageCompany.elem.find('.subdivision').val(),
-			// 	"barangay": pageCompany.elem.find('.brgy').val(),
-			// 	"city": pageCompany.elem.find('.city').val(),
-			// 	"province": pageCompany.elem.find('.province').val(),
-			// 	"zip_code": pageCompany.elem.find('.zipcode').val()
-			// 	};
-			// company_address = JSON.stringify(company_address);
-
-			// var company_contact = {
-			// 	"company_tel_no": pageCompany.elem.find('.telnum').val(),
-			// 	"company_cel_no": pageCompany.elem.find('.cellnum').val()
-			// 	};
-			// company_contact = JSON.stringify(company_contact);
-
 			var company_form_info = {	
-				"company_sss_id": pageCompany.elem.find('.sssnum').val(), 
-				"company_pagibig_id": pageCompany.elem.find('.pagibignum').val(),
+				"company_sss_id": pageCompany.elem.find('.sssnum1').val() 
+								+ "-" 
+								+ pageCompany.elem.find('.sssnum2').val() 
+								+ "-" 
+								+ pageCompany.elem.find('.sssnum3').val()
+								+ "-"
+								+ pageCompany.elem.find('.sssnum4').val(), 
+				"company_pagibig_id": pageCompany.elem.find('.pagibignum1').val()
+								+ "-"
+								+ pageCompany.elem.find('.pagibignum2').val()
+								+ "-"
+								+ pageCompany.elem.find('.pagibignum3').val(),
 				"company_name": pageCompany.elem.find('.employername').val(),
 				"company_address": JSON.stringify({
 					"room_no" : pageCompany.elem.find('.rm').val(),
@@ -227,8 +456,8 @@
 		result = result['query'];
 		$.each(result, function(key,value){
 
-			pageCompany.elem.find('.sssnum').val(value['company_sss_id']);
-			pageCompany.elem.find('.pagibignum').val(value['company_pagibig_id']);
+			pageCompany.sssnum = value['company_sss_id'].split('-');
+			pageCompany.pagibignum = value['company_pagibig_id'].split('-');
 			pageCompany.elem.find('.employername').val(value['company_name']);
 			pageCompany.elem.find('.rep-name').val(value['company_representative']);
 			pageCompany.elem.find('.rep-position').val(value['company_rep_pos']);
@@ -252,5 +481,14 @@
 			pageCompany.elem.find('.email').val(value['company_email']);
 
 		});
+
+		pageCompany.elem.find('.sssnum1').val(pageCompany.sssnum[0]);
+		pageCompany.elem.find('.sssnum2').val(pageCompany.sssnum[1]);
+		pageCompany.elem.find('.sssnum3').val(pageCompany.sssnum[2]);
+		pageCompany.elem.find('.sssnum4').val(pageCompany.sssnum[3]);
+
+		pageCompany.elem.find('.pagibignum1').val(pageCompany.pagibignum[0]);
+		pageCompany.elem.find('.pagibignum2').val(pageCompany.pagibignum[1]);
+		pageCompany.elem.find('.pagibignum3').val(pageCompany.pagibignum[2]);
 	});
 </script>

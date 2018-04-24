@@ -107,6 +107,14 @@
 		pageSSSReferenceEdit.action = '<?php echo $action?>';
 		pageSSSReferenceEdit.id = '<?php echo $id?>';
 
+		if(pageSSSReferenceEdit.action == "edit"){
+			pageSSSReferenceEdit.elem.find('.sss-ref-from').attr('readonly', "");
+			pageSSSReferenceEdit.elem.find('.sss-ref-to').attr('readonly' , "");
+		}else if(pageSSSReferenceEdit.action == "add"){
+			pageSSSReferenceEdit.elem.find('.sss-ref-from').removeAttr('readonly');
+			pageSSSReferenceEdit.elem.find('.sss-ref-to').removeAttr('readonly');
+		}
+
 		pageSSSReferenceEdit.elem.find('.end-over').off("click").click(function(e){
 		pageSSSReferenceEdit.elem.find('.sss-ref-to').val('Over');
 			});
@@ -170,7 +178,7 @@
 						pageSSSReferenceEdit.elem.find('.modal-error').modal("show");
 						pageSSSReferenceEdit.valid = false;
 					}else if(valueRef['ref_range_end'] == pageSSSReferenceEdit.end){
-						pageSSSReferenceEdit.elem.find('.modal-error .modal-body p').html("End of range is already exists!");
+						pageSSSReferenceEdit.elem.find('.modal-error <div class="mod"></div>al-body p').html("End of range is already exists!");
 						pageSSSReferenceEdit.elem.find('.modal-error').modal("show");
 						pageSSSReferenceEdit.valid = false;
 					}else if(valueRef['ref_range_end'] == pageSSSReferenceEdit.start){

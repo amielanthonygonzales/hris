@@ -133,11 +133,30 @@
 						<h3>SSS Contribution</h3>
 					</div>
 					<div class="panel-body sss-panel">
-						
 						<div class="form-group">
 							<label for="sss-number">SSS Number</label>
-							<input class="form-control sss-number" type="text" name="sssNumber" placeholder="SSS Number" required />
+							<div class="row form-group">
+								<div class="col-md-3">
+									<input class="form-control sss-number1" type="text" name="sss-number" required />
+								</div>
+								<div class="col-md-1">
+									<div class="dash-container">-</div>
+								</div>
+								<div class="col-md-4">
+									<input class="form-control sss-number2" type="text" name="sss-number" required />
+								</div>
+								<div class="col-md-1">
+									<div class="dash-container">-</div>
+								</div>
+								<div class="col-md-2">
+									<input class="form-control sss-number3" type="text" name="sss-number" required />
+								</div>
+							</div>
 						</div>
+						<!-- <div class="form-group">
+							<label for="sss-number">SSS Number</label>
+							<input class="form-control sss-number" type="text" name="sssNumber" placeholder="SSS Number" required />
+						</div> -->
 						<div class="form-group">
 							<label for="ss-contribution">Social Security Contribution</label>
 							<div class="row form-group">
@@ -195,8 +214,24 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="pagibig-number">Pag-Ibig Number</label>
-							<input class="form-control pagibig-number" type="text" name="pagibigNumber" placeholder="Pag-Ibig Number" required />
+							<label >Pag-Ibig Number</label>
+							<div class="row form-group">
+								<div class="col-md-3">
+									<input class="form-control pagibig-number1" type="text" name="pagibigNumber" required />
+								</div>
+								<div class="col-md-1">
+									<div class="dash-container">-</div>
+								</div>
+								<div class="col-md-3">
+									<input class="form-control pagibig-number2" type="text" name="pagibigNumber" required />
+								</div>
+								<div class="col-md-1">
+									<div class="dash-container">-</div>
+								</div>
+								<div class="col-md-3">
+									<input class="form-control pagibig-number3" type="text" name="pagibigNumber" required />
+								</div>
+							</div>
 						</div>
 						<div class="form-group">
 							<label>Membership Program</label>
@@ -386,18 +421,199 @@
         	}
         });
 
+        pageEmployee.countPagibigNo1 = pageEmployee.elem.find('.pagibig-number1').val().length;
+        pageEmployee.elem.find('.pagibig-number1').keydown(function(e){
+        	if(e.which == 8 || e.which == 46){
+        		if(pageEmployee.countPagibigNo1 != 0 && !(pageEmployee.countPagibigNo1 < 0)){
+        				pageEmployee.countPagibigNo1 -= 1;
+        			console.log(pageEmployee.countPagibigNo1);
+        		}
+        		return true;
+        	}else if(pageEmployee.countPagibigNo1 == 4){
+        		pageEmployee.elem.find('.pagibig-number2').focus();
+        		return false;
+        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+        		
+        		if(pageEmployee.countPagibigNo1 < 4){
+        			pageEmployee.countPagibigNo1 += 1;
+        			console.log(pageEmployee.countPagibigNo1);
+        			return true;
+        		}
+        		else{
+        			return false;
+        		}
+        	}
+        	else if(e.which == 9 || e.which == 189){
+        		return true;
+        	}else{
+        		return false;
+        	}
+        });
+        pageEmployee.countPagibigNo2 = pageEmployee.elem.find('.pagibig-number2').val().length;
+        pageEmployee.elem.find('.pagibig-number2').keydown(function(e){
+        	if(e.which == 8 || e.which == 46){
+        		if(pageEmployee.countPagibigNo2 != 0 && !(pageEmployee.countPagibigNo2 < 0)){
+        				pageEmployee.countPagibigNo2 -= 1;
+        			console.log(pageEmployee.countPagibigNo2);
+        		}
+        		return true;
+        	}else if(pageEmployee.countPagibigNo2 == 4){
+        		pageEmployee.elem.find('.pagibig-number3').focus();
+        		return false;
+        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+        		
+        		if(pageEmployee.countPagibigNo2 < 4){
+        			pageEmployee.countPagibigNo2 += 1;
+        			console.log(pageEmployee.countPagibigNo2);
+        			return true;
+        		}
+        		else{
+        			return false;
+        		}
+        	}
+        	else if(e.which == 9 || e.which == 189){
+        		return true;
+        	}else{
+        		return false;
+        	}
+        });
+
+        pageEmployee.countPagibigNo3 = pageEmployee.elem.find('.pagibig-number3').val().length;
+        pageEmployee.elem.find('.pagibig-number3').keydown(function(e){
+        	if(e.which == 8 || e.which == 46){
+        		if(pageEmployee.countPagibigNo3 != 0 && !(pageEmployee.countPagibigNo3 < 0)){
+        				pageEmployee.countPagibigNo3 -= 1;
+        			console.log(pageEmployee.countPagibigNo3);
+        		}
+        		return true;
+        	}else if(pageEmployee.countPagibigNo3 == 4){
+        		return false;
+        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+        		
+        		if(pageEmployee.countPagibigNo3 < 4){
+        			pageEmployee.countPagibigNo3 += 1;
+        			console.log(pageEmployee.countPagibigNo3);
+        			return true;
+        		}
+        		else{
+        			return false;
+        		}
+        	}
+        	else if(e.which == 9 || e.which == 189){
+        		return true;
+        	}else{
+        		return false;
+        	}
+        });
+
+
+        pageEmployee.countSSSNumber1 = pageEmployee.elem.find('.sss-number1').val().length;
+        pageEmployee.elem.find('.sss-number1').keydown(function(e){
+        	if(e.which == 8 || e.which == 46){
+        		if(pageEmployee.countSSSNumber1 != 0 && !(pageEmployee.countSSSNumber1 < 0)){
+        				pageEmployee.countSSSNumber1 -= 1;
+        			console.log(pageEmployee.countSSSNumber1);
+        		}
+        		return true;
+        	}else if(pageEmployee.countSSSNumber1 == 2){
+        		pageEmployee.elem.find('.sss-number2').focus();
+        		return false;
+        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+        		
+        		if(pageEmployee.countSSSNumber1 < 2){
+        			pageEmployee.countSSSNumber1 += 1;
+        			console.log(pageEmployee.countSSSNumber1);
+        			return true;
+        		}
+        		else{
+        			return false;
+        		}
+        	}
+        	else if(e.which == 9 || e.which == 189){
+        		return true;
+        	}else{
+        		return false;
+        	}
+        });
+        pageEmployee.countSSSNumber2 = pageEmployee.elem.find('.sss-number2').val().length;
+        pageEmployee.elem.find('.sss-number2').keydown(function(e){
+        	if(e.which == 8 || e.which == 46){
+        		if(pageEmployee.countSSSNumber2 != 0 && !(pageEmployee.countSSSNumber2 < 0)){
+        				pageEmployee.countSSSNumber2 -= 1;
+        			console.log(pageEmployee.countSSSNumber2);
+        		}
+        		return true;
+        	}else if(pageEmployee.countSSSNumber2 == 7){
+        		pageEmployee.elem.find('.sss-number3').focus();
+        		return false;
+        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+        		
+        		if(pageEmployee.countSSSNumber2 < 7){
+        			pageEmployee.countSSSNumber2 += 1;
+        			console.log(pageEmployee.countSSSNumber2);
+        			return true;
+        		}
+        		else{
+        			return false;
+        		}
+        	}
+        	else if(e.which == 9 || e.which == 189){
+        		return true;
+        	}else{
+        		return false;
+        	}
+        });
+
+        pageEmployee.countSSSNumber3 = pageEmployee.elem.find('.sss-number3').val().length;
+        pageEmployee.elem.find('.sss-number3').keydown(function(e){
+        	if(e.which == 8 || e.which == 46){
+        		if(pageEmployee.countSSSNumber3 != 0 && !(pageEmployee.countSSSNumber3 < 0)){
+        				pageEmployee.countSSSNumber3 -= 1;
+        			console.log(pageEmployee.countSSSNumber3);
+        		}
+        		return true;
+        	}else if(pageEmployee.countSSSNumber3 == 1){
+        		return false;
+        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+        		
+        		if(pageEmployee.countSSSNumber3 < 1){
+        			pageEmployee.countSSSNumber3 += 1;
+        			console.log(pageEmployee.countSSSNumber3);
+        			return true;
+        		}
+        		else{
+        			return false;
+        		}
+        	}
+        	else if(e.which == 9 || e.which == 189){
+        		return true;
+        	}else{
+        		return false;
+        	}
+        });
+
+
+
 		pageEmployee.elem.find('.btn-save-employee').off("click").click(function(event){
 
 			pageEmployee.employee_content = {
 				"emp_birthday" : pageEmployee.elem.find('.engagement-date').val(),
 				"emp_dept" : pageEmployee.elem.find('.listDepartment').val(),
 				"emp_salary": pageEmployee.elem.find('.empSalary').val(),
-				"sss_no" : pageEmployee.elem.find('.sss-number').val(),
+				"sss_no" : pageEmployee.elem.find('.sss-number1').val() 
+						   + "-" 
+						   + pageEmployee.elem.find('.sss-number2').val() 
+						   + "-" 
+						   + pageEmployee.elem.find('.sss-number3').val() ,
 				"ss_contribution" : pageEmployee.elem.find('.sss-Contribution').val(),
 				"ec_contribution" : pageEmployee.elem.find('.ec-Contribution').val(),
 				"er_contribution" : pageEmployee.elem.find('.er-Contribution').val(),
 				"ee_contribution" : pageEmployee.elem.find('.ee-Contribution').val(),
-				"pagibig_no" : pageEmployee.elem.find('.pagibig-number').val(),
+				"pagibig_no" : pageEmployee.elem.find('.pagibig-number1').val() 
+							   + "-" 
+							   + pageEmployee.elem.find('.pagibig-number2').val() 
+							   + "-" 
+							   + pageEmployee.elem.find('.pagibig-number3').val(),
 				"pagibig_mid_no" : pageEmployee.elem.find('.pagibig-mid-number1').val() 
 								  + "-" 
 								  + pageEmployee.elem.find('.pagibig-mid-number2').val()
@@ -491,16 +707,18 @@
 			pageEmployee.elem.find('.empUsername').val(value['emp_username']);
 			pageEmployee.elem.find('.oldpassword').val(value['emp_password']);
 
-			pageEmployee.elem.find('.sss-number').val(value['sss_no']);
+			
 			pageEmployee.elem.find('.sss-Contribution').val(value['ss_contribution']);
 			pageEmployee.elem.find('.ec-Contribution').val(value['ec_contribution']);
 			pageEmployee.elem.find('.er-Contribution').val(value['er_contribution']);
 			pageEmployee.elem.find('.ee-Contribution').val(value['ee_contribution']);
 
 			pageEmployee.mid_no = value['pagibig_mid_no'].split('-');
+			pageEmployee.accountNo = value['pagibig_no'].split('-');
+			pageEmployee.sssNo = value['sss_no'].split('-');
 			
 
-			pageEmployee.elem.find('.pagibig-number').val(value['pagibig_no']);
+			
 			pageEmployee.elem.find('.ee-share').val(value['pagibig_ee_share']);
 			pageEmployee.elem.find('.er-share').val(value['pagibig_er_share']);
 			pageEmployee.elem.find('.pagibig-remarks').val(value['pagibig_remarks']);
@@ -512,6 +730,13 @@
 		pageEmployee.elem.find('.pagibig-mid-number1').val(pageEmployee.mid_no[0]);
 		pageEmployee.elem.find('.pagibig-mid-number2').val(pageEmployee.mid_no[1]);
 		pageEmployee.elem.find('.pagibig-mid-number3').val(pageEmployee.mid_no[2]);
+		pageEmployee.elem.find('.pagibig-number1').val(pageEmployee.accountNo[0]);
+		pageEmployee.elem.find('.pagibig-number2').val(pageEmployee.accountNo[1]);
+		pageEmployee.elem.find('.pagibig-number3').val(pageEmployee.accountNo[2]);
+		pageEmployee.elem.find('.sss-number1').val(pageEmployee.sssNo[0]);
+		pageEmployee.elem.find('.sss-number2').val(pageEmployee.sssNo[1]);
+		pageEmployee.elem.find('.sss-number3').val(pageEmployee.sssNo[2]);
+
 
 		$.getJSON('<?php echo base_url('profile');?>', function(data){
 			$.each(data, function(key,value){

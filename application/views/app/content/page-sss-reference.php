@@ -94,7 +94,6 @@
 			"processing": true,
 			"serverSide": true,
 			"pagingType": "full_numbers",
-			"order": [[ 0, "desc" ]],
 			"ajax":{
 				"url": "<?php echo site_url('sss-datatable')?>",
 				"dataScr" : function( json ){
@@ -177,6 +176,7 @@
 					"<'row am-datatable-body'<'col-sm-12'tr>>" +
 					"<'row am-datatable-footer'<'col-sm-5'i><'col-sm-7'p>>"
 		});
+
 
 		
 

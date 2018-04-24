@@ -83,7 +83,7 @@
 				<input type="text" class="total2 clear-pagibig" />
 				<input type="text" class="remarks2 clear-pagibig" />
 
-				<input type="text" class="midNo3 clear-pagibig" />
+				 <input type="text" class="midNo3 clear-pagibig" />
 				<input type="text" class="accountNo3 clear-pagibig" />
 				<input type="text" class="member-program3 clear-pagibig" />
 				<input type="text" class="name3 clear-pagibig" />
@@ -92,7 +92,7 @@
 				<input type="text" class="employeeShare3 clear-pagibig" />
 				<input type="text" class="employerShare3 clear-pagibig" />
 				<input type="text" class="total3 clear-pagibig" />
-				<input type="text" class="remarks3 clear-pagibig" /><br/>
+				<input type="text" class="remarks3 clear-pagibig" /><br/> 
 
 				<input type="text" class="midNo4 clear-pagibig" />
 				<input type="text" class="accountNo4 clear-pagibig" />
@@ -105,7 +105,7 @@
 				<input type="text" class="total4 clear-pagibig" />
 				<input type="text" class="remarks4 clear-pagibig" />
 
-				<input type="text" class="midNo5 clear-pagibig" />
+				 <input type="text" class="midNo5 clear-pagibig" />
 				<input type="text" class="accountNo5 clear-pagibig" />
 				<input type="text" class="member-program5 clear-pagibig" />
 				<input type="text" class="name5 clear-pagibig" />
@@ -114,7 +114,7 @@
 				<input type="text" class="employeeShare5 clear-pagibig" />
 				<input type="text" class="employerShare5 clear-pagibig" />
 				<input type="text" class="total5 clear-pagibig" />
-				<input type="text" class="remarks5 clear-pagibig" /><br/>
+				<input type="text" class="remarks5 clear-pagibig" /><br/> 
 
 				<input type="text" class="midNo6 clear-pagibig" />
 				<input type="text" class="accountNo6 clear-pagibig" />
@@ -618,7 +618,7 @@
 					<input type="text" class="employeeShare20 clear-pagibig" />
 					<input type="text" class="employerShare20 clear-pagibig" />
 					<input type="text" class="total20 clear-pagibig" />
-					<input type="text" class="remarks20 clear-pagibig" />
+					<input type="text" class="remarks20 clear-pagibig" /> 
 
 					<input type="text" class="midNo21 clear-pagibig" />
 					<input type="text" class="accountNo21 clear-pagibig" />
@@ -746,7 +746,7 @@
 
 		pagePagibigContri.month = pagePagibigContri.getDate.getMonth();
 		pagePagibigContri.day = pagePagibigContri.getDate.getDate();
-		pagePagibigContri.monthlyCompen = pagePagibigContri.getDate.getFullYear() + " " + parseInt(pagePagibigContri.month + 1);
+		pagePagibigContri.monthlyCompen = pagePagibigContri.getDate.getFullYear() + "" + (pagePagibigContri.month<10 ? '0' : '') + parseInt(pagePagibigContri.month + 1);
 
 		pagePagibigContri.currentDate = monthNames[pagePagibigContri.month] + " " 
 										+ (pagePagibigContri.day<10 ? '0' : '') + pagePagibigContri.day + ", " 
