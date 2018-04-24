@@ -69,7 +69,7 @@ $route['get-session'] = 'api/Employee_Controller/getEmployeeSession';
 $route['profile'] = 'api/Employee_Controller/getEmployeeProfile';
 $route['email'] = 'api/Employee_Controller/sendEmail';
 $route['notification'] = 'api/Employee_Controller/sendNotification';
-
+$route['get-sss-ref'] = 'api/Employee_Controller/getAllSSSRef';
 
 //Company
 //app
@@ -117,8 +117,11 @@ $route['get-data-sss/(:any)'] = 'api/SSS_Controller/getDataPerPage/$1';
 $route['get-all-reference'] = 'api/SSS_Controller/getAllReference';
 $route['add-reference'] = 'api/SSS_Controller/addReference';
 $route['sss-datatable'] = 'api/SSS_Controller/datatableSSS';
+$route['ref-get-data/(:any)'] = 'api/SSS_Controller/getRefSSS/$1';
+$route['update-reference/(:any)'] = 'api/SSS_Controller/updateReference/$1';
+$route['delete-reference/(:any)'] = 'api/SSS_Controller/deleteReference/$1';
 //app
-$route['add-sss-reference'] = 'app/SSS_Controller/viewAddReference';
+$route['add-sss-reference/(:any)/(:any)'] = 'app/SSS_Controller/viewAddReference/$1/$2';
 
 //Payed Contribution
 //api

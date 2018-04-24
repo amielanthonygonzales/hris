@@ -388,5 +388,10 @@
 				`emp_id` = " .$this->db->escape($id));
 			return 1;
 		}
+
+		public function getAllSSSRef(){
+			$sql = $this->db->query("SELECT * FROM `sss_reference` WHERE `ref_deleted` = 0");
+			return $sql->result();
+		}
 	}
 ?>

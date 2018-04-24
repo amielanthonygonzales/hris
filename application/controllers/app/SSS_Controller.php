@@ -6,11 +6,11 @@
 			$this->load->model('SSS_Model');
 		}
 
-		public function viewAddReference(){
+		public function viewAddReference($action, $id){
 			if(!isset($_SESSION['user'])){
 				redirect(site_url('index'));
 			}
-			$data = array();
+			$data = array("action"=>$action, "id"=>$id);
 			$data['content'] = $this->load->view('app/content/page-sss-reference-edit', $data, true);
 			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
 			$data['callHead'] = $this->load->view("app/nav-head", $data, true);

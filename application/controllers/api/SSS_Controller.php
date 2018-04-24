@@ -71,5 +71,33 @@
 			header('Content-Type: application/json');
 			echo json_encode($ret);
 		}
+
+		public function getRefSSS($id){
+			$this->benchmark->mark('start');
+			$ret['query'] = $this->SSS_Model->getRefSSS($id);
+			$this->benchmark->mark('end');
+			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($ret);
+		}
+
+		public function updateReference($id){
+			$this->benchmark->mark('start');
+			$postReference = $this->input->post();
+			$ret['success'] = $this->SSS_Model->updateReference($postReference, $id);
+			$this->benchmark->mark('end');
+			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($ret);
+		}
+
+		public function deleteReference($id){
+			$this->benchmark->mark('start');
+			$ret['success'] = $this->SSS_Model->deleteReference($id);
+			$this->benchmark->mark('end');
+			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($ret);
+		}
 	}
  ?>

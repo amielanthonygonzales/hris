@@ -55,7 +55,7 @@
 			<table class="table table-hover table-bordered table-striped table-sss-reference">
 				<thead>
 					<tr>
-						<th rowspan="3" class="table-title">Range of Compensation</th>
+						<th rowspan="2" colspan="2" class="table-title">Range of Compensation</th>
 						<th rowspan="3" class="table-title">Monthly Salary Credit</th>
 						<th colspan="4" class="table-title">Employer - Employee</th>
 						<th rowspan="3" class="table-title"></th>
@@ -67,6 +67,8 @@
 						<th class="table-title">EC</th>
 					</tr>
 					<tr>
+						<th class="table-title">From</th>
+						<th class="table-title">To</th>
 						<th class="table-title">ER</th>
 						<th class="table-title">EE</th>
 						<th class="table-title">Total</th>
@@ -74,14 +76,6 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1,000 - 1,249.99</td>
-						<td>1,000</td>
-						<td>73.70</td>
-						<td>36.30</td>
-						<td>110.00</td>
-						<td>10.00</td>
-					</tr>
 
 				</tbody>
 			</table>
@@ -110,7 +104,7 @@
 			"columnDefs": [
 				{
 					"targets": 0,
-					"orderable": true,
+					"orderable": false,
 					//"data":  "null",
 					//"defaultContent": ""
 				},
@@ -129,12 +123,55 @@
 				{data: "ref_monthly_salary"},
 				{data: "ref_er"},
 				{data: "ref_ee"},
+				{data: "sum"},
 				{data: "ref_ec"},	
 				{data: "ref_id"},
 				{data: "ref_id"}
 			],
 			"drawCallback":function(settings){
-
+				pageSSSReference.elem.find('.table-sss-reference td:nth-child(6)').each(function(){
+					var elem = $(this);
+					var data = JSON.parse(elem.html());
+					console.log(elem.html());
+				});
+				pageSSSReference.elem.find('.table-sss-reference td:nth-child(8)').each(function(){
+					var elem = $(this);
+					var data = JSON.parse(elem.html());
+						elem.html(data);
+					elem.html("<a class='icon icon-left s7-note text-success'></a>").off("click").click(function(){
+						window.parent.location = "<?php echo base_url('add-sss-reference/')?>"+"edit/"+data;
+					});
+				});
+				pageSSSReference.elem.find('.table-sss-reference td:nth-child(9)').each(function(){
+					var elem = $(this);
+					var data = JSON.parse(elem.html());
+						elem.html(data);
+					elem.html("<a class='icon icon-left s7-trash text-danger'></a>").off("click").click(function(){
+						pageSSSReference.elem.find('.i-circle').removeClass('text-success').addClass('text-danger');
+						pageSSSReference.elem.find('.symbol').removeClass('s7-check').addClass('s7-attention');
+						pageSSSReference.elem.find('.sss-ref-message').html('Are you sure you want to delete this data!');
+						pageSSSReference.elem.find('.btn-proceed').hide();
+						pageSSSReference.elem.find('.btn-yes').show().off("click").click(function(e){
+							$.ajax({
+								method: "POST",
+								url: "<?php echo base_url('delete-reference/')?>" + data,
+								success: function(result){
+									if(result.success){
+										pageSSSReference.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
+										pageSSSReference.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
+										pageSSSReference.elem.find('.btn-proceed').show();
+										pageSSSReference.elem.find('.btn-yes').hide();
+										pageSSSReference.elem.find('.btn-no').hide();
+										pageSSSReference.elem.find('.sss-ref-message').html('Data successfully deleted!');
+										pageSSSReference.elem.find('.modal-sss-ref').modal();
+									}
+								}
+							});
+						});
+						pageSSSReference.elem.find('.btn-no').show();
+						pageSSSReference.elem.find('.modal-sss-ref').modal();
+					});
+				});
 			},
 			dom:  	"<'row am-datatable-header'<'col-sm-6'l><'col-sm-6'f>>" +
 					"<'row am-datatable-body'<'col-sm-12'tr>>" +
@@ -144,7 +181,7 @@
 		
 
 		pageSSSReference.elem.find('.btn-add').off("click").click(function(e){
-			window.parent.location = "<?php echo base_url('add-sss-reference')?>";
+			window.parent.location = "<?php echo base_url('add-sss-reference/')?>"+"add/0" ;
 		});
 		callback();
 	}
