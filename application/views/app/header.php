@@ -65,6 +65,7 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/app"); ?>/lib/select2/css/select2.min.css"/>
 
 		<!-- data tables -->
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/app"); ?>/lib/datatables/css/dataTables.bootstrap.min.css"/>
 		<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/js/jquery.dataTables.min.js" type="text/javascript"></script>
 		<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
 		<script src="<?php echo base_url("assets/app"); ?>/lib/datatables/plugins/buttons/js/dataTables.buttons.js" type="text/javascript"></script>
