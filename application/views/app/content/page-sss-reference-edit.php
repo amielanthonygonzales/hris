@@ -98,10 +98,14 @@
 	</div>
 </div>
 <script type="text/javascript">
+
 	var pageSSSReferenceEdit = {};
+	var action = '<?php echo $action?>';
 	pageSSSReferenceEdit.init = function(selector, callback){
 		pageSSSReferenceEdit.elem = $(selector);
 		pageSSSReferenceEdit.valid = true;
+		pageSSSReferenceEdit.action = '<?php echo $action?>';
+		pageSSSReferenceEdit.id = '<?php echo $id?>';
 
 		pageSSSReferenceEdit.elem.find('.end-over').off("click").click(function(e){
 		pageSSSReferenceEdit.elem.find('.sss-ref-to').val('Over');
@@ -118,16 +122,46 @@
 					"ref_ec" : pageSSSReferenceEdit.elem.find('.sss-ref-ec').val()
 				};
 
+				if(pageSSSReferenceEdit.action == "edit"){
+						$.ajax({
+							method: "POST",
+								url: "<?php echo base_url('update-reference/')?>"+pageSSSReferenceEdit.id,
+								data: pageSSSReferenceEdit.content,
+								success: function(result){
+									if(result.success == 1){
+										pageSSSReferenceEdit.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
+										pageSSSReferenceEdit.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
+										pageSSSReferenceEdit.elem.find('.btn-proceed').show();
+										pageSSSReferenceEdit.elem.find('.btn-yes').hide();
+										pageSSSReferenceEdit.elem.find('.btn-no').hide();
+										pageSSSReferenceEdit.elem.find('.sss-ref-message').html('Data has been updated successfully!');
+										pageSSSReferenceEdit.elem.find('.modal-sss-ref').modal();
+									}else if(result.success.error){
+										pageSSSReferenceEdit.elem.find('.modal-error .modal-body p').html(result.success.error);
+										pageSSSReferenceEdit.elem.find('.modal-error').modal("show");
+									}
+								}
+						});	
+					}
+
+				if(pageSSSReferenceEdit.action == "add"){
+
 				$.getJSON("<?php echo site_url('get-all-reference')?>", function(result){
 
 					result = result['query'];
 					console.log(result);
+
+
 					$.each(result, function(keyRef, valueRef){
 
 					pageSSSReferenceEdit.start = pageSSSReferenceEdit.elem.find('.sss-ref-from').val();
 					pageSSSReferenceEdit.end = pageSSSReferenceEdit.elem.find('.sss-ref-to').val();
 
 					if(pageSSSReferenceEdit.end < pageSSSReferenceEdit.start){
+						pageSSSReferenceEdit.elem.find('.modal-error .modal-body p').html("Invalid range!");
+						pageSSSReferenceEdit.elem.find('.modal-error').modal("show");
+						pageSSSReferenceEdit.valid = false;
+					}else if(pageSSSReferenceEdit.end == pageSSSReferenceEdit.start){
 						pageSSSReferenceEdit.elem.find('.modal-error .modal-body p').html("Invalid range!");
 						pageSSSReferenceEdit.elem.find('.modal-error').modal("show");
 						pageSSSReferenceEdit.valid = false;
@@ -158,7 +192,7 @@
 					}
 					});
 
-					if(pageSSSReferenceEdit.valid == true){
+					if(pageSSSReferenceEdit.valid == true && pageSSSReferenceEdit.action == "add"){
 						$.ajax({
 							method: "POST",
 								url: "<?php echo base_url('add-reference')?>",
@@ -180,11 +214,13 @@
 						});	
 					}
 
+
 					
 				});
 
-				
+				}
 			});	
+
 
 		pageSSSReferenceEdit.ref_er = 0.0;
 		pageSSSReferenceEdit.ref_ee = 0.0;
@@ -203,10 +239,39 @@
 			pageSSSReferenceEdit.elem.find('.sss-ref-total-contri').text(pageSSSReferenceEdit.ref_total);
 		});
 
-		callback();
+		
+		if(pageSSSReferenceEdit.action == "edit"){
+			$.getJSON('<?php echo base_url('ref-get-data/')?>'+pageSSSReferenceEdit.id, callback);
+		}else{
+			callback();
+		}
+		
 
 	}
-	pageSSSReferenceEdit.init("#pageSSSReferenceEdit", function(){
 
-	});
+	if(action == "edit"){
+		pageSSSReferenceEdit.ref_er_query = 0.0;
+		pageSSSReferenceEdit.ref_ee_query = 0.0;
+		pageSSSReferenceEdit.ref_total_query = 0.0;
+		pageSSSReferenceEdit.init("#pageSSSReferenceEdit", function(result){
+			result = result['query'];
+			console.log(result);
+			$.each(result, function(keyEdit, valueEdit){
+				pageSSSReferenceEdit.elem.find('.sss-ref-from').val(valueEdit['ref_range_start']);
+				pageSSSReferenceEdit.elem.find('.sss-ref-to').val(valueEdit['ref_range_end']);
+				pageSSSReferenceEdit.elem.find('.sss-ref-monthly').val(valueEdit['ref_monthly_salary']);
+				pageSSSReferenceEdit.elem.find('.sss-ref-er').val(valueEdit['ref_er']);
+				pageSSSReferenceEdit.elem.find('.sss-ref-ee').val(valueEdit['ref_ee']);
+				pageSSSReferenceEdit.elem.find('.sss-ref-ec').val(valueEdit['ref_ec']);
+			});
+			pageSSSReferenceEdit.ref_er_query = parseFloat(pageSSSReferenceEdit.elem.find('.sss-ref-er').val());
+			pageSSSReferenceEdit.ref_ee_query = parseFloat(pageSSSReferenceEdit.elem.find('.sss-ref-ee').val());
+			pageSSSReferenceEdit.ref_total_query = pageSSSReferenceEdit.ref_er_query + pageSSSReferenceEdit.ref_ee_query;
+			pageSSSReferenceEdit.elem.find('.sss-ref-total-contri').text(pageSSSReferenceEdit.ref_total_query);
+		});
+	}else{
+		pageSSSReferenceEdit.init("#pageSSSReferenceEdit", function(){
+		});
+	}
+	
 </script>

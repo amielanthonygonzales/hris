@@ -497,7 +497,9 @@
 			pageEmployee.elem.find('.er-Contribution').val(value['er_contribution']);
 			pageEmployee.elem.find('.ee-Contribution').val(value['ee_contribution']);
 
-			pageEmployee.elem.find('.pagibig-mid-number').val(value['pagibig_mid_no']);
+			pageEmployee.mid_no = value['pagibig_mid_no'].split('-');
+			
+
 			pageEmployee.elem.find('.pagibig-number').val(value['pagibig_no']);
 			pageEmployee.elem.find('.ee-share').val(value['pagibig_ee_share']);
 			pageEmployee.elem.find('.er-share').val(value['pagibig_er_share']);
@@ -506,6 +508,10 @@
 			pageEmployee.elem.find('.mem-program').val(value['pagibig_mem_prog']);
 			pageEmployee.elem.find('.remarks-date').val(value['pagibig_remarks_date']);
 		});
+
+		pageEmployee.elem.find('.pagibig-mid-number1').val(pageEmployee.mid_no[0]);
+		pageEmployee.elem.find('.pagibig-mid-number2').val(pageEmployee.mid_no[1]);
+		pageEmployee.elem.find('.pagibig-mid-number3').val(pageEmployee.mid_no[2]);
 
 		$.getJSON('<?php echo base_url('profile');?>', function(data){
 			$.each(data, function(key,value){
@@ -528,167 +534,195 @@
 		pageEmployee.elem.find('.empSalary').keyup(function(e){
 			pageEmployee.salary = pageEmployee.elem.find('.empSalary').val();
 			console.log(pageEmployee.salary);
-			if(pageEmployee.salary < 1000){
-				pageEmployee.elem.find('.sss-Contribution').val('0.00');
-				pageEmployee.elem.find('.ec-Contribution').val('0.00');
-				pageEmployee.elem.find('.ee-Contribution').val('0.00');
-				pageEmployee.elem.find('.er-Contribution').val('0.00');
-			}else if(pageEmployee.salary >= 1000 && pageEmployee.salary <= 1249.99){
-				pageEmployee.elem.find('.sss-Contribution').val('110.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('36.30');
-				pageEmployee.elem.find('.er-Contribution').val('73.70');
-			}else if(pageEmployee.salary >= 1250 && pageEmployee.salary <= 1749.99){
-				pageEmployee.elem.find('.sss-Contribution').val('165.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('54.50');
-				pageEmployee.elem.find('.er-Contribution').val('110.50');
-			}else if(pageEmployee.salary >= 1750 && pageEmployee.salary <= 2249.99){
-				pageEmployee.elem.find('.sss-Contribution').val('220.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('72.70');
-				pageEmployee.elem.find('.er-Contribution').val('147.30');
-			}else if(pageEmployee.salary >= 2250 && pageEmployee.salary <= 2749.99){
-				pageEmployee.elem.find('.sss-Contribution').val('275.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('90.80');
-				pageEmployee.elem.find('.er-Contribution').val('184.20');
-			}else if(pageEmployee.salary >= 2750 && pageEmployee.salary <= 3249.99){
-				pageEmployee.elem.find('.sss-Contribution').val('330.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('109.00');
-				pageEmployee.elem.find('.er-Contribution').val('221.00');
-			}else if(pageEmployee.salary >= 3250 && pageEmployee.salary <= 3749.99){
-				pageEmployee.elem.find('.sss-Contribution').val('385.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('127.20');
-				pageEmployee.elem.find('.er-Contribution').val('257.80');
-			}else if(pageEmployee.salary >= 3750 && pageEmployee.salary <= 4249.99){
-				pageEmployee.elem.find('.sss-Contribution').val('440.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('145.30');
-				pageEmployee.elem.find('.er-Contribution').val('294.70');
-			}else if(pageEmployee.salary >= 4250 && pageEmployee.salary <= 4749.99){
-				pageEmployee.elem.find('.sss-Contribution').val('495.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('163.50');
-				pageEmployee.elem.find('.er-Contribution').val('331.50');
-			}else if(pageEmployee.salary >= 4750 && pageEmployee.salary <= 5249.99){
-				pageEmployee.elem.find('.sss-Contribution').val('550.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('181.70');
-				pageEmployee.elem.find('.er-Contribution').val('368.30');
-			}else if(pageEmployee.salary >= 5250 && pageEmployee.salary <= 5749.99){
-				pageEmployee.elem.find('.sss-Contribution').val('605.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('199.80');
-				pageEmployee.elem.find('.er-Contribution').val('405.20');
-			}else if(pageEmployee.salary >= 5750 && pageEmployee.salary <= 6249.99){
-				pageEmployee.elem.find('.sss-Contribution').val('660.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('218.00');
-				pageEmployee.elem.find('.er-Contribution').val('422.00');
-			}else if(pageEmployee.salary >= 6250 && pageEmployee.salary <= 6749.99){
-				pageEmployee.elem.find('.sss-Contribution').val('715.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('236.20');
-				pageEmployee.elem.find('.er-Contribution').val('478.80');
-			}else if(pageEmployee.salary >= 6750 && pageEmployee.salary <= 7249.99){
-				pageEmployee.elem.find('.sss-Contribution').val('770.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('254.30');
-				pageEmployee.elem.find('.er-Contribution').val('515.70');
-			}else if(pageEmployee.salary >= 7250 && pageEmployee.salary <= 7749.99){
-				pageEmployee.elem.find('.sss-Contribution').val('825.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('272.50');
-				pageEmployee.elem.find('.er-Contribution').val('552.50');
-			}else if(pageEmployee.salary >= 7750 && pageEmployee.salary <= 8249.99){
-				pageEmployee.elem.find('.sss-Contribution').val('880.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('290.70');
-				pageEmployee.elem.find('.er-Contribution').val('589.30');
-			}else if(pageEmployee.salary >= 8250 && pageEmployee.salary <= 8749.99){
-				pageEmployee.elem.find('.sss-Contribution').val('935.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('308.80');
-				pageEmployee.elem.find('.er-Contribution').val('626.20');
-			}else if(pageEmployee.salary >= 8750 && pageEmployee.salary <= 9249.99){
-				pageEmployee.elem.find('.sss-Contribution').val('990.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('327.00');
-				pageEmployee.elem.find('.er-Contribution').val('663.00');
-			}else if(pageEmployee.salary >= 9250 && pageEmployee.salary <= 9749.99){
-				pageEmployee.elem.find('.sss-Contribution').val('1045.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('345.20');
-				pageEmployee.elem.find('.er-Contribution').val('699.80');
-			}else if(pageEmployee.salary >= 9750 && pageEmployee.salary <= 10249.99){
-				pageEmployee.elem.find('.sss-Contribution').val('1100.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('363.30');
-				pageEmployee.elem.find('.er-Contribution').val('736.70');
-			}else if(pageEmployee.salary >= 10250 && pageEmployee.salary <= 10749.99){
-				pageEmployee.elem.find('.sss-Contribution').val('1155.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('381.50');
-				pageEmployee.elem.find('.er-Contribution').val('773.50');
-			}else if(pageEmployee.salary >= 10750 && pageEmployee.salary <= 11249.99){
-				pageEmployee.elem.find('.sss-Contribution').val('1210.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('399.70');
-				pageEmployee.elem.find('.er-Contribution').val('810.30');
-			}else if(pageEmployee.salary >= 11250 && pageEmployee.salary <= 11749.99){
-				pageEmployee.elem.find('.sss-Contribution').val('1265.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('417.80');
-				pageEmployee.elem.find('.er-Contribution').val('847.20');
-			}else if(pageEmployee.salary >= 11750 && pageEmployee.salary <= 12249.99){
-				pageEmployee.elem.find('.sss-Contribution').val('1320.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('436.00');
-				pageEmployee.elem.find('.er-Contribution').val('884.00');
-			}else if(pageEmployee.salary >= 12250 && pageEmployee.salary <= 12749.99){
-				pageEmployee.elem.find('.sss-Contribution').val('1375.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('454.20');
-				pageEmployee.elem.find('.er-Contribution').val('920.80');
-			}else if(pageEmployee.salary >= 12750 && pageEmployee.salary <= 13249.99){
-				pageEmployee.elem.find('.sss-Contribution').val('1430.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('472.30');
-				pageEmployee.elem.find('.er-Contribution').val('957.70');
-			}else if(pageEmployee.salary >= 13250 && pageEmployee.salary <= 13749.99){
-				pageEmployee.elem.find('.sss-Contribution').val('1485.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('490.50');
-				pageEmployee.elem.find('.er-Contribution').val('994.50');
-			}else if(pageEmployee.salary >= 13750 && pageEmployee.salary <= 14249.99){
-				pageEmployee.elem.find('.sss-Contribution').val('1540.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('508.70');
-				pageEmployee.elem.find('.er-Contribution').val('1031.30');
-			}else if(pageEmployee.salary >= 14250 && pageEmployee.salary <= 14749.99){
-				pageEmployee.elem.find('.sss-Contribution').val('1595.00');
-				pageEmployee.elem.find('.ec-Contribution').val('10.00');
-				pageEmployee.elem.find('.ee-Contribution').val('526.80');
-				pageEmployee.elem.find('.er-Contribution').val('1068.20');
-			}else if(pageEmployee.salary >= 14750 && pageEmployee.salary <= 15249.99){
-				pageEmployee.elem.find('.sss-Contribution').val('1650.00');
-				pageEmployee.elem.find('.ec-Contribution').val('30.00');
-				pageEmployee.elem.find('.ee-Contribution').val('545.00');
-				pageEmployee.elem.find('.er-Contribution').val('1105.00');
-			}else if(pageEmployee.salary >= 15250 && pageEmployee.salary <= 15749.99){
-				pageEmployee.elem.find('.sss-Contribution').val('1705.00');
-				pageEmployee.elem.find('.ec-Contribution').val('30.00');
-				pageEmployee.elem.find('.ee-Contribution').val('563.20');
-				pageEmployee.elem.find('.er-Contribution').val('1141.80');
-			}else if(pageEmployee.salary >= 15750){
-				pageEmployee.elem.find('.sss-Contribution').val('1760.00');
-				pageEmployee.elem.find('.ec-Contribution').val('30.00');
-				pageEmployee.elem.find('.ee-Contribution').val('581.30');
-				pageEmployee.elem.find('.er-Contribution').val('1178.70');
-			}
+
+			$.getJSON('<?php echo base_url('get-sss-ref');?>', function(result){
+				result = result['query'];
+				pageEmployee.er = 0.0;
+				pageEmployee.ee = 0.0;
+				pageEmployee.total = 0.0;
+
+				$.each(result, function(keySalary, valueSalary){
+					if(pageEmployee.salary >= valueSalary['ref_range_start'] && valueSalary['ref_range_end'] == "Over"){
+						pageEmployee.elem.find('.ec-Contribution').val(valueSalary['ref_ec']);
+						pageEmployee.elem.find('.ee-Contribution').val(valueSalary['ref_ee']);
+						pageEmployee.elem.find('.er-Contribution').val(valueSalary['ref_er']);
+					}else if(!(pageEmployee.salary >= valueSalary['ref_range_start']) && !(pageEmployee.salary <= valueSalary['ref_range_end'])){
+						pageEmployee.elem.find('.ec-Contribution').val('0.00');
+						pageEmployee.elem.find('.ee-Contribution').val('0.00');
+						pageEmployee.elem.find('.er-Contribution').val('0.00');
+					}else if(pageEmployee.salary >= valueSalary['ref_range_start'] && pageEmployee.salary <= valueSalary['ref_range_end']){
+						pageEmployee.elem.find('.ec-Contribution').val(valueSalary['ref_ec']);
+						pageEmployee.elem.find('.ee-Contribution').val(valueSalary['ref_ee']);
+						pageEmployee.elem.find('.er-Contribution').val(valueSalary['ref_er']);
+					}
+				});
+				pageEmployee.ee = parseFloat(pageEmployee.elem.find('.ee-Contribution').val());
+				pageEmployee.er = parseFloat(pageEmployee.elem.find('.er-Contribution').val());
+				pageEmployee.total = pageEmployee.ee + pageEmployee.er;
+				pageEmployee.elem.find('.sss-Contribution').val(pageEmployee.total);
+
+			});
+			// if(pageEmployee.salary < 1000){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('0.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('0.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('0.00');
+			// 	pageEmployee.elem.find('.er-Contribution').val('0.00');
+			// }else if(pageEmployee.salary >= 1000 && pageEmployee.salary <= 1249.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('110.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('36.30');
+			// 	pageEmployee.elem.find('.er-Contribution').val('73.70');
+			// }else if(pageEmployee.salary >= 1250 && pageEmployee.salary <= 1749.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('165.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('54.50');
+			// 	pageEmployee.elem.find('.er-Contribution').val('110.50');
+			// }else if(pageEmployee.salary >= 1750 && pageEmployee.salary <= 2249.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('220.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('72.70');
+			// 	pageEmployee.elem.find('.er-Contribution').val('147.30');
+			// }else if(pageEmployee.salary >= 2250 && pageEmployee.salary <= 2749.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('275.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('90.80');
+			// 	pageEmployee.elem.find('.er-Contribution').val('184.20');
+			// }else if(pageEmployee.salary >= 2750 && pageEmployee.salary <= 3249.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('330.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('109.00');
+			// 	pageEmployee.elem.find('.er-Contribution').val('221.00');
+			// }else if(pageEmployee.salary >= 3250 && pageEmployee.salary <= 3749.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('385.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('127.20');
+			// 	pageEmployee.elem.find('.er-Contribution').val('257.80');
+			// }else if(pageEmployee.salary >= 3750 && pageEmployee.salary <= 4249.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('440.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('145.30');
+			// 	pageEmployee.elem.find('.er-Contribution').val('294.70');
+			// }else if(pageEmployee.salary >= 4250 && pageEmployee.salary <= 4749.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('495.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('163.50');
+			// 	pageEmployee.elem.find('.er-Contribution').val('331.50');
+			// }else if(pageEmployee.salary >= 4750 && pageEmployee.salary <= 5249.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('550.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('181.70');
+			// 	pageEmployee.elem.find('.er-Contribution').val('368.30');
+			// }else if(pageEmployee.salary >= 5250 && pageEmployee.salary <= 5749.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('605.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('199.80');
+			// 	pageEmployee.elem.find('.er-Contribution').val('405.20');
+			// }else if(pageEmployee.salary >= 5750 && pageEmployee.salary <= 6249.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('660.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('218.00');
+			// 	pageEmployee.elem.find('.er-Contribution').val('422.00');
+			// }else if(pageEmployee.salary >= 6250 && pageEmployee.salary <= 6749.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('715.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('236.20');
+			// 	pageEmployee.elem.find('.er-Contribution').val('478.80');
+			// }else if(pageEmployee.salary >= 6750 && pageEmployee.salary <= 7249.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('770.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('254.30');
+			// 	pageEmployee.elem.find('.er-Contribution').val('515.70');
+			// }else if(pageEmployee.salary >= 7250 && pageEmployee.salary <= 7749.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('825.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('272.50');
+			// 	pageEmployee.elem.find('.er-Contribution').val('552.50');
+			// }else if(pageEmployee.salary >= 7750 && pageEmployee.salary <= 8249.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('880.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('290.70');
+			// 	pageEmployee.elem.find('.er-Contribution').val('589.30');
+			// }else if(pageEmployee.salary >= 8250 && pageEmployee.salary <= 8749.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('935.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('308.80');
+			// 	pageEmployee.elem.find('.er-Contribution').val('626.20');
+			// }else if(pageEmployee.salary >= 8750 && pageEmployee.salary <= 9249.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('990.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('327.00');
+			// 	pageEmployee.elem.find('.er-Contribution').val('663.00');
+			// }else if(pageEmployee.salary >= 9250 && pageEmployee.salary <= 9749.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('1045.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('345.20');
+			// 	pageEmployee.elem.find('.er-Contribution').val('699.80');
+			// }else if(pageEmployee.salary >= 9750 && pageEmployee.salary <= 10249.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('1100.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('363.30');
+			// 	pageEmployee.elem.find('.er-Contribution').val('736.70');
+			// }else if(pageEmployee.salary >= 10250 && pageEmployee.salary <= 10749.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('1155.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('381.50');
+			// 	pageEmployee.elem.find('.er-Contribution').val('773.50');
+			// }else if(pageEmployee.salary >= 10750 && pageEmployee.salary <= 11249.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('1210.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('399.70');
+			// 	pageEmployee.elem.find('.er-Contribution').val('810.30');
+			// }else if(pageEmployee.salary >= 11250 && pageEmployee.salary <= 11749.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('1265.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('417.80');
+			// 	pageEmployee.elem.find('.er-Contribution').val('847.20');
+			// }else if(pageEmployee.salary >= 11750 && pageEmployee.salary <= 12249.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('1320.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('436.00');
+			// 	pageEmployee.elem.find('.er-Contribution').val('884.00');
+			// }else if(pageEmployee.salary >= 12250 && pageEmployee.salary <= 12749.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('1375.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('454.20');
+			// 	pageEmployee.elem.find('.er-Contribution').val('920.80');
+			// }else if(pageEmployee.salary >= 12750 && pageEmployee.salary <= 13249.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('1430.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('472.30');
+			// 	pageEmployee.elem.find('.er-Contribution').val('957.70');
+			// }else if(pageEmployee.salary >= 13250 && pageEmployee.salary <= 13749.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('1485.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('490.50');
+			// 	pageEmployee.elem.find('.er-Contribution').val('994.50');
+			// }else if(pageEmployee.salary >= 13750 && pageEmployee.salary <= 14249.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('1540.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('508.70');
+			// 	pageEmployee.elem.find('.er-Contribution').val('1031.30');
+			// }else if(pageEmployee.salary >= 14250 && pageEmployee.salary <= 14749.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('1595.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('10.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('526.80');
+			// 	pageEmployee.elem.find('.er-Contribution').val('1068.20');
+			// }else if(pageEmployee.salary >= 14750 && pageEmployee.salary <= 15249.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('1650.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('30.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('545.00');
+			// 	pageEmployee.elem.find('.er-Contribution').val('1105.00');
+			// }else if(pageEmployee.salary >= 15250 && pageEmployee.salary <= 15749.99){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('1705.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('30.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('563.20');
+			// 	pageEmployee.elem.find('.er-Contribution').val('1141.80');
+			// }else if(pageEmployee.salary >= 15750){
+			// 	pageEmployee.elem.find('.sss-Contribution').val('1760.00');
+			// 	pageEmployee.elem.find('.ec-Contribution').val('30.00');
+			// 	pageEmployee.elem.find('.ee-Contribution').val('581.30');
+			// 	pageEmployee.elem.find('.er-Contribution').val('1178.70');
+			// }
 		});
 	});
 </script>

@@ -220,5 +220,14 @@
         	echo json_encode($ret);
 
 		}
+
+		public function getAllSSSRef(){
+			$this->benchmark->mark('start');
+			$data['query'] = $this->Employee_Model->getAllSSSRef();
+			$this->benchmark->mark('end');
+			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($data);
+		}
 	}
 ?>
