@@ -257,20 +257,38 @@
 		}
 
 		public function updateEmployeeInfo($id, $updatePost){
-			$sql = $this->db->query("
-				UPDATE 
-				employee 
-				SET
-				emp_birthday = " .$this->db->escape($updatePost['emp_birthday']). " ,
-				emp_dept = " .$this->db->escape($updatePost['emp_dept']). " ,
-				emp_salary = " .$this->db->escape($updatePost['emp_salary']). " 
-				WHERE 
-				emp_id = " .$this->db->escape($id));
-			return 1;
+			if(strlen($updatePost['sss_no']) != 16){
+				$returndata['error'] = "Invalid length of SSS Number!";
+			}else if(strlen($updatePost['pagibig_mid_no']) != 14){
+				$returndata['error'] = "Invalid length of Pag-Ibig MID Number!";
+			}else if(strlen($updatePost['pagibig_no']) != 14){
+				$returndata['error'] = "Invalid length of Pag-Ibig Number!";
+			}
+			if(strlen($updatePost['sss_no']) == 3 || strlen($updatePost['pagibig_mid_no']) == 3 || strlen($updatePost['pagibig_no']) == 3){
+				$sql = $this->db->query("
+					UPDATE 
+					employee 
+					SET
+					emp_birthday = " .$this->db->escape($updatePost['emp_birthday']). " ,
+					emp_dept = " .$this->db->escape($updatePost['emp_dept']). " ,
+					emp_salary = " .$this->db->escape($updatePost['emp_salary']). " 
+					WHERE 
+					emp_id = " .$this->db->escape($id));
+				$returndata = 1;
+			}
+			return $returndata;
 		}
 
 		public function updateSSSInfo($id, $updatePost){
-			$sql = $this->db->query("
+			if(strlen($updatePost['sss_no']) != 16){
+				$returndata['error'] = "Invalid length of SSS Number!";
+			}else if(strlen($updatePost['pagibig_mid_no']) != 14){
+				$returndata['error'] = "Invalid length of Pag-Ibig MID Number!";
+			}else if(strlen($updatePost['pagibig_no']) != 14){
+				$returndata['error'] = "Invalid length of Pag-Ibig Number!";
+			}
+			if(strlen($updatePost['sss_no']) == 3 || strlen($updatePost['pagibig_mid_no']) == 3 || strlen($updatePost['pagibig_no']) == 3){
+				$sql = $this->db->query("
 				UPDATE 
 					`sss` 
 				SET 
@@ -281,25 +299,37 @@
 					`ee_contribution` = " .$this->db->escape($updatePost['ee_contribution']). " 
 				WHERE 
 					`sss_emp_id` = ".$this->db->escape($id));
-			return 1;
+				$returndata = 1;
+			}
+			return $returndata;
 		}
 
 		public function updatePagibigInfo($id, $updatePost){
-			$sql = $this->db->query("
-				UPDATE 
-				pag_ibig 
-				SET 
-				pagibig_mid_no = ".$this->db->escape($updatePost['pagibig_mid_no'])." ,
-				pagibig_no = ".$this->db->escape($updatePost['pagibig_no'])." , 
-				pagibig_ee_share = ".$this->db->escape($updatePost['pagibig_ee_share'])." ,
-				pagibig_er_share = ".$this->db->escape($updatePost['pagibig_er_share'])." ,
-				pagibig_mem_prog = ".$this->db->escape($updatePost['pagibig_mem_prog'])." ,
-				monthly_compen = ".$this->db->escape($updatePost['monthly_compen'])." ,
-				pagibig_remarks = ".$this->db->escape($updatePost['pagibig_remarks'])." ,
-				pagibig_remarks_date = ".$this->db->escape($updatePost['pagibig_remarks_date'])." 
-				WHERE 
-				pagibig_emp_id = ".$this->db->escape($id));
-			return 1;
+			if(strlen($updatePost['pagibig_mid_no']) != 14){
+				$returndata['error'] = "Invalid length of Pag-Ibig MID Number!";
+			}else if(strlen($updatePost['pagibig_no']) != 14){
+				$returndata['error'] = "Invalid length of Pag-Ibig Number!";
+			}else if(strlen($updatePost['sss_no']) != 16){
+				$returndata['error'] = "Invalid length of SSS Number!";
+			}
+			if(strlen($updatePost['sss_no']) == 3 || strlen($updatePost['pagibig_mid_no']) == 3 || strlen($updatePost['pagibig_no']) == 3){
+				$sql = $this->db->query("
+					UPDATE 
+					pag_ibig 
+					SET 
+					pagibig_mid_no = ".$this->db->escape($updatePost['pagibig_mid_no'])." ,
+					pagibig_no = ".$this->db->escape($updatePost['pagibig_no'])." , 
+					pagibig_ee_share = ".$this->db->escape($updatePost['pagibig_ee_share'])." ,
+					pagibig_er_share = ".$this->db->escape($updatePost['pagibig_er_share'])." ,
+					pagibig_mem_prog = ".$this->db->escape($updatePost['pagibig_mem_prog'])." ,
+					monthly_compen = ".$this->db->escape($updatePost['monthly_compen'])." ,
+					pagibig_remarks = ".$this->db->escape($updatePost['pagibig_remarks'])." ,
+					pagibig_remarks_date = ".$this->db->escape($updatePost['pagibig_remarks_date'])." 
+					WHERE 
+					pagibig_emp_id = ".$this->db->escape($id));
+				$returndata = 1;
+			}
+			return $returndata;
 		}
 
 		public function deleteEmployeeInfo($id){

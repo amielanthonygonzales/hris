@@ -90,6 +90,7 @@ $route['dashboard-department'] = 'app/Dashboard_Controller/department';
 $route['dashboard-sss'] = 'app/Dashboard_Controller/sss';
 $route['dashboard-pagibig'] = 'app/Dashboard_Controller/pagibig';
 $route['dashboard-sss-reference'] = 'app/Dashboard_Controller/sssReference';
+$route['dashboard-paid-contri'] = 'app/Dashboard_Controller/paidContribution';
 
 
 
@@ -110,6 +111,7 @@ $route['department-datatable'] = 'api/Department_Controller/datatableDepartment'
 //api
 $route['get-data-pagibig'] = 'api/Pagibig_Controller/getData';
 $route['get-data-per-page/(:any)'] = 'api/Pagibig_Controller/getDataPerPage/$1';
+$route['pagibig-paid-datatable'] = 'api/Pagibig_Controller/dataTablePaidPagibig';
 
 //SSS
 //api
@@ -120,6 +122,7 @@ $route['sss-datatable'] = 'api/SSS_Controller/datatableSSS';
 $route['ref-get-data/(:any)'] = 'api/SSS_Controller/getRefSSS/$1';
 $route['update-reference/(:any)'] = 'api/SSS_Controller/updateReference/$1';
 $route['delete-reference/(:any)'] = 'api/SSS_Controller/deleteReference/$1';
+$route['sss-paid-datatable'] = 'api/SSS_Controller/dataTablePaidSSS';
 //app
 $route['add-sss-reference/(:any)/(:any)'] = 'app/SSS_Controller/viewAddReference/$1/$2';
 

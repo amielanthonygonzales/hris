@@ -336,8 +336,9 @@
             }
         });
 
-		pageEmployee.countNumberMid1 = pageEmployee.elem.find('.pagibig-mid-number1').val().length;
+		
         pageEmployee.elem.find('.pagibig-mid-number1').keydown(function(e){
+        pageEmployee.countNumberMid1 = pageEmployee.elem.find('.pagibig-mid-number1').val().length;
         	if(e.which == 8 || e.which == 46){
         		if(pageEmployee.countNumberMid1 != 0 && !(pageEmployee.countNumberMid1 < 0)){
         				pageEmployee.countNumberMid1 -= 1;
@@ -364,8 +365,9 @@
         		return false;
         	}
         });
-        pageEmployee.countNumberMid2 = pageEmployee.elem.find('.pagibig-mid-number2').val().length;
+        
         pageEmployee.elem.find('.pagibig-mid-number2').keydown(function(e){
+        pageEmployee.countNumberMid2 = pageEmployee.elem.find('.pagibig-mid-number2').val().length;
         	if(e.which == 8 || e.which == 46){
         		if(pageEmployee.countNumberMid2 != 0 && !(pageEmployee.countNumberMid2 < 0)){
         				pageEmployee.countNumberMid2 -= 1;
@@ -393,8 +395,9 @@
         	}
         });
 
-        pageEmployee.countNumberMid3 = pageEmployee.elem.find('.pagibig-mid-number3').val().length;
+        
         pageEmployee.elem.find('.pagibig-mid-number3').keydown(function(e){
+        pageEmployee.countNumberMid3 = pageEmployee.elem.find('.pagibig-mid-number3').val().length;
         	if(e.which == 8 || e.which == 46){
         		if(pageEmployee.countNumberMid3 != 0 && !(pageEmployee.countNumberMid3 < 0)){
         				pageEmployee.countNumberMid3 -= 1;
@@ -421,8 +424,9 @@
         	}
         });
 
-        pageEmployee.countPagibigNo1 = pageEmployee.elem.find('.pagibig-number1').val().length;
+        
         pageEmployee.elem.find('.pagibig-number1').keydown(function(e){
+        pageEmployee.countPagibigNo1 = pageEmployee.elem.find('.pagibig-number1').val().length;
         	if(e.which == 8 || e.which == 46){
         		if(pageEmployee.countPagibigNo1 != 0 && !(pageEmployee.countPagibigNo1 < 0)){
         				pageEmployee.countPagibigNo1 -= 1;
@@ -449,8 +453,9 @@
         		return false;
         	}
         });
-        pageEmployee.countPagibigNo2 = pageEmployee.elem.find('.pagibig-number2').val().length;
+        
         pageEmployee.elem.find('.pagibig-number2').keydown(function(e){
+        pageEmployee.countPagibigNo2 = pageEmployee.elem.find('.pagibig-number2').val().length;
         	if(e.which == 8 || e.which == 46){
         		if(pageEmployee.countPagibigNo2 != 0 && !(pageEmployee.countPagibigNo2 < 0)){
         				pageEmployee.countPagibigNo2 -= 1;
@@ -478,8 +483,9 @@
         	}
         });
 
-        pageEmployee.countPagibigNo3 = pageEmployee.elem.find('.pagibig-number3').val().length;
+        
         pageEmployee.elem.find('.pagibig-number3').keydown(function(e){
+        pageEmployee.countPagibigNo3 = pageEmployee.elem.find('.pagibig-number3').val().length;
         	if(e.which == 8 || e.which == 46){
         		if(pageEmployee.countPagibigNo3 != 0 && !(pageEmployee.countPagibigNo3 < 0)){
         				pageEmployee.countPagibigNo3 -= 1;
@@ -507,8 +513,9 @@
         });
 
 
-        pageEmployee.countSSSNumber1 = pageEmployee.elem.find('.sss-number1').val().length;
+        
         pageEmployee.elem.find('.sss-number1').keydown(function(e){
+        pageEmployee.countSSSNumber1 = pageEmployee.elem.find('.sss-number1').val().length;
         	if(e.which == 8 || e.which == 46){
         		if(pageEmployee.countSSSNumber1 != 0 && !(pageEmployee.countSSSNumber1 < 0)){
         				pageEmployee.countSSSNumber1 -= 1;
@@ -535,8 +542,9 @@
         		return false;
         	}
         });
-        pageEmployee.countSSSNumber2 = pageEmployee.elem.find('.sss-number2').val().length;
+        
         pageEmployee.elem.find('.sss-number2').keydown(function(e){
+        pageEmployee.countSSSNumber2 = pageEmployee.elem.find('.sss-number2').val().length;
         	if(e.which == 8 || e.which == 46){
         		if(pageEmployee.countSSSNumber2 != 0 && !(pageEmployee.countSSSNumber2 < 0)){
         				pageEmployee.countSSSNumber2 -= 1;
@@ -564,8 +572,9 @@
         	}
         });
 
-        pageEmployee.countSSSNumber3 = pageEmployee.elem.find('.sss-number3').val().length;
+        //pageEmployee.countSSSNumber3 = pageEmployee.elem.find('.sss-number3').val().length;
         pageEmployee.elem.find('.sss-number3').keydown(function(e){
+        pageEmployee.countSSSNumber3 = pageEmployee.elem.find('.sss-number3').val().length;
         	if(e.which == 8 || e.which == 46){
         		if(pageEmployee.countSSSNumber3 != 0 && !(pageEmployee.countSSSNumber3 < 0)){
         				pageEmployee.countSSSNumber3 -= 1;
@@ -632,7 +641,8 @@
 					url: "<?php echo base_url('update-employee/')?>" + pageEmployee.id,
 					data: pageEmployee.employee_content,
 					success: function(result){
-						if(result.success){
+						console.log(result);
+						if(result.success == 1){
 							pageEmployee.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
 							pageEmployee.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
 							pageEmployee.elem.find('.btn-proceed').show();
@@ -640,7 +650,9 @@
 							pageEmployee.elem.find('.btn-no').hide();
 							pageEmployee.elem.find('.message').html('Data has been saved successfully!');
 							pageEmployee.elem.find('.modal-department').modal();
-							
+						}else if(result.success.error){
+							pageEmployee.elem.find('.modal-error .modal-body p').html(result.success.error);
+							pageEmployee.elem.find('.modal-error').modal("show");
 						}
 					}
 			});

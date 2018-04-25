@@ -99,5 +99,28 @@
 			header('Content-Type: application/json');
         	echo json_encode($ret);
 		}
+
+		public function dataTablePaidSSS(){
+			$args = array(
+	            "count" => $_GET['length'],
+	            "offset" =>  $_GET['start'],
+	            "search" =>  $_GET['search']['value'],
+	            "orderby" => $columns[$_GET['order'][0]['column']],
+	            "dir" => $_GET['order'][0]['dir']
+       		);
+       		if($args['dir'] == ""){
+				$args['dir']	= "desc";
+			}
+			if($args['orderby'] == ""){
+				$args['orderby']	= "year";
+			}
+			$ret=array();
+			$ret['draw'] = $_GET['draw'];
+			$ret['data'] = $this->SSS_Model->getPaidSSS($args);
+			$ret['recordsTotal'] = $this->SSS_Model->countPaidSSS();
+			$ret['recordsFiltered'] = $ret['recordsTotal'];
+			header('Content-Type: application/json');
+			echo json_encode($ret);
+		}
 	}
  ?>

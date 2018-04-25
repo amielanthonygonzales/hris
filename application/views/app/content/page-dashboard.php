@@ -10,55 +10,55 @@
 					<div class="row form-group">
 						<div class="col-md-6">
 							<label for="sssnum">SSS Employer Number</label>
-							<input class="form-control company-sss-num" type="text" name="sssnum" placeholder="SSS Employer Number" title="Numbers only" readonly />
+							<input class="form-control company-sss-num typing-dashboard" type="text" name="sssnum" placeholder="SSS Employer Number" title="Numbers only" />
 						</div>
 						<div class="col-md-6">
 							<label for="sssnum">Pag-IBIG Employer Number</label>
-							<input class="form-control company-pagibig-num" type="text" name="pagibignum" placeholder="Pag-IBIG Employer Number" readonly/>
+							<input class="form-control company-pagibig-num typing-dashboard" type="text" name="pagibignum" placeholder="Pag-IBIG Employer Number"/>
 						</div>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="employername">Employer Name</label>
-					<input class="form-control company-employer-name" type="text" name="employername" placeholder="Employer Name" readonly/>
+					<input class="form-control company-employer-name typing-dashboard" type="text" name="employername" placeholder="Employer Name"/>
 				</div>
 				<div class="form-group">
 					<div class = "row form-group">
 						<div class="col-md-4">
 							<label for="lname">Rm./Flr./Unit No. &amp; Bldg. Name</label>
-							<input class="form-control rm" type="text" name="rm" placeholder="Rm./Flr./Unit No.& Bldg. Name" readonly/>
+							<input class="form-control rm typing-dashboard" type="text" name="rm" placeholder="Rm./Flr./Unit No.& Bldg. Name"/>
 						</div>
 						<div class="col-md-4">
 							<label for="extname">House/Lot &amp; Blk. No.</label>
-							<input class="form-control house" type="text" name="house" placeholder="House/Lot & Blk. No." readonly />
+							<input class="form-control house typing-dashboard" type="text" name="house" placeholder="House/Lot & Blk. No."/>
 						</div>
 						<div class="col-md-4">
 							<label for="extname">Street Name</label>
-							<input class="form-control street" type="text" name="street" placeholder="Street Name" readonly/>
+							<input class="form-control street typing-dashboard" type="text" name="street" placeholder="Street Name"/>
 						</div>
 					</div>
 					<div class = "row form-group">
 						<div class="col-md-4">
 							<label for="extname">Subdivision</label>
-							<input class="form-control subdivision" type="text" name="subdivision" placeholder="Subdivision" readonly/>
+							<input class="form-control subdivision typing-dashboard" type="text" name="subdivision" placeholder="Subdivision"/>
 						</div>
 						<div class="col-md-4">
 							<label for="extname">Barangay/District/Locality</label>
-							<input class="form-control brgy" type="text" name="brgy" placeholder="Barangay/District/Locality" readonly/>
+							<input class="form-control brgy typing-dashboard" type="text" name="brgy" placeholder="Barangay/District/Locality"/>
 						</div>
 						<div class="col-md-4">
 							<label for="extname">City/Municipality</label>
-							<input class="form-control city" type="text" name="city" placeholder="City/Municipality" readonly/>
+							<input class="form-control city typing-dashboard" type="text" name="city" placeholder="City/Municipality"/>
 						</div>
 					</div>
 					<div class = "row form-group">
 						<div class="col-md-6">
 							<label for="extname">Province</label>
-							<input class="form-control province" type="text" name="province" placeholder="Province" readonly/>
+							<input class="form-control province typing-dashboard" type="text" name="province" placeholder="Province"/>
 						</div>
 						<div class="col-md-6">
 							<label for="extname">Zip Code</label>
-							<input class="form-control zipcode" type="number" name="zipcode" placeholder="Zip Code" readonly/>
+							<input class="form-control zipcode typing-dashboard" type="number" name="zipcode" placeholder="Zip Code"/>
 						</div>
 						
 					</div>
@@ -67,19 +67,19 @@
 					<div class="row form-group">
 						<div class="col-md-3">
 							<label for="extname">Tax Identification Number</label>
-							<input class="form-control company-tax-num" type="number" name="taxnum" placeholder="Tax Identification Number" readonly/>
+							<input class="form-control company-tax-num typing-dashboard" type="number" name="taxnum" placeholder="Tax Identification Number"/>
 						</div>
 						<div class="col-md-3">
 							<label for="username">Telephone Number</label>
-							<input class="form-control company-tel-num" type="tel" name="telnum" placeholder="Telephone Number" readonly/>
+							<input class="form-control company-tel-num typing-dashboard" type="tel" name="telnum" placeholder="Telephone Number"/>
 						</div>
 						<div class="col-md-3">
 							<label for="username">Mobile/Cellphone Number</label>
-							<input class="form-control company-cell-num" type="tel" name="cellnum" placeholder="Mobile/Cellphone Number" readonly/>
+							<input class="form-control company-cell-num typing-dashboard" type="tel" name="cellnum" placeholder="Mobile/Cellphone Number"/>
 						</div>
 						<div class="col-md-3">
 							<label for="email">Email</label>
-							<input class="form-control company-email" type="email" name="email" placeholder="Email" readonly/>
+							<input class="form-control company-email typing-dashboard" type="email" name="email" placeholder="Email"/>
 						</div>
 					</div>
 					
@@ -197,6 +197,18 @@
 	var pageDashboard = {};
 	pageDashboard.init = function(selector, callback){
 		pageDashboard.elem = $(selector);
+
+
+		pageDashboard.elem.find('.typing-dashboard').keydown(function(e){
+			if(e.which == 9){
+				return true;
+			}else{
+				return false;
+			}
+		});
+		pageDashboard.elem.find('.typing-dashboard').on("contextmenu",function(){
+	       return false;
+	    }); 
 
 		
 

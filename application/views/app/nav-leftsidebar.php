@@ -74,7 +74,7 @@
 											<a href="<?php echo base_url('dashboard-pagibig')?>">Pag-Ibig Contribution</a>
 										</li>
 										<li>
-											<a href="<?php echo base_url('dashboard-pagibig')?>">Paid Contributions</a>
+											<a href="<?php echo base_url('dashboard-paid-contri')?>">Paid Contributions</a>
 										</li>
 									</ul>
 								</div>
