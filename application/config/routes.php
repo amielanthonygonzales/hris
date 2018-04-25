@@ -57,6 +57,7 @@ $route['employee/(:any)/(:any)'] = 'app/Employee_Controller/view/$1/$2';
 $route['register-employee'] = 'app/Employee_Controller/registerEmployee';
 $route['employee-list'] = 'app/Employee_Controller/employeeList';
 $route['employee-edit/(:any)'] = 'app/Employee_Controller/employeeEdit/$1';
+
 //api
 $route['get-all-department'] = 'api/Employee_Controller/getAllDepartment';
 $route['add-employee'] = 'api/Employee_Controller/addEmployee';
@@ -68,6 +69,7 @@ $route['delete-employee/(:any)'] = 'api/Employee_Controller/deleteEmployeeInfo/$
 $route['employee-datatable'] = 'api/Employee_Controller/dataTable';
 $route['get-session'] = 'api/Employee_Controller/getEmployeeSession';
 $route['profile'] = 'api/Employee_Controller/getEmployeeProfile';
+$route['profile-emp'] = 'api/Employee_Controller/getEmployeeProfile-emp';
 $route['email'] = 'api/Employee_Controller/sendEmail';
 $route['get-sss-ref'] = 'api/Employee_Controller/getAllSSSRef';
 
@@ -91,6 +93,7 @@ $route['dashboard-sss'] = 'app/Dashboard_Controller/sss';
 $route['dashboard-pagibig'] = 'app/Dashboard_Controller/pagibig';
 $route['dashboard-sss-reference'] = 'app/Dashboard_Controller/sssReference';
 $route['dashboard-paid-contri'] = 'app/Dashboard_Controller/paidContribution';
+$route['dashboard-paid-contri-emp'] = 'app/Dashboard_Controller/paidContributionEmp';
 
 
 

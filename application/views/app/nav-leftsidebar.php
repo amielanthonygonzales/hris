@@ -6,9 +6,9 @@
 			<li>
 				<a href="<?php echo base_url('dashboard'); ?>"><i class="icon s7-monitor"></i><span>Dashboard</span></a>
 			</li>
-			<li class="parent">
+			<!-- <li class="parent">
 				<a class="profile" href="#"><i class="icon s7-user"></i><span>Profile</span></a>
-			</li>
+			</li> -->
 				<li class="parent">
 					<a class="company" href="<?php echo base_url('dashboard-company')?>"><i class="icon s7-culture"></i><span>Company</span></a>
 					<ul class="sub-menu"><li class="title">Company</li>

@@ -113,5 +113,16 @@
 			$this->load->view('app/header', $data);
 			$this->load->view('app/footer', $data);
 		}
+
+		public function paidContributionEmp(){
+			if(!isset($_SESSION['user'])){
+				redirect(site_url('index'));
+			}
+			$data = array();
+			$data['content'] = $this->load->view('app/content/page-paid-contri-employee', $data, true);
+			$data['callHead'] = $this->load->view("app/nav-head-employee", $data, true);
+			$this->load->view('app/header', $data);
+			$this->load->view('app/footer', $data);
+		}
 	}
 ?>

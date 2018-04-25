@@ -102,14 +102,14 @@
 					<label for="username">Username</label>
 					<input class="form-control empUsername" type="text" name="username" placeholder="Username" required/>
 				</div>
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<label for="oldpassword">Old Password</label>
 					<input class="form-control oldpassword" type="password" name="oldpassword" placeholder="Old Password" />
 				</div>
 				<div class="form-group">
 					<label for="newpassword">New Password</label>
 					<input class="form-control newpassword" type="password" name="newpassword" placeholder="New Password" />
-				</div>
+				</div> -->
 				<div class="form-group">
 					<label class="control-label">Department</label>
 					<select class="form-control listDepartment"></select>
