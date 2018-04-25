@@ -50,25 +50,25 @@
 		<div class="panel-body form-body">
 			<div class="form-sss"></div>
 			<div class="test-relative">
-				<input type="text" class="employerName" /><br/>
-				<input type="text" class="employerAddress" />
-				<input type="text" class="amountDue" /><br/>
-				<input type="text" class="employerZip" /> 
-				<input type="text" class="dueDate" /><br/>
-				<input type="text" class="employerId" /> 
-				<input type="text" class="generationDate" /><br/>
+				<input type="text" class="employerName typing-sss" /><br/>
+				<input type="text" class="employerAddress typing-sss" />
+				<input type="text" class="amountDue typing-sss" /><br/>
+				<input type="text" class="employerZip typing-sss" /> 
+				<input type="text" class="dueDate typing-sss" /><br/>
+				<input type="text" class="employerId typing-sss" /> 
+				<input type="text" class="generationDate typing-sss" /><br/>
 
 				<!-- <input type="text" class="listSummary" /> -->
-				<input type="text" class="listSummary" /><br/>
-				<input type="text" class="totalEmployees" /><br/>
-				<input type="text" class="socialSecurity" /><br/>
-				<input type="text" class="employeeCompensation" /><br/>
-				<input type="text" class="total" /><br/>
-				<input type="text" class="grandTotal" /><br/>
+				<input type="text" class="listSummary typing-sss" /><br/>
+				<input type="text" class="totalEmployees typing-sss" /><br/>
+				<input type="text" class="socialSecurity typing-sss" /><br/>
+				<input type="text" class="employeeCompensation typing-sss" /><br/>
+				<input type="text" class="total typing-sss" /><br/>
+				<input type="text" class="grandTotal typing-sss" /><br/>
 
-				<input type="text" class="employerName bankCopyName" /><br/>
-				<input type="text" class="employerId bankCopyEmployerId"/> 
-				<input type="text" class="bankCopySummaryMonth"/> 
+				<input type="text" class="employerName bankCopyName typing-sss" /><br/>
+				<input type="text" class="employerId bankCopyEmployerId typing-sss"/> 
+				<input type="text" class="bankCopySummaryMonth typing-sss"/> 
 				<!-- <input type="text" class="employerAddress" /><br/>
 				<input type="text" class="employerZip" /><br/>
 				-->
@@ -100,24 +100,24 @@
 				</div>
 
 				<div class="sss-form-content">
-					<input type="text" class="employerName" /><br/>
-					<input type="text" class="employerAddress" />
-					<input type="text" class="amountDue" /><br/>
-					<input type="text" class="employerZip" /> 
-					<input type="text" class="dueDate" /><br/>
-					<input type="text" class="employerId" /> 
-					<input type="text" class="generationDate" /><br/>
+					<input type="text" class="employerName typing-sss" /><br/>
+					<input type="text" class="employerAddress typing-sss" />
+					<input type="text" class="amountDue typing-sss" /><br/>
+					<input type="text" class="employerZip typing-sss" /> 
+					<input type="text" class="dueDate typing-sss" /><br/>
+					<input type="text" class="employerId typing-sss" /> 
+					<input type="text" class="generationDate typing-sss" /><br/>
 
-					<input type="text" class="listSummary" />
-					<input type="text" class="totalEmployees" />
-					<input type="text" class="socialSecurity" />
-					<input type="text" class="employeeCompensation" />
-					<input type="text" class="total" />
-					<input type="text" class="grandTotal" />
+					<input type="text" class="listSummary typing-sss" />
+					<input type="text" class="totalEmployees typing-sss" />
+					<input type="text" class="socialSecurity typing-sss" />
+					<input type="text" class="employeeCompensation typing-sss" />
+					<input type="text" class="total typing-sss" />
+					<input type="text" class="grandTotal typing-sss" />
 
-					<input type="text" class="employerName bankCopyName" /><br/>
-					<input type="text" class="employerId bankCopyEmployerId"/> 
-					<input type="text" class="bankCopySummaryMonth"/> 
+					<input type="text" class="employerName bankCopyName typing-sss" /><br/>
+					<input type="text" class="employerId bankCopyEmployerId typing-sss"/> 
+					<input type="text" class="bankCopySummaryMonth typing-sss"/> 
 				</div>
 
 			</div>
@@ -159,6 +159,17 @@
 		pageSSSContri.pageInt = 0;
 		pageSSSContri.inputCount = 0;
 		pageSSSContri.page = 0;
+
+		pageSSSContri.elem.find('.typing-sss').keydown(function(e){
+			if(e.which == 9){
+				return true;
+			}else{
+				return false;
+			}
+		});
+		pageSSSContri.elem.find('.typing-sss').on("contextmenu",function(){
+	       return false;
+	    }); 
 
 		pageSSSContri.elem.find('.form-sss-second').hide();
 		pageSSSContri.elem.find('.test-relative-second').hide();
@@ -364,7 +375,7 @@
 			});
 			pageSSSContri.totalSSContri = pageSSSContri.ssContribution + pageSSSContri.ecContribution;
 
-			pageSSSContri.elem.find('.amountDue').val(pageSSSContri.totalSSContri + ".00");
+			pageSSSContri.elem.find('.amountDue').val("P " + pageSSSContri.totalSSContri + ".00");
 			pageSSSContri.elem.find('.grandTotal').val("Php " + pageSSSContri.totalSSContri + ".00");
 			pageSSSContri.elem.find('.total').val(pageSSSContri.totalSSContri + ".00");
 			pageSSSContri.elem.find('.employeeCompensation').val(pageSSSContri.ecContribution + ".00");
