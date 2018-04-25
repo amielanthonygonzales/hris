@@ -18,6 +18,26 @@
 			</div>
 		</div>
 	</div>
+
+	<div tabindex="-1" role="dialog" class="modal fade in modal-error">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						<div class="i-circle text-danger"><i class="icon s7-close"></i></div>
+						<h4>Oh no!</h4>
+						<p></p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-danger">Proceed</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3>Company's Information</h3>
@@ -203,8 +223,8 @@
 	pageCompany.init = function(selector, callback){
 		pageCompany.elem = $(selector);
 
-		pageCompany.countSSSNumber1 = pageCompany.elem.find('.sssnum1').val().length;
 	        pageCompany.elem.find('.sssnum1').keydown(function(e){
+	        pageCompany.countSSSNumber1 = pageCompany.elem.find('.sssnum1').val().length;
 	        	if(e.which == 8 || e.which == 46){
 	        		if(pageCompany.countSSSNumber1 != 0 && !(pageCompany.countSSSNumber1 < 0)){
 	        				pageCompany.countSSSNumber1 -= 1;
@@ -231,8 +251,9 @@
 	        		return false;
 	        	}
 	        });
-	        pageCompany.countSSSNumber2 = pageCompany.elem.find('.sssnum2').val().length;
+	        
 	        pageCompany.elem.find('.sssnum2').keydown(function(e){
+	        pageCompany.countSSSNumber2 = pageCompany.elem.find('.sssnum2').val().length;
 	        	if(e.which == 8 || e.which == 46){
 	        		if(pageCompany.countSSSNumber2 != 0 && !(pageCompany.countSSSNumber2 < 0)){
 	        				pageCompany.countSSSNumber2 -= 1;
@@ -260,8 +281,9 @@
 	        	}
 	        });
 
-	        pageCompany.countSSSNumber3 = pageCompany.elem.find('.sssnum3').val().length;
+	        
 	        pageCompany.elem.find('.sssnum3').keydown(function(e){
+	        pageCompany.countSSSNumber3 = pageCompany.elem.find('.sssnum3').val().length;
 	        	if(e.which == 8 || e.which == 46){
 	        		if(pageCompany.countSSSNumber3 != 0 && !(pageCompany.countSSSNumber3 < 0)){
 	        				pageCompany.countSSSNumber3 -= 1;
@@ -289,8 +311,9 @@
 	        	}
 	        });
 
-	        pageCompany.countSSSNumber4 = pageCompany.elem.find('.sssnum4').val().length;
+	        
 	        pageCompany.elem.find('.sssnum4').keydown(function(e){
+	        pageCompany.countSSSNumber4 = pageCompany.elem.find('.sssnum4').val().length;
 	        	if(e.which == 8 || e.which == 46){
 	        		if(pageCompany.countSSSNumber4 != 0 && !(pageCompany.countSSSNumber4 < 0)){
 	        				pageCompany.countSSSNumber4 -= 1;
@@ -317,8 +340,9 @@
 	        	}
 	        });
 
-	        pageCompany.countPagibigNo1 = pageCompany.elem.find('.pagibignum1').val().length;
+	        
 	        pageCompany.elem.find('.pagibignum1').keydown(function(e){
+	        pageCompany.countPagibigNo1 = pageCompany.elem.find('.pagibignum1').val().length;
 	        	if(e.which == 8 || e.which == 46){
 	        		if(pageCompany.countPagibigNo1 != 0 && !(pageCompany.countPagibigNo1 < 0)){
 	        				pageCompany.countPagibigNo1 -= 1;
@@ -345,8 +369,9 @@
 	        		return false;
 	        	}
 	        });
-	        pageCompany.countPagibigNo2 = pageCompany.elem.find('.pagibignum2').val().length;
+	        
 	        pageCompany.elem.find('.pagibignum2').keydown(function(e){
+	        pageCompany.countPagibigNo2 = pageCompany.elem.find('.pagibignum2').val().length;
 	        	if(e.which == 8 || e.which == 46){
 	        		if(pageCompany.countPagibigNo2 != 0 && !(pageCompany.countPagibigNo2 < 0)){
 	        				pageCompany.countPagibigNo2 -= 1;
@@ -374,8 +399,9 @@
 	        	}
 	        });
 
-	        pageCompany.countPagibigNo3 = pageCompany.elem.find('.pagibignum3').val().length;
+	        
 	        pageCompany.elem.find('.pagibignum3').keydown(function(e){
+	        pageCompany.countPagibigNo3 = pageCompany.elem.find('.pagibignum3').val().length;
 	        	if(e.which == 8 || e.which == 46){
 	        		if(pageCompany.countPagibigNo3 != 0 && !(pageCompany.countPagibigNo3 < 0)){
 	        				pageCompany.countPagibigNo3 -= 1;
@@ -442,8 +468,11 @@
 					url: "<?php echo base_url('add-company')?>",
 					data: company_form_info,
 					success: function(result){
-						if(result.success){
+						if(result.success == 1){
 							pageCompany.elem.find('.modal-department').modal();
+						}else if(result.success.error){
+							pageCompany.elem.find('.modal-error .modal-body p').html(result.success.error);
+							pageCompany.elem.find('.modal-error').modal("show");
 						}
 					}
 			});

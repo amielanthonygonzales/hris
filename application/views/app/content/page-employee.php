@@ -8,6 +8,7 @@
 				<div class="modal-body">
 					<div class="text-center">
 						<div class="i-circle"><i class="icon symbol"></i></div>
+						<h4>Awesome!</h4>
 						<p class="message"></p>
 					</div>
 				</div>

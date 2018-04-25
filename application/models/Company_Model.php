@@ -2,7 +2,13 @@
 	
 	class Company_Model extends CI_Model{
 		function addCompany($postCompany){
-			$this->db->query("
+			if(strlen($postCompany['company_sss_id']) != 16){
+				$returndata['error'] = "Invalid length of Company SSS Id number!";
+			}
+			else if(strlen($postCompany['company_pagibig_id']) != 14){
+				$returndata['error'] = "Invalid length of Company Pag-Ibig Id number!";
+			}else{
+				$this->db->query("
 				UPDATE 
 					company 
 				SET 
@@ -17,7 +23,10 @@
 					company_rep_pos = " .$this->db->escape($postCompany['company_rep_pos']). " 
 				WHERE 
 					company_id = 1");
-			return 1;
+				$returndata = 1;
+			}
+			
+			return $returndata;
 		}
 		function checkID(){
 			$query = $this->db->query("SELECT sssid, pagibigid FROM company");
