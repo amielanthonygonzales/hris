@@ -21,5 +21,12 @@
 			header('Content-Type: application/json');
 			echo json_encode($data);
 		}
+		public function updateNotification(){
+			$this->benchmark->mark('start');
+			$data['notifications'] = $this->Paid_Model->updateNotification();
+			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+			echo json_encode($data);
+		}
 	} 
 ?>

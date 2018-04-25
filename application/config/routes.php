@@ -63,12 +63,12 @@ $route['add-employee'] = 'api/Employee_Controller/addEmployee';
 $route['get-all-employee'] = 'api/Employee_Controller/getAllEmployee';
 $route['get-employee/(:any)'] = 'api/Employee_Controller/getEmployee/$1';
 $route['update-employee/(:any)'] = 'api/Employee_Controller/updateEmployeeInfo/$1';
+$route['read-notification'] = 'api/Employee_Controller/readNotification';
 $route['delete-employee/(:any)'] = 'api/Employee_Controller/deleteEmployeeInfo/$1';
 $route['employee-datatable'] = 'api/Employee_Controller/dataTable';
 $route['get-session'] = 'api/Employee_Controller/getEmployeeSession';
 $route['profile'] = 'api/Employee_Controller/getEmployeeProfile';
 $route['email'] = 'api/Employee_Controller/sendEmail';
-$route['notification'] = 'api/Employee_Controller/sendNotification';
 $route['get-sss-ref'] = 'api/Employee_Controller/getAllSSSRef';
 
 //Company
@@ -110,6 +110,8 @@ $route['department-datatable'] = 'api/Department_Controller/datatableDepartment'
 //Pag-Ibig
 //api
 $route['get-data-pagibig'] = 'api/Pagibig_Controller/getData';
+$route['notification'] = 'api/Pagibig_Controller/sendNotification';
+$route['update-notification'] = 'api/Pagibig_Controller/updateNotification';
 $route['get-data-per-page/(:any)'] = 'api/Pagibig_Controller/getDataPerPage/$1';
 $route['pagibig-paid-datatable'] = 'api/Pagibig_Controller/dataTablePaidPagibig';
 

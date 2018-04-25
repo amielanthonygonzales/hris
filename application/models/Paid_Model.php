@@ -21,6 +21,7 @@
 				);
 			return 1;
 		}
+		
 		public function getContributions(){
 			$sql = $this->db->query("
 				SELECT 

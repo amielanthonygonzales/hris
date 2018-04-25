@@ -829,6 +829,7 @@
 							dataType: "json",
 							success: function(data){
 								console.log("Success");
+								$('#notif-badge').addClass('indicator');
 							}
 					});
 				}

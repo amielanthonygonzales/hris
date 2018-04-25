@@ -256,6 +256,18 @@
 			return $sql->result();
 		}
 
+		public function updateReadNotification($id){
+				$sql = $this->db->query("
+				UPDATE 
+					`employee` 
+				SET 
+					`emp_notification` = 0
+				WHERE 
+					`emp_id` = ".$this->db->escape($id['id']));
+
+			return 1;
+		}
+
 		public function updateEmployeeInfo($id, $updatePost){
 			if(strlen($updatePost['sss_no']) != 12){
 				$returndata['error'] = "Invalid length of SSS Number!";

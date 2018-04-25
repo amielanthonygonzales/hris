@@ -66,5 +66,17 @@
 			$sql = "SELECT COUNT(*) AS `count` FROM `paid_contribution` WHERE `gov_agency` = 'Pag-Ibig' ";
 			return $this->db->query($sql)->result_array()[0]["count"];
 		}
+
+		public function updateNotification(){
+			$sql = $this->db->query("
+				UPDATE 
+					employee 
+					SET
+					emp_notification = 1
+					WHERE 
+					emp_deleted = 0" 
+				);
+			return 1;
+		}
 	}
 ?>
