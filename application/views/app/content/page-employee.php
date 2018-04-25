@@ -772,32 +772,42 @@
 		pageEmployee.elem.find('.empSalary').keyup(function(e){
 			pageEmployee.salary = pageEmployee.elem.find('.empSalary').val();
 			console.log(pageEmployee.salary);
-
+			pageEmployee.valid = [];
 			$.getJSON('<?php echo base_url('get-sss-ref');?>', function(result){
 				result = result['query'];
 				pageEmployee.er = 0.0;
 				pageEmployee.ee = 0.0;
 				pageEmployee.total = 0.0;
 
+				
 				$.each(result, function(keySalary, valueSalary){
-					if(pageEmployee.salary >= valueSalary['ref_range_start'] && valueSalary['ref_range_end'] == "Over"){
+					console.log(valueSalary['ref_range_end'] == "Over");
+					if(parseFloat(pageEmployee.salary) >= parseFloat(valueSalary['ref_range_start']) && valueSalary['ref_range_end'] == "over" || valueSalary['ref_range_end'] == "Over"){
 						pageEmployee.elem.find('.ec-Contribution').val(valueSalary['ref_ec']);
 						pageEmployee.elem.find('.ee-Contribution').val(valueSalary['ref_ee']);
 						pageEmployee.elem.find('.er-Contribution').val(valueSalary['ref_er']);
-					}else if(!(pageEmployee.salary >= valueSalary['ref_range_start']) && !(pageEmployee.salary <= valueSalary['ref_range_end'])){
-						pageEmployee.elem.find('.ec-Contribution').val('0.00');
-						pageEmployee.elem.find('.ee-Contribution').val('0.00');
-						pageEmployee.elem.find('.er-Contribution').val('0.00');
-					}else if(pageEmployee.salary >= valueSalary['ref_range_start'] && pageEmployee.salary <= valueSalary['ref_range_end']){
+						pageEmployee.valid.push('greater');
+					}else if((parseFloat(pageEmployee.salary) >= parseFloat(valueSalary['ref_range_start'])) && (parseFloat(pageEmployee.salary) <= parseFloat(valueSalary['ref_range_end'])) && valueSalary['ref_range_end'] != "over"){
 						pageEmployee.elem.find('.ec-Contribution').val(valueSalary['ref_ec']);
 						pageEmployee.elem.find('.ee-Contribution').val(valueSalary['ref_ee']);
 						pageEmployee.elem.find('.er-Contribution').val(valueSalary['ref_er']);
+						pageEmployee.valid.push('true');
+					}else if(!(parseFloat(pageEmployee.salary) >= parseFloat(valueSalary['ref_range_start'])) && !(parseFloat(pageEmployee.salary) <= parseFloat(valueSalary['ref_range_end'])) && valueSalary['ref_range_end'] != "over"){
+						console.log(valueSalary['ref_range_end']);
+						pageEmployee.valid.push('false');
 					}
 				});
-				pageEmployee.ee = parseFloat(pageEmployee.elem.find('.ee-Contribution').val());
-				pageEmployee.er = parseFloat(pageEmployee.elem.find('.er-Contribution').val());
-				pageEmployee.total = pageEmployee.ee + pageEmployee.er;
-				pageEmployee.elem.find('.sss-Contribution').val(pageEmployee.total);
+				if(pageEmployee.valid == ""){
+					pageEmployee.elem.find('.ec-Contribution').val('0.00');
+					pageEmployee.elem.find('.ee-Contribution').val('0.00');
+					pageEmployee.elem.find('.er-Contribution').val('0.00');
+				}else {
+					pageEmployee.ee = parseFloat(pageEmployee.elem.find('.ee-Contribution').val());
+					pageEmployee.er = parseFloat(pageEmployee.elem.find('.er-Contribution').val());
+					pageEmployee.total = pageEmployee.ee + pageEmployee.er;
+					pageEmployee.elem.find('.sss-Contribution').val(pageEmployee.total);
+				}
+				
 
 			});
 			// if(pageEmployee.salary < 1000){
