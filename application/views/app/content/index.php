@@ -36,7 +36,7 @@
                       </div>
                     </div>
                     <div class="form-group login-submit">
-                      <button data-dismiss="modal" class ="btn btn-primary form-control login-btn">LOGIN</button>
+                      <button data-dismiss="modal" class ="btn form-control login-btn" id="login-btn-index">LOGIN</button>
                     </div>
                   </div>
                 </form>

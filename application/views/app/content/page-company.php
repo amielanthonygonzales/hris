@@ -104,7 +104,7 @@
 						</div>
 						<div class="col-md-4">
 							<label for="extname">Zip Code</label>
-							<input class="form-control zipcode" type="number" name="zipcode" placeholder="Zip Code"/>
+							<input class="form-control zipcode" type="text" name="zipcode" placeholder="Zip Code"/>
 						</div>
 						
 					</div>
@@ -223,6 +223,49 @@
 	pageCompany.init = function(selector, callback){
 		pageCompany.elem = $(selector);
 
+			pageCompany.elem.find('.zipcode').keydown(function(e){
+        	if(e.which == 8 
+        		|| e.which == 9 
+        		|| e.which == 13 
+        		|| e.which == 46 
+        		|| e.which >= 48 && e.which <= 57 
+        		|| e.which >= 96 && e.which <= 105 
+        		|| e.which >= 112 && e.which <= 123 
+        		|| e.which >= 37 && e.which <= 40){
+        		return true;
+        	}else{
+        		return false;
+        	}
+        });
+
+			pageCompany.elem.find('.cellnum').keydown(function(e){
+	        pageCompany.countSSSNumber1 = pageCompany.elem.find('.cellnum').val().length;
+	        	if(e.which == 8 || e.which == 46){
+	        		if(pageCompany.countSSSNumber1 != 0 && !(pageCompany.countSSSNumber1 < 0)){
+	        				pageCompany.countSSSNumber1 -= 1;
+	        			console.log(pageCompany.countSSSNumber1);
+	        		}
+	        		return true;
+	        	}else if(pageCompany.countSSSNumber1 == 11){
+	        		return false;
+	        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+	        		
+	        		if(pageCompany.countSSSNumber1 < 11){
+	        			pageCompany.countSSSNumber1 += 1;
+	        			console.log(pageCompany.countSSSNumber1);
+	        			return true;
+	        		}
+	        		else{
+	        			return false;
+	        		}
+	        	}
+	        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
+	        		return true;
+	        	}else{
+	        		return false;
+	        	}
+	        });
+
 	        pageCompany.elem.find('.sssnum1').keydown(function(e){
 	        pageCompany.countSSSNumber1 = pageCompany.elem.find('.sssnum1').val().length;
 	        	if(e.which == 8 || e.which == 46){
@@ -245,7 +288,7 @@
 	        			return false;
 	        		}
 	        	}
-	        	else if(e.which == 9 || e.which == 189){
+	        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
 	        		return true;
 	        	}else{
 	        		return false;
@@ -274,7 +317,7 @@
 	        			return false;
 	        		}
 	        	}
-	        	else if(e.which == 9 || e.which == 189){
+	        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
 	        		return true;
 	        	}else{
 	        		return false;
@@ -304,7 +347,7 @@
 	        			return false;
 	        		}
 	        	}
-	        	else if(e.which == 9 || e.which == 189){
+	        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
 	        		return true;
 	        	}else{
 	        		return false;
@@ -333,7 +376,7 @@
 	        			return false;
 	        		}
 	        	}
-	        	else if(e.which == 9 || e.which == 189){
+	        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
 	        		return true;
 	        	}else{
 	        		return false;
@@ -363,7 +406,7 @@
 	        			return false;
 	        		}
 	        	}
-	        	else if(e.which == 9 || e.which == 189){
+	        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
 	        		return true;
 	        	}else{
 	        		return false;
@@ -392,7 +435,7 @@
 	        			return false;
 	        		}
 	        	}
-	        	else if(e.which == 9 || e.which == 189){
+	        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
 	        		return true;
 	        	}else{
 	        		return false;
@@ -421,7 +464,7 @@
 	        			return false;
 	        		}
 	        	}
-	        	else if(e.which == 9 || e.which == 189){
+	        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
 	        		return true;
 	        	}else{
 	        		return false;

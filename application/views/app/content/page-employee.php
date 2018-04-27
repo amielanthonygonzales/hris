@@ -122,7 +122,7 @@
 			<div class="panel-body">
 				<div class="form-group">
 					<label for="empSalary">Salary</label>
-					<input class="form-control empSalary" type="number" name="salary" placeholder="Salary" required />
+					<input class="form-control empSalary" type="text" name="salary" placeholder="Salary" required />
 				</div>
 			</div>
 		</div>
@@ -360,7 +360,7 @@
         			return false;
         		}
         	}
-        	else if(e.which == 9 || e.which == 189){
+        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
         		return true;
         	}else{
         		return false;
@@ -389,7 +389,7 @@
         			return false;
         		}
         	}
-        	else if(e.which == 9 || e.which == 189){
+        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
         		return true;
         	}else{
         		return false;
@@ -418,7 +418,7 @@
         			return false;
         		}
         	}
-        	else if(e.which == 9 || e.which == 189){
+        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
         		return true;
         	}else{
         		return false;
@@ -448,7 +448,7 @@
         			return false;
         		}
         	}
-        	else if(e.which == 9 || e.which == 189){
+        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
         		return true;
         	}else{
         		return false;
@@ -477,7 +477,7 @@
         			return false;
         		}
         	}
-        	else if(e.which == 9 || e.which == 189){
+        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
         		return true;
         	}else{
         		return false;
@@ -506,7 +506,7 @@
         			return false;
         		}
         	}
-        	else if(e.which == 9 || e.which == 189){
+        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
         		return true;
         	}else{
         		return false;
@@ -537,7 +537,7 @@
         			return false;
         		}
         	}
-        	else if(e.which == 9 || e.which == 189){
+        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
         		return true;
         	}else{
         		return false;
@@ -566,7 +566,7 @@
         			return false;
         		}
         	}
-        	else if(e.which == 9 || e.which == 189){
+        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
         		return true;
         	}else{
         		return false;
@@ -595,7 +595,52 @@
         			return false;
         		}
         	}
-        	else if(e.which == 9 || e.which == 189){
+        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
+        		return true;
+        	}else{
+        		return false;
+        	}
+        });
+
+        pageEmployee.elem.find('.empSalary').keydown(function(e){
+        	if(e.which == 8 
+        		|| e.which == 9 
+        		|| e.which == 13 
+        		|| e.which == 46 
+        		|| e.which >= 48 && e.which <= 57 
+        		|| e.which >= 96 && e.which <= 105 
+        		|| e.which >= 112 && e.which <= 123 
+        		|| e.which >= 37 && e.which <= 40){
+        		return true;
+        	}else{
+        		return false;
+        	}
+        });
+
+        pageEmployee.elem.find('.ee-share').keydown(function(e){
+        	if(e.which == 8 
+        		|| e.which == 9 
+        		|| e.which == 13 
+        		|| e.which == 46 
+        		|| e.which >= 48 && e.which <= 57 
+        		|| e.which >= 96 && e.which <= 105 
+        		|| e.which >= 112 && e.which <= 123 
+        		|| e.which >= 37 && e.which <= 40){
+        		return true;
+        	}else{
+        		return false;
+        	}
+        });
+
+        pageEmployee.elem.find('.er-share').keydown(function(e){
+        	if(e.which == 8 
+        		|| e.which == 9 
+        		|| e.which == 13 
+        		|| e.which == 46 
+        		|| e.which >= 48 && e.which <= 57 
+        		|| e.which >= 96 && e.which <= 105 
+        		|| e.which >= 112 && e.which <= 123 
+        		|| e.which >= 37 && e.which <= 40){
         		return true;
         	}else{
         		return false;
