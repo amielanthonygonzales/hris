@@ -8,7 +8,7 @@
 				<div class="modal-body">
 					<div class="text-center">
 						<div class="i-circle"><i class="icon symbol"></i></div>
-						<h4>Awesome!</h4>
+						
 						<p class="message"></p>
 					</div>
 				</div>
@@ -40,6 +40,25 @@
         </div>
       </div>
     </div>
+    <div tabindex="-1" role="dialog" class="modal fade in modal-error">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						<div class="i-circle text-danger"><i class="icon s7-close"></i></div>
+						<h4>Oh no!</h4>
+						<p></p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-danger">Proceed</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3>Add Department</h3>
@@ -80,7 +99,7 @@
 	pageDepartment.init = function(selector,callback){
 		pageDepartment.elem = $(selector);
 
-		pageDepartment.elem.find('.department-table').DataTable({
+		pageDepartment.dataTableContent = pageDepartment.elem.find('.department-table').DataTable({
 			"autowidth":false,
 			"paging" : true,
 			"searching": true,
@@ -153,7 +172,9 @@
 										if(result.success){
 											pageDepartment.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
 											pageDepartment.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
-											pageDepartment.elem.find('.btn-proceed').show();
+											pageDepartment.elem.find('.btn-proceed').show().off("click").click(function(){
+												pageDepartment.elem.find('.department-table').DataTable().ajax.reload();
+											});
 											pageDepartment.elem.find('.btn-yes').hide();
 											pageDepartment.elem.find('.btn-no').hide();
 											pageDepartment.elem.find('.message').html('Data successfully deleted!');
@@ -182,7 +203,9 @@
 									if(result.success){
 										pageDepartment.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
 										pageDepartment.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
-										pageDepartment.elem.find('.btn-proceed').show();
+										pageDepartment.elem.find('.btn-proceed').show().off("click").click(function(){
+											pageDepartment.elem.find('.department-table').DataTable().ajax.reload();
+										});
 										pageDepartment.elem.find('.btn-yes').hide();
 										pageDepartment.elem.find('.btn-no').hide();
 										pageDepartment.elem.find('.message').html('Data successfully deleted!');
@@ -202,32 +225,38 @@
 					"<'row am-datatable-footer'<'col-sm-5'i><'col-sm-7'p>>"
 		});
 
-		pageDepartment.elem.find('.btn-dept-save').off("click").click(function(event){
-			var dept_name = pageDepartment.elem.find('.dept_name').val();
-			$.ajax({
-				method: "POST",
-					url: "<?php echo base_url('add-department')?>",
-					data: {"dept_name": dept_name},
-					success: function(result){
-						if(result.success){
-							pageDepartment.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
-							pageDepartment.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
-							pageDepartment.elem.find('.btn-proceed').show();
-							pageDepartment.elem.find('.btn-yes').hide();
-							pageDepartment.elem.find('.btn-no').hide();
-							pageDepartment.elem.find('.message').html('Data has been saved successfully!');
-							pageDepartment.elem.find('.modal-department').modal();
-						}
-					}
-			});	
-		});
+
 
 		pageDepartment.elem.find('.btn-dept-add').off("click").click(function(e){
-			pageDepartment.elem.find('.btn-save').removeClass('btn-dept-edit').addClass('btn-dept-save');
+			pageDepartment.elem.find('.dept_name').val('');
+			pageDepartment.elem.find('.btn-save').removeClass('btn-dept-edit').addClass('btn-dept-save').off("click").click(function(){
+				var dept_name = pageDepartment.elem.find('.dept_name').val();
+				console.log(dept_name);
+				$.ajax({
+					method: "POST",
+						url: "<?php echo base_url('add-department')?>",
+						data: {"dept_name": dept_name},
+						success: function(result){
+							if(result.success == 1){
+								pageDepartment.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
+								pageDepartment.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
+								pageDepartment.elem.find('.btn-proceed').show().off("click").click(function(){
+									pageDepartment.elem.find('.department-table').DataTable().ajax.reload();
+								});
+								pageDepartment.elem.find('.btn-yes').hide();
+								pageDepartment.elem.find('.btn-no').hide();
+								pageDepartment.elem.find('.message').html('Data has been saved successfully!');
+								pageDepartment.elem.find('.modal-department').modal();
+							}else if(result.success.error){
+								pageDepartment.elem.find('.modal-error .modal-body p').html(result.success.error);
+								pageDepartment.elem.find('.modal-error').modal("show");
+							}
+						}
+				});	
+			});
 			pageDepartment.elem.find('.modal-title').text('Add Department');
 			pageDepartment.elem.find('.modal-edit-department').modal();
 		});
-
 		//$.getJSON('<?php echo site_url('get-department')?>', callback);
 
 	}

@@ -76,6 +76,10 @@ h6 { font-size: .75em!important; }
 	color: #ffffff;
 }
 
+#pageEmployeeEdit a{
+    color: white;
+}
+
 a:hover{
 	text-decoration: none;
     outline: none;

@@ -210,6 +210,7 @@
 	       return false;
 	    }); 
 
+
 		
 
 		pageDashboard.elem.find('.employee-info-table').DataTable({
@@ -218,6 +219,7 @@
 			"processing": true,
 			"serverSide": true,
 			"pagingType": "full_numbers",
+			responsive: true,
 			"ajax":{
 				"url": "<?php echo site_url('employee-datatable')?>",
 				"dataScr" : function( json ){

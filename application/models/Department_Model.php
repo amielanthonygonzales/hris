@@ -1,6 +1,11 @@
 <?php
 	class Department_Model extends CI_Model{
+
 		public function addDepartment($postDepartment){
+		if($postDepartment['dept_name'] == ""){
+			$returnData['error'] = "You need to enter department name!";
+		}
+		else{
 			$sql = $this->db->query('
 				INSERT INTO 
 				department 
@@ -12,7 +17,10 @@
 				$this->db->escape($postDepartment['dept_name']).
 				');'
 			);
-	      	return 1;
+			$returnData = 1;
+		}
+			
+	      	return $returnData;
 		}
 
 		public function getAllDepartment(){
@@ -26,8 +34,14 @@
 		}
 
 		public function updateDepartment($id, $updateDept){
+		if($postDepartment['dept_name'] == ""){
+			$returnData['error'] = "You need to enter department name!";
+		}
+		else{
 			$sql = $this->db->query("UPDATE department SET dept_name = " .$this->db->escape($updateDept['dept_name']) ." WHERE dept_Id = " .$this->db->escape($id));
-			return 1;
+			$returnData = 1;
+		}
+	      	return $returnData;
 		}
 
 		public function getDepartments($args){

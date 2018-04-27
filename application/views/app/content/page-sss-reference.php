@@ -9,7 +9,7 @@
 				<div class="modal-body">
 					<div class="text-center">
 						<div class="i-circle"><i class="icon symbol"></i></div>
-						<h4>Awesome!</h4>
+						
 						<p class="sss-ref-message"></p>
 					</div>
 				</div>
@@ -159,7 +159,9 @@
 									if(result.success){
 										pageSSSReference.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
 										pageSSSReference.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
-										pageSSSReference.elem.find('.btn-proceed').show();
+										pageSSSReference.elem.find('.btn-proceed').show().off("click").click(function(){
+											pageSSSReference.elem.find('.table-sss-reference').DataTable().ajax.reload();
+										});
 										pageSSSReference.elem.find('.btn-yes').hide();
 										pageSSSReference.elem.find('.btn-no').hide();
 										pageSSSReference.elem.find('.sss-ref-message').html('Data successfully deleted!');

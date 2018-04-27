@@ -672,7 +672,9 @@
 						if(result.success){
 							pageEmployee.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
 							pageEmployee.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
-							pageEmployee.elem.find('.btn-proceed').show();
+							pageEmployee.elem.find('.btn-proceed').show().off("click").click(function(){
+								location.replace('<?php echo base_url('employee-list')?>');
+							});
 							pageEmployee.elem.find('.btn-yes').hide();
 							pageEmployee.elem.find('.btn-no').hide();
 							pageEmployee.elem.find('.message').html('Data successfully deleted!');

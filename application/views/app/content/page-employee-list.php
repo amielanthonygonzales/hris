@@ -142,7 +142,9 @@
 										if(result.success){
 											pageEmployeeList.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
 											pageEmployeeList.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
-											pageEmployeeList.elem.find('.btn-proceed').show();
+											pageEmployeeList.elem.find('.btn-proceed').show().off("click").click(function(e){
+												pageEmployeeList.elem.find('.employeeList').DataTable().ajax.reload();
+											});
 											pageEmployeeList.elem.find('.btn-yes').hide();
 											pageEmployeeList.elem.find('.btn-no').hide();
 											pageEmployeeList.elem.find('.message').html('Data successfully deleted!');
