@@ -17,8 +17,8 @@
 				'smtp_port' => '465',
 				'smp_timeout' => '30',
 				'smp_mailpath' => '/usr/sbin/sendmail',
-				'smtp_user' => 'jrpg99@gmail.com',
-				'smtp_pass' => 'pass1020',
+				'smtp_user' => 'paulo@nmgresources.ph',
+				'smtp_pass' => 'milky Way01',
 				'mailtype' => 'html',
 				'charset' => 'utf-8',
 				'wordwrap' => TRUE
