@@ -68,5 +68,10 @@
 			$sql = $this->db->query('SELECT `dept_name` FROM `department` WHERE `dept_Id` = ' . $this->db->escape($id));
 			return $sql->result();
 		}
+
+		public function getDepartmentNameEmp($id){
+			$sql = $this->db->query("SELECT * FROM `department` WHERE `dept_Id` = ".$this->db->escape($id));
+			return $sql->result();
+		}
 	}
 ?>

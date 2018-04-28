@@ -78,5 +78,22 @@
 				);
 			return 1;
 		}
+
+		public function getPaidPagibigEmp($args, $id){
+			if(!isset($args['offset'])){
+				$args['offset'] = 0;
+			}
+			$sql = "
+			SELECT * , (`pagibig_ee_share` + `pagibig_er_share`) AS sum
+			FROM `paid_contribution` , `employee`, `pag_ibig`
+			WHERE `gov_agency` = 'Pag-Ibig' 
+			AND `emp_id` = ".$this->db->escape($id)." 
+			AND `emp_id` = `pagibig_emp_id` 
+			AND `year` LIKE '%" .$this->db->escape_str($args['search']). "%'
+			ORDER BY ".$this->db->escape_str($args['orderby'])." ". $this->db->escape_str($args['dir'])." 
+			LIMIT " .$this->db->escape_str($args['count']). " 
+			OFFSET ".$this->db->escape_str($args['offset']);
+			return $this->db->query($sql)->result_array();
+		}
 	}
 ?>

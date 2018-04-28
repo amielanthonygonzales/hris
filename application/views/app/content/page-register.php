@@ -39,25 +39,28 @@
 			</div>
 		</div>
 	</div>
+	<div class="panel-buttons">
+		<div class="row col-md-12">
+			<div class="form-group">
+				<button type="button" name="btnEmail" class ="btn btn-space btn-success btn-email pull-right">
+					<i class="icon icon-left s7-mail"></i>EMAIL
+				</button>
+				<button type="button" name="btnAdd" value="add" class ="btn btn-space btn-success btn-add-register pull-right">
+					<i class="icon icon-left s7-plus"></i>ADD
+				</button>
+				<button type="button" name="btnBack" value="back" class ="btn btn-space btn-success btnBack pull-right">
+					<i class="icon icon-left s7-back"></i>BACK
+				</button>
+			</div>
+		</div>
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3>Register Employee</h3>
 		</div>
 		<div class="panel-body">
 			<form>
-				<div class="row form-group">
-					<div class="col-md-12 ">
-						<button type="button" name="btnBack" value="back" class ="btn btn-space btn-success btnBack pull-right">
-							<i class="icon icon-left s7-back"></i>BACK
-						</button>
-						<button type="button" name="btnAdd" value="add" class ="btn btn-space btn-success btn-add-register pull-right">
-							<i class="icon icon-left s7-plus"></i>ADD
-						</button>
-						<button type="button" name="btnEmail" class ="btn btn-space btn-success btn-email pull-right">
-							<i class="icon icon-left s7-mail"></i>EMAIL
-						</button>
-					</div>
-				</div>	
+
 				<div class="form-group">
 					<label for="employeeID">Employee ID <code>*</code></label>
 					<input class="form-control employeeID" type="text" name="empId" placeholder="Employee ID"  />

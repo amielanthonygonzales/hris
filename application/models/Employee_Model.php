@@ -475,5 +475,77 @@
 			$sql = $this->db->query("SELECT * FROM `sss_reference` WHERE `ref_deleted` = 0");
 			return $sql->result();
 		}
+
+		public function getEmpNameNotif($id){
+			$sql = $this->db->query("SELECT * FROM `employee` WHERE `emp_id` = ".$this->db->escape($id));
+			return $sql->result();
+		}
+
+		public function getEmployeeDeleted($args){
+			$sql= "
+			SELECT 
+			* 
+			FROM 
+				`employee` 
+			WHERE 
+				`emp_deleted` = 1 
+			AND  
+				CONCAT(`emp_first_name`, ' ', `emp_last_name`) 
+			LIKE
+				'%" .$this->db->escape_str($args['search']). "%' 
+			ORDER BY 
+				".$this->db->escape_str($args['orderby'])." ". $this->db->escape_str($args['dir'])." 
+			LIMIT 
+				" .$this->db->escape_str($args['count']). " 
+			OFFSET 
+				".$this->db->escape_str($args['offset']);
+
+				return $this->db->query($sql)->result_array();
+		}
+
+		public function countEmployeeDeleted(){
+			$sql = "SELECT COUNT(*) AS `count` FROM `employee` WHERE `emp_deleted` = 1";
+			return $this->db->query($sql)->result_array()[0]["count"];
+		}
+
+		public function getEmployeeRestore($id){
+			$sql = $this->db->query("SELECT * FROM employee, sss, pag_ibig WHERE employee.emp_id = ".$this->db->escape($id)." and  sss.sss_emp_id = employee.emp_id and pag_ibig.pagibig_emp_id = employee.emp_id and employee.emp_deleted = 1");
+			return $sql->result();
+		}
+
+		public function updateRestoreEmployee($id){
+			$sql = $this->db->query("
+				UPDATE 
+				employee 
+				SET
+				emp_deleted = 0  
+				WHERE 
+				emp_id = " .$this->db->escape($id));
+			return 1;
+		}
+
+		public function restoreSSSInfo($id){
+			$sql = $this->db->query("
+			UPDATE 
+				`sss` 
+			SET 
+				`sss_deleted` = 0  
+			WHERE 
+				`sss_emp_id` = ".$this->db->escape($id));
+				
+			
+			return 1;
+		}
+
+		public function restorePagibigInfo($id){
+			$sql = $this->db->query("
+				UPDATE 
+				`pag_ibig` 
+				SET 
+				`pagibig_deleted` = 0 
+				WHERE 
+				`pagibig_emp_id` = ".$this->db->escape($id));
+			return 1;
+		}
 	}
 ?>

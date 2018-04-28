@@ -46,6 +46,9 @@
 										<li>
 											<a href="<?php echo base_url('employee-list')?>">List of Employee</a>
 										</li>
+										<li>
+											<a href="<?php echo base_url('employee-restore-list')?>">List of Employee to Restore</a>
+										</li>
 									</ul>
 								</div>
 								<div class="nano-pane">

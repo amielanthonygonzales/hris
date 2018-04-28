@@ -20,12 +20,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3>SSS Contribution Form</h3>
-		</div>
-		<div class="panel-body button-print">
-			<div class="pull-right">
+	<div class="panel-buttons">
+		<div class="row col-md-12">
+			<div class="form-group">
 				<button type="button" name="btnPageOne" value="page-one" class ="btn btn-success btn-space btn-page-one">
 						<i class="icon icon-left s7-file"></i>PAGE 1
 				</button>
@@ -39,14 +36,16 @@
 						<i class="icon icon-left s7-print"></i>PRINT
 				</button>
 			</div>
-		</div>
-		<div class="panel-body button-print">
-			<div class="pull-right pagination">
+			<div class="form-group button-print">
+				<div class="pull-right pagination">
+			</div>
 			</div>
 		</div>
 	</div>
 	<div class="panel panel-default">
-		
+		<div class="panel-heading">
+			<h3>SSS Contribution Form</h3>
+		</div>
 		<div class="panel-body form-body">
 			<div class="form-sss"></div>
 			<div class="test-relative">

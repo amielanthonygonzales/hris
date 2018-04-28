@@ -40,18 +40,19 @@
 			</div>
 		</div>
 	</div>
-	
+	<div class="panel-buttons">
+		<div class="row col-md-12">
+			<div class="form-group">
+				<button type="button" name="btnPrint" value="print" class ="btn btn-success btn-space btn-add pull-right">
+						<i class="icon icon-left s7-plus"></i>ADD
+				</button>
+			</div>
+		</div>
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3>SSS Contribution Reference</h3>
 		</div>
-		<div class="panel-body">
-			<button type="button" name="btnPrint" value="print" class ="btn btn-success btn-space btn-add pull-right">
-					<i class="icon icon-left s7-plus"></i>ADD
-			</button>
-		</div>
-	</div>
-	<div class="panel panel-default">
 		<div class="panel-body">
 			<table class="table table-hover table-bordered table-striped table-sss-reference">
 				<thead>

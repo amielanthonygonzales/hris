@@ -69,6 +69,15 @@
 			header('Content-Type: application/json');
       		echo json_encode($data);
 		}
+
+		public function getDepartmentNameEmp($id){
+			$this->benchmark->mark('start');
+			$ret['success'] = $this->Department_Model->getDepartmentNameEmp($id);
+			$this->benchmark->mark('end');
+			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+        	header('Content-Type: application/json');
+        	echo json_encode($ret);
+		}
 	}
 ?>
 

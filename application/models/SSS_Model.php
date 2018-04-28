@@ -186,5 +186,22 @@
 			$sql = "SELECT COUNT(*) AS `count` FROM `paid_contribution` WHERE `gov_agency` = 'SSS' ";
 			return $this->db->query($sql)->result_array()[0]["count"];
 		}
+
+		public function getPaidSSSEmp($args,$id){
+			if(!isset($args['offset'])){
+				$args['offset'] = 0;
+			}
+			$sql = "
+			SELECT * , (`ss_contribution` + `ec_contribution`) AS sum
+			FROM `paid_contribution` , `employee`, `sss`
+			WHERE `gov_agency` = 'SSS' 
+			AND `emp_id` = ".$this->db->escape($id)." 
+			AND `emp_id` = `sss_emp_id` 
+			AND `year` LIKE '%" .$this->db->escape_str($args['search']). "%'
+			ORDER BY ".$this->db->escape_str($args['orderby'])." ". $this->db->escape_str($args['dir'])." 
+			LIMIT " .$this->db->escape_str($args['count']). " 
+			OFFSET ".$this->db->escape_str($args['offset']);
+			return $this->db->query($sql)->result_array();
+		}
 	}
 ?>

@@ -4,14 +4,14 @@
 	<meta charset="utf-8">
     <meta name = "viewport" content="width=device-width, initial-scale=1">
 
-    <link rel = "icon" href="assets/img/hrLogo.png"  />
+    <link rel = "icon" href="<?php echo base_url("assets/app/img/hris-logo.png"); ?>"/>	
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/font-awesome/css/font-awesome.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/stroke-7/style.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('amaretti/html/assets/lib/jquery.nanoscroller/css/nanoscroller.css');?>"/>
     <link rel="stylesheet" href="<?php echo base_url('amaretti/html/assets/css/style.css');?>" type="text/css"/>
     <!-- <link rel="stylesheet" href="<?php echo base_url("assets/css") ?>/style.css" type="text/css"/> -->
 	<link rel="stylesheet" href="<?php echo base_url("assets/app") ?>/css/style.css" type="text/css"/>
-	<title>HR Information System</title>
+	<title>HR Contribution System</title>
 </head>
 
 <body class="am-splash-screen">

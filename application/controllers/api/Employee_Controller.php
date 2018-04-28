@@ -181,5 +181,62 @@
 			header('Content-Type: application/json');
         	echo json_encode($data);
 		}
+
+		public function getEmpNameNotif($id){
+			$this->benchmark->mark('start');
+			$data['query'] = $this->Employee_Model->getEmpNameNotif($id);
+			$this->benchmark->mark('end');
+			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($data);
+		}
+
+		public function getEmployeeDeleted(){
+			$columns[0] = 'emp_id'; 
+			$columns[1] = 'emp_last_name';
+			$columns[2] = 'emp_first_name';
+			$args = array(
+	            "count" => $_GET['length'],
+	            "offset" =>  $_GET['start'],
+	            "search" =>  $_GET['search']['value'],
+	            "orderby" => $columns[$_GET['order'][0]['column']],
+	            "dir" => $_GET['order'][0]['dir']
+       		 );
+			if($args['dir'] == ""){
+				$args['dir']	= "desc";
+			}
+			if($args['orderby'] == ""){
+				$args['orderby']	= "emp_id";
+			}
+			$ret=array();
+			$ret['draw'] = $_GET['draw'];
+			$ret['data'] = $this->Employee_Model->getEmployeeDeleted($args);
+			$ret['recordsTotal'] = $this->Employee_Model->countEmployeeDeleted();
+			$ret['recordsFiltered'] = $ret['recordsTotal'];
+			header('Content-Type: application/json');
+			echo json_encode($ret);
+		}
+
+		public function getEmployeeRestore($id){
+			$this->benchmark->mark('start');
+			$data['query'] = $this->Employee_Model->getEmployeeRestore($id);
+			$data['departmentQuery'] = $this->Employee_Model->getAllDepartment();
+			$this->benchmark->mark('end');
+			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($data);
+		}
+
+		public function updateRestoreEmployee($id){
+			$this->benchmark->mark('start');
+			$ret['success'] = $this->Employee_Model->updateRestoreEmployee($id);
+			$ret['success'] = $this->Employee_Model->restoreSSSInfo($id);
+			$ret['success'] = $this->Employee_Model->restorePagibigInfo($id);
+			$this->benchmark->mark('end');
+			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($ret);
+
+		}
 	}
 ?>

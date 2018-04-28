@@ -19,7 +19,7 @@
 		<div id="am-navbar-collapse" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right am-icons-nav">
               <li id="notif" class="dropdown">
-              	<a href="<?php echo base_url('dashboard-paid-contri-emp')?>">
+              	<a class= "emp-notif" href="#">
               		<span class="icon s7-bell"></span><span id="notif-badge"></span>
               	</a> 
               </li>
@@ -38,7 +38,8 @@
 	$.getJSON('<?php echo base_url('profile');?>', function(data){
 		$.each(data, function(key,value){
 			if(key == "user"){
-				$('.profile').attr("href", '<?php echo base_url('employee-edit/')?>'+value.emp_id)
+				$('.profile').attr("href", '<?php echo base_url('employee-edit/')?>'+value.emp_id);
+				$('.emp-notif').attr("href", '<?php echo base_url('dashboard-paid-contri-emp/')?>'+value.emp_id);
 			}
 		});	
 	});

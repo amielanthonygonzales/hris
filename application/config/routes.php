@@ -57,6 +57,8 @@ $route['employee/(:any)/(:any)'] = 'app/Employee_Controller/view/$1/$2';
 $route['register-employee'] = 'app/Employee_Controller/registerEmployee';
 $route['employee-list'] = 'app/Employee_Controller/employeeList';
 $route['employee-edit/(:any)'] = 'app/Employee_Controller/employeeEdit/$1';
+$route['employee-restore-list'] = 'app/Employee_Controller/employeeRestore';
+$route['employee-restore/(:any)'] = 'app/Employee_Controller/employeeRestoreData/$1';
 
 //api
 $route['get-all-department'] = 'api/Employee_Controller/getAllDepartment';
@@ -72,6 +74,10 @@ $route['profile'] = 'api/Employee_Controller/getEmployeeProfile';
 $route['profile-emp'] = 'api/Employee_Controller/getEmployeeProfile-emp';
 $route['email'] = 'api/Employee_Controller/sendEmail';
 $route['get-sss-ref'] = 'api/Employee_Controller/getAllSSSRef';
+$route['get-emp-name-notif/(:any)'] = 'api/Employee_Controller/getEmpNameNotif/$1';
+$route['get-emp-deleted'] = 'api/Employee_Controller/getEmployeeDeleted';
+$route['get-employee-restore/(:any)'] = 'api/Employee_Controller/getEmployeeRestore/$1';
+$route['update-restore-employee/(:any)'] = 'api/Employee_Controller/updateRestoreEmployee/$1';
 
 //Company
 //app
@@ -93,7 +99,7 @@ $route['dashboard-sss'] = 'app/Dashboard_Controller/sss';
 $route['dashboard-pagibig'] = 'app/Dashboard_Controller/pagibig';
 $route['dashboard-sss-reference'] = 'app/Dashboard_Controller/sssReference';
 $route['dashboard-paid-contri'] = 'app/Dashboard_Controller/paidContribution';
-$route['dashboard-paid-contri-emp'] = 'app/Dashboard_Controller/paidContributionEmp';
+$route['dashboard-paid-contri-emp/(:any)'] = 'app/Dashboard_Controller/paidContributionEmp/$1';
 
 
 
@@ -109,6 +115,7 @@ $route['delete-department/(:any)'] = 'api/Department_Controller/deleteDepartment
 $route['update-department/(:any)'] = 'api/Department_Controller/updateDepartment/$1';
 $route['get-department-name/(:any)'] = 'api/Department_Controller/getDepartmentName/$1';
 $route['department-datatable'] = 'api/Department_Controller/datatableDepartment';
+$route['get-department-name-emp/(:any)'] = 'api/Department_Controller/getDepartmentNameEmp/$1';
 
 //Pag-Ibig
 //api
@@ -117,6 +124,7 @@ $route['notification'] = 'api/Pagibig_Controller/sendNotification';
 $route['update-notification'] = 'api/Pagibig_Controller/updateNotification';
 $route['get-data-per-page/(:any)'] = 'api/Pagibig_Controller/getDataPerPage/$1';
 $route['pagibig-paid-datatable'] = 'api/Pagibig_Controller/dataTablePaidPagibig';
+$route['pagibig-paid-datatable-emp/(:any)'] = 'api/Pagibig_Controller/dataTablePaidPagibigEmp/$1';
 
 //SSS
 //api
@@ -128,6 +136,7 @@ $route['ref-get-data/(:any)'] = 'api/SSS_Controller/getRefSSS/$1';
 $route['update-reference/(:any)'] = 'api/SSS_Controller/updateReference/$1';
 $route['delete-reference/(:any)'] = 'api/SSS_Controller/deleteReference/$1';
 $route['sss-paid-datatable'] = 'api/SSS_Controller/dataTablePaidSSS';
+$route['sss-paid-datatable-emp/(:any)'] = 'api/SSS_Controller/dataTablePaidSSSEmp/$1';
 //app
 $route['add-sss-reference/(:any)/(:any)'] = 'app/SSS_Controller/viewAddReference/$1/$2';
 

@@ -38,24 +38,23 @@
 			</div>
 		</div>
 	</div>
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3>Company's Information</h3>
-		</div>
-		<div class="panel-body">
-			<div class="row form-group">
-				<div class="pull-right">
-					<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-company">
-							<i class="icon icon-left s7-diskette"></i>SAVE
-					</button>
-					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-company">
-						<i class="icon icon-left s7-back"></i>BACK
-					</button>
-				</div>
+	<div class="panel-buttons">
+		<div class="row col-md-12">
+			<div class="form-group">
+				<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-company">
+					<i class="icon icon-left s7-back"></i>BACK
+				</button>
+				<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-company">
+						<i class="icon icon-left s7-diskette"></i>SAVE
+				</button>
+				
 			</div>
 		</div>
 	</div>
 	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3>Company's Information</h3>
+		</div>
 		<div class="panel-body panel-body-company ">
 			<form id="add-form" class="company-form">
 				<div class="form-group">

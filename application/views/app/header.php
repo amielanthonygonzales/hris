@@ -26,7 +26,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<link rel = "icon" href="<?php echo base_url("assets/app/img/hris-logo.png"); ?>"/>	
-		<title>HRIS</title>
+		<title>HRCS</title>
 		
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/app") ?>/lib/stroke-7/style.css"/>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/app") ?>/lib/jquery.nanoscroller/css/nanoscroller.css"/><!--[if lt IE 9]>

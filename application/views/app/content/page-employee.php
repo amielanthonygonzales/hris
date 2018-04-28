@@ -8,7 +8,6 @@
 				<div class="modal-body">
 					<div class="text-center">
 						<div class="i-circle"><i class="icon symbol"></i></div>
-						<h4>Awesome!</h4>
 						<p class="message"></p>
 					</div>
 				</div>
@@ -40,28 +39,27 @@
 			</div>
 		</div>
 	</div>
+	<div class="panel-buttons">
+		<div class="row col-md-12">
+			<div class="form-group">
+				<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employee">
+
+					<i class="icon icon-left s7-back"></i>BACK
+				</button>
+				<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-employee">
+						<i class="icon icon-left s7-diskette"></i>SAVE
+				</button>
+				<button type="button" name="btnDeleted" value="deleted" class ="btn btn-success btn-space btn-deleted-employee">
+						<i class="icon icon-left s7-trash"></i>DELETE
+				</button>
+			</div>
+		</div>
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h2 class="username-header"></h2>
 			<h3 class="emp-full-name"></h3>
 		</div>
-		<div class="panel-body">
-			<div class="row pull-right">
-					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employee">
-
-						<i class="icon icon-left s7-back"></i>BACK
-					</button>
-					<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-employee">
-							<i class="icon icon-left s7-diskette"></i>SAVE
-					</button>
-					<button type="button" name="btnDeleted" value="deleted" class ="btn btn-success btn-space btn-deleted-employee">
-							<i class="icon icon-left s7-trash"></i>DELETE
-					</button>
-				</div>	
-		</div>
-	</div>
-	<div class="panel panel-default">
-		
 		
 		<div class="panel-body employee-panel">
 			<form>
@@ -177,7 +175,7 @@
 								</div>
 								<div class="col-md-3">
 									<label for="ss-contribution">Total</label>
-									<input class="form-control sss-Contribution" type="text" name="ssContribution" placeholder="SS Contribution" readonly />
+									<input class="form-control sss-Contribution" type="text" name="ssContribution" 	readonly />
 								</div>
 							</div>
 						</div>
@@ -287,22 +285,6 @@
 				</div>
 			</div>
 		</form>
-	</div>
-	<div class="panel panel-default">
-		<div class="panel-body">
-			<div class="row pull-right">
-					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employee">
-
-						<i class="icon icon-left s7-back"></i>BACK
-					</button>
-					<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-employee">
-							<i class="icon icon-left s7-diskette"></i>SAVE
-					</button>
-					<button type="button" name="btnDeleted" value="deleted" class ="btn btn-success btn-space btn-deleted-employee">
-							<i class="icon icon-left s7-trash"></i>DELETE
-					</button>
-				</div>	
-		</div>
 	</div>
 </div>
 
@@ -707,7 +689,7 @@
 		pageEmployee.elem.find('.btn-deleted-employee').off("click").click(function(event){
 			pageEmployee.elem.find('.i-circle').removeClass('text-success').addClass('text-danger');
 			pageEmployee.elem.find('.symbol').removeClass('s7-check').addClass('s7-attention');
-			pageEmployee.elem.find('.message').html('Are you sure you want to delete this data!');
+			pageEmployee.elem.find('.message').html('Are you sure you want to delete this data?');
 			pageEmployee.elem.find('.btn-proceed').hide();
 			pageEmployee.elem.find('.btn-yes').show().off("click").click(function(e){
 				$.ajax({

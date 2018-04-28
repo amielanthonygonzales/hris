@@ -39,17 +39,23 @@
 			</div>
 		</div>
 	</div>
+	<div class="panel-buttons">
+		<div class="row col-md-12">
+			<div class="form-group">
+				<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back">
+
+					<i class="icon icon-left s7-back"></i>BACK
+				</button>
+				<button type="button" name="btnPrint" value="print" class ="btn btn-success btn-space btn-save pull-right">
+					<i class="icon icon-left s7-diskette"></i>SAVE
+			</button>
+			</div>
+		</div>
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			SSS Contribution Reference
 		</div>
-		<div class="panel-body">
-			<button type="button" name="btnPrint" value="print" class ="btn btn-success btn-space btn-save pull-right">
-					<i class="icon icon-left s7-diskette"></i>SAVE
-			</button>
-		</div>
-	</div>
-	<div class="panel panel-default">
 		<div class="panel-body">
 			<label>Range of Compensation</label>
 			<div class="form-group">
@@ -119,6 +125,10 @@
 		pageSSSReferenceEdit.elem.find('.end-over').off("click").click(function(e){
 		pageSSSReferenceEdit.elem.find('.sss-ref-to').val('Over');
 			});
+
+		pageSSSReferenceEdit.elem.find('.btn-back').off("click").click(function(e){
+			location.replace('<?php echo base_url('dashboard-sss-reference')?>');
+		});
 
 		pageSSSReferenceEdit.elem.find('.btn-save').off("click").click(function(event){
 				pageSSSReferenceEdit.elem.find('.modal-edit-sss-ref').hide();

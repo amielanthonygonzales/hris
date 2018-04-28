@@ -296,6 +296,13 @@ a:hover{
 #login-btn-index{
     background-color: #8ec63f;
 }
+
+.panel-buttons{
+    margin-top: 23px;
+    text-align: right;
+    margin-right: 16px; 
+    height: 60px;
+}
 /*.message{
     color: #ec4b4b;
 }*/

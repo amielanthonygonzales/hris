@@ -21,12 +21,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3>Pag-Ibig Contribution Form</h3>
-		</div>
-		<div class="panel-body button-print">
-			<div class="pull-right">
+	<div class="panel-buttons">
+		<div class="row col-md-12">
+			<div class="form-group">
 				<button type="button" name="btnPrint" value="print" class ="btn btn-success btn-space btn-paid">
 						<i class="icon icon-left s7-cash"></i>PAID CONTRIBUTION
 				</button>
@@ -37,13 +34,15 @@
 						<i class="icon icon-left s7-mail"></i>EMAIL
 				</button>
 			</div>
-		</div>
-		<div class="panel-body button-print">
-			<div class="pull-right pagination"></div>
+			<div class="form-group button-print">
+				<div class="pull-right pagination"></div>
+			</div>
 		</div>
 	</div>
 	<div class="panel panel-default">
-		
+		<div class="panel-heading">
+			<h3>Pag-Ibig Contribution Form</h3>
+		</div>
 		<div class="panel-body form-body">
 			<div class="form-pagibig"></div>
 			<div class="test-relative">

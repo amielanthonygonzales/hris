@@ -20,23 +20,22 @@
 			</div>
 		</div>
 	</div>
+	<div class="panel-buttons ">
+		<div class="row col-md-12 ">
+			<div class="form-group">
+				<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-employeeEdit">
+					<i class="icon icon-left s7-diskette"></i>SAVE
+				</button>
+				<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employeeEdit">
+					<a href="<?php echo base_url('logout'); ?>"><i class="icon icon-left s7-power"></i>LOG OUT</a>
+				</button>
+			</div>	
+		</div>
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3 class="emp-full-name"></h3>
 		</div>
-		<div class="panel-body">
-			<div class="row pull-right">
-					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employeeEdit">
-
-						<a href="<?php echo base_url('logout'); ?>"><i class="icon icon-left s7-power"></i>LOG OUT</a>
-					</button>
-					<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-employeeEdit">
-							<i class="icon icon-left s7-diskette"></i>SAVE
-					</button>
-				</div>	
-		</div>
-	</div>
-	<div class="panel panel-default">
 		<div class="panel-body">
 			<form>
 				<div class="form-group">
@@ -69,12 +68,45 @@
 	                </div>
 					<div class="form-group">
 						<label for="empSalary">Salary</label>
-						<input class="form-control empSalary" type="number" name="salary" placeholder="Salary" required readonly />
+						<input class="form-control editEmp-salary" type="number" name="salary" placeholder="Salary" required readonly />
+					</div>
+					<div class="form-group">
+						<label>Department</label>
+						<input class="form-control editEmp-dept" type="text" name="empDept" placeholder="Department" required readonly />
 					</div>
 			</form>
 		</div>
 	</div>
-	<div class="panel panel-default">
+	<div class="row">
+
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3>SSS Information</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<label>SSS Number</label>
+						<input class="form-control editEmp-sss" type="text" name="empSss" placeholder="SSS Number" required readonly />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3>Pag-Ibig Information</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<label>Pag-Ibig Number</label>
+						<input class="form-control editEmp-pagibig" type="text" name="empPagibig" placeholder="Pag-Ibig Number" required readonly />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="panel panel-default">
 		<div class="panel-body">
 			<div class="row pull-right">
 					<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employeeEdit">
@@ -86,7 +118,7 @@
 					</button>
 				</div>	
 		</div>
-	</div>
+	</div> -->
 </div>
 
 <script type="text/javascript">
@@ -168,6 +200,7 @@
         });
 
 		result = result['query'];
+		console.log(result);
         $.each(result, function(key, value){
 
         	pageEmployeeEdit.elem.find('.emp-full-name').text(value['emp_last_name'] + ", " + value['emp_first_name'] + " " + value['emp_middle_name'] + " " + value['emp_ext_name']);
@@ -177,6 +210,22 @@
         	pageEmployeeEdit.elem.find('.editEmp-lname').val(value['emp_last_name']);
         	pageEmployeeEdit.elem.find('.editEmp-extname').val(value['emp_ext_name']);
         	pageEmployeeEdit.elem.find('.editEmp-birthday').val(value['emp_birthday']);
+        	pageEmployeeEdit.elem.find('.editEmp-salary').val(value['emp_salary']);
+        	pageEmployeeEdit.elem.find('.editEmp-sss').val(value['sss_no']);
+        	pageEmployeeEdit.elem.find('.editEmp-pagibig').val(value['pagibig_no']);
+
+
+        	pageEmployeeEdit.dept_id = value['emp_dept'];
         });
+
+        $.getJSON('<?php echo site_url('get-department-name/')?>'+pageEmployeeEdit.dept_id, function(data){
+        		data = data['query'];
+        		console.log( data);
+
+        		$.each(data, function(keyDept, valueDept){
+        			pageEmployeeEdit.elem.find('.editEmp-dept').val(valueDept['dept_name']);
+        		});
+	        		
+        	});
     });
 </script>
