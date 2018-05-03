@@ -185,6 +185,8 @@
 		public function getEmpNameNotif($id){
 			$this->benchmark->mark('start');
 			$data['query'] = $this->Employee_Model->getEmpNameNotif($id);
+			$data['querySSS'] = $this->Employee_Model->getEmpSSSPaidContri();
+			$data['queryPagibig'] = $this->Employee_Model->getEmpPagibigPaidContri();
 			$this->benchmark->mark('end');
 			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
 			header('Content-Type: application/json');

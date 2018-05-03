@@ -222,6 +222,8 @@
 	pageCompany.init = function(selector, callback){
 		pageCompany.elem = $(selector);
 
+		pageCompany.elem.find('.sssnum4').val('000');
+
 			pageCompany.elem.find('.zipcode').keydown(function(e){
         	if(e.which == 8 
         		|| e.which == 9 

@@ -1,0 +1,44 @@
+#pagePaidContriEmployee .info-block .description {
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #e6e6e6;
+    display: block;
+    color: #7b7b7b;
+}
+
+#pagePaidContriEmployee .info-block table tr td.item {
+    width: 60%;
+    color: #7b7b7b;
+    border-bottom: 1px dashed #e6e6e6;
+}
+
+#pagePaidContriEmployee .info-block table tr td.total-item {
+    width: 60%;
+    color: #8ec63f;
+}
+
+#pagePaidContriEmployee .info-block table tr td {
+    padding: 15px 0;
+}
+
+#pagePaidContriEmployee .info-block table tr td {
+    padding: 15px 0;
+}
+
+#pagePaidContriEmployee .info-block table {
+    width: 100%;
+}
+
+#pagePaidContriEmployee .amount-contri{
+    text-align: right;
+    border-bottom: 1px dashed #e6e6e6;
+}
+
+#pagePaidContriEmployee .info-block table tr.end-of-formula{
+    border-bottom: 3px solid #dddddd;
+}
+
+
+#pagePaidContriEmployee .contri-content{
+    padding: 20px;
+    border: 2px solid #dddddd;
+}

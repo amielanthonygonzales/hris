@@ -3831,6 +3831,9 @@ a:hover{
     .form-pagibig{
         display: none;
     }
+    .panel-buttons{
+    	display: none;
+    }
     .button-print{
         display: none;
     }

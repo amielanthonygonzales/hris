@@ -734,7 +734,7 @@
 		pagePagibigContri.elem = $(selector);
 		pagePagibigContri.pageInt = 0;
 		pagePagibigContri.inputCount = 0;
-
+		pagePagibigContri.saveEmployeeInfo = [];
 
 		const monthNames = ["January", "February", "March", "April", "May", "June",
 							  "July", "August", "September", "October", "November", "December"
@@ -778,8 +778,10 @@
 				"month" : pagePagibigContri.month + 1,
 				"year" : pagePagibigContri.getDate.getFullYear(),
 				"amount" : pagePagibigContri.grandTotalContri,
-				"gov_agency" : "Pag-Ibig"
+				"gov_agency" : "Pag-Ibig",
+				"paid_employee" : JSON.stringify(pagePagibigContri.saveEmployeeInfo)
 			};
+			console.log(pagePagibigContri.contribution);
 
 			$.ajax({
 				method: "POST",
@@ -842,6 +844,7 @@
 		console.log(result);
 		pagePagibigContri.page = Math.ceil(pagePagibigContri.page/28);
 			pagePagibigContri.elem.find('.pagination').html('');
+
 
 		for(pagePagibigContri.pageInt = 1; pagePagibigContri.pageInt<= pagePagibigContri.page;pagePagibigContri.pageInt++){
 			pagePagibigContri.createButton = $('<button></button>');
@@ -938,6 +941,13 @@
 		$.each(pagePagibigContri.allEmployeeInfo, function(keyAllEmp, valueAllEmp){
 			pagePagibigContri.grandTotalER += +parseInt(valueAllEmp['pagibig_er_share']);
 			pagePagibigContri.grandTotalEE += parseInt(valueAllEmp['pagibig_ee_share']);
+			pagePagibigContri.saveEmployee = {
+				"pagibig_emp_id" : valueAllEmp['pagibig_emp_id'],
+				"pagibig_ee_share" : valueAllEmp['pagibig_ee_share'],
+				"pagibig_er_share" : valueAllEmp['pagibig_er_share']
+			}
+			pagePagibigContri.saveEmployeeInfo.push(pagePagibigContri.saveEmployee);
+
 		});
 		pagePagibigContri.grandTotalContri = pagePagibigContri.grandTotalER + pagePagibigContri.grandTotalEE;
 
@@ -949,6 +959,8 @@
 		}
 
 		$.each(pagePagibigContri.getPaidContri, function(keyPaid, valPaid){
+			console.log($.parseJSON(valPaid['paid_employee']));
+			
 			if(valPaid['month'] != (pagePagibigContri.month + 1) 
 				&& valPaid['year'] != pagePagibigContri.getDate.getFullYear() 
 				&& valPaid['gov_agency'] == 'Pag-Ibig'){
@@ -961,6 +973,7 @@
 				pagePagibigContri.elem.find('.btn-paid').hide();
 				return false;
 			}
+
 		});
 	}
 </script>

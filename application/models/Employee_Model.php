@@ -481,6 +481,16 @@
 			return $sql->result();
 		}
 
+		public function getEmpSSSPaidContri(){
+			$sql = $this->db->query("SELECT * FROM `paid_contribution` WHERE `gov_agency` = 'SSS'");
+			return $sql->result();
+		}
+
+		public function getEmpPagibigPaidContri(){
+			$sql = $this->db->query("SELECT * FROM `paid_contribution` WHERE `gov_agency` = 'Pag-Ibig'");
+			return $sql->result();
+		}
+
 		public function getEmployeeDeleted($args){
 			$sql= "
 			SELECT 

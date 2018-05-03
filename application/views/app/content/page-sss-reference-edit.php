@@ -60,7 +60,7 @@
 			<label>Range of Compensation</label>
 			<div class="form-group">
 				<label>From</label>
-      			<input type="name" placeholder="From" class="form-control sss-ref-from clear-sss-ref"/>
+      			<input type="name" placeholder="From" class="form-control sss-ref-from clear-sss-ref "/>
 			</div>
       		<div class="form-group">
       			<label>To</label>
@@ -121,6 +121,21 @@
 			pageSSSReferenceEdit.elem.find('.sss-ref-from').removeAttr('readonly');
 			pageSSSReferenceEdit.elem.find('.sss-ref-to').removeAttr('readonly');
 		}
+
+		pageSSSReferenceEdit.elem.find('.clear-sss-ref').keydown(function(e){
+			if(e.which == 8 
+        		|| e.which == 9 
+        		|| e.which == 13 
+        		|| e.which == 46 
+        		|| e.which >= 48 && e.which <= 57 
+        		|| e.which >= 96 && e.which <= 105 
+        		|| e.which >= 112 && e.which <= 123 
+        		|| e.which >= 37 && e.which <= 40){
+        		return true;
+        	}else{
+        		return false;
+        	}
+		});
 
 		pageSSSReferenceEdit.elem.find('.end-over').off("click").click(function(e){
 		pageSSSReferenceEdit.elem.find('.sss-ref-to').val('Over');
@@ -185,19 +200,19 @@
 						pageSSSReferenceEdit.elem.find('.modal-error').modal("show");
 						pageSSSReferenceEdit.valid = false;
 					}else if(valueRef['ref_range_start'] == pageSSSReferenceEdit.start){
-						pageSSSReferenceEdit.elem.find('.modal-error .modal-body p').html("Start of range is already exists!");
+						pageSSSReferenceEdit.elem.find('.modal-error .modal-body p').html("Start of range already exists!");
 						pageSSSReferenceEdit.elem.find('.modal-error').modal("show");
 						pageSSSReferenceEdit.valid = false;
 					}else if(valueRef['ref_range_end'] == pageSSSReferenceEdit.end){
-						pageSSSReferenceEdit.elem.find('.modal-error <div class="mod"></div>al-body p').html("End of range is already exists!");
+						pageSSSReferenceEdit.elem.find('.modal-error <div class="mod"></div>al-body p').html("End of range already exists!");
 						pageSSSReferenceEdit.elem.find('.modal-error').modal("show");
 						pageSSSReferenceEdit.valid = false;
 					}else if(valueRef['ref_range_end'] == pageSSSReferenceEdit.start){
-						pageSSSReferenceEdit.elem.find('.modal-error .modal-body p').html("End of range is already exists!");
+						pageSSSReferenceEdit.elem.find('.modal-error .modal-body p').html("End of range already exists!");
 						pageSSSReferenceEdit.elem.find('.modal-error').modal("show");
 						pageSSSReferenceEdit.valid = false;
 					}else if(pageSSSReferenceEdit.start < valueRef['ref_range_start']  && pageSSSReferenceEdit.end > valueRef['ref_range_end']){
-						pageSSSReferenceEdit.elem.find('.modal-error .modal-body p').html("Range is already exists!");
+						pageSSSReferenceEdit.elem.find('.modal-error .modal-body p').html("Range already exists!");
 						pageSSSReferenceEdit.elem.find('.modal-error').modal("show");
 						pageSSSReferenceEdit.valid = false;
 					}else if(pageSSSReferenceEdit.end == 'Over') {
@@ -245,8 +260,12 @@
 		pageSSSReferenceEdit.ref_ee = 0.0;
 		pageSSSReferenceEdit.ref_total = 0.0;
 		pageSSSReferenceEdit.elem.find('.sss-ref-er').keyup(function(e){
+			
 			pageSSSReferenceEdit.ref_er = parseFloat(pageSSSReferenceEdit.elem.find('.sss-ref-er').val());
 			pageSSSReferenceEdit.ref_ee = parseFloat(pageSSSReferenceEdit.elem.find('.sss-ref-ee').val());
+			if(pageSSSReferenceEdit.elem.find('.sss-ref-ee').val() == ""){
+				pageSSSReferenceEdit.ref_ee = 0.0;
+			}
 			pageSSSReferenceEdit.ref_total = pageSSSReferenceEdit.ref_er + pageSSSReferenceEdit.ref_ee;
 			pageSSSReferenceEdit.elem.find('.sss-ref-total-contri').text(pageSSSReferenceEdit.ref_total);
 		});
@@ -254,7 +273,11 @@
 		pageSSSReferenceEdit.elem.find('.sss-ref-ee').keyup(function(e){
 			pageSSSReferenceEdit.ref_er = parseFloat(pageSSSReferenceEdit.elem.find('.sss-ref-er').val());
 			pageSSSReferenceEdit.ref_ee = parseFloat(pageSSSReferenceEdit.elem.find('.sss-ref-ee').val());
+			if(pageSSSReferenceEdit.ref_er == ""){
+				pageSSSReferenceEdit.ref_er = 0;
+			}
 			pageSSSReferenceEdit.ref_total = pageSSSReferenceEdit.ref_er + pageSSSReferenceEdit.ref_ee;
+
 			pageSSSReferenceEdit.elem.find('.sss-ref-total-contri').text(pageSSSReferenceEdit.ref_total);
 		});
 

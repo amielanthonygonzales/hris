@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="<?php echo base_url('amaretti/html/assets/css/style.css');?>" type="text/css"/>
     <!-- <link rel="stylesheet" href="<?php echo base_url("assets/css") ?>/style.css" type="text/css"/> -->
 	<link rel="stylesheet" href="<?php echo base_url("assets/app") ?>/css/style.css" type="text/css"/>
-	<title>HR Contribution System</title>
+	<title>HR Information System</title>
 </head>
 
 <body class="am-splash-screen">

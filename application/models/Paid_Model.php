@@ -9,14 +9,16 @@
 							`month`, 
 							`year`, 
 							`amount`, 
-							`gov_agency`
+							`gov_agency`,
+							`paid_employee`
 						) 
 				VALUES 
 					(
 						".$this->db->escape($addPost['month']).", 
 						".$this->db->escape($addPost['year']).", 
 						".$this->db->escape($addPost['amount']).", 
-						".$this->db->escape($addPost['gov_agency'])."
+						".$this->db->escape($addPost['gov_agency']).", 
+						".$this->db->escape($addPost['paid_employee'])."
 					)"
 				);
 			return 1;

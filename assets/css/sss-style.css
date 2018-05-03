@@ -409,6 +409,9 @@
     #pageSSSContri .button-print{
         display: none;
     }
+    .panel-buttons{
+        display: none;
+    }
 
     #pageSSSContri .test-relative{
         display: none;
