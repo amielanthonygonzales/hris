@@ -369,7 +369,6 @@
 			pageDashboard.pagibigPaidMonth.splice(11,0, "12");
 			pageDashboard.pagibigPaidAmount.splice(11,0, "0");
 		}
-		console.log(pageDashboard.pagibigPaidAmount);
 
 		
 		console.log(pageDashboard.company);
@@ -409,7 +408,6 @@
 			pageDashboard.ee_contribution +=  parseFloat(value['ee_contribution']);
 			pageDashboard.er_contribution +=  parseFloat(value['er_contribution']);
 
-			console.log(pageDashboard.er_contribution);
 		});
 		pageDashboard.sss_total = pageDashboard.ss_contribution + pageDashboard.ec_contribution;
 		pageDashboard.elem.find('.ss-contribution').text(pageDashboard.ss_contribution.toFixed(2));

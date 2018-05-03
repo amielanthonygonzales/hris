@@ -42,3 +42,79 @@
     padding: 20px;
     border: 2px solid #dddddd;
 }
+
+#sss-graph{
+    width: 100%;
+}
+
+.modebar{
+    display: none;
+} 
+
+#pagePaidContriEmployee .select-year{
+	padding: 20px;
+    padding-bottom: 0;
+}
+
+#pagePaidContriEmployee .emp-print{
+	display: none;
+}
+
+#pagePaidContriEmployee  .sss-print{
+		display: none;
+}
+
+#pagePaidContriEmployee  .pagibig-print{
+	display: none;
+}
+
+@media print{
+	@page{
+        size: A4 portrait;
+        margin:0;
+    }
+
+    body:before{
+        -webkit-print-color-adjust: exact;
+        padding: 0;
+    }
+
+    #pagePaidContriEmployee .emp-print{
+    	display: block;
+    	padding: 20px;
+    	font-size: 28px;
+    	border-bottom: 1px solid #e6e6e6;
+    }
+
+    #pagePaidContriEmployee .info-block{
+    	width: 45%;
+    	float: left;
+		border: 1px solid #e6e6e6;
+		margin-left: 25px;
+		margin-top: 20px;
+    }
+
+    #pagePaidContriEmployee .svg-container{
+    	display: none;
+    }
+
+	#pagePaidContriEmployee  .sss-print{
+		display: block;
+	}
+
+	#pagePaidContriEmployee  .sss-title{
+		padding-left: 20px;
+		font-size: 20px;
+		margin-top: 20px;
+	}
+
+	#pagePaidContriEmployee  .pagibig-print{
+		display: block;
+	}
+
+	#pagePaidContriEmployee  .pagibig-title{
+		padding-left: 20px;
+		font-size: 20px;
+		margin-top: 20px;
+	}
+}

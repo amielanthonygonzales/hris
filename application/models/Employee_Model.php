@@ -481,13 +481,43 @@
 			return $sql->result();
 		}
 
-		public function getEmpSSSPaidContri(){
-			$sql = $this->db->query("SELECT * FROM `paid_contribution` WHERE `gov_agency` = 'SSS'");
+		public function getEmpSSSPaidContri($year){
+			$sql = $this->db->query("
+				SELECT 
+				* 
+				FROM 
+					`paid_contribution` 
+				WHERE 
+					`gov_agency` = 'SSS' 
+				AND 
+					`year` = " .$this->db->escape($year) . " 
+				ORDER BY `month` ASC
+				");
 			return $sql->result();
 		}
 
-		public function getEmpPagibigPaidContri(){
-			$sql = $this->db->query("SELECT * FROM `paid_contribution` WHERE `gov_agency` = 'Pag-Ibig'");
+		public function getEmpPagibigPaidContri($year){
+			$sql = $this->db->query("
+				SELECT 
+				* 
+				FROM 
+					`paid_contribution` 
+				WHERE 
+					`gov_agency` = 'Pag-Ibig' 
+				AND 
+					`year` = " .$this->db->escape($year) . " 
+				ORDER BY `month` ASC
+				");
+			return $sql->result();
+		}
+
+		public function getPaidYearSSS(){
+			$sql = $this->db->query("SELECT `year` FROM `paid_contribution` WHERE `gov_agency` = 'SSS' GROUP BY `year`");
+			return $sql->result();
+		}
+
+		public function getPaidYearPagibig(){
+			$sql = $this->db->query("SELECT `year` FROM `paid_contribution` WHERE `gov_agency` = 'Pag-Ibig' GROUP BY `year`");
 			return $sql->result();
 		}
 

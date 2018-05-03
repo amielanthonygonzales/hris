@@ -1,4 +1,4 @@
-<div id="pageDepartment">
+ <div id="pageDepartment">
 	<div tabindex="-1" role="dialog" class="modal fade in modal-department">
 		<div class="modal-dialog">
 			<div class="modal-content">

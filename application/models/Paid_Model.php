@@ -44,5 +44,35 @@
 				");
 			return $sql->result();
 		}
+
+		public function getSSSByYear($year){
+			$sql = $this->db->query("
+				SELECT 
+				* 
+				FROM 
+					`paid_contribution` 
+				WHERE 
+					`gov_agency` = 'SSS' 
+				AND 
+					`year` = " .$this->db->escape($year) . " 
+				ORDER BY `month` ASC
+				");
+			return $sql->result();
+		}
+		
+		public function getPagibigByYear($year){
+			$sql = $this->db->query("
+				SELECT 
+				* 
+				FROM 
+					`paid_contribution` 
+				WHERE 
+					`gov_agency` = 'Pag-Ibig' 
+				AND 
+					`year` = " .$this->db->escape($year) . " 
+				ORDER BY `month` ASC
+				");
+			return $sql->result();
+		}
 	}
 ?>

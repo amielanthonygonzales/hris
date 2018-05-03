@@ -74,7 +74,7 @@ $route['profile'] = 'api/Employee_Controller/getEmployeeProfile';
 $route['profile-emp'] = 'api/Employee_Controller/getEmployeeProfile-emp';
 $route['email'] = 'api/Employee_Controller/sendEmail';
 $route['get-sss-ref'] = 'api/Employee_Controller/getAllSSSRef';
-$route['get-emp-name-notif/(:any)'] = 'api/Employee_Controller/getEmpNameNotif/$1';
+$route['get-emp-name-notif/(:any)/(:any)'] = 'api/Employee_Controller/getEmpNameNotif/$1/$2';
 $route['get-emp-deleted'] = 'api/Employee_Controller/getEmployeeDeleted';
 $route['get-employee-restore/(:any)'] = 'api/Employee_Controller/getEmployeeRestore/$1';
 $route['update-restore-employee/(:any)'] = 'api/Employee_Controller/updateRestoreEmployee/$1';
@@ -140,11 +140,13 @@ $route['sss-paid-datatable-emp/(:any)'] = 'api/SSS_Controller/dataTablePaidSSSEm
 //app
 $route['add-sss-reference/(:any)/(:any)'] = 'app/SSS_Controller/viewAddReference/$1/$2';
 
-//Payed Contribution
+//Paid Contribution
 //api
 $route['saved-contribution'] = 'api/Paid_Controller/addContribution';
 $route['get-contributions'] = 'api/Paid_Controller/getContributions';
-
+$route['get-contri-by-year/(:any)/(:any)'] = 'api/Paid_Controller/getContriByYear/$1/$2';
+$route['get-sss-by-year/(:any)'] = 'api/Paid_Controller/getSSSByYear/$1';
+$route['get-pagibig-by-year/(:any)'] = 'api/Paid_Controller/getPagibigByYear/$1';
 
 
 // $route['register-employee'] = 'RegisterEmp_Controller/registerEmp';

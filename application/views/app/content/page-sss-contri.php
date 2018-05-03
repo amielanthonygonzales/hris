@@ -158,6 +158,7 @@
 		pageSSSContri.pageInt = 0;
 		pageSSSContri.inputCount = 0;
 		pageSSSContri.page = 0;
+		pageSSSContri.saveEmployeeInfo = [];
 
 		pageSSSContri.elem.find('.typing-sss').keydown(function(e){
 			if(e.which == 9){
@@ -234,7 +235,8 @@
 				"month" : pageSSSContri.month + 1,
 				"year" : pageSSSContri.getDate.getFullYear(),
 				"amount" : pageSSSContri.totalSSContri,
-				"gov_agency" : "SSS"
+				"gov_agency" : "SSS",
+				"paid_employee" : JSON.stringify(pageSSSContri.saveEmployeeInfo)
 			};
 
 			$.ajax({
@@ -369,8 +371,17 @@
 			pageSSSContri.totalSSContri = 0;
 			$.each(pageSSSContri.allEmployeeInfo, function(keyAll, valueAll){
 				console.log(valueAll);
+
 				pageSSSContri.ssContribution += +parseInt(valueAll['ss_contribution']);
 				pageSSSContri.ecContribution += + parseInt(valueAll['ec_contribution']);
+
+				pageSSSContri.saveEmployee = {
+					"sss_emp_id" : valueAll['sss_emp_id'],
+					"sss_ss_contribution" : valueAll['ss_contribution'],
+					"sss_ec_contribution" : valueAll['ec_contribution']
+				};
+
+				pageSSSContri.saveEmployeeInfo.push(pageSSSContri.saveEmployee);
 			});
 			pageSSSContri.totalSSContri = pageSSSContri.ssContribution + pageSSSContri.ecContribution;
 

@@ -182,11 +182,13 @@
         	echo json_encode($data);
 		}
 
-		public function getEmpNameNotif($id){
+		public function getEmpNameNotif($id, $year){
 			$this->benchmark->mark('start');
 			$data['query'] = $this->Employee_Model->getEmpNameNotif($id);
-			$data['querySSS'] = $this->Employee_Model->getEmpSSSPaidContri();
-			$data['queryPagibig'] = $this->Employee_Model->getEmpPagibigPaidContri();
+			$data['querySSS'] = $this->Employee_Model->getEmpSSSPaidContri($year);
+			$data['queryPagibig'] = $this->Employee_Model->getEmpPagibigPaidContri($year);
+			$data['queryYearSSS'] = $this->Employee_Model->getPaidYearSSS();
+			$data['queryYearPagibig'] = $this->Employee_Model->getPaidYearPagibig();
 			$this->benchmark->mark('end');
 			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
 			header('Content-Type: application/json');

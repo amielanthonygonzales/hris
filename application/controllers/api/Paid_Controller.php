@@ -28,5 +28,30 @@
 			header('Content-Type: application/json');
 			echo json_encode($data);
 		}
+
+		public function getContriByYear($year, $yearSSS){
+			$this->benchmark->mark('start');
+			$data['queryPagibig'] = $this->Paid_Model->getPagibigByYear($year);
+			$data['querySSS'] = $this->Paid_Model->getSSSByYear($yearSSS);
+			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+			echo json_encode($data);
+		}
+
+		public function getSSSByYear($year){
+			$this->benchmark->mark('start');
+			$data['querySSS'] = $this->Paid_Model->getSSSByYear($year);
+			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+			echo json_encode($data);
+		}
+
+		public function getPagibigByYear($year){
+			$this->benchmark->mark('start');
+			$data['queryPagibig'] = $this->Paid_Model->getPagibigByYear($year);
+			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+			echo json_encode($data);
+		}
 	} 
 ?>
