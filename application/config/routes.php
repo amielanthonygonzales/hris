@@ -100,6 +100,7 @@ $route['dashboard-pagibig'] = 'app/Dashboard_Controller/pagibig';
 $route['dashboard-sss-reference'] = 'app/Dashboard_Controller/sssReference';
 $route['dashboard-paid-contri'] = 'app/Dashboard_Controller/paidContribution';
 $route['dashboard-paid-contri-emp/(:any)'] = 'app/Dashboard_Controller/paidContributionEmp/$1';
+$route['dashboard-paid-contri-admin/(:any)'] = 'app/Dashboard_Controller/paidContributionAdmin/$1';
 
 
 
@@ -144,7 +145,7 @@ $route['add-sss-reference/(:any)/(:any)'] = 'app/SSS_Controller/viewAddReference
 //api
 $route['saved-contribution'] = 'api/Paid_Controller/addContribution';
 $route['get-contributions'] = 'api/Paid_Controller/getContributions';
-$route['get-contri-by-year/(:any)/(:any)'] = 'api/Paid_Controller/getContriByYear/$1/$2';
+$route['get-contri-by-year/(:any)'] = 'api/Paid_Controller/getContriByYear/$1';
 $route['get-sss-by-year/(:any)'] = 'api/Paid_Controller/getSSSByYear/$1';
 $route['get-pagibig-by-year/(:any)'] = 'api/Paid_Controller/getPagibigByYear/$1';
 

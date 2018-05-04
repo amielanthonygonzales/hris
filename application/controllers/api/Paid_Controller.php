@@ -29,10 +29,12 @@
 			echo json_encode($data);
 		}
 
-		public function getContriByYear($year, $yearSSS){
+		public function getContriByYear($year){
 			$this->benchmark->mark('start');
 			$data['queryPagibig'] = $this->Paid_Model->getPagibigByYear($year);
-			$data['querySSS'] = $this->Paid_Model->getSSSByYear($yearSSS);
+			$data['querySSS'] = $this->Paid_Model->getSSSByYear($year);
+			$data['queryYearSSS'] = $this->Paid_Model->getPaidYearSSS();
+			$data['queryYearPagibig'] = $this->Paid_Model->getPaidYearPagibig();
 			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
 			header('Content-Type: application/json');
 			echo json_encode($data);

@@ -68,6 +68,146 @@
 	display: none;
 }
 
+#pagePaidContri .info-block .description {
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #e6e6e6;
+    display: block;
+    color: #7b7b7b;
+}
+
+#pagePaidContri .info-block table tr td.item {
+    width: 60%;
+    color: #7b7b7b;
+    border-bottom: 1px dashed #e6e6e6;
+}
+
+#pagePaidContri .info-block table tr td.total-item {
+    width: 60%;
+    color: #8ec63f;
+}
+
+#pagePaidContri .info-block table tr td {
+    padding: 15px 0;
+}
+
+#pagePaidContri .info-block table tr td {
+    padding: 15px 0;
+}
+
+#pagePaidContri .info-block table {
+    width: 100%;
+}
+
+#pagePaidContri .amount-contri{
+    text-align: right;
+    border-bottom: 1px dashed #e6e6e6;
+}
+
+#pagePaidContri .info-block table tr.end-of-formula{
+    border-bottom: 3px solid #dddddd;
+}
+
+
+#pagePaidContri .contri-content{
+    padding: 20px;
+    border: 2px solid #dddddd;
+}
+
+#sss-graph{
+    width: 100%;
+}
+
+.modebar{
+    display: none;
+} 
+
+#pagePaidContri .select-year{
+	padding: 20px;
+    padding-bottom: 0;
+}
+
+#pagePaidContri .emp-print{
+	display: none;
+}
+
+#pagePaidContri  .sss-print{
+		display: none;
+}
+
+#pagePaidContri  .pagibig-print{
+	display: none;
+}
+
+#pagePaidContriAdmin .info-block .description {
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #e6e6e6;
+    display: block;
+    color: #7b7b7b;
+}
+
+#pagePaidContriAdmin .info-block table tr td.item {
+    width: 60%;
+    color: #7b7b7b;
+    border-bottom: 1px dashed #e6e6e6;
+}
+
+#pagePaidContriAdmin .info-block table tr td.total-item {
+    width: 60%;
+    color: #8ec63f;
+}
+
+#pagePaidContriAdmin .info-block table tr td {
+    padding: 15px 0;
+}
+
+#pagePaidContriAdmin .info-block table tr td {
+    padding: 15px 0;
+}
+
+#pagePaidContriAdmin .info-block table {
+    width: 100%;
+}
+
+#pagePaidContriAdmin .amount-contri{
+    text-align: right;
+    border-bottom: 1px dashed #e6e6e6;
+}
+
+#pagePaidContriAdmin .info-block table tr.end-of-formula{
+    border-bottom: 3px solid #dddddd;
+}
+
+
+#pagePaidContriAdmin .contri-content{
+    padding: 20px;
+    border: 2px solid #dddddd;
+}
+
+#sss-graph{
+    width: 100%;
+}
+
+.modebar{
+    display: none;
+} 
+
+#pagePaidContriAdmin .select-year{
+	padding: 20px;
+    padding-bottom: 0;
+}
+
+#pagePaidContriAdmin .emp-print{
+	display: none;
+}
+
+#pagePaidContriAdmin  .sss-print{
+		display: none;
+}
+
+#pagePaidContriAdmin  .pagibig-print{
+	display: none;
+}
+
 @media print{
 	@page{
         size: A4 portrait;
@@ -113,6 +253,84 @@
 	}
 
 	#pagePaidContriEmployee  .pagibig-title{
+		padding-left: 20px;
+		font-size: 20px;
+		margin-top: 20px;
+	}
+
+	#pagePaidContri  .emp-print{
+    	display: block;
+    	padding: 20px;
+    	font-size: 28px;
+    	border-bottom: 1px solid #e6e6e6;
+    }
+
+    #pagePaidContri  .info-block{
+    	width: 45%;
+    	float: left;
+		border: 1px solid #e6e6e6;
+		margin-left: 25px;
+		margin-top: 20px;
+    }
+
+    #pagePaidContri  .svg-container{
+    	display: none;
+    }
+
+	#pagePaidContri   .sss-print{
+		display: block;
+	}
+
+	#pagePaidContri   .sss-title{
+		padding-left: 20px;
+		font-size: 20px;
+		margin-top: 20px;
+	}
+
+	#pagePaidContri   .pagibig-print{
+		display: block;
+	}
+
+	#pagePaidContri   .pagibig-title{
+		padding-left: 20px;
+		font-size: 20px;
+		margin-top: 20px;
+	}
+
+	#pagePaidContriAdmin .emp-print{
+    	display: block;
+    	padding: 20px;
+    	font-size: 28px;
+    	border-bottom: 1px solid #e6e6e6;
+    }
+
+    #pagePaidContriAdmin .info-block{
+    	width: 45%;
+    	float: left;
+		border: 1px solid #e6e6e6;
+		margin-left: 25px;
+		margin-top: 20px;
+    }
+
+    #pagePaidContriAdmin .svg-container{
+    	display: none;
+    }
+
+	#pagePaidContriAdmin  .sss-print{
+		display: block;
+	}
+
+	#pagePaidContriAdmin  .sss-title{
+		padding-left: 20px;
+		font-size: 20px;
+		margin-top: 20px;
+	}
+
+	#pagePaidContriAdmin  .pagibig-print{
+		display: block;
+	}
+
+	#pagePaidContriAdmin  .pagibig-title{
 		padding-left: 20px;
 		font-size: 20px;
 		margin-top: 20px;

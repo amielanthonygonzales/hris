@@ -18,7 +18,7 @@
 		<div id="am-navbar-collapse" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right am-icons-nav">
               <li id="notif" class="dropdown">
-              	<a href="<?php echo base_url('dashboard-paid-contri')?>">
+              	<a href="#">
               		<span class="icon s7-bell"></span><span id="notif-badge"></span>
               	</a> 
               </li>
@@ -44,12 +44,25 @@
 						data: {id: value.emp_id},
 						success: function(result){
 							$('#notif-badge').removeClass('indicator');
+							window.parent.location = "<?php echo base_url('dashboard-paid-contri-admin/')?>"+id;
 						}
 					});
 				}
 			});	
 		});
-	})
+	});
+
+	// $.('#notif').off("click").click(function(){
+
+	// });
+	$('#notif').mouseenter(function(){
+		$('#notif').attr('title', 'Notification');
+	});
+
+	$('.profile').mouseenter(function(){
+		$('.profile').attr('title', 'Profile');
+	});
+
 	$.getJSON('<?php echo base_url('profile');?>', function(data){
 		$.each(data, function(key,value){
 			if(key == "user"){
@@ -72,6 +85,6 @@
 					}
 				}
 			});
-		})
-	})
+		});
+	});
 </script>

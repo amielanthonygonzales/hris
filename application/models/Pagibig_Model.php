@@ -37,13 +37,13 @@
 		}
 
 		public function countData(){
-			$sql = $this->db->query("SELECT count(*) as cnt FROM `employee` where `emp_deleted` = 0");
+			$sql = $this->db->query("SELECT count(*) as cnt FROM `pag_ibig` where `pagibig_deleted` = 0 AND (LENGTH(`pagibig_no`) = 14 OR LENGTH(`pagibig_mid_no`) = 14)");
 			return $sql->result_array()[0]['cnt'];
 		}
 
 		public function getAllData($page){
 			$pageNo = ($page - 1)*28;
-			$sql = $this->db->query("SELECT * FROM `employee`, `pag_ibig` where `emp_deleted` = 0 AND `pagibig_emp_id` = `emp_id` AND `pagibig_deleted` = 0 ORDER BY `emp_last_name` ASC LIMIT 28 OFFSET ". $this->db->escape($pageNo));
+			$sql = $this->db->query("SELECT * FROM `employee`, `pag_ibig` where `emp_deleted` = 0 AND `pagibig_emp_id` = `emp_id` AND `pagibig_deleted` = 0 AND (LENGTH(`pagibig_no`) = 14 OR LENGTH(`pagibig_mid_no`) = 14) ORDER BY `emp_last_name` ASC LIMIT 28 OFFSET ". $this->db->escape($pageNo));
 			return $sql->result();
 		}
 

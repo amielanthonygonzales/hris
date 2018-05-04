@@ -403,13 +403,15 @@
 		pageDashboard.er_contribution = 0;
 		pageDashboard.sss_total = 0;
 		$.each(pageDashboard.sss, function(key, value){
+
 			pageDashboard.ss_contribution +=  parseFloat(value['ss_contribution']); 
 			pageDashboard.ec_contribution +=  parseFloat(value['ec_contribution']); 
 			pageDashboard.ee_contribution +=  parseFloat(value['ee_contribution']);
 			pageDashboard.er_contribution +=  parseFloat(value['er_contribution']);
-
+			console.log(parseFloat(value['ec_contribution']));
 		});
 		pageDashboard.sss_total = pageDashboard.ss_contribution + pageDashboard.ec_contribution;
+
 		pageDashboard.elem.find('.ss-contribution').text(pageDashboard.ss_contribution.toFixed(2));
 		pageDashboard.elem.find('.ee-contribution').text(pageDashboard.ee_contribution.toFixed(2));
 		pageDashboard.elem.find('.er-contribution').text(pageDashboard.er_contribution.toFixed(2));

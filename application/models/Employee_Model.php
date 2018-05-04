@@ -341,6 +341,7 @@
 		}
 
 		public function updatePagibigInfo($id, $updatePost){
+			
 			if(strlen($updatePost['pagibig_mid_no']) != 14){
 				$returndata['error'] = "Invalid length of Pag-Ibig MID Number!";
 			}else if(strlen($updatePost['pagibig_no']) != 14){
@@ -364,7 +365,8 @@
 					pagibig_emp_id = ".$this->db->escape($id));
 				$returndata = 1;
 			}
-			if(strlen($updatePost['sss_no']) == 3 || strlen($updatePost['pagibig_mid_no']) == 3 || strlen($updatePost['pagibig_no']) == 3){
+			if(strlen($updatePost['sss_no']) == 3 || strlen($updatePost['pagibig_mid_no']) == 3 || strlen($updatePost['pagibig_no']) == 3 
+				|| strlen($updatePost['sss_no']) == 2 || strlen($updatePost['pagibig_mid_no']) == 2 || strlen($updatePost['pagibig_no']) == 2){
 				$sql = $this->db->query("
 					UPDATE 
 					pag_ibig 

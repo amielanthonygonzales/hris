@@ -59,7 +59,7 @@
 				");
 			return $sql->result();
 		}
-		
+
 		public function getPagibigByYear($year){
 			$sql = $this->db->query("
 				SELECT 
@@ -72,6 +72,16 @@
 					`year` = " .$this->db->escape($year) . " 
 				ORDER BY `month` ASC
 				");
+			return $sql->result();
+		}
+
+		public function getPaidYearSSS(){
+			$sql = $this->db->query("SELECT `year` FROM `paid_contribution` WHERE `gov_agency` = 'SSS' GROUP BY `year`");
+			return $sql->result();
+		}
+
+		public function getPaidYearPagibig(){
+			$sql = $this->db->query("SELECT `year` FROM `paid_contribution` WHERE `gov_agency` = 'Pag-Ibig' GROUP BY `year`");
 			return $sql->result();
 		}
 	}
