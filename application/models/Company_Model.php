@@ -4,9 +4,16 @@
 		function addCompany($postCompany){
 			if(strlen($postCompany['company_sss_id']) != 16){
 				$returndata['error'] = "Invalid length of Company SSS Id number!";
-			}
-			else if(strlen($postCompany['company_pagibig_id']) != 14){
+			}else if(strlen($postCompany['company_pagibig_id']) != 14){
 				$returndata['error'] = "Invalid length of Company Pag-Ibig Id number!";
+			}else if($postCompany['company_name'] == ''){
+				$returndata['error'] = "Please enter employer/business name!";
+			}else if($postCompany['company_email'] == ''){
+				$returndata['error'] = "Please enter business email!";
+			}else if($postCompany['company_representative'] == ''){
+				$returndata['error'] = "Please enter company representative for government contribution!";
+			}else if($postCompany['company_rep_pos'] == ''){
+				$returndata['error'] = "Please enter company representative position!";
 			}else{
 				$this->db->query("
 				UPDATE 

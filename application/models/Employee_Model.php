@@ -669,6 +669,9 @@
 						pagibig_ee_share = ".$this->db->escape($updatePost['pagibig_ee_share'])." ,
 						pagibig_er_share = ".$this->db->escape($updatePost['pagibig_er_share'])." ,
 						pagibig_mem_prog = ".$this->db->escape($updatePost['pagibig_mem_prog'])." ,
+						pagibig_ee_share_mp_two = ".$this->db->escape($updatePost['	pagibig_ee_share_mp_two'])." ,
+						pagibig_er_share_mp_two	 = ".$this->db->escape($updatePost['pagibig_er_share_mp_two	'])." ,
+						pagibig_mem_prog_two = ".$this->db->escape($updatePost['pagibig_mem_prog_two'])." ,
 						monthly_compen = ".$this->db->escape($updatePost['monthly_compen'])." ,
 						pagibig_remarks = ".$this->db->escape($updatePost['pagibig_remarks'])." ,
 						pagibig_remarks_date = ".$this->db->escape($updatePost['pagibig_remarks_date'])." 
@@ -713,6 +716,9 @@
 											pagibig_ee_share = ".$this->db->escape($updatePost['pagibig_ee_share'])." ,
 											pagibig_er_share = ".$this->db->escape($updatePost['pagibig_er_share'])." ,
 											pagibig_mem_prog = ".$this->db->escape($updatePost['pagibig_mem_prog'])." ,
+											pagibig_ee_share_mp_two = ".$this->db->escape($updatePost['	pagibig_ee_share_mp_two'])." ,
+											pagibig_er_share_mp_two	 = ".$this->db->escape($updatePost['pagibig_er_share_mp_two	'])." ,
+											pagibig_mem_prog_two = ".$this->db->escape($updatePost['pagibig_mem_prog_two'])." ,
 											monthly_compen = ".$this->db->escape($updatePost['monthly_compen'])." ,
 											pagibig_remarks = ".$this->db->escape($updatePost['pagibig_remarks'])." ,
 											pagibig_remarks_date = ".$this->db->escape($updatePost['pagibig_remarks_date'])." 
@@ -731,6 +737,9 @@
 											pagibig_ee_share = ".$this->db->escape($updatePost['pagibig_ee_share'])." ,
 											pagibig_er_share = ".$this->db->escape($updatePost['pagibig_er_share'])." ,
 											pagibig_mem_prog = ".$this->db->escape($updatePost['pagibig_mem_prog'])." ,
+											pagibig_ee_share_mp_two = ".$this->db->escape($updatePost['	pagibig_ee_share_mp_two'])." ,
+											pagibig_er_share_mp_two	 = ".$this->db->escape($updatePost['pagibig_er_share_mp_two	'])." ,
+											pagibig_mem_prog_two = ".$this->db->escape($updatePost['pagibig_mem_prog_two'])." ,
 											monthly_compen = ".$this->db->escape($updatePost['monthly_compen'])." ,
 											pagibig_remarks = ".$this->db->escape($updatePost['pagibig_remarks'])." ,
 											pagibig_remarks_date = ".$this->db->escape($updatePost['pagibig_remarks_date'])." 
@@ -771,6 +780,9 @@
 					pagibig_ee_share = ".$this->db->escape($updatePost['pagibig_ee_share'])." ,
 					pagibig_er_share = ".$this->db->escape($updatePost['pagibig_er_share'])." ,
 					pagibig_mem_prog = ".$this->db->escape($updatePost['pagibig_mem_prog'])." ,
+					pagibig_ee_share_mp_two = ".$this->db->escape($updatePost['	pagibig_ee_share_mp_two'])." ,
+					pagibig_er_share_mp_two	 = ".$this->db->escape($updatePost['pagibig_er_share_mp_two	'])." ,
+					pagibig_mem_prog_two = ".$this->db->escape($updatePost['pagibig_mem_prog_two'])." ,
 					monthly_compen = ".$this->db->escape($updatePost['monthly_compen'])." ,
 					pagibig_remarks = ".$this->db->escape($updatePost['pagibig_remarks'])." ,
 					pagibig_remarks_date = ".$this->db->escape($updatePost['pagibig_remarks_date'])." 
@@ -789,6 +801,9 @@
 					pagibig_ee_share = ".$this->db->escape($updatePost['pagibig_ee_share'])." ,
 					pagibig_er_share = ".$this->db->escape($updatePost['pagibig_er_share'])." ,
 					pagibig_mem_prog = ".$this->db->escape($updatePost['pagibig_mem_prog'])." ,
+					pagibig_ee_share_mp_two = ".$this->db->escape($updatePost['	pagibig_ee_share_mp_two'])." ,
+					pagibig_er_share_mp_two	 = ".$this->db->escape($updatePost['pagibig_er_share_mp_two	'])." ,
+					pagibig_mem_prog_two = ".$this->db->escape($updatePost['pagibig_mem_prog_two'])." ,
 					monthly_compen = ".$this->db->escape($updatePost['monthly_compen'])." ,
 					pagibig_remarks = ".$this->db->escape($updatePost['pagibig_remarks'])." ,
 					pagibig_remarks_date = ".$this->db->escape($updatePost['pagibig_remarks_date'])." 

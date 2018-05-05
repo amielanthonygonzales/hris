@@ -226,37 +226,6 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group">
-							<label >Pag-Ibig Number</label>
-							<div class="row form-group">
-								<div class="col-md-3">
-									<input class="form-control pagibig-number1" type="text" name="pagibigNumber" required />
-								</div>
-								<div class="col-md-1">
-									<div class="dash-container">-</div>
-								</div>
-								<div class="col-md-3">
-									<input class="form-control pagibig-number2" type="text" name="pagibigNumber" required />
-								</div>
-								<div class="col-md-1">
-									<div class="dash-container">-</div>
-								</div>
-								<div class="col-md-3">
-									<input class="form-control pagibig-number3" type="text" name="pagibigNumber" required />
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>Membership Program</label>
-							<select class=" form-control mem-program">
-								<option value="MP1">MP1</option>
-								<option value="MP2">MP2</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="pagibig-number">Monthly Compensation</label>
-							<input class="form-control monthly-compen" type="text" name="monthly-compen" placeholder="Monthly Compensation" required />
-						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
@@ -271,6 +240,58 @@
 								</div>
 							</div>
 						</div>
+						 <div class="am-checkbox col-md-12">
+	                    	<input id="check2" type="checkbox" class="icheck mp2-program">
+	                    	<label for="check2">MP2 Program</label>
+	                    </div>
+						<div class="mp2-group">
+							<div class="form-group">
+								<label >Pag-Ibig Number</label>
+								<div class="row form-group">
+									<div class="col-md-3">
+										<input class="form-control pagibig-number1" type="text" name="pagibigNumber" required />
+									</div>
+									<div class="col-md-1">
+										<div class="dash-container">-</div>
+									</div>
+									<div class="col-md-3">
+										<input class="form-control pagibig-number2" type="text" name="pagibigNumber" required />
+									</div>
+									<div class="col-md-1">
+										<div class="dash-container">-</div>
+									</div>
+									<div class="col-md-3">
+										<input class="form-control pagibig-number3" type="text" name="pagibigNumber" required />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="ee-share">EE Share For Pag-Ibig No</label>
+										<input class="form-control ee-share-mp2" type="text" name="eeShare" placeholder="EE Share" required />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="er-share">ER Share For Pag-Ibig No</label>
+										<input class="form-control er-share-mp2" type="text" name="erShare" placeholder="ER Share" required />
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- <div class="form-group">
+							<label>Membership Program</label>
+							<select class=" form-control mem-program">
+								<option value="MP1">MP1</option>
+								<option value="MP2">MP2</option>
+							</select>
+						</div> -->
+						<div class="form-group">
+							<label for="pagibig-number">Monthly Compensation</label>
+							<input class="form-control monthly-compen" type="text" name="monthly-compen" placeholder="Monthly Compensation" required />
+						</div>
+						
 						<div class="row form-group">
 							<div class="col-md-6">
 								<label for="pagibig-monthly">Remarks</label>
@@ -310,6 +331,15 @@
 		pageEmployee.elem = $(selector);
 		pageEmployee.action = "<?php echo $action?>";
 		pageEmployee.id = <?php echo $id?>;
+
+		pageEmployee.elem.find('.mp2-group').hide();
+		pageEmployee.elem.find('.mp2-program').off("click").click(function(e){
+			if(pageEmployee.elem.find('.mp2-program').is(':checked')){
+				pageEmployee.elem.find('.mp2-group').show();
+			}else{
+				pageEmployee.elem.find('.mp2-group').hide();
+			}
+		});
 
 		pageEmployee.elem.find('.btn-back-employee').off("click").click(function(e){
 			location.replace('<?php echo base_url('employee-list')?>');
@@ -672,9 +702,12 @@
 								  + pageEmployee.elem.find('.pagibig-mid-number3').val(),
 				"pagibig_ee_share" : pageEmployee.elem.find('.ee-share').val(),
 				"pagibig_er_share" : pageEmployee.elem.find('.er-share').val(),
+				"pagibig_ee_share_mp_two" : pageEmployee.elem.find('.ee-share-mp2').val(),
+				"pagibig_er_share_mp_two" : pageEmployee.elem.find('.er-share-mp2').val(),
 				"pagibig_remarks" : pageEmployee.elem.find('.pagibig-remarks').val(),
 				"pagibig_remarks_date" : pageEmployee.elem.find('.remarks-date').val(),
-				"pagibig_mem_prog" : pageEmployee.elem.find('.mem-program').val(),
+				"pagibig_mem_prog" : 'MP1',
+				"pagibig_mem_prog_two" : 'MP2',
 				"monthly_compen" : pageEmployee.elem.find('.monthly-compen').val()
 			};
 
@@ -825,7 +858,7 @@
 						pageEmployee.elem.find('.empEmail').on("contextmenu",function(){
 					       return false;
 					    }); 
-	    
+
 						globalUser = sessionUsername;
 						//pageEmployee.elem.find('.username-group').hide();
 					}

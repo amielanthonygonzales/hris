@@ -58,7 +58,7 @@
 		<div class="panel-body panel-body-company ">
 			<form id="add-form" class="company-form">
 				<div class="form-group">
-					<label for="employername">Employer/Business Name</label>
+					<label for="employername">Employer/Business Name <code>*</code></label>
 					<input class="form-control employername" type="text" name="employername" placeholder="Employer/Business Name" required/>
 				</div>
 				<div class="form-group">
@@ -79,7 +79,7 @@
 					</div>
 					<div class = "row form-group">
 						<div class="col-md-4">
-							<label for="extname">Street Name</label>
+							<label for="extname">Street Name <code>*</code></label>
 							<input class="form-control street" type="text" name="street" placeholder="Street Name"/>
 						</div>
 						<div class="col-md-4">
@@ -87,22 +87,22 @@
 							<input class="form-control subdivision" type="text" name="subdivision" placeholder="Subdivision"/>
 						</div>
 						<div class="col-md-4">
-							<label for="extname">Barangay/District/Locality</label>
+							<label for="extname">Barangay/District/Locality <code>*</code></label>
 							<input class="form-control brgy" type="text" name="brgy" placeholder="Barangay/District/Locality"/>
 						</div>
 						
 					</div>
 					<div class = "row form-group">
 						<div class="col-md-4">
-							<label for="extname">City/Municipality</label>
+							<label for="extname">City/Municipality <code>*</code></label>
 							<input class="form-control city" type="text" name="city" placeholder="City/Municipality"/>
 						</div>
 						<div class="col-md-4">
-							<label for="extname">Province</label>
+							<label for="extname">Province <code>*</code></label>
 							<input class="form-control province" type="text" name="province" placeholder="Province"/>
 						</div>
 						<div class="col-md-4">
-							<label for="extname">Zip Code</label>
+							<label for="extname">Zip Code <code>*</code></label>
 							<input class="form-control zipcode" type="text" name="zipcode" placeholder="Zip Code"/>
 						</div>
 						
@@ -119,11 +119,11 @@
 							<input class="form-control telnum" type="tel" name="telnum" placeholder="Telephone Number" required/>
 						</div>
 						<div class="col-md-3">
-							<label for="username">Mobile/Cellphone Number</label>
+							<label for="username">Mobile/Cellphone Number <code>*</code></label>
 							<input class="form-control cellnum" type="tel" name="cellnum" placeholder="Mobile/Cellphone Number" required/>
 						</div>
 						<div class="col-md-3">
-							<label for="email">Email</label>
+							<label for="email">Email <code>*</code></label>
 							<input class="form-control email" type="email" name="email" placeholder="Email" required/>
 						</div>
 					</div>
@@ -138,11 +138,11 @@
 		</div>
 		<div class="panel-body">
 			<div class="form-group">
-				<label>Representative Name</label>
+				<label>Representative Name <code>*</code></label>
 				<input class="form-control rep-name" type="text" name="rep-name" placeholder="Representative Name" required/>
 			</div>
 			<div class="form-group">
-				<label>Representative Position</label>
+				<label>Representative Position <code>*</code></label>
 				<input class="form-control rep-position" type="text" name="rep-position" placeholder="Representative Position" required/>
 			</div>
 		</div>
@@ -153,7 +153,7 @@
 			</div>
 			<div class="panel-body">
 				<div class="form-group">
-					<label for="sssnum">SSS Number</label>
+					<label for="sssnum">SSS Number <code>*</code></label>
 					<div class="row form-group">
 						<div class="col-md-2">
 							<input class="form-control sssnum1" type="text" name="sssnum" required />
@@ -189,7 +189,7 @@
 				<h3>Company Pag-Ibig Information</h3>
 			</div>
 			<div class="panel-body">
-				<label for="sssnum">Pag-IBIG Employer Number</label>
+				<label for="sssnum">Pag-IBIG Employer Number <code>*</code></label>
 				<div class="row form-group">
 					<div class="col-md-3">
 						<input class="form-control pagibignum1" type="text" name="pagibigNumber" required />
@@ -506,20 +506,44 @@
 				"company_representative": pageCompany.elem.find('.rep-name').val(),
 				"company_rep_pos": pageCompany.elem.find('.rep-position').val()
 			};
-
-			$.ajax({
-				method: "POST",
-					url: "<?php echo base_url('add-company')?>",
-					data: company_form_info,
-					success: function(result){
-						if(result.success == 1){
-							pageCompany.elem.find('.modal-department').modal();
-						}else if(result.success.error){
-							pageCompany.elem.find('.modal-error .modal-body p').html(result.success.error);
-							pageCompany.elem.find('.modal-error').modal("show");
+			if(pageCompany.elem.find('.street').val() == ''){
+				pageCompany.elem.find('.modal-error .modal-body p').html('');
+				pageCompany.elem.find('.modal-error .modal-body p').html('Please enter street name!');
+				pageCompany.elem.find('.modal-error').modal("show");
+			}else if(pageCompany.elem.find('.brgy').val() == ''){
+				pageCompany.elem.find('.modal-error .modal-body p').html('');
+				pageCompany.elem.find('.modal-error .modal-body p').html('Please enter barangay/district/locality!');
+				pageCompany.elem.find('.modal-error').modal("show");
+			}else if(pageCompany.elem.find('.city').val() == ''){
+				pageCompany.elem.find('.modal-error .modal-body p').html('');
+				pageCompany.elem.find('.modal-error .modal-body p').html('Please enter city/municipality!');
+				pageCompany.elem.find('.modal-error').modal("show");
+			}else if(pageCompany.elem.find('.province').val() == ''){
+				pageCompany.elem.find('.modal-error .modal-body p').html('');
+				pageCompany.elem.find('.modal-error .modal-body p').html('Please enter province!');
+				pageCompany.elem.find('.modal-error').modal("show");
+			}else if(pageCompany.elem.find('.zipcode').val() == ''){
+				pageCompany.elem.find('.modal-error .modal-body p').html('');
+				pageCompany.elem.find('.modal-error .modal-body p').html('Please enter zip code!');
+				pageCompany.elem.find('.modal-error').modal("show");
+			}else{
+				pageCompany.elem.find('.modal-error .modal-body p').html('');
+				$.ajax({
+					method: "POST",
+						url: "<?php echo base_url('add-company')?>",
+						data: company_form_info,
+						success: function(result){
+							if(result.success == 1){
+								pageCompany.elem.find('.modal-department').modal();
+							}else if(result.success.error){
+								pageCompany.elem.find('.modal-error .modal-body p').html(result.success.error);
+								pageCompany.elem.find('.modal-error').modal("show");
+							}
 						}
-					}
-			});
+				});
+			}
+
+			
 			console.log(company_form_info);
 		});
 		$.getJSON('<?php echo site_url('getAllCompanyInfo')?>', callback);

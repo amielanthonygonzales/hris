@@ -214,37 +214,6 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group">
-							<label >Pag-Ibig Number</label>
-							<div class="row form-group">
-								<div class="col-md-3">
-									<input class="form-control pagibig-number1" type="text" name="pagibigNumber" required />
-								</div>
-								<div class="col-md-1">
-									<div class="dash-container">-</div>
-								</div>
-								<div class="col-md-3">
-									<input class="form-control pagibig-number2" type="text" name="pagibigNumber" required />
-								</div>
-								<div class="col-md-1">
-									<div class="dash-container">-</div>
-								</div>
-								<div class="col-md-3">
-									<input class="form-control pagibig-number3" type="text" name="pagibigNumber" required />
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>Membership Program</label>
-							<select class=" form-control mem-program">
-								<option value="MP1">MP1</option>
-								<option value="MP2">MP2</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="pagibig-number">Monthly Compensation</label>
-							<input class="form-control monthly-compen" type="text" name="monthly-compen" placeholder="Monthly Compensation" required />
-						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
@@ -259,6 +228,59 @@
 								</div>
 							</div>
 						</div>
+						
+						<!-- <div class="form-group">
+							<label>Membership Program</label>
+							<select class=" form-control mem-program">
+								<option value="MP1">MP1</option>
+								<option value="MP2">MP2</option>
+							</select>
+						</div> -->
+						 <div class="am-checkbox col-md-12">
+	                    	<input id="check2" type="checkbox" class="icheck mp2-program">
+	                    	<label for="check2">MP2 Program</label>
+	                    </div>
+						<div class="mp2-group">
+							<div class="form-group">
+								<label >Pag-Ibig Number</label>
+								<div class="row form-group">
+									<div class="col-md-3">
+										<input class="form-control pagibig-number1" type="text" name="pagibigNumber" required />
+									</div>
+									<div class="col-md-1">
+										<div class="dash-container">-</div>
+									</div>
+									<div class="col-md-3">
+										<input class="form-control pagibig-number2" type="text" name="pagibigNumber" required />
+									</div>
+									<div class="col-md-1">
+										<div class="dash-container">-</div>
+									</div>
+									<div class="col-md-3">
+										<input class="form-control pagibig-number3" type="text" name="pagibigNumber" required />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="ee-share">EE Share For Pag-Ibig No</label>
+										<input class="form-control ee-share-mp2" type="text" name="eeShare" placeholder="EE Share" required />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="er-share">ER Share For Pag-Ibig No</label>
+										<input class="form-control er-share-mp2" type="text" name="erShare" placeholder="ER Share" required />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="pagibig-number">Monthly Compensation</label>
+							<input class="form-control monthly-compen" type="text" name="monthly-compen" placeholder="Monthly Compensation" required />
+						</div>
+						
 						<div class="row form-group">
 							<div class="col-md-6">
 								<label for="pagibig-monthly">Remarks</label>
@@ -277,7 +299,7 @@
 		                            <span class="input-group-addon btn btn-primary">
 		                            	<i class="icon-left icon-th s7-date"></i>
 		                            </span>
-		                            <input type="datetime" size="16" type="text" class="form-control required-textfield remarks-date" name="engagement-date read" readonly>
+		                            <input type="datetime" size="16" type="text" class="form-control required-textfield remarks-date" name="engagement-date read" >
 		                            
 		                        </div>
 							</div>
@@ -303,6 +325,15 @@
 		pageAdminProfile.elem.find('.passwordForm').hide();
 		pageAdminProfile.elem.find('.currentPass').val('');
 		pageAdminProfile.elem.find('.newPass').val('');
+
+		pageAdminProfile.elem.find('.mp2-group').hide();
+		pageAdminProfile.elem.find('.mp2-program').off("click").click(function(e){
+			if(pageAdminProfile.elem.find('.mp2-program').is(':checked')){
+				pageAdminProfile.elem.find('.mp2-group').show();
+			}else{
+				pageAdminProfile.elem.find('.mp2-group').hide();
+			}
+		});
 
 		pageAdminProfile.elem.find('.changePassword').off("click").click(function(e){
 			if(pageAdminProfile.elem.find('.changePassword').is(':checked')){
@@ -706,12 +737,14 @@
 								  + pageAdminProfile.elem.find('.pagibig-mid-number3').val(),
 				"pagibig_ee_share" : pageAdminProfile.elem.find('.ee-share').val(),
 				"pagibig_er_share" : pageAdminProfile.elem.find('.er-share').val(),
+				"pagibig_ee_share_mp_two" : pageAdminProfile.elem.find('.ee-share-mp2').val(),
+				"pagibig_er_share_mp_two" : pageAdminProfile.elem.find('.er-share-mp2').val(),
 				"pagibig_remarks" : pageAdminProfile.elem.find('.pagibig-remarks').val(),
 				"pagibig_remarks_date" : pageAdminProfile.elem.find('.remarks-date').val(),
-				"pagibig_mem_prog" : pageAdminProfile.elem.find('.mem-program').val(),
+				"pagibig_mem_prog" : 'MP1',
+				"pagibig_mem_prog_two" : 'MP2',
 				"monthly_compen" : pageAdminProfile.elem.find('.monthly-compen').val()
 			};
-
 			$.ajax({
 				method: "POST",
 					url: "<?php echo base_url('update-admin/')?>" + pageAdminProfile.id,
