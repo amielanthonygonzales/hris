@@ -66,6 +66,7 @@ $route['add-employee'] = 'api/Employee_Controller/addEmployee';
 $route['get-all-employee'] = 'api/Employee_Controller/getAllEmployee';
 $route['get-employee/(:any)'] = 'api/Employee_Controller/getEmployee/$1';
 $route['update-employee/(:any)'] = 'api/Employee_Controller/updateEmployeeInfo/$1';
+$route['employee-update/(:any)'] = 'api/Employee_Controller/employeeUpdate/$1';
 $route['read-notification'] = 'api/Employee_Controller/readNotification';
 $route['delete-employee/(:any)'] = 'api/Employee_Controller/deleteEmployeeInfo/$1';
 $route['employee-datatable'] = 'api/Employee_Controller/dataTable';

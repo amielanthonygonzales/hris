@@ -20,6 +20,25 @@
 			</div>
 		</div>
 	</div>
+	<div tabindex="-1" role="dialog" class="modal fade in modal-error">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button " data-dismiss="modal" aria-hidden="true" class="close"><i class="icon s7-close"></i></button>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						<div class="i-circle text-danger"><i class="icon s7-close"></i></div>
+						<h4>Oh no!</h4>
+						<p></p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-danger">Proceed</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="panel-buttons ">
 		<div class="row col-md-12 ">
 			<div class="form-group">
@@ -66,6 +85,20 @@
 	                        </div>
 	                    </div>
 	                </div>
+	                <div class="am-checkbox">
+                    	<input id="check1" type="checkbox" class="icheck changePassword">
+                    	<label for="check1">Change Password</label>
+                    </div>
+					<div class="passwordForm">
+						<div class="form-group">
+							<label>Current Password <code>*</code></label>
+							<input class="form-control editEmp-currentPass" type="password" name="currentPass" placeholder="Current Password" />
+						</div>
+						<div class="form-group">
+							<label>New Password (at least 8 alphanumeric characters w/special characters) <code>*</code></label>
+							<input class="form-control editEmp-newPass" type="password" name="newPass" placeholder="New Password" />
+						</div>
+					</div>
 					<div class="form-group">
 						<label for="empSalary">Salary</label>
 						<input class="form-control editEmp-salary" type="number" name="salary" placeholder="Salary" required readonly />
@@ -127,25 +160,46 @@
 	pageEmployeeEdit.init = function(selector, callback){
 		pageEmployeeEdit.elem = $(selector);
 		pageEmployeeEdit.passId = <?php echo $id?>;
+		pageEmployeeEdit.passwordChange = 'no';
 		//console.log(pageEmployeeEdit.passId);
+
+		pageEmployeeEdit.elem.find('.passwordForm').hide();
+		pageEmployeeEdit.elem.find('.editEmp-currentPass').val('');
+		pageEmployeeEdit.elem.find('.editEmp-newPass').val('');
+
+		pageEmployeeEdit.elem.find('.changePassword').off("click").click(function(e){
+			if(pageEmployeeEdit.elem.find('.changePassword').is(':checked')){
+				pageEmployeeEdit.elem.find('.passwordForm').show();
+				pageEmployeeEdit.passwordChange = 'yes';
+			}else{
+				pageEmployeeEdit.elem.find('.passwordForm').hide();
+				pageEmployeeEdit.elem.find('.editEmp-currentPass').val('');
+				pageEmployeeEdit.elem.find('.editEmp-newPass').val('');
+				pageEmployeeEdit.passwordChange = 'no';
+			}
+		});
 
 		pageEmployeeEdit.elem.find('.btn-save-employeeEdit').off("click").click(function(event){
 			pageEmployeeEdit.content = {
+				"emp_id" : pageEmployeeEdit.passId,
 				"emp_first_name" : pageEmployeeEdit.elem.find('.editEmp-fname').val(),
 				"emp_middle_name" : pageEmployeeEdit.elem.find('.editEmp-mname').val(),
 				"emp_last_name" : pageEmployeeEdit.elem.find('.editEmp-lname').val(),
 				"emp_ext_name" : pageEmployeeEdit.elem.find('.editEmp-extname').val(),
 				"emp_birthday" : pageEmployeeEdit.elem.find('.editEmp-birthday').val(),
+				"changePassword" : pageEmployeeEdit.passwordChange,
+				currentPassword : pageEmployeeEdit.elem.find('.editEmp-currentPass').val(),
+				newPassword : pageEmployeeEdit.elem.find('.editEmp-newPass').val()
 			};
 
 			console.log(pageEmployeeEdit.passId);
 
 			$.ajax({
 				method: "POST",
-					url: "<?php echo base_url('update-employee/')?>" + pageEmployeeEdit.passId,
+					url: "<?php echo base_url('employee-update/')?>" + pageEmployeeEdit.passId,
 					data: pageEmployeeEdit.content,
 					success: function(result){
-						if(result.success){
+						if(result.success == 1){
 							pageEmployeeEdit.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
 							pageEmployeeEdit.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
 							pageEmployeeEdit.elem.find('.btn-proceed').show();
@@ -154,6 +208,20 @@
 							pageEmployeeEdit.elem.find('.message').html('Data has been saved successfully!');
 							pageEmployeeEdit.elem.find('.modal-department').modal();
 							
+						}else if(result.success == 2){
+							pageEmployeeEdit.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
+							pageEmployeeEdit.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
+							pageEmployeeEdit.elem.find('.btn-proceed').show().off("click").click(function(e){
+								window.parent.location = "<?php echo base_url('logout')?>";
+							});
+							pageEmployeeEdit.elem.find('.btn-yes').hide();
+							pageEmployeeEdit.elem.find('.btn-no').hide();
+							pageEmployeeEdit.elem.find('.message').html('Data has been saved successfully!');
+							pageEmployeeEdit.elem.find('.modal-department').modal();
+							
+						}else if(result.success.error){
+							pageEmployeeEdit.elem.find('.modal-error .modal-body p').html(result.success.error);
+							pageEmployeeEdit.elem.find('.modal-error').modal("show");
 						}
 					}
 			});

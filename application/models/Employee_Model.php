@@ -302,6 +302,68 @@
 			return $returndata;
 		}
 
+		public function employeeUpdate($id, $updatePost){
+			if($updatePost['changePassword'] == 'no'){
+				$sql = $this->db->query("
+					UPDATE 
+					employee 
+					SET
+					emp_first_name = " .$this->db->escape($updatePost['emp_first_name']). " ,
+					emp_middle_name = " .$this->db->escape($updatePost['emp_middle_name']). " ,
+					emp_last_name = " .$this->db->escape($updatePost['emp_last_name']). " ,
+					emp_ext_name = " .$this->db->escape($updatePost['emp_ext_name']). " ,
+					emp_birthday = " .$this->db->escape($updatePost['emp_birthday']). " 
+					WHERE 
+					emp_id = " .$this->db->escape($id));
+				$returndata = 1;
+			}else if($updatePost['changePassword'] == 'yes'){
+				if($updatePost['currentPassword'] == ""){
+					$returndata['error'] = "Enter your current password";
+				}else if($updatePost['newPassword'] == ""){
+					$returndata['error'] = "Enter your new password";
+				}else{
+					if(isset($_POST['currentPassword']) && isset($_POST['newPassword'])){
+						$password = $_POST['currentPassword'];
+
+						$sql = $this->db->query("SELECT * FROM `employee` WHERE `emp_id` = " .$this->db->escape($id));
+						$row = $sql->row();
+						$error = 'error';
+							if(password_verify($password, $row->emp_password)){
+								if(strlen($updatePost['newPassword']) < 8){
+									$returndata['error'] = "Please input at least 8 characters for the new password";
+									//return $error;
+								}else if (!preg_match('/[\'^£$%&*()}!{@#~?><>,|=_+¬-]/', $updatePost['newPassword'])){
+								    $returndata['error'] = "Please input at least 1 (one) special character in your new password";
+								}else if(!preg_match('~[0-9]~', $updatePost['newPassword'])){
+									$returndata['error'] = "Please input at least 1 (one) digit in your new password";
+								}else{
+									$newPassword = password_hash($updatePost['newPassword'], PASSWORD_BCRYPT);
+									$sql = $this->db->query("
+										UPDATE 
+										employee 
+										SET
+										emp_first_name = " .$this->db->escape($updatePost['emp_first_name']). " ,
+										emp_middle_name = " .$this->db->escape($updatePost['emp_middle_name']). " ,
+										emp_last_name = " .$this->db->escape($updatePost['emp_last_name']). " ,
+										emp_ext_name = " .$this->db->escape($updatePost['emp_ext_name']). " ,
+										emp_birthday = " .$this->db->escape($updatePost['emp_birthday']). " ,
+										emp_password = " .$this->db->escape($newPassword). " 
+										WHERE 
+										emp_id = " .$this->db->escape($id));
+									$returndata = 2;
+								}
+								
+							}else{
+								$returndata['error'] = "Invalid current password!";
+							}
+						
+					}
+				}
+				
+			}
+			return $returndata;
+		}
+
 		public function updateSSSInfo($id, $updatePost){
 			if(strlen($updatePost['sss_no']) != 12){
 				$returndata['error'] = "Invalid length of SSS Number!";
