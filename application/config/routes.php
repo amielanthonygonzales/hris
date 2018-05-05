@@ -59,6 +59,7 @@ $route['employee-list'] = 'app/Employee_Controller/employeeList';
 $route['employee-edit/(:any)'] = 'app/Employee_Controller/employeeEdit/$1';
 $route['employee-restore-list'] = 'app/Employee_Controller/employeeRestore';
 $route['employee-restore/(:any)'] = 'app/Employee_Controller/employeeRestoreData/$1';
+$route['admin-profile/(:any)'] = 'app/Employee_Controller/adminProfile/$1';
 
 //api
 $route['get-all-department'] = 'api/Employee_Controller/getAllDepartment';
@@ -66,6 +67,7 @@ $route['add-employee'] = 'api/Employee_Controller/addEmployee';
 $route['get-all-employee'] = 'api/Employee_Controller/getAllEmployee';
 $route['get-employee/(:any)'] = 'api/Employee_Controller/getEmployee/$1';
 $route['update-employee/(:any)'] = 'api/Employee_Controller/updateEmployeeInfo/$1';
+$route['update-admin/(:any)'] = 'api/Employee_Controller/updateAdminInfo/$1';
 $route['employee-update/(:any)'] = 'api/Employee_Controller/employeeUpdate/$1';
 $route['read-notification'] = 'api/Employee_Controller/readNotification';
 $route['delete-employee/(:any)'] = 'api/Employee_Controller/deleteEmployeeInfo/$1';

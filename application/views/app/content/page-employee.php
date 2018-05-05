@@ -112,6 +112,20 @@
 					<label class="control-label">Department</label>
 					<select class="form-control listDepartment"></select>
 				</div>
+				<div class="am-checkbox">
+                    	<input id="check1" type="checkbox" class="icheck changePassword">
+                    	<label for="check1">Change Password</label>
+                    </div>
+					<div class="passwordForm">
+						<div class="form-group">
+							<label>Current Password <code>*</code></label>
+							<input class="form-control editEmp-currentPass" type="password" name="currentPass" placeholder="Current Password" />
+						</div>
+						<div class="form-group">
+							<label>New Password (at least 8 alphanumeric characters w/special characters) <code>*</code></label>
+							<input class="form-control editEmp-newPass" type="password" name="newPass" placeholder="New Password" />
+						</div>
+					</div>
 
 			</div>
 		</div>
@@ -788,11 +802,36 @@
 					if(username == sessionUsername){
 						pageEmployee.elem.find('.required-textfield').removeAttr('readonly');
 						pageEmployee.elem.find('.email-group').hide();
+						pageEmployee.elem.find('.btn-deleted-employee').hide();
+
+						 pageEmployee.elem.find('.empUsername').keydown(function(e){
+							if(e.which == 9){
+								return true;
+							}else{
+								return false;
+							}
+						});
+						pageEmployee.elem.find('.empUsername').on("contextmenu",function(){
+					       return false;
+					    }); 
+
+					    pageEmployee.elem.find('.empEmail').keydown(function(e){
+							if(e.which == 9){
+								return true;
+							}else{
+								return false;
+							}
+						});
+						pageEmployee.elem.find('.empEmail').on("contextmenu",function(){
+					       return false;
+					    }); 
+	    
 						globalUser = sessionUsername;
 						//pageEmployee.elem.find('.username-group').hide();
 					}
 					else{
 						pageEmployee.elem.find('.employee-panel').hide();
+						pageEmployee.elem.find('.btn-deleted-employee').show();
 					}
 				}
 			});	

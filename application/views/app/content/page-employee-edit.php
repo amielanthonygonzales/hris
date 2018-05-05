@@ -45,8 +45,8 @@
 				<button type="button" name="btnSave" value="save" class ="btn btn-success btn-space btn-save-employeeEdit">
 					<i class="icon icon-left s7-diskette"></i>SAVE
 				</button>
-				<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-back-employeeEdit">
-					<a href="<?php echo base_url('logout'); ?>"><i class="icon icon-left s7-power"></i>LOG OUT</a>
+				<button type="button" name="btnBack" value="back" class ="btn btn-success btn-space btn-logout-employeeEdit">
+					<i class="icon icon-left s7-power"></i>LOG OUT
 				</button>
 			</div>	
 		</div>
@@ -177,6 +177,10 @@
 				pageEmployeeEdit.elem.find('.editEmp-newPass').val('');
 				pageEmployeeEdit.passwordChange = 'no';
 			}
+		});
+
+		pageEmployeeEdit.elem.find('.btn-logout-employeeEdit').off("click").click(function(e){
+			window.parent.location = "<?php echo base_url('logout')?>";
 		});
 
 		pageEmployeeEdit.elem.find('.btn-save-employeeEdit').off("click").click(function(event){

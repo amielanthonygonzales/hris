@@ -287,7 +287,8 @@
 					emp_id = " .$this->db->escape($id));
 				$returndata = 1;
 			}
-			if(strlen($updatePost['sss_no']) == 3 || strlen($updatePost['pagibig_mid_no']) == 3 || strlen($updatePost['pagibig_no']) == 3){
+			if(strlen($updatePost['sss_no']) == 3 || strlen($updatePost['pagibig_mid_no']) == 3 || strlen($updatePost['pagibig_no']) == 3 
+			  || strlen($updatePost['sss_no']) == 2 || strlen($updatePost['pagibig_mid_no']) == 2 || strlen($updatePost['pagibig_no']) == 2){
 				$sql = $this->db->query("
 					UPDATE 
 					employee 
@@ -364,6 +365,125 @@
 			return $returndata;
 		}
 
+		public function updateAdminInfo($id, $updatePost){
+			if($updatePost['changePassword'] == 'no'){
+				if(strlen($updatePost['sss_no']) != 12){
+					$returndata['error'] = "Invalid length of SSS Number!";
+				}else if(strlen($updatePost['pagibig_mid_no']) != 14){
+					$returndata['error'] = "Invalid length of Pag-Ibig MID Number!";
+				}else if(strlen($updatePost['pagibig_no']) != 14){
+					$returndata['error'] = "Invalid length of Pag-Ibig Number!";
+				}else{
+					$sql = $this->db->query("
+						UPDATE 
+						employee 
+						SET
+						emp_first_name = " .$this->db->escape($updatePost['emp_first_name']). ", 
+						emp_middle_name = " .$this->db->escape($updatePost['emp_middle_name']). ", 
+						emp_last_name = " .$this->db->escape($updatePost['emp_last_name']). ", 
+						emp_ext_name = " .$this->db->escape($updatePost['emp_ext_name']). ", 
+						emp_birthday = " .$this->db->escape($updatePost['emp_birthday']). ", 
+						emp_dept = " .$this->db->escape($updatePost['emp_dept']). " ,
+						emp_salary = " .$this->db->escape($updatePost['emp_salary']). " 
+						WHERE 
+						emp_id = " .$this->db->escape($id));
+					$returndata = 1;
+				}
+				if(strlen($updatePost['sss_no']) == 3 || strlen($updatePost['pagibig_mid_no']) == 3 || strlen($updatePost['pagibig_no']) == 3 
+				  || strlen($updatePost['sss_no']) == 2 || strlen($updatePost['pagibig_mid_no']) == 2 || strlen($updatePost['pagibig_no']) == 2){
+					$sql = $this->db->query("
+						UPDATE 
+						employee 
+						SET
+						emp_first_name = " .$this->db->escape($updatePost['emp_first_name']). ", 
+						emp_middle_name = " .$this->db->escape($updatePost['emp_middle_name']). ", 
+						emp_last_name = " .$this->db->escape($updatePost['emp_last_name']). ", 
+						emp_ext_name = " .$this->db->escape($updatePost['emp_ext_name']). ", 
+						emp_birthday = " .$this->db->escape($updatePost['emp_birthday']). ", 
+						emp_dept = " .$this->db->escape($updatePost['emp_dept']). " ,
+						emp_salary = " .$this->db->escape($updatePost['emp_salary']). " 
+						WHERE 
+						emp_id = " .$this->db->escape($id));
+					$returndata = 1;
+				}
+			}else if($updatePost['changePassword'] == 'yes'){
+				if($updatePost['currentPassword'] == ""){
+					$returndata['error'] = "Enter your current password";
+				}else if($updatePost['newPassword'] == ""){
+					$returndata['error'] = "Enter your new password";
+				}else{
+					if(isset($_POST['currentPassword']) && isset($_POST['newPassword'])){
+						$password = $_POST['currentPassword'];
+
+						$sql = $this->db->query("SELECT * FROM `employee` WHERE `emp_id` = " .$this->db->escape($id));
+						$row = $sql->row();
+						$error = 'error';
+							if(password_verify($password, $row->emp_password)){
+								if(strlen($updatePost['newPassword']) < 8){
+									$returndata['error'] = "Please input at least 8 characters for the new password";
+									//return $error;
+								}else if (!preg_match('/[\'^£$%&*()}!{@#~?><>,|=_+¬-]/', $updatePost['newPassword'])){
+								    $returndata['error'] = "Please input at least 1 (one) special character in your new password";
+								}else if(!preg_match('~[0-9]~', $updatePost['newPassword'])){
+									$returndata['error'] = "Please input at least 1 (one) digit in your new password";
+								}else{
+									if(strlen($updatePost['sss_no']) != 12){
+										$returndata['error'] = "Invalid length of SSS Number!";
+									}else if(strlen($updatePost['pagibig_mid_no']) != 14){
+										$returndata['error'] = "Invalid length of Pag-Ibig MID Number!";
+									}else if(strlen($updatePost['pagibig_no']) != 14){
+										$returndata['error'] = "Invalid length of Pag-Ibig Number!";
+									}else{
+										$newPassword = password_hash($updatePost['newPassword'], PASSWORD_BCRYPT);
+										$sql = $this->db->query("
+											UPDATE 
+											employee 
+											SET
+											emp_first_name = " .$this->db->escape($updatePost['emp_first_name']). " ,
+											emp_middle_name = " .$this->db->escape($updatePost['emp_middle_name']). " ,
+											emp_last_name = " .$this->db->escape($updatePost['emp_last_name']). " ,
+											emp_ext_name = " .$this->db->escape($updatePost['emp_ext_name']). " ,
+											emp_birthday = " .$this->db->escape($updatePost['emp_birthday']). " ,
+											emp_dept = " .$this->db->escape($updatePost['emp_dept']). " ,
+											emp_salary = " .$this->db->escape($updatePost['emp_salary']). ", 
+											emp_password = " .$this->db->escape($newPassword). " 
+											WHERE 
+											emp_id = " .$this->db->escape($id));
+										$returndata = 2;
+									}
+									if(strlen($updatePost['sss_no']) == 3 || strlen($updatePost['pagibig_mid_no']) == 3 || strlen($updatePost['pagibig_no']) == 3 
+									  || strlen($updatePost['sss_no']) == 2 || strlen($updatePost['pagibig_mid_no']) == 2 || strlen($updatePost['pagibig_no']) == 2){
+										$newPassword = password_hash($updatePost['newPassword'], PASSWORD_BCRYPT);
+										$sql = $this->db->query("
+											UPDATE 
+											employee 
+											SET
+											emp_first_name = " .$this->db->escape($updatePost['emp_first_name']). " ,
+											emp_middle_name = " .$this->db->escape($updatePost['emp_middle_name']). " ,
+											emp_last_name = " .$this->db->escape($updatePost['emp_last_name']). " ,
+											emp_ext_name = " .$this->db->escape($updatePost['emp_ext_name']). " ,
+											emp_birthday = " .$this->db->escape($updatePost['emp_birthday']). " ,
+											emp_dept = " .$this->db->escape($updatePost['emp_dept']). " ,
+											emp_salary = " .$this->db->escape($updatePost['emp_salary']). ", 
+											emp_password = " .$this->db->escape($newPassword). " 
+											WHERE 
+											emp_id = " .$this->db->escape($id));
+										$returndata = 2;
+									}
+									
+								}
+								
+							}else{
+								$returndata['error'] = "Invalid current password!";
+							}
+						
+					}
+				}
+				
+			}
+			return $returndata;
+		}
+
 		public function updateSSSInfo($id, $updatePost){
 			if(strlen($updatePost['sss_no']) != 12){
 				$returndata['error'] = "Invalid length of SSS Number!";
@@ -385,7 +505,8 @@
 					`sss_emp_id` = ".$this->db->escape($id));
 				$returndata = 1;
 			}
-			if(strlen($updatePost['sss_no']) == 3 || strlen($updatePost['pagibig_mid_no']) == 3 || strlen($updatePost['pagibig_no']) == 3){
+			if(strlen($updatePost['sss_no']) == 3 || strlen($updatePost['pagibig_mid_no']) == 3 || strlen($updatePost['pagibig_no']) == 3 
+				|| strlen($updatePost['sss_no']) == 2 || strlen($updatePost['pagibig_mid_no']) == 2 || strlen($updatePost['pagibig_no']) == 2){
 				$sql = $this->db->query("
 				UPDATE 
 					`sss` 
@@ -400,6 +521,236 @@
 				$returndata = 1;
 			}
 			return $returndata;
+		}
+
+		public function updateAdminSSS($id, $updatePost){
+					
+			if($updatePost['changePassword'] == 'no'){
+				if(strlen($updatePost['sss_no']) != 12){
+					$returndata['error'] = "Invalid length of SSS Number!";
+				}else if(strlen($updatePost['pagibig_mid_no']) != 14){
+					$returndata['error'] = "Invalid length of Pag-Ibig MID Number!";
+				}else if(strlen($updatePost['pagibig_no']) != 14){
+					$returndata['error'] = "Invalid length of Pag-Ibig Number!";
+				}else{
+					$sql = $this->db->query("
+						UPDATE 
+							`sss` 
+						SET 
+							`sss_no` = " .$this->db->escape($updatePost['sss_no']). " ,
+							`ss_contribution` = " .$this->db->escape($updatePost['ss_contribution']). " ,
+							`ec_contribution` = " .$this->db->escape($updatePost['ec_contribution']). " ,
+							`er_contribution` = " .$this->db->escape($updatePost['er_contribution']). " ,
+							`ee_contribution` = " .$this->db->escape($updatePost['ee_contribution']). " 
+						WHERE 
+							`sss_emp_id` = ".$this->db->escape($id));
+					$returndata = 1;
+				}
+				if(strlen($updatePost['sss_no']) == 3 || strlen($updatePost['pagibig_mid_no']) == 3 || strlen($updatePost['pagibig_no']) == 3 
+				  || strlen($updatePost['sss_no']) == 2 || strlen($updatePost['pagibig_mid_no']) == 2 || strlen($updatePost['pagibig_no']) == 2){
+					$sql = $this->db->query("
+						UPDATE 
+							`sss` 
+						SET 
+							`sss_no` = " .$this->db->escape($updatePost['sss_no']). " ,
+							`ss_contribution` = " .$this->db->escape($updatePost['ss_contribution']). " ,
+							`ec_contribution` = " .$this->db->escape($updatePost['ec_contribution']). " ,
+							`er_contribution` = " .$this->db->escape($updatePost['er_contribution']). " ,
+							`ee_contribution` = " .$this->db->escape($updatePost['ee_contribution']). " 
+						WHERE 
+							`sss_emp_id` = ".$this->db->escape($id));
+					$returndata = 1;
+				}
+			}else if($updatePost['changePassword'] == 'yes'){
+				if($updatePost['currentPassword'] == ""){
+					$returndata['error'] = "Enter your current password";
+				}else if($updatePost['newPassword'] == ""){
+					$returndata['error'] = "Enter your new password";
+				}else{
+					if(isset($_POST['currentPassword']) && isset($_POST['newPassword'])){
+						$password = $_POST['currentPassword'];
+
+						$sql = $this->db->query("SELECT * FROM `employee` WHERE `emp_id` = " .$this->db->escape($id));
+						$row = $sql->row();
+						$error = 'error';
+							if(password_verify($password, $row->emp_password)){
+								if(strlen($updatePost['newPassword']) < 8){
+									$returndata['error'] = "Please input at least 8 characters for the new password";
+									//return $error;
+								}else if (!preg_match('/[\'^£$%&*()}!{@#~?><>,|=_+¬-]/', $updatePost['newPassword'])){
+								    $returndata['error'] = "Please input at least 1 (one) special character in your new password";
+								}else if(!preg_match('~[0-9]~', $updatePost['newPassword'])){
+									$returndata['error'] = "Please input at least 1 (one) digit in your new password";
+								}else{
+									if(strlen($updatePost['sss_no']) != 12){
+										$returndata['error'] = "Invalid length of SSS Number!";
+									}else if(strlen($updatePost['pagibig_mid_no']) != 14){
+										$returndata['error'] = "Invalid length of Pag-Ibig MID Number!";
+									}else if(strlen($updatePost['pagibig_no']) != 14){
+										$returndata['error'] = "Invalid length of Pag-Ibig Number!";
+									}else{
+										$sql = $this->db->query("
+											UPDATE 
+												`sss` 
+											SET 
+												`sss_no` = " .$this->db->escape($updatePost['sss_no']). " ,
+												`ss_contribution` = " .$this->db->escape($updatePost['ss_contribution']). " ,
+												`ec_contribution` = " .$this->db->escape($updatePost['ec_contribution']). " ,
+												`er_contribution` = " .$this->db->escape($updatePost['er_contribution']). " ,
+												`ee_contribution` = " .$this->db->escape($updatePost['ee_contribution']). " 
+											WHERE 
+												`sss_emp_id` = ".$this->db->escape($id));
+										$returndata = 2;
+									}
+									if(strlen($updatePost['sss_no']) == 3 || strlen($updatePost['pagibig_mid_no']) == 3 || strlen($updatePost['pagibig_no']) == 3 
+									  || strlen($updatePost['sss_no']) == 2 || strlen($updatePost['pagibig_mid_no']) == 2 || strlen($updatePost['pagibig_no']) == 2){
+										$sql = $this->db->query("
+											UPDATE 
+												`sss` 
+											SET 
+												`sss_no` = " .$this->db->escape($updatePost['sss_no']). " ,
+												`ss_contribution` = " .$this->db->escape($updatePost['ss_contribution']). " ,
+												`ec_contribution` = " .$this->db->escape($updatePost['ec_contribution']). " ,
+												`er_contribution` = " .$this->db->escape($updatePost['er_contribution']). " ,
+												`ee_contribution` = " .$this->db->escape($updatePost['ee_contribution']). " 
+											WHERE 
+												`sss_emp_id` = ".$this->db->escape($id));
+										$returndata = 2;
+									}
+									
+								}
+								
+							}else{
+								$returndata['error'] = "Invalid current password!";
+							}
+						
+					}
+				}
+				
+			}
+			return $returndata;
+		
+		}
+
+		public function updateAdminPagibig($id, $updatePost){
+					
+			if($updatePost['changePassword'] == 'no'){
+				if(strlen($updatePost['sss_no']) != 12){
+					$returndata['error'] = "Invalid length of SSS Number!";
+				}else if(strlen($updatePost['pagibig_mid_no']) != 14){
+					$returndata['error'] = "Invalid length of Pag-Ibig MID Number!";
+				}else if(strlen($updatePost['pagibig_no']) != 14){
+					$returndata['error'] = "Invalid length of Pag-Ibig Number!";
+				}else{
+					$sql = $this->db->query("
+						UPDATE 
+						pag_ibig 
+						SET 
+						pagibig_mid_no = ".$this->db->escape($updatePost['pagibig_mid_no'])." ,
+						pagibig_no = ".$this->db->escape($updatePost['pagibig_no'])." , 
+						pagibig_ee_share = ".$this->db->escape($updatePost['pagibig_ee_share'])." ,
+						pagibig_er_share = ".$this->db->escape($updatePost['pagibig_er_share'])." ,
+						pagibig_mem_prog = ".$this->db->escape($updatePost['pagibig_mem_prog'])." ,
+						monthly_compen = ".$this->db->escape($updatePost['monthly_compen'])." ,
+						pagibig_remarks = ".$this->db->escape($updatePost['pagibig_remarks'])." ,
+						pagibig_remarks_date = ".$this->db->escape($updatePost['pagibig_remarks_date'])." 
+						WHERE 
+						pagibig_emp_id = ".$this->db->escape($id));
+					$returndata = 1;
+				}
+				if(strlen($updatePost['sss_no']) == 3 || strlen($updatePost['pagibig_mid_no']) == 3 || strlen($updatePost['pagibig_no']) == 3 
+				  || strlen($updatePost['sss_no']) == 2 || strlen($updatePost['pagibig_mid_no']) == 2 || strlen($updatePost['pagibig_no']) == 2){
+					$sql = $this->db->query("
+						UPDATE 
+						pag_ibig 
+						SET 
+						pagibig_mid_no = ".$this->db->escape($updatePost['pagibig_mid_no'])." ,
+						pagibig_no = ".$this->db->escape($updatePost['pagibig_no'])." , 
+						pagibig_ee_share = ".$this->db->escape($updatePost['pagibig_ee_share'])." ,
+						pagibig_er_share = ".$this->db->escape($updatePost['pagibig_er_share'])." ,
+						pagibig_mem_prog = ".$this->db->escape($updatePost['pagibig_mem_prog'])." ,
+						monthly_compen = ".$this->db->escape($updatePost['monthly_compen'])." ,
+						pagibig_remarks = ".$this->db->escape($updatePost['pagibig_remarks'])." ,
+						pagibig_remarks_date = ".$this->db->escape($updatePost['pagibig_remarks_date'])." 
+						WHERE 
+						pagibig_emp_id = ".$this->db->escape($id));
+					$returndata = 1;
+				}
+			}else if($updatePost['changePassword'] == 'yes'){
+				if($updatePost['currentPassword'] == ""){
+					$returndata['error'] = "Enter your current password";
+				}else if($updatePost['newPassword'] == ""){
+					$returndata['error'] = "Enter your new password";
+				}else{
+					if(isset($_POST['currentPassword']) && isset($_POST['newPassword'])){
+						$password = $_POST['currentPassword'];
+
+						$sql = $this->db->query("SELECT * FROM `employee` WHERE `emp_id` = " .$this->db->escape($id));
+						$row = $sql->row();
+						$error = 'error';
+							if(password_verify($password, $row->emp_password)){
+								if(strlen($updatePost['newPassword']) < 8){
+									$returndata['error'] = "Please input at least 8 characters for the new password";
+									//return $error;
+								}else if (!preg_match('/[\'^£$%&*()}!{@#~?><>,|=_+¬-]/', $updatePost['newPassword'])){
+								    $returndata['error'] = "Please input at least 1 (one) special character in your new password";
+								}else if(!preg_match('~[0-9]~', $updatePost['newPassword'])){
+									$returndata['error'] = "Please input at least 1 (one) digit in your new password";
+								}else{
+									if(strlen($updatePost['sss_no']) != 12){
+										$returndata['error'] = "Invalid length of SSS Number!";
+									}else if(strlen($updatePost['pagibig_mid_no']) != 14){
+										$returndata['error'] = "Invalid length of Pag-Ibig MID Number!";
+									}else if(strlen($updatePost['pagibig_no']) != 14){
+										$returndata['error'] = "Invalid length of Pag-Ibig Number!";
+									}else{
+										$sql = $this->db->query("
+											UPDATE 
+											pag_ibig 
+											SET 
+											pagibig_mid_no = ".$this->db->escape($updatePost['pagibig_mid_no'])." ,
+											pagibig_no = ".$this->db->escape($updatePost['pagibig_no'])." , 
+											pagibig_ee_share = ".$this->db->escape($updatePost['pagibig_ee_share'])." ,
+											pagibig_er_share = ".$this->db->escape($updatePost['pagibig_er_share'])." ,
+											pagibig_mem_prog = ".$this->db->escape($updatePost['pagibig_mem_prog'])." ,
+											monthly_compen = ".$this->db->escape($updatePost['monthly_compen'])." ,
+											pagibig_remarks = ".$this->db->escape($updatePost['pagibig_remarks'])." ,
+											pagibig_remarks_date = ".$this->db->escape($updatePost['pagibig_remarks_date'])." 
+											WHERE 
+											pagibig_emp_id = ".$this->db->escape($id));
+										$returndata = 2;
+									}
+									if(strlen($updatePost['sss_no']) == 3 || strlen($updatePost['pagibig_mid_no']) == 3 || strlen($updatePost['pagibig_no']) == 3 
+									  || strlen($updatePost['sss_no']) == 2 || strlen($updatePost['pagibig_mid_no']) == 2 || strlen($updatePost['pagibig_no']) == 2){
+										$sql = $this->db->query("
+											UPDATE 
+											pag_ibig 
+											SET 
+											pagibig_mid_no = ".$this->db->escape($updatePost['pagibig_mid_no'])." ,
+											pagibig_no = ".$this->db->escape($updatePost['pagibig_no'])." , 
+											pagibig_ee_share = ".$this->db->escape($updatePost['pagibig_ee_share'])." ,
+											pagibig_er_share = ".$this->db->escape($updatePost['pagibig_er_share'])." ,
+											pagibig_mem_prog = ".$this->db->escape($updatePost['pagibig_mem_prog'])." ,
+											monthly_compen = ".$this->db->escape($updatePost['monthly_compen'])." ,
+											pagibig_remarks = ".$this->db->escape($updatePost['pagibig_remarks'])." ,
+											pagibig_remarks_date = ".$this->db->escape($updatePost['pagibig_remarks_date'])." 
+											WHERE 
+											pagibig_emp_id = ".$this->db->escape($id));
+										$returndata = 2;
+									}
+									
+								}
+								
+							}else{
+								$returndata['error'] = "Invalid current password!";
+							}
+						
+					}
+				}
+				
+			}
+			return $returndata;
+		
 		}
 
 		public function updatePagibigInfo($id, $updatePost){

@@ -124,6 +124,20 @@
 
 		}
 
+		public function updateAdminInfo($id){
+			$this->benchmark->mark('start');
+			$updatePost = $this->input->post();
+			
+			$ret['success'] = $this->Employee_Model->updateAdminSSS($id, $updatePost);
+			$ret['success'] = $this->Employee_Model->updateAdminPagibig($id, $updatePost);
+			$ret['success'] = $this->Employee_Model->updateAdminInfo($id, $updatePost);
+			$this->benchmark->mark('end');
+			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($ret);
+
+		}
+
 		public function employeeUpdate($id){
 			$this->benchmark->mark('start');
 			$updatePost = $this->input->post();

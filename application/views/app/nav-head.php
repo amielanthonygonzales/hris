@@ -63,6 +63,7 @@
 		$('.profile').attr('title', 'Profile');
 	});
 
+
 	$.getJSON('<?php echo base_url('profile');?>', function(data){
 		$.each(data, function(key,value){
 			if(key == "user"){
