@@ -870,6 +870,7 @@
 
 		pagePagibigContri.companyInfo = result['company'];
 		pagePagibigContri.employeeInfo = result['employee'];
+		pagePagibigContri.employeeMID = result['employeeMID'];
 		pagePagibigContri.allEmployeeInfo = result['allEmployee'];
 		pagePagibigContri.getPaidContri = result['paid-contribution'];
 		
@@ -899,33 +900,72 @@
 
 		pagePagibigContri.totalER = 0;
 		pagePagibigContri.totalEE = 0;
+		pagePagibigContri.totalERMP2 = 0;
+		pagePagibigContri.totalEEMP2 = 0;
 		pagePagibigContri.total = 0;
+		pagePagibigContri.numberPage = 0;
 		
 		$.each(pagePagibigContri.employeeInfo, function(keyEmployee, valueEmployee){
-			keyEmployee += +1;
+			
 			pagePagibigContri.totalContri = 0;
+			keyEmployee += 1;
 
-			//console.log(valueEmployee);
-
-			pagePagibigContri.elem.find('.midNo'+keyEmployee).val(valueEmployee['pagibig_mid_no']);
+			
 			pagePagibigContri.elem.find('.name'+keyEmployee).val(valueEmployee['emp_last_name'].toUpperCase() + ", " + valueEmployee['emp_first_name'].toUpperCase() + " " + valueEmployee['emp_ext_name'].toUpperCase() + " " + valueEmployee['emp_middle_name'].toUpperCase());
-			pagePagibigContri.elem.find('.accountNo'+keyEmployee).val(valueEmployee['pagibig_no']);
-			pagePagibigContri.elem.find('.employeeShare'+keyEmployee).val(valueEmployee['pagibig_ee_share']);
-			pagePagibigContri.elem.find('.employerShare'+keyEmployee).val(valueEmployee['pagibig_er_share']);
-
 			pagePagibigContri.elem.find('.remarks'+keyEmployee).val(valueEmployee['pagibig_remarks'] + ": " + valueEmployee['pagibig_remarks_date']);
-			pagePagibigContri.elem.find('.member-program'+keyEmployee).val(valueEmployee['pagibig_mem_prog']);
 			pagePagibigContri.elem.find('.monthly'+keyEmployee).val(valueEmployee['monthly_compen']);
+			pagePagibigContri.elem.find('.period-covered'+keyEmployee).val(pagePagibigContri.monthlyCompen);
+				
 
-			pagePagibigContri.totalContri = parseInt(valueEmployee['pagibig_ee_share']) + parseInt(valueEmployee['pagibig_er_share']);
-			pagePagibigContri.elem.find('.total'+keyEmployee).val(pagePagibigContri.totalContri);
+			if(valueEmployee['pagibig_no'].length == 14 && valueEmployee['pagibig_mid_no'].length != 14){
+				pagePagibigContri.elem.find('.accountNo'+keyEmployee).val(valueEmployee['pagibig_no']);
 
-			pagePagibigContri.elem.find('.totalEmployee').val(keyEmployee);
-			pagePagibigContri.totalER += +parseInt(valueEmployee['pagibig_er_share']);
-			pagePagibigContri.totalEE += parseInt(valueEmployee['pagibig_ee_share']);
+				pagePagibigContri.elem.find('.member-program'+keyEmployee).val(valueEmployee['pagibig_mem_prog']);
+				
+				pagePagibigContri.elem.find('.employeeShare'+keyEmployee).val(valueEmployee['pagibig_ee_share']);
+				pagePagibigContri.elem.find('.employerShare'+keyEmployee).val(valueEmployee['pagibig_er_share']);
+				pagePagibigContri.totalContri = parseInt(valueEmployee['pagibig_ee_share']) + parseInt(valueEmployee['pagibig_er_share']);
+				pagePagibigContri.elem.find('.total'+keyEmployee).val(pagePagibigContri.totalContri);
+
+				pagePagibigContri.elem.find('.totalEmployee').val(keyEmployee);
+				pagePagibigContri.totalER += +parseInt(valueEmployee['pagibig_er_share']);
+				pagePagibigContri.totalEE += parseInt(valueEmployee['pagibig_ee_share']);
+			}
+			else if(valueEmployee['pagibig_mid_no'].length == 14 && valueEmployee['pagibig_no'].length != 14){
+				pagePagibigContri.elem.find('.midNo'+keyEmployee).val(valueEmployee['pagibig_mid_no']);
+				pagePagibigContri.elem.find('.member-program'+keyEmployee).val(valueEmployee['pagibig_mem_prog_two']);
+				pagePagibigContri.elem.find('.employeeShare'+keyEmployee).val(valueEmployee['pagibig_ee_share_mp_two']);
+				pagePagibigContri.elem.find('.employerShare'+keyEmployee).val(valueEmployee['pagibig_er_share_mp_two']);
+				pagePagibigContri.totalContri = parseInt(valueEmployee['pagibig_ee_share_mp_two']) + parseInt(valueEmployee['pagibig_er_share_mp_two']);
+				pagePagibigContri.elem.find('.total'+keyEmployee).val(pagePagibigContri.totalContri);
+
+				pagePagibigContri.elem.find('.totalEmployee').val(keyEmployee);
+				pagePagibigContri.totalER += +parseInt(valueEmployee['pagibig_er_share_mp_two']);
+				pagePagibigContri.totalEE += parseInt(valueEmployee['pagibig_ee_share_mp_two']);
+			}
+
+			else if(valueEmployee['pagibig_mid_no'].length == 14 && valueEmployee['pagibig_no'].length == 14){
+				pagePagibigContri.elem.find('.midNo'+keyEmployee).val(valueEmployee['pagibig_mid_no']);
+				pagePagibigContri.elem.find('.accountNo'+keyEmployee).val(valueEmployee['pagibig_no']);
+				pagePagibigContri.elem.find('.member-program'+keyEmployee).val(valueEmployee['pagibig_mem_prog_two'] + ", " + valueEmployee['pagibig_mem_prog']);
+				pagePagibigContri.elem.find('.employeeShare'+keyEmployee).val(parseInt(valueEmployee['pagibig_ee_share_mp_two']) + parseInt(valueEmployee['pagibig_ee_share']));
+				pagePagibigContri.elem.find('.employerShare'+keyEmployee).val(parseInt(valueEmployee['pagibig_er_share']) + parseInt(valueEmployee['pagibig_er_share_mp_two']));
+				
+
+				pagePagibigContri.elem.find('.totalEmployee').val(keyEmployee);
+				pagePagibigContri.totalER += +parseInt(valueEmployee['pagibig_er_share']);
+				pagePagibigContri.totalEE += parseInt(valueEmployee['pagibig_ee_share']);
+				pagePagibigContri.totalERMP2 += +parseInt(valueEmployee['pagibig_er_share_mp_two']);
+				pagePagibigContri.totalEEMP2 += parseInt(valueEmployee['pagibig_ee_share_mp_two']);
+
+				pagePagibigContri.totalContri = parseInt(valueEmployee['pagibig_ee_share_mp_two']) + parseInt(valueEmployee['pagibig_er_share_mp_two']) + parseInt(valueEmployee['pagibig_er_share']) + parseInt(valueEmployee['pagibig_ee_share']);
+				pagePagibigContri.elem.find('.total'+keyEmployee).val(pagePagibigContri.totalContri);
+			}
+
+			
 			// console.log(valueEmployee);
 
-			pagePagibigContri.elem.find('.period-covered'+keyEmployee).val(pagePagibigContri.monthlyCompen);
+			
 		});
 		pagePagibigContri.total = pagePagibigContri.totalER + pagePagibigContri.totalEE;
 

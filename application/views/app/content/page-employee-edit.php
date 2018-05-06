@@ -101,11 +101,11 @@
 					</div>
 					<div class="form-group">
 						<label for="empSalary">Salary</label>
-						<input class="form-control editEmp-salary" type="number" name="salary" placeholder="Salary" required readonly />
+						<input class="form-control editEmp-salary" type="number" name="salary" placeholder="Salary"/>
 					</div>
 					<div class="form-group">
 						<label>Department</label>
-						<input class="form-control editEmp-dept" type="text" name="empDept" placeholder="Department" required readonly />
+						<input class="form-control editEmp-dept" type="text" name="empDept" placeholder="Department"/>
 					</div>
 			</form>
 		</div>
@@ -120,7 +120,7 @@
 				<div class="panel-body">
 					<div class="form-group">
 						<label>SSS Number</label>
-						<input class="form-control editEmp-sss" type="text" name="empSss" placeholder="SSS Number" required readonly />
+						<input class="form-control editEmp-sss" type="text" name="empSss" placeholder="SSS Number" required />
 					</div>
 				</div>
 			</div>
@@ -133,7 +133,7 @@
 				<div class="panel-body">
 					<div class="form-group">
 						<label>Pag-Ibig Number</label>
-						<input class="form-control editEmp-pagibig" type="text" name="empPagibig" placeholder="Pag-Ibig Number" required readonly />
+						<input class="form-control editEmp-pagibig" type="text" name="empPagibig" placeholder="Pag-Ibig Number" required/>
 					</div>
 				</div>
 			</div>
@@ -182,6 +182,61 @@
 		pageEmployeeEdit.elem.find('.btn-logout-employeeEdit').off("click").click(function(e){
 			window.parent.location = "<?php echo base_url('logout')?>";
 		});
+
+		pageEmployeeEdit.elem.find('.engagement-date').keydown(function(e){
+			if(e.which == 9){
+				return true;
+			}else{
+				return false;
+			}
+		});
+		pageEmployeeEdit.elem.find('.engagement-date').on("contextmenu",function(){
+	       return false;
+	    }); 
+
+	    pageEmployeeEdit.elem.find('.editEmp-sss').keydown(function(e){
+			if(e.which == 9){
+				return true;
+			}else{
+				return false;
+			}
+		});
+		pageEmployeeEdit.elem.find('.editEmp-sss').on("contextmenu",function(){
+	       return false;
+	    });
+
+	    pageEmployeeEdit.elem.find('.editEmp-pagibig').keydown(function(e){
+			if(e.which == 9){
+				return true;
+			}else{
+				return false;
+			}
+		});
+		pageEmployeeEdit.elem.find('.editEmp-pagibig').on("contextmenu",function(){
+	       return false;
+	    });
+
+	    pageEmployeeEdit.elem.find('.editEmp-dept').keydown(function(e){
+			if(e.which == 9){
+				return true;
+			}else{
+				return false;
+			}
+		});
+		pageEmployeeEdit.elem.find('.editEmp-dept').on("contextmenu",function(){
+	       return false;
+	    });
+
+	    pageEmployeeEdit.elem.find('.editEmp-salary').keydown(function(e){
+			if(e.which == 9){
+				return true;
+			}else{
+				return false;
+			}
+		});
+		pageEmployeeEdit.elem.find('.editEmp-salary').on("contextmenu",function(){
+	       return false;
+	    });
 
 		pageEmployeeEdit.elem.find('.btn-save-employeeEdit').off("click").click(function(event){
 			pageEmployeeEdit.content = {

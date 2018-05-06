@@ -47,6 +47,8 @@
 			return $sql->result();
 		}
 
+		
+
 		public function getPaidPagibig($args){
 			if(!isset($args['offset'])){
 				$args['offset'] = 0;

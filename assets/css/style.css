@@ -112,6 +112,21 @@ a:hover{
     margin-top: 32px;
 }
 
+#pageAdminProfile .dash-container{
+    border-width: 0;
+    box-shadow: none;
+    padding: 1px 1px;
+    font-size: 26px;
+}
+
+#pageAdminProfile .dash-container-sss{
+    border-width: 0;
+    box-shadow: none;
+    padding: 1px 1px;
+    font-size: 26px;
+    margin-top: 32px;
+}
+
 #pageCompany .dash-container{
     border-width: 0;
     box-shadow: none;

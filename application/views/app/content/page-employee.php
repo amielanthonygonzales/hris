@@ -207,25 +207,26 @@
 					</div>
 					<div class="panel-body pagibig-panel">
 						<div class="form-group">
-							<label for="pagibig-mid-number">Pag-Ibig MID No</label>
+							<label >Pag-Ibig Number</label>
 							<div class="row form-group">
 								<div class="col-md-3">
-									<input class="form-control pagibig-mid-number1" type="text" name="pagibigMidNumber" required />
+									<input class="form-control pagibig-number1" type="text" name="pagibigNumber" required />
 								</div>
 								<div class="col-md-1">
 									<div class="dash-container">-</div>
 								</div>
 								<div class="col-md-3">
-									<input class="form-control pagibig-mid-number2" type="text" name="pagibigMidNumber" required />
+									<input class="form-control pagibig-number2" type="text" name="pagibigNumber" required />
 								</div>
 								<div class="col-md-1">
 									<div class="dash-container">-</div>
 								</div>
 								<div class="col-md-3">
-									<input class="form-control pagibig-mid-number3" type="text" name="pagibigMidNumber" required />
+									<input class="form-control pagibig-number3" type="text" name="pagibigNumber" required />
 								</div>
 							</div>
 						</div>
+						
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
@@ -246,35 +247,35 @@
 	                    </div>
 						<div class="mp2-group">
 							<div class="form-group">
-								<label >Pag-Ibig Number</label>
+								<label for="pagibig-mid-number">Pag-Ibig MID No</label>
 								<div class="row form-group">
 									<div class="col-md-3">
-										<input class="form-control pagibig-number1" type="text" name="pagibigNumber" required />
+										<input class="form-control pagibig-mid-number1" type="text" name="pagibigMidNumber" required />
 									</div>
 									<div class="col-md-1">
 										<div class="dash-container">-</div>
 									</div>
 									<div class="col-md-3">
-										<input class="form-control pagibig-number2" type="text" name="pagibigNumber" required />
+										<input class="form-control pagibig-mid-number2" type="text" name="pagibigMidNumber" required />
 									</div>
 									<div class="col-md-1">
 										<div class="dash-container">-</div>
 									</div>
 									<div class="col-md-3">
-										<input class="form-control pagibig-number3" type="text" name="pagibigNumber" required />
+										<input class="form-control pagibig-mid-number3" type="text" name="pagibigMidNumber" required />
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="ee-share">EE Share For Pag-Ibig No</label>
+										<label for="ee-share">EE Share For MID No</label>
 										<input class="form-control ee-share-mp2" type="text" name="eeShare" placeholder="EE Share" required />
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="er-share">ER Share For Pag-Ibig No</label>
+										<label for="er-share">ER Share For MID No</label>
 										<input class="form-control er-share-mp2" type="text" name="erShare" placeholder="ER Share" required />
 									</div>
 								</div>
@@ -310,7 +311,7 @@
 		                            <span class="input-group-addon btn btn-primary">
 		                            	<i class="icon-left icon-th s7-date"></i>
 		                            </span>
-		                            <input type="datetime" size="16" type="text" class="form-control required-textfield remarks-date" name="engagement-date read" readonly>
+		                            <input type="datetime" size="16" type="text" class="form-control required-textfield remarks-date" name="engagement-date read">
 		                            
 		                        </div>
 							</div>
@@ -673,6 +674,17 @@
         	}
         });
 
+        pageEmployee.elem.find('.remarks-date').keydown(function(e){
+			if(e.which == 9){
+				return true;
+			}else{
+				return false;
+			}
+		});
+		pageEmployee.elem.find('.remarks-date').on("contextmenu",function(){
+	       return false;
+	    }); 
+
 
 
 		pageEmployee.elem.find('.btn-save-employee').off("click").click(function(event){
@@ -710,6 +722,8 @@
 				"pagibig_mem_prog_two" : 'MP2',
 				"monthly_compen" : pageEmployee.elem.find('.monthly-compen').val()
 			};
+
+			console.log(pageEmployee.employee_content);
 
 			$.ajax({
 				method: "POST",
@@ -810,6 +824,8 @@
 			
 			pageEmployee.elem.find('.ee-share').val(value['pagibig_ee_share']);
 			pageEmployee.elem.find('.er-share').val(value['pagibig_er_share']);
+			pageEmployee.elem.find('.ee-share-mp2').val(value['pagibig_ee_share_mp_two']);
+			pageEmployee.elem.find('.er-share-mp2').val(value['pagibig_er_share_mp_two']);
 			pageEmployee.elem.find('.pagibig-remarks').val(value['pagibig_remarks']);
 			pageEmployee.elem.find('.monthly-compen').val(value['monthly_compen']);
 			pageEmployee.elem.find('.mem-program').val(value['pagibig_mem_prog']);

@@ -19,6 +19,7 @@
 			$this->benchmark->mark('start');
 			$data['page'] = $page;
 			$data['employee'] = $this->Pagibig_Model->getAllData($page);
+			$data['employeeMID'] = $this->Pagibig_Model->getAllData($page);
 			$data['company'] = $this->Pagibig_Model->getCompanyData();
 			$data['allEmployee'] = $this->Pagibig_Model->getEmployeeData();
 			$data['paid-contribution'] = $this->Pagibig_Model->getPaidContribution();
