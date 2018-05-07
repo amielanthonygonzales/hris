@@ -40,6 +40,11 @@ h6 { font-size: .75em!important; }
     padding: 20px;
 }
 
+.forgot-button{
+    margin-top: 20px;
+    text-align: right;
+}
+
 #username, #password{
 	border: 0;
     background-color: transparent;
@@ -50,6 +55,18 @@ h6 { font-size: .75em!important; }
     font-weight: 500;
     height: 36px;
     border-radius: 0;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+        background-color: #addc53;
+    border-color: #afde54;
+}
+
+.btn-block:hover {
+        background-color: #addc53;
+    border-color: #afde54;
 }
 
 .input-group-addon{

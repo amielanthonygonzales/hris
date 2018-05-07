@@ -2623,6 +2623,11 @@ table th[class*="col-"] {
   overflow-x: auto;
   min-height: 0.01%;
 }
+
+.forgot-button{
+    margin-top: 20px;
+    text-align: right;
+}
 @media screen and (max-width: 767px) {
   .table-responsive {
     width: 100%;
@@ -4079,6 +4084,8 @@ fieldset[disabled] .btn-link:focus {
 .btn-block {
   display: block;
   width: 100%;
+  background-color: #abd852;
+    border-color: #a8d352;
 }
 .btn-block + .btn-block {
   margin-top: 5px;
@@ -4087,6 +4094,8 @@ input[type="submit"].btn-block,
 input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%;
+  background-color: #abd852;
+    border-color: #a8d352;
 }
 .fade {
   opacity: 0;
@@ -6073,7 +6082,7 @@ button.list-group-item-danger.active:focus {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .panel-body {
-  padding: 15px 20px 20px;
+  padding: 4px 20px 20px;
 }
 .panel-heading {
   padding: 20px 20px 15px;
@@ -12198,6 +12207,7 @@ li.L9 {
   border: 0;
   overflow: hidden;
   margin-bottom: 20px;
+  margin-top: -50px;
 }
 .login-container .panel-default .panel-heading {
   padding: 0;
@@ -13829,8 +13839,8 @@ fieldset[disabled] .btn-alt4.active {
   border-color: #ed5454;
 }
 .btn-primary.btn-shade1:hover {
-  background-color: #f06c6c;
-  border-color: #f06c6c;
+  background-color: #abd852;
+    border-color: #a8d352;
 }
 .btn-primary.btn-shade1:active,
 .btn-primary.btn-shade1.active,

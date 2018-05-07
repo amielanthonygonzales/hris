@@ -157,6 +157,7 @@ $route['get-pagibig-by-year/(:any)'] = 'api/Paid_Controller/getPagibigByYear/$1'
 // $route['employee'] = 'RegisterEmp_Controller/employeeTable';
 $route['index'] = 'RegisterEmp_Controller/login';
 $route['logout'] = 'RegisterEmp_Controller/logout';
+$route['forgot-password'] = 'RegisterEmp_Controller/forgot';
 $route['employee-view/(:any)'] = 'RegisterEmp_Controller/viewEmployee/$1';
 $route['changeStatus/(:any)'] = 'RegisterEmp_Controller/changeStatus/$1';
 

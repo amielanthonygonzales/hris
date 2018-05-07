@@ -877,6 +877,8 @@
 			
 			pageAdminProfile.elem.find('.ee-share').val(value['pagibig_ee_share']);
 			pageAdminProfile.elem.find('.er-share').val(value['pagibig_er_share']);
+			pageAdminProfile.elem.find('.ee-share-mp2').val(value['pagibig_ee_share_mp_two']);
+			pageAdminProfile.elem.find('.er-share-mp2').val(value['pagibig_er_share_mp_two']);
 			pageAdminProfile.elem.find('.pagibig-remarks').val(value['pagibig_remarks']);
 			pageAdminProfile.elem.find('.monthly-compen').val(value['monthly_compen']);
 			pageAdminProfile.elem.find('.mem-program').val(value['pagibig_mem_prog']);

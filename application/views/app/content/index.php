@@ -35,6 +35,9 @@
                         <input id="password" autocomplete="off" type="password" placeholder="Password" name="login" class="form-control password">
                       </div>
                     </div>
+                    <div class="form-group forgot-button">
+                    	<a href="#" class="btn-forgot">Forgot Password</a>
+                    </div>
                     <div class="form-group login-submit">
                       <button data-dismiss="modal" class ="btn form-control login-btn" id="login-btn-index">LOGIN</button>
                     </div>
@@ -105,6 +108,10 @@
 					}
 			});
 			//console.log(login_info);
+		});
+
+		$('.btn-forgot').off("click").click(function(e){
+			window.parent.location = "<?php echo base_url('forgot-password')?>";
 		});
 
 		$(document).keypress(function(event){

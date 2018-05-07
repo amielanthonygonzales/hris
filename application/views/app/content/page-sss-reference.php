@@ -66,7 +66,7 @@
 					</tr>
 					<tr>
 						<th colspan="3" class="table-title">Social Security</th>
-						<th class="table-title">EC</th>
+						<th rowspan="2" class="table-title">EC</th>
 					</tr>
 					<tr>
 						<th class="table-title">From</th>
@@ -74,7 +74,6 @@
 						<th class="table-title">ER</th>
 						<th class="table-title">EE</th>
 						<th class="table-title">Total</th>
-						<th class="table-title">ER</th>
 					</tr>
 				</thead>
 				<tbody>

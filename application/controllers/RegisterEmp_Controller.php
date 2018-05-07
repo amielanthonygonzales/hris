@@ -14,6 +14,10 @@
 			$this->load->view('app/content/index');
 		}
 
+		public function forgot(){
+			$this->load->view('app/content/page-forgot-password');
+		}
+
 		public function logout(){
 			if(isset($_SESSION['user'])){
 				unset($_SESSION['user']);	
