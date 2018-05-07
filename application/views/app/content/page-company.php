@@ -520,6 +520,14 @@
 				pageCompany.elem.find('.modal-error .modal-body p').html('');
 				pageCompany.elem.find('.modal-error .modal-body p').html('Please enter zip code!');
 				pageCompany.elem.find('.modal-error').modal("show");
+			}else if(pageCompany.elem.find('.cellnum').val() == ''){
+				pageCompany.elem.find('.modal-error .modal-body p').html('');
+				pageCompany.elem.find('.modal-error .modal-body p').html('Please enter mobile/cellphone number!');
+				pageCompany.elem.find('.modal-error').modal("show");
+			}else if(pageCompany.elem.find('.cellnum').val().length != 11){
+				pageCompany.elem.find('.modal-error .modal-body p').html('');
+				pageCompany.elem.find('.modal-error .modal-body p').html('Invalid length of mobile/cellphone number!');
+				pageCompany.elem.find('.modal-error').modal("show");
 			}else{
 				pageCompany.elem.find('.modal-error .modal-body p').html('');
 				$.ajax({
