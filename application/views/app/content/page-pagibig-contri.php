@@ -921,7 +921,7 @@
 				pagePagibigContri.elem.find('.accountNo'+keyEmployee).val(valueEmployee['pagibig_no']);
 
 				pagePagibigContri.elem.find('.member-program'+keyEmployee).val(valueEmployee['pagibig_mem_prog']);
-				
+
 				pagePagibigContri.elem.find('.employeeShare'+keyEmployee).val(valueEmployee['pagibig_ee_share']);
 				pagePagibigContri.elem.find('.employerShare'+keyEmployee).val(valueEmployee['pagibig_er_share']);
 				pagePagibigContri.totalContri = parseInt(valueEmployee['pagibig_ee_share']) + parseInt(valueEmployee['pagibig_er_share']);
@@ -983,8 +983,8 @@
 			pagePagibigContri.grandTotalEE += parseInt(valueAllEmp['pagibig_ee_share']);
 			pagePagibigContri.saveEmployee = {
 				"pagibig_emp_id" : valueAllEmp['pagibig_emp_id'],
-				"pagibig_ee_share" : valueAllEmp['pagibig_ee_share'],
-				"pagibig_er_share" : valueAllEmp['pagibig_er_share']
+				"pagibig_ee_share" : parseInt(valueAllEmp['pagibig_ee_share']) + parseInt(valueAllEmp['pagibig_ee_share_mp_two']),
+				"pagibig_er_share" : parseInt(valueAllEmp['pagibig_er_share']) + parseInt(valueAllEmp['pagibig_er_share_mp_two'])
 			}
 			pagePagibigContri.saveEmployeeInfo.push(pagePagibigContri.saveEmployee);
 

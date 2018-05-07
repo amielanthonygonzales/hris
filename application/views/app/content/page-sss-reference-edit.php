@@ -130,7 +130,8 @@
         		|| e.which >= 48 && e.which <= 57 
         		|| e.which >= 96 && e.which <= 105 
         		|| e.which >= 112 && e.which <= 123 
-        		|| e.which >= 37 && e.which <= 40){
+        		|| e.which >= 37 && e.which <= 40 
+        		|| e.which == 190){
         		return true;
         	}else{
         		return false;
@@ -235,7 +236,9 @@
 									if(result.success == 1){
 										pageSSSReferenceEdit.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
 										pageSSSReferenceEdit.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
-										pageSSSReferenceEdit.elem.find('.btn-proceed').show();
+										pageSSSReferenceEdit.elem.find('.btn-proceed').show().off("click").click(function(e){
+											window.parent.location = "<?php echo base_url('dashboard-sss-reference')?>";
+										});
 										pageSSSReferenceEdit.elem.find('.btn-yes').hide();
 										pageSSSReferenceEdit.elem.find('.btn-no').hide();
 										pageSSSReferenceEdit.elem.find('.sss-ref-message').html('Data has been saved successfully!');

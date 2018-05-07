@@ -155,7 +155,7 @@
 				<div class="form-group">
 					<label for="sssnum">SSS Number <code>*</code></label>
 					<div class="row form-group">
-						<div class="col-md-2">
+						<div class="col-md-3">
 							<input class="form-control sssnum1" type="text" name="sssnum" required />
 						</div>
 						<div class="col-md-1">
@@ -167,14 +167,8 @@
 						<div class="col-md-1">
 							<div class="dash-container">-</div>
 						</div>
-						<div class="col-md-2">
+						<div class="col-md-3">
 							<input class="form-control sssnum3" type="text" name="sssnum" required />
-						</div>
-						<div class="col-md-1">
-							<div class="dash-container">-</div>
-						</div>
-						<div class="col-md-2">
-							<input class="form-control sssnum4" type="text" name="sssnum" required />
 						</div>
 					</div>
 				</div>
@@ -222,7 +216,7 @@
 	pageCompany.init = function(selector, callback){
 		pageCompany.elem = $(selector);
 
-		pageCompany.elem.find('.sssnum4').val('000');
+		// pageCompany.elem.find('.sssnum4').val('000');
 
 			pageCompany.elem.find('.zipcode').keydown(function(e){
         	if(e.which == 8 
@@ -335,7 +329,7 @@
 	        		}
 	        		return true;
 	        	}else if(pageCompany.countSSSNumber3 == 1){
-	        		pageCompany.elem.find('.sssnum4').focus();
+	        		// pageCompany.elem.find('.sssnum4').focus();
 	        		return false;
 	        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
 	        		
@@ -356,33 +350,33 @@
 	        });
 
 	        
-	        pageCompany.elem.find('.sssnum4').keydown(function(e){
-	        pageCompany.countSSSNumber4 = pageCompany.elem.find('.sssnum4').val().length;
-	        	if(e.which == 8 || e.which == 46){
-	        		if(pageCompany.countSSSNumber4 != 0 && !(pageCompany.countSSSNumber4 < 0)){
-	        				pageCompany.countSSSNumber4 -= 1;
-	        			console.log(pageCompany.countSSSNumber4);
-	        		}
-	        		return true;
-	        	}else if(pageCompany.countSSSNumber4 == 3){
-	        		return false;
-	        	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
+	        // pageCompany.elem.find('.sssnum4').keydown(function(e){
+	        // pageCompany.countSSSNumber4 = pageCompany.elem.find('.sssnum4').val().length;
+	        // 	if(e.which == 8 || e.which == 46){
+	        // 		if(pageCompany.countSSSNumber4 != 0 && !(pageCompany.countSSSNumber4 < 0)){
+	        // 				pageCompany.countSSSNumber4 -= 1;
+	        // 			console.log(pageCompany.countSSSNumber4);
+	        // 		}
+	        // 		return true;
+	        // 	}else if(pageCompany.countSSSNumber4 == 3){
+	        // 		return false;
+	        // 	}else if(e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105 ){
 	        		
-	        		if(pageCompany.countSSSNumber4 < 3){
-	        			pageCompany.countSSSNumber4 += 1;
-	        			console.log(pageCompany.countSSSNumber4);
-	        			return true;
-	        		}
-	        		else{
-	        			return false;
-	        		}
-	        	}
-	        	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
-	        		return true;
-	        	}else{
-	        		return false;
-	        	}
-	        });
+	        // 		if(pageCompany.countSSSNumber4 < 3){
+	        // 			pageCompany.countSSSNumber4 += 1;
+	        // 			console.log(pageCompany.countSSSNumber4);
+	        // 			return true;
+	        // 		}
+	        // 		else{
+	        // 			return false;
+	        // 		}
+	        // 	}
+	        // 	else if(e.which == 9 || e.which >= 112 && e.which <= 123 || e.which >= 37 && e.which <= 40){
+	        // 		return true;
+	        // 	}else{
+	        // 		return false;
+	        // 	}
+	        // });
 
 	        
 	        pageCompany.elem.find('.pagibignum1').keydown(function(e){
@@ -479,7 +473,7 @@
 								+ "-" 
 								+ pageCompany.elem.find('.sssnum3').val()
 								+ "-"
-								+ pageCompany.elem.find('.sssnum4').val(), 
+								+ "000", 
 				"company_pagibig_id": pageCompany.elem.find('.pagibignum1').val()
 								+ "-"
 								+ pageCompany.elem.find('.pagibignum2').val()
@@ -582,7 +576,7 @@
 		pageCompany.elem.find('.sssnum1').val(pageCompany.sssnum[0]);
 		pageCompany.elem.find('.sssnum2').val(pageCompany.sssnum[1]);
 		pageCompany.elem.find('.sssnum3').val(pageCompany.sssnum[2]);
-		pageCompany.elem.find('.sssnum4').val(pageCompany.sssnum[3]);
+		// pageCompany.elem.find('.sssnum4').val(pageCompany.sssnum[3]);
 
 		pageCompany.elem.find('.pagibignum1').val(pageCompany.pagibignum[0]);
 		pageCompany.elem.find('.pagibignum2').val(pageCompany.pagibignum[1]);

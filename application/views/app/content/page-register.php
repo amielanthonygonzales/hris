@@ -14,7 +14,7 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" data-dismiss="modal" class="btn btn-success">Proceed</button>
+					<button type="button" data-dismiss="modal" class="btn btn-success btn-proceed">Proceed</button>
 				</div>
 			</div>
 		</div>
@@ -211,6 +211,10 @@
 					}
 				});
 			});
+		});
+
+		pageRegister.elem.find('.btn-proceed').off("click").click(function(e){
+			window.parent.location = "<?php echo base_url('employee-register')?>";
 		});
 
 		$.getJSON('<?php echo site_url('get-all-department')?>', callback);
