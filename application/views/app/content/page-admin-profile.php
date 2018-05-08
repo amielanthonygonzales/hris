@@ -122,6 +122,21 @@
 					<label class="control-label">Department</label>
 					<select class="form-control listDepartment"></select>
 				</div>
+				<div class="form-group">
+					<label>Hint Question</label>
+					<select class="form-control hint-question">
+						<option value="Model of your first car">Model of your first car?</option>
+						<option value="Oldest sibling birth month and year">Oldest sibling birth month and year?</option>
+						<option value="Father's middle name">Father's middle name?</option>
+						<option value="Name of favorite childhood friend">Name of favorite childhood friend?</option>
+						<option value="Childhood nickname">Childhood nickname?</option>
+						<option value="Mother maiden's name">Mother maiden's name?</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Hint Question Answer</label>
+					<input type="text" name="hint-answer" class="form-control hint-answer" placeholder="Hint Question Answer" />
+				</div>
 				
 
 			</div>
@@ -195,84 +210,76 @@
 					</div>
 					<div class="panel-body pagibig-panel">
 						<div class="form-group">
-							<label >Pag-Ibig Number</label>
+							<label for="pagibig-mid-number">Pag-Ibig MID No</label>
 							<div class="row form-group">
 								<div class="col-md-3">
-									<input class="form-control pagibig-number1" type="text" name="pagibigNumber" required />
+									<input class="form-control pagibig-mid-number1" type="text" name="pagibigMidNumber" required />
 								</div>
 								<div class="col-md-1">
 									<div class="dash-container">-</div>
 								</div>
 								<div class="col-md-3">
-									<input class="form-control pagibig-number2" type="text" name="pagibigNumber" required />
+									<input class="form-control pagibig-mid-number2" type="text" name="pagibigMidNumber" required />
 								</div>
 								<div class="col-md-1">
 									<div class="dash-container">-</div>
 								</div>
 								<div class="col-md-3">
-									<input class="form-control pagibig-number3" type="text" name="pagibigNumber" required />
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="ee-share">EE Share</label>
-									<input class="form-control ee-share" type="text" name="eeShare" placeholder="EE Share" required />
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="er-share">ER Share</label>
-									<input class="form-control er-share" type="text" name="erShare" placeholder="ER Share" required />
+									<input class="form-control pagibig-mid-number3" type="text" name="pagibigMidNumber" required />
 								</div>
 							</div>
 						</div>
 						
-						<!-- <div class="form-group">
-							<label>Membership Program</label>
-							<select class=" form-control mem-program">
-								<option value="MP1">MP1</option>
-								<option value="MP2">MP2</option>
-							</select>
-						</div> -->
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="ee-share">EE Share For MID No</label>
+									<input class="form-control ee-share-mp2" type="text" name="eeShare" placeholder="EE Share" required />
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="er-share">ER Share For MID No</label>
+									<input class="form-control er-share-mp2" type="text" name="erShare" placeholder="ER Share" required />
+								</div>
+							</div>
+						</div>
 						 <div class="am-checkbox col-md-12">
 	                    	<input id="check2" type="checkbox" class="icheck mp2-program">
-	                    	<label for="check2">MP2 Program</label>
+	                    	<label for="check2">MP1 Program</label>
 	                    </div>
 						<div class="mp2-group">
 							<div class="form-group">
-								<label for="pagibig-mid-number">Pag-Ibig MID No</label>
+								<label >Pag-Ibig Number</label>
 								<div class="row form-group">
 									<div class="col-md-3">
-										<input class="form-control pagibig-mid-number1" type="text" name="pagibigMidNumber" required />
+										<input class="form-control pagibig-number1" type="text" name="pagibigNumber" required />
 									</div>
 									<div class="col-md-1">
 										<div class="dash-container">-</div>
 									</div>
 									<div class="col-md-3">
-										<input class="form-control pagibig-mid-number2" type="text" name="pagibigMidNumber" required />
+										<input class="form-control pagibig-number2" type="text" name="pagibigNumber" required />
 									</div>
 									<div class="col-md-1">
 										<div class="dash-container">-</div>
 									</div>
 									<div class="col-md-3">
-										<input class="form-control pagibig-mid-number3" type="text" name="pagibigMidNumber" required />
+										<input class="form-control pagibig-number3" type="text" name="pagibigNumber" required />
 									</div>
 								</div>
 							</div>
-							
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="ee-share">EE Share For MID No</label>
-										<input class="form-control ee-share-mp2" type="text" name="eeShare" placeholder="EE Share" required />
+										<label for="ee-share">EE Share for Pag-Ibig No</label>
+										<input class="form-control ee-share" type="text" name="eeShare" placeholder="EE Share" required />
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="er-share">ER Share For MID No</label>
-										<input class="form-control er-share-mp2" type="text" name="erShare" placeholder="ER Share" required />
+										<label for="er-share">ER Share for Pag-Ibig No</label>
+										<input class="form-control er-share" type="text" name="erShare" placeholder="ER Share" required />
 									</div>
 								</div>
 							</div>
@@ -744,6 +751,8 @@
 				"changePassword" : pageAdminProfile.passwordChange,
 				currentPassword : pageAdminProfile.elem.find('.currentPass').val(),
 				newPassword : pageAdminProfile.elem.find('.newPass').val(),
+				"emp_hint_question" : pageAdminProfile.elem.find('.hint-question').val(),
+				"emp_hint_answer" : pageAdminProfile.elem.find('.hint-answer').val(),
 				"ss_contribution" : pageAdminProfile.elem.find('.sss-Contribution').val(),
 				"ec_contribution" : pageAdminProfile.elem.find('.ec-Contribution').val(),
 				"er_contribution" : pageAdminProfile.elem.find('.er-Contribution').val(),
@@ -768,36 +777,45 @@
 				"pagibig_mem_prog_two" : 'MP2',
 				"monthly_compen" : pageAdminProfile.elem.find('.monthly-compen').val()
 			};
-			$.ajax({
-				method: "POST",
-					url: "<?php echo base_url('update-admin/')?>" + pageAdminProfile.id,
-					data: pageAdminProfile.employee_content,
-					success: function(result){
-						console.log(result);
-						if(result.success == 1){
-							pageAdminProfile.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
-							pageAdminProfile.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
-							pageAdminProfile.elem.find('.btn-proceed').show();
-							pageAdminProfile.elem.find('.btn-yes').hide();
-							pageAdminProfile.elem.find('.btn-no').hide();
-							pageAdminProfile.elem.find('.message').html('Data has been saved successfully!');
-							pageAdminProfile.elem.find('.modal-department').modal();
-						}else if(result.success == 2){
-							pageAdminProfile.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
-							pageAdminProfile.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
-							pageAdminProfile.elem.find('.btn-proceed').show().off("click").click(function(e){
-								window.parent.location = "<?php echo base_url('logout')?>";
-							});
-							pageAdminProfile.elem.find('.btn-yes').hide();
-							pageAdminProfile.elem.find('.btn-no').hide();
-							pageAdminProfile.elem.find('.message').html('Data has been saved successfully!');
-							pageAdminProfile.elem.find('.modal-department').modal();
-						}else if(result.success.error){
-							pageAdminProfile.elem.find('.modal-error .modal-body p').html(result.success.error);
-							pageAdminProfile.elem.find('.modal-error').modal("show");
+			if(pageAdminProfile.elem.find('.hint-answer').val() == ""){
+				pageAdminProfile.elem.find('.modal-error .modal-body p').html('');
+				pageAdminProfile.elem.find('.modal-error .modal-body p').html('Please enter answer for the hint question!');
+				pageAdminProfile.elem.find('.modal-error').modal("show");
+			}
+			else{
+				pageAdminProfile.elem.find('.modal-error .modal-body p').html('');
+				$.ajax({
+					method: "POST",
+						url: "<?php echo base_url('update-admin/')?>" + pageAdminProfile.id,
+						data: pageAdminProfile.employee_content,
+						success: function(result){
+							console.log(result);
+							if(result.success == 1){
+								pageAdminProfile.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
+								pageAdminProfile.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
+								pageAdminProfile.elem.find('.btn-proceed').show();
+								pageAdminProfile.elem.find('.btn-yes').hide();
+								pageAdminProfile.elem.find('.btn-no').hide();
+								pageAdminProfile.elem.find('.message').html('Data has been saved successfully!');
+								pageAdminProfile.elem.find('.modal-department').modal();
+							}else if(result.success == 2){
+								pageAdminProfile.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
+								pageAdminProfile.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
+								pageAdminProfile.elem.find('.btn-proceed').show().off("click").click(function(e){
+									window.parent.location = "<?php echo base_url('logout')?>";
+								});
+								pageAdminProfile.elem.find('.btn-yes').hide();
+								pageAdminProfile.elem.find('.btn-no').hide();
+								pageAdminProfile.elem.find('.message').html('Data has been saved successfully!');
+								pageAdminProfile.elem.find('.modal-department').modal();
+							}else if(result.success.error){
+								pageAdminProfile.elem.find('.modal-error .modal-body p').html(result.success.error);
+								pageAdminProfile.elem.find('.modal-error').modal("show");
+							}
 						}
-					}
-			});
+				});
+			}
+			
 		});
 
 		// pageAdminProfile.elem.find('.btn-deleted-employee').off("click").click(function(event){
@@ -856,6 +874,8 @@
 			pageAdminProfile.elem.find('.lname').val(value['emp_last_name']);
 			pageAdminProfile.elem.find('.extname').val(value['emp_ext_name']);
 			pageAdminProfile.elem.find('.listDepartment').val(value['emp_dept']);
+			pageAdminProfile.elem.find('.hint-question').val(value['emp_hint_question']);
+			pageAdminProfile.elem.find('.hint-answer').val(value['emp_hint_answer']);
 
 			pageAdminProfile.elem.find('.engagement-date').val(value['emp_birthday']);
 			pageAdminProfile.elem.find('.empSalary').val(value['emp_salary']);

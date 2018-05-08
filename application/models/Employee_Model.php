@@ -25,6 +25,41 @@
 			}
 		}
 
+		function checkUsername(){
+			if(isset($_POST['username'])){
+				$username = $_POST['username'];
+				//$sql = $this->db->query("SELECT * FROM `employee` WHERE `emp_username` = " .$this->db->escape($username).  "AND `emp_password` =" .$this->db->escape($password));
+				$sql = $this->db->query("SELECT * FROM `employee` WHERE `emp_username` = " .$this->db->escape($username));
+				$row = $sql->row();
+				$error = 'error';
+				if($username == $row->emp_username){
+					return $row;
+				}else{
+					return $error;
+					
+				}
+				
+			}
+		}
+
+		function checkAnswer(){
+			if(isset($_POST['username'])){
+				$username = $_POST['username'];
+				$answer = $_POST['answer'];
+				//$sql = $this->db->query("SELECT * FROM `employee` WHERE `emp_username` = " .$this->db->escape($username).  "AND `emp_password` =" .$this->db->escape($password));
+				$sql = $this->db->query("SELECT * FROM `employee` WHERE `emp_username` = " .$this->db->escape($username));
+				$row = $sql->row();
+				$error = 'error';
+				if($answer == $row->emp_hint_answer){
+					return $row;
+				}else{
+					return $error;
+					
+				}
+				
+			}
+		}
+
 		function getName(){
 			$sql=$this->db->query("SELECT id, firstName, lastName, middleName, extName, birthday, username, active from employee where active = 1 ");
 			return $sql->result();
@@ -313,7 +348,9 @@
 					emp_middle_name = " .$this->db->escape($updatePost['emp_middle_name']). " ,
 					emp_last_name = " .$this->db->escape($updatePost['emp_last_name']). " ,
 					emp_ext_name = " .$this->db->escape($updatePost['emp_ext_name']). " ,
-					emp_birthday = " .$this->db->escape($updatePost['emp_birthday']). " 
+					emp_birthday = " .$this->db->escape($updatePost['emp_birthday']). ", 
+					emp_hint_question = " .$this->db->escape($updatePost['emp_hint_question']). ", 
+					emp_hint_answer = " .$this->db->escape($updatePost['emp_hint_answer']). " 
 					WHERE 
 					emp_id = " .$this->db->escape($id));
 				$returndata = 1;
@@ -348,7 +385,9 @@
 										emp_last_name = " .$this->db->escape($updatePost['emp_last_name']). " ,
 										emp_ext_name = " .$this->db->escape($updatePost['emp_ext_name']). " ,
 										emp_birthday = " .$this->db->escape($updatePost['emp_birthday']). " ,
-										emp_password = " .$this->db->escape($newPassword). " 
+										emp_password = " .$this->db->escape($newPassword). ", 
+										emp_hint_question = " .$this->db->escape($updatePost['emp_hint_question']). ", 
+										emp_hint_answer = " .$this->db->escape($updatePost['emp_hint_answer']). "  
 										WHERE 
 										emp_id = " .$this->db->escape($id));
 									$returndata = 2;
@@ -361,6 +400,22 @@
 					}
 				}
 				
+			}
+			return $returndata;
+		}
+
+		public function updatePassword($id, $updatePost){
+			if(strlen($updatePost['newPassword']) < 8){
+				$returndata['error'] = "Please input at least 8 characters for the new password";
+				//return $error;
+			}else if (!preg_match('/[\'^£$%&*()}!{@#~?><>,|=_+¬-]/', $updatePost['newPassword'])){
+			    $returndata['error'] = "Please input at least 1 (one) special character in your new password";
+			}else if(!preg_match('~[0-9]~', $updatePost['newPassword'])){
+				$returndata['error'] = "Please input at least 1 (one) digit in your new password";
+			}else{
+				$newPassword = password_hash($updatePost['newPassword'], PASSWORD_BCRYPT);
+				$sql = $this->db->query("UPDATE `employee` SET `emp_password` = " .$this->db->escape($newPassword). " WHERE emp_id = " .$this->db->escape($id));
+				$returndata = 1;
 			}
 			return $returndata;
 		}
@@ -384,7 +439,9 @@
 						emp_ext_name = " .$this->db->escape($updatePost['emp_ext_name']). ", 
 						emp_birthday = " .$this->db->escape($updatePost['emp_birthday']). ", 
 						emp_dept = " .$this->db->escape($updatePost['emp_dept']). " ,
-						emp_salary = " .$this->db->escape($updatePost['emp_salary']). " 
+						emp_salary = " .$this->db->escape($updatePost['emp_salary']). ", 
+						emp_hint_question = " .$this->db->escape($updatePost['emp_hint_question']). ", 
+						emp_hint_answer = " .$this->db->escape($updatePost['emp_hint_answer']). " 
 						WHERE 
 						emp_id = " .$this->db->escape($id));
 					$returndata = 1;
@@ -401,7 +458,9 @@
 						emp_ext_name = " .$this->db->escape($updatePost['emp_ext_name']). ", 
 						emp_birthday = " .$this->db->escape($updatePost['emp_birthday']). ", 
 						emp_dept = " .$this->db->escape($updatePost['emp_dept']). " ,
-						emp_salary = " .$this->db->escape($updatePost['emp_salary']). " 
+						emp_salary = " .$this->db->escape($updatePost['emp_salary']). ", 
+						emp_hint_question = " .$this->db->escape($updatePost['emp_hint_question']). ", 
+						emp_hint_answer = " .$this->db->escape($updatePost['emp_hint_answer']). "  
 						WHERE 
 						emp_id = " .$this->db->escape($id));
 					$returndata = 1;
@@ -446,7 +505,9 @@
 											emp_birthday = " .$this->db->escape($updatePost['emp_birthday']). " ,
 											emp_dept = " .$this->db->escape($updatePost['emp_dept']). " ,
 											emp_salary = " .$this->db->escape($updatePost['emp_salary']). ", 
-											emp_password = " .$this->db->escape($newPassword). " 
+											emp_password = " .$this->db->escape($newPassword). ", 
+											emp_hint_question = " .$this->db->escape($updatePost['emp_hint_question']). ", 
+											emp_hint_answer = " .$this->db->escape($updatePost['emp_hint_answer']). "  
 											WHERE 
 											emp_id = " .$this->db->escape($id));
 										$returndata = 2;
@@ -465,7 +526,9 @@
 											emp_birthday = " .$this->db->escape($updatePost['emp_birthday']). " ,
 											emp_dept = " .$this->db->escape($updatePost['emp_dept']). " ,
 											emp_salary = " .$this->db->escape($updatePost['emp_salary']). ", 
-											emp_password = " .$this->db->escape($newPassword). " 
+											emp_password = " .$this->db->escape($newPassword). ", 
+											emp_hint_question = " .$this->db->escape($updatePost['emp_hint_question']). ", 
+											emp_hint_answer = " .$this->db->escape($updatePost['emp_hint_answer']). "  
 											WHERE 
 											emp_id = " .$this->db->escape($id));
 										$returndata = 2;

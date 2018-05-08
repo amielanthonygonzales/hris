@@ -207,37 +207,36 @@
 					</div>
 					<div class="panel-body pagibig-panel">
 						<div class="form-group">
-							<label >Pag-Ibig Number</label>
+							<label for="pagibig-mid-number">Pag-Ibig MID No</label>
 							<div class="row form-group">
 								<div class="col-md-3">
-									<input class="form-control pagibig-number1" type="text" name="pagibigNumber" required />
+									<input class="form-control pagibig-mid-number1" type="text" name="pagibigMidNumber" required />
 								</div>
 								<div class="col-md-1">
 									<div class="dash-container">-</div>
 								</div>
 								<div class="col-md-3">
-									<input class="form-control pagibig-number2" type="text" name="pagibigNumber" required />
+									<input class="form-control pagibig-mid-number2" type="text" name="pagibigMidNumber" required />
 								</div>
 								<div class="col-md-1">
 									<div class="dash-container">-</div>
 								</div>
 								<div class="col-md-3">
-									<input class="form-control pagibig-number3" type="text" name="pagibigNumber" required />
+									<input class="form-control pagibig-mid-number3" type="text" name="pagibigMidNumber" required />
 								</div>
 							</div>
 						</div>
-						
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="ee-share">EE Share</label>
-									<input class="form-control ee-share" type="text" name="eeShare" placeholder="EE Share" required />
+									<label for="ee-share">EE Share For MID No</label>
+									<input class="form-control ee-share-mp2" type="text" name="eeShare" placeholder="EE Share" required />
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="er-share">ER Share</label>
-									<input class="form-control er-share" type="text" name="erShare" placeholder="ER Share" required />
+									<label for="er-share">ER Share For MID No</label>
+									<input class="form-control er-share-mp2" type="text" name="erShare" placeholder="ER Share" required />
 								</div>
 							</div>
 						</div>
@@ -247,36 +246,37 @@
 	                    </div>
 						<div class="mp2-group">
 							<div class="form-group">
-								<label for="pagibig-mid-number">Pag-Ibig MID No</label>
+								<label >Pag-Ibig Number</label>
 								<div class="row form-group">
 									<div class="col-md-3">
-										<input class="form-control pagibig-mid-number1" type="text" name="pagibigMidNumber" required />
+										<input class="form-control pagibig-number1" type="text" name="pagibigNumber" required />
 									</div>
 									<div class="col-md-1">
 										<div class="dash-container">-</div>
 									</div>
 									<div class="col-md-3">
-										<input class="form-control pagibig-mid-number2" type="text" name="pagibigMidNumber" required />
+										<input class="form-control pagibig-number2" type="text" name="pagibigNumber" required />
 									</div>
 									<div class="col-md-1">
 										<div class="dash-container">-</div>
 									</div>
 									<div class="col-md-3">
-										<input class="form-control pagibig-mid-number3" type="text" name="pagibigMidNumber" required />
+										<input class="form-control pagibig-number3" type="text" name="pagibigNumber" required />
 									</div>
 								</div>
 							</div>
+							
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="ee-share">EE Share For MID No</label>
-										<input class="form-control ee-share-mp2" type="text" name="eeShare" placeholder="EE Share" required />
+										<label for="ee-share">EE Share for Pag-Ibig No</label>
+										<input class="form-control ee-share" type="text" name="eeShare" placeholder="EE Share" required />
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="er-share">ER Share For MID No</label>
-										<input class="form-control er-share-mp2" type="text" name="erShare" placeholder="ER Share" required />
+										<label for="er-share">ER Share for Pag-Ibig No</label>
+										<input class="form-control er-share" type="text" name="erShare" placeholder="ER Share" required />
 									</div>
 								</div>
 							</div>

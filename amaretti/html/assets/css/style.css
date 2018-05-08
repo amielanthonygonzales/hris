@@ -271,6 +271,11 @@ td,
 th {
   padding: 0;
 }
+
+.hint-question{
+    color: white;
+    font-size: 14px;
+}
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
   *,
@@ -12196,27 +12201,31 @@ li.L9 {
 /*------------------------------------------------------------------
   [Login]
 */
-.login-container {
+
+.forgot-container{
+  margin-top: -60px;
+}
+.forgot-container {
   max-width: 400px;
   margin: 80px auto;
   padding: 10px;
 }
-.login-container .panel-default {
-  background: transparent;
-  padding: 0;
-  border: 0;
-  overflow: hidden;
-  margin-bottom: 20px;
-  margin-top: -50px;
+.forgot-container .panel-default {
+    background: transparent;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    margin-bottom: -20px;
+    margin-top: -54px;
 }
-.login-container .panel-default .panel-heading {
+.forgot-container .panel-default .panel-heading {
   padding: 0;
   background: transparent;
   border: 0;
   text-align: center;
   margin-bottom: 20px;
 }
-.login-container .panel-default .panel-heading span {
+.forgot-container .panel-default .panel-heading span {
   display: block;
   color: #858383;
   line-height: 20px;
@@ -12226,26 +12235,26 @@ li.L9 {
   margin-top: 10px;
   padding-bottom: 10px;
 }
-.login-container .panel-default .panel-body .form-group {
+.forgot-container .panel-default .panel-body .form-group {
   margin: 0;
   padding: 0;
 }
-.login-container .panel-default .panel-body .form-group > div {
+.forgot-container .panel-default .panel-body .form-group > div {
   padding: 0;
 }
-.login-container .panel-default .panel-body .form-group .input-group {
+.forgot-container .panel-default .panel-body .form-group .input-group {
   border-bottom: 2px solid #4a4949;
   padding: 10px 0;
 }
-.login-container .panel-default .panel-body .form-group .input-group .input-group-addon {
+.forgot-container .panel-default .panel-body .form-group .input-group .input-group-addon {
   border: 0;
   background-color: transparent;
 }
-.login-container .panel-default .panel-body .form-group .input-group .input-group-addon .icon {
+.forgot-container .panel-default .panel-body .form-group .input-group .input-group-addon .icon {
   font-size: 20px;
   color: #ffffff;
 }
-.login-container .panel-default .panel-body .form-group .input-group .form-control {
+.forgot-container .panel-default .panel-body .form-group .input-group .form-control {
   border: 0;
   background-color: transparent;
   box-shadow: none;
@@ -12256,44 +12265,45 @@ li.L9 {
   font-weight: 500;
   height: 36px;
 }
-.login-container .panel-default .panel-body .form-group .input-group.parsley-error {
+.forgot-container .panel-default .panel-body .form-group .input-group.parsley-error {
   border-color: #f49090;
 }
-.login-container .panel-default .panel-body .form-group.login-submit {
+.forgot-container .panel-default .panel-body .form-group.login-submit {
   padding-top: 40px;
   padding-bottom: 15px;
 }
-.login-container .panel-default .panel-body .form-group.login-submit .btn {
+.forgot-container .panel-default .panel-body .form-group.login-submit .btn {
   width: 100%;
+  margin-top: 10px;
 }
-.login-container .panel-default .panel-body .form-group.footer {
+.forgot-container .panel-default .panel-body .form-group.footer {
   margin-top: 3px;
   line-height: 35px;
   font-size: 14px;
 }
-.login-container .panel-default .panel-body .form-group .remember {
+.forgot-container .panel-default .panel-body .form-group .remember {
   text-align: right;
   color: #a3a2a2;
 }
-.login-container .panel-default .panel-body .form-group .remember label {
+.forgot-container .panel-default .panel-body .form-group .remember label {
   margin: 0;
   cursor: pointer;
 }
-.login-container .panel-default .panel-body .form-group .remember .am-checkbox {
+.forgot-container .panel-default .panel-body .form-group .remember .am-checkbox {
   display: inline-block;
   margin-left: 7px;
 }
-.login-container .panel-default .panel-body .form-group .remember .am-checkbox input[type="checkbox"] + label:before,
-.login-container .panel-default .panel-body .form-group .remember .am-checkbox input[type="radio"] + label:before {
+.forgot-container .panel-default .panel-body .form-group .remember .am-checkbox input[type="checkbox"] + label:before,
+.forgot-container .panel-default .panel-body .form-group .remember .am-checkbox input[type="radio"] + label:before {
   border-color: #4a4949;
   background-color: transparent;
 }
-.login-container .panel-default .panel-body .form-group .remember .am-checkbox input[type="checkbox"] + label:hover:before,
-.login-container .panel-default .panel-body .form-group .remember .am-checkbox input[type="radio"] + label:hover:before {
+.forgot-container .panel-default .panel-body .form-group .remember .am-checkbox input[type="checkbox"] + label:hover:before,
+.forgot-container .panel-default .panel-body .form-group .remember .am-checkbox input[type="radio"] + label:hover:before {
   border-color: #575555;
 }
 @media (max-width: 767px) {
-  .login-container {
+  .forgot-container {
     margin-top: 50px;
   }
 }

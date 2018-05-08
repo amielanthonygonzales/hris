@@ -70,6 +70,33 @@
 			header('Content-Type: application/json');
         	echo json_encode($data);
 		}
+		public function getEmployeeUsername(){
+			// print_r($_SESSION);
+			// exit();
+			$this->benchmark->mark('start');
+			$data;
+			$data['query'] = $this->Employee_Model->checkUsername();
+			$this->benchmark->mark('end');
+			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			$_SESSION['user'] = $data['query'];
+			$_SESSION['login'] = true;
+			header('Content-Type: application/json');
+        	echo json_encode($data);
+		}
+
+		public function getEmployeeAnswer(){
+			// print_r($_SESSION);
+			// exit();
+			$this->benchmark->mark('start');
+			$data;
+			$data['query'] = $this->Employee_Model->checkAnswer();
+			$this->benchmark->mark('end');
+			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			$_SESSION['user'] = $data['query'];
+			$_SESSION['login'] = true;
+			header('Content-Type: application/json');
+        	echo json_encode($data);
+		}
 
 		public function getAllDepartment(){
 			$this->benchmark->mark('start');
@@ -142,6 +169,17 @@
 			$this->benchmark->mark('start');
 			$updatePost = $this->input->post();
 			$ret['success'] = $this->Employee_Model->employeeUpdate($id, $updatePost);
+			$this->benchmark->mark('end');
+			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+        	echo json_encode($ret);
+
+		}
+
+		public function updatePassword($id){
+			$this->benchmark->mark('start');
+			$updatePost = $this->input->post();
+			$ret['success'] = $this->Employee_Model->updatePassword($id, $updatePost);
 			$this->benchmark->mark('end');
 			$ret['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
 			header('Content-Type: application/json');

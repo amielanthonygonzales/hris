@@ -59,19 +59,19 @@
 			<form>
 				<div class="form-group">
 						<label for="fname">First Name</label>
-						<input class="form-control editEmp-fname" type="text" name="fname" placeholder="First Name" required />
+						<input class="form-control editEmp-fname cant-type" type="text" name="fname" placeholder="First Name" required />
 					</div>
 					<div class="form-group">
 						<label for="mname">Middle Name</label>
-						<input class="form-control editEmp-mname" type="text" name="mname" placeholder="Middle Name" required/>
+						<input class="form-control editEmp-mname cant-type" type="text" name="mname" placeholder="Middle Name" required/>
 					</div>
 					<div class="form-group">
 						<label for="lname">Last Name</label>
-						<input class="form-control editEmp-lname" type="text" name="lname" placeholder="Last Name" required/>
+						<input class="form-control editEmp-lname cant-type" type="text" name="lname" placeholder="Last Name" required/>
 					</div>
 					<div class="form-group">
 						<label for="extname">Extension Name</label>
-						<input class="form-control editEmp-extname" type="text" name="extname" placeholder="Extension Name" />
+						<input class="form-control editEmp-extname cant-type" type="text" name="extname" placeholder="Extension Name" />
 					</div>
 	                <div class="form-group">
 	                    <div class="form-group">
@@ -80,47 +80,30 @@
 	                            <span class="input-group-addon btn btn-primary">
 	                            	<i class="icon-left icon-th s7-date"></i>
 	                            </span>
-	                            <input type="datetime" size="16" type="text" class="form-control engagement-date editEmp-birthday" name="engagement-date read" >
+	                            <input type="datetime" size="16" type="text" class="form-control engagement-date editEmp-birthday " name="engagement-date read" readonly>
 	                            
 	                        </div>
 	                    </div>
 	                </div>
-	                <div class="am-checkbox">
-                    	<input id="check1" type="checkbox" class="icheck changePassword">
-                    	<label for="check1">Change Password</label>
-                    </div>
-					<div class="passwordForm">
-						<div class="form-group">
-							<label>Current Password <code>*</code></label>
-							<input class="form-control editEmp-currentPass" type="password" name="currentPass" placeholder="Current Password" />
-						</div>
-						<div class="form-group">
-							<label>New Password (at least 8 alphanumeric characters w/special characters) <code>*</code></label>
-							<input class="form-control editEmp-newPass" type="password" name="newPass" placeholder="New Password" />
-						</div>
+					<div class="form-group">
+						<label>New Password (at least 8 alphanumeric characters w/special characters) <code>*</code></label>
+						<input class="form-control editEmp-newPass" type="password" name="newPass" placeholder="New Password" />
 					</div>
 					<div class="form-group">
 						<label for="empSalary">Salary</label>
-						<input class="form-control editEmp-salary" type="number" name="salary" placeholder="Salary"/>
+						<input class="form-control editEmp-salary cant-type" type="number" name="salary" placeholder="Salary"/>
 					</div>
 					<div class="form-group">
 						<label>Department</label>
-						<input class="form-control editEmp-dept" type="text" name="empDept" placeholder="Department"/>
+						<input class="form-control editEmp-dept cant-type" type="text" name="empDept" placeholder="Department"/>
 					</div>
 					<div class="form-group">
 						<label>Hint Question</label>
-						<select class="form-control hint-question">
-							<option value="Model of your first car">Model of your first car?</option>
-							<option value="Oldest sibling birth month and year">Oldest sibling birth month and year?</option>
-							<option value="Father's middle name">Father's middle name?</option>
-							<option value="Name of favorite childhood friend">Name of favorite childhood friend?</option>
-							<option value="Childhood nickname">Childhood nickname?</option>
-							<option value="Mother maiden's name">Mother maiden's name?</option>
-						</select>
+						<input class="form-control hint-question cant-type" type="text" name="empDept" placeholder="Department"/>
 					</div>
 					<div class="form-group">
 						<label>Hint Question Answer</label>
-						<input type="text" name="hint-answer" class="form-control hint-answer" placeholder="Hint Question Answer" />
+						<input type="text" name="hint-answer " class="form-control hint-answer cant-type" placeholder="Hint Question Answer" />
 					</div>
 			</form>
 		</div>
@@ -253,61 +236,46 @@
 	       return false;
 	    });
 
+	    pageEmployeeEdit.elem.find('.cant-type').keydown(function(e){
+			if(e.which == 9){
+				return true;
+			}else{
+				return false;
+			}
+		});
+		pageEmployeeEdit.elem.find('.cant-type').on("contextmenu",function(){
+	       return false;
+	    });
+
 		pageEmployeeEdit.elem.find('.btn-save-employeeEdit').off("click").click(function(event){
 			pageEmployeeEdit.content = {
-				"emp_id" : pageEmployeeEdit.passId,
-				"emp_first_name" : pageEmployeeEdit.elem.find('.editEmp-fname').val(),
-				"emp_middle_name" : pageEmployeeEdit.elem.find('.editEmp-mname').val(),
-				"emp_last_name" : pageEmployeeEdit.elem.find('.editEmp-lname').val(),
-				"emp_ext_name" : pageEmployeeEdit.elem.find('.editEmp-extname').val(),
-				"emp_birthday" : pageEmployeeEdit.elem.find('.editEmp-birthday').val(),
-				"changePassword" : pageEmployeeEdit.passwordChange,
-				currentPassword : pageEmployeeEdit.elem.find('.editEmp-currentPass').val(),
-				newPassword : pageEmployeeEdit.elem.find('.editEmp-newPass').val(),
-				"emp_hint_question" : pageEmployeeEdit.elem.find('.hint-question').val(),
-				"emp_hint_answer" : pageEmployeeEdit.elem.find('.hint-answer').val()
+				newPassword : pageEmployeeEdit.elem.find('.editEmp-newPass').val()
 			};
 
-			if(pageEmployeeEdit.elem.find('.hint-answer').val() == ""){
-				pageEmployeeEdit.elem.find('.modal-error .modal-body p').html('');
-				pageEmployeeEdit.elem.find('.modal-error .modal-body p').html('Please enter answer for the hint question!');
-				pageEmployeeEdit.elem.find('.modal-error').modal("show");
-			}else{
-				pageEmployeeEdit.elem.find('.modal-error .modal-body p').html('');
-				$.ajax({
-					method: "POST",
-						url: "<?php echo base_url('employee-update/')?>" + pageEmployeeEdit.passId,
-						data: pageEmployeeEdit.content,
-						success: function(result){
-							if(result.success == 1){
-								pageEmployeeEdit.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
-								pageEmployeeEdit.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
-								pageEmployeeEdit.elem.find('.btn-proceed').show();
-								pageEmployeeEdit.elem.find('.btn-yes').hide();
-								pageEmployeeEdit.elem.find('.btn-no').hide();
-								pageEmployeeEdit.elem.find('.message').html('Data has been saved successfully!');
-								pageEmployeeEdit.elem.find('.modal-department').modal();
-								
-							}else if(result.success == 2){
-								pageEmployeeEdit.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
-								pageEmployeeEdit.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
-								pageEmployeeEdit.elem.find('.btn-proceed').show().off("click").click(function(e){
-									window.parent.location = "<?php echo base_url('logout')?>";
-								});
-								pageEmployeeEdit.elem.find('.btn-yes').hide();
-								pageEmployeeEdit.elem.find('.btn-no').hide();
-								pageEmployeeEdit.elem.find('.message').html('Data has been saved successfully!');
-								pageEmployeeEdit.elem.find('.modal-department').modal();
-								
-							}else if(result.success.error){
-								pageEmployeeEdit.elem.find('.modal-error .modal-body p').html(result.success.error);
-								pageEmployeeEdit.elem.find('.modal-error').modal("show");
-							}
-						}
-				});
-			}
+			console.log(pageEmployeeEdit.passId);
 
-			
+			$.ajax({
+				method: "POST",
+					url: "<?php echo base_url('update-password/')?>" + pageEmployeeEdit.passId,
+					data: pageEmployeeEdit.content,
+					success: function(result){
+						if(result.success == 1){
+							pageEmployeeEdit.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
+							pageEmployeeEdit.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
+							pageEmployeeEdit.elem.find('.btn-proceed').show().off("click").click(function(e){
+								window.parent.location = "<?php echo base_url('logout')?>";
+							});
+							pageEmployeeEdit.elem.find('.btn-yes').hide();
+							pageEmployeeEdit.elem.find('.btn-no').hide();
+							pageEmployeeEdit.elem.find('.message').html('Data has been saved successfully!');
+							pageEmployeeEdit.elem.find('.modal-department').modal();
+							
+						}else if(result.success.error){
+							pageEmployeeEdit.elem.find('.modal-error .modal-body p').html(result.success.error);
+							pageEmployeeEdit.elem.find('.modal-error').modal("show");
+						}
+					}
+			});
 		});
 
 		// pageEmployeeEdit.elem.find('.btn-deleted-employeeEdit').off("click").click(function(event){
