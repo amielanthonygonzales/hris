@@ -29,16 +29,33 @@
 				SELECT 
 				* FROM 
 					`employee`, 
-					`pag_ibig`,
-					`sss` 
+					`pag_ibig`
 				WHERE 
 					`pagibig_emp_id` = `emp_id`
-				AND
-					`sss_emp_id`  = `emp_id`
 				AND 
 					`emp_deleted` = 0 
 				AND 
 					`pagibig_deleted` = 0
+				AND
+					(LENGTH(`pagibig_no`) = 14 OR LENGTH(`pagibig_mid_no`) = 14)
+				ORDER BY 
+					`emp_last_name` ASC
+				");
+			return $sql->result();
+		}
+
+		public function getSSSContributions(){
+			$sql = $this->db->query("
+				SELECT 
+				* FROM 
+					`employee`, 
+					`sss` 
+				WHERE 
+					`sss_emp_id`  = `emp_id`
+				AND 
+					`emp_deleted` = 0 
+				AND 
+					`sss_deleted` = 0
 				ORDER BY 
 					`emp_last_name` ASC
 				");

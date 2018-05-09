@@ -9,15 +9,27 @@
 			if(!isset($_SESSION['user'])){
 				redirect(site_url('index'));
 			}
-			$data = array();
-			//$_SESSION['rhev'] = "gay";
-			// print_r($_SESSION);
-			// exit();
-			$data['content'] = $this->load->view('app/content/page-dashboard', $data, true);
-			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
-			$data['callHead'] = $this->load->view("app/nav-head", $data, true);
-			$this->load->view('app/header', $data);
-			$this->load->view('app/footer', $data);
+			if(isset($_SESSION['user'])){
+				$user = $_SESSION['user'];
+				foreach ($user as $key => $value) {
+					if($key == 'emp_position'){
+						if($value == 'employee'){
+							redirect(site_url('index'));
+						}
+						else if($value == 'admin'){
+							$data = array();
+							//$_SESSION['rhev'] = "gay";
+							// print_r($_SESSION);
+							// exit();
+							$data['content'] = $this->load->view('app/content/page-dashboard', $data, true);
+							$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
+							$data['callHead'] = $this->load->view("app/nav-head", $data, true);
+							$this->load->view('app/header', $data);
+							$this->load->view('app/footer', $data);
+						}
+					}
+				}
+			}
 		}
 		public function department(){
 			// print_r($_SESSION);
@@ -25,93 +37,189 @@
 			if(!isset($_SESSION['user'])){
 				redirect(site_url('index'));
 			}
-			$data = array();
-			$data['content'] = $this->load->view('app/content/page-department', $data, true);
-			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
-			$data['callHead'] = $this->load->view("app/nav-head", $data, true);
-			$this->load->view('app/header', $data);
-			$this->load->view('app/footer', $data);
+			if(isset($_SESSION['user'])){
+				$user = $_SESSION['user'];
+				foreach ($user as $key => $value) {
+					if($key == 'emp_position'){
+						if($value == 'employee'){
+							redirect(site_url('index'));
+						}
+						else if($value == 'admin'){
+							$data = array();
+							$data['content'] = $this->load->view('app/content/page-department', $data, true);
+							$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
+							$data['callHead'] = $this->load->view("app/nav-head", $data, true);
+							$this->load->view('app/header', $data);
+							$this->load->view('app/footer', $data);
+						}
+					}
+				}
+			}
 		}
 		public function employee(){
 			if(!isset($_SESSION['user'])){
 				redirect(site_url('index'));
 			}
-			$data = array();
-			$data['content'] = $this->load->view('app/content/page-employee', $data, true);
-			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
-			$data['callHead'] = $this->load->view("app/nav-head", $data, true);
-			$this->load->view('app/header', $data);
-			$this->load->view('app/footer', $data);
+			if(isset($_SESSION['user'])){
+				$user = $_SESSION['user'];
+				foreach ($user as $key => $value) {
+					if($key == 'emp_position'){
+						if($value == 'employee'){
+							redirect(site_url('index'));
+						}
+						else if($value == 'admin'){
+							$data = array();
+							$data['content'] = $this->load->view('app/content/page-employee', $data, true);
+							$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
+							$data['callHead'] = $this->load->view("app/nav-head", $data, true);
+							$this->load->view('app/header', $data);
+							$this->load->view('app/footer', $data);
+						}
+					}
+				}
+			}
 		}
 		public function company(){
 			if(!isset($_SESSION['user'])){
 				redirect(site_url('index'));
 			}
-			$data = array();
-			$data['content'] = $this->load->view('app/content/page-company', $data, true);
-			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
-			$data['callHead'] = $this->load->view("app/nav-head", $data, true);
-			$this->load->view('app/header', $data);
-			$this->load->view('app/footer', $data);
+			if(isset($_SESSION['user'])){
+				$user = $_SESSION['user'];
+				foreach ($user as $key => $value) {
+					if($key == 'emp_position'){
+						if($value == 'employee'){
+							redirect(site_url('index'));
+						}
+						else if($value == 'admin'){
+							$data = array();
+							$data['content'] = $this->load->view('app/content/page-company', $data, true);
+							$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
+							$data['callHead'] = $this->load->view("app/nav-head", $data, true);
+							$this->load->view('app/header', $data);
+							$this->load->view('app/footer', $data);
+						}
+					}
+				}
+			}
 		}
 		public function registerEmployee(){
 			if(!isset($_SESSION['user'])){
 				redirect(site_url('index'));
 			}
-			$data = array();
-			$data['content'] = $this->load->view('app/content/page-register', $data, true);
-			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
-			$data['callHead'] = $this->load->view("app/nav-head", $data, true);
-			$this->load->view('app/header', $data);
-			$this->load->view('app/footer', $data);
+			if(isset($_SESSION['user'])){
+				$user = $_SESSION['user'];
+				foreach ($user as $key => $value) {
+					if($key == 'emp_position'){
+						if($value == 'employee'){
+							redirect(site_url('index'));
+						}
+						else if($value == 'admin'){
+							$data = array();
+							$data['content'] = $this->load->view('app/content/page-register', $data, true);
+							$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
+							$data['callHead'] = $this->load->view("app/nav-head", $data, true);
+							$this->load->view('app/header', $data);
+							$this->load->view('app/footer', $data);
+						}
+					}
+				}
+			}
 		}
 
 		public function sss(){
 			if(!isset($_SESSION['user'])){
 				redirect(site_url('index'));
 			}
-			$data = array();
-			$data['content'] = $this->load->view('app/content/page-sss-contri', $data, true);
-			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
-			$data['callHead'] = $this->load->view("app/nav-head", $data, true);
-			$this->load->view('app/header', $data);
-			$this->load->view('app/footer', $data);
+			if(isset($_SESSION['user'])){
+				$user = $_SESSION['user'];
+				foreach ($user as $key => $value) {
+					if($key == 'emp_position'){
+						if($value == 'employee'){
+							redirect(site_url('index'));
+						}
+						else if($value == 'admin'){
+							$data = array();
+							$data['content'] = $this->load->view('app/content/page-sss-contri', $data, true);
+							$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
+							$data['callHead'] = $this->load->view("app/nav-head", $data, true);
+							$this->load->view('app/header', $data);
+							$this->load->view('app/footer', $data);
+						}
+					}
+				}
+			}
 		}
 
 		public function sssReference(){
 			if(!isset($_SESSION['user'])){
 				redirect(site_url('index'));
 			}
-			$data = array();
-			$data['content'] = $this->load->view('app/content/page-sss-reference', $data, true);
-			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
-			$data['callHead'] = $this->load->view("app/nav-head", $data, true);
-			$this->load->view('app/header', $data);
-			$this->load->view('app/footer', $data);
+			if(isset($_SESSION['user'])){
+				$user = $_SESSION['user'];
+				foreach ($user as $key => $value) {
+					if($key == 'emp_position'){
+						if($value == 'employee'){
+							redirect(site_url('index'));
+						}
+						else if($value == 'admin'){
+							$data = array();
+							$data['content'] = $this->load->view('app/content/page-sss-reference', $data, true);
+							$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
+							$data['callHead'] = $this->load->view("app/nav-head", $data, true);
+							$this->load->view('app/header', $data);
+							$this->load->view('app/footer', $data);
+						}
+					}
+				}
+			}
 		}
 
 		public function pagibig(){
 			if(!isset($_SESSION['user'])){
 				redirect(site_url('index'));
 			}
-			$data = array();
-			$data['content'] = $this->load->view('app/content/page-pagibig-contri', $data, true);
-			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
-			$data['callHead'] = $this->load->view("app/nav-head", $data, true);
-			$this->load->view('app/header', $data);
-			$this->load->view('app/footer', $data);
+			if(isset($_SESSION['user'])){
+				$user = $_SESSION['user'];
+				foreach ($user as $key => $value) {
+					if($key == 'emp_position'){
+						if($value == 'employee'){
+							redirect(site_url('index'));
+						}
+						else if($value == 'admin'){
+							$data = array();
+							$data['content'] = $this->load->view('app/content/page-pagibig-contri', $data, true);
+							$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
+							$data['callHead'] = $this->load->view("app/nav-head", $data, true);
+							$this->load->view('app/header', $data);
+							$this->load->view('app/footer', $data);
+						}
+					}
+				}
+			}
 		}
 
 		public function paidContribution(){
 			if(!isset($_SESSION['user'])){
 				redirect(site_url('index'));
 			}
-			$data = array();
-			$data['content'] = $this->load->view('app/content/page-paid-contri', $data, true);
-			$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
-			$data['callHead'] = $this->load->view("app/nav-head", $data, true);
-			$this->load->view('app/header', $data);
-			$this->load->view('app/footer', $data);
+			if(isset($_SESSION['user'])){
+				$user = $_SESSION['user'];
+				foreach ($user as $key => $value) {
+					if($key == 'emp_position'){
+						if($value == 'employee'){
+							redirect(site_url('index'));
+						}
+						else if($value == 'admin'){
+							$data = array();
+							$data['content'] = $this->load->view('app/content/page-paid-contri', $data, true);
+							$data['call'] = $this->load->view("app/nav-leftsidebar", $data, true);
+							$data['callHead'] = $this->load->view("app/nav-head", $data, true);
+							$this->load->view('app/header', $data);
+							$this->load->view('app/footer', $data);
+						}
+					}
+				}
+			}
 		}
 
 		public function paidContributionEmp($id){

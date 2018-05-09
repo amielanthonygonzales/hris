@@ -35,6 +35,9 @@
 				<button type="button" name="btnPrint" value="print" class ="btn btn-success btn-space btn-print">
 						<i class="icon icon-left s7-print"></i>PRINT
 				</button>
+				<button type="button" name="btnMail" value="mail" class ="btn btn-success btn-space btn-mail">
+						<i class="icon icon-left s7-mail"></i>EMAIL
+				</button>
 			</div>
 			<div class="form-group button-print">
 				<div class="pull-right pagination">
@@ -264,6 +267,36 @@
 
 	pageSSSContri.init("#pageSSSContri", function(data){
 		pageSSSContri.populate(data);
+	});
+
+	pageSSSContri.elem.find('.btn-mail').off().click(function(){
+		pageSSSContri.dataArray = [];
+		pageSSSContri.dataObj = {};
+		var args;
+		$.getJSON('<?php echo site_url('get-sss-contributions')?>', function(result){
+			var len = result.contributions.length;
+			console.log("Result -> " + result);
+			for(var i=0; i<len; i++){
+				var total = 0;
+				total = parseInt(result.contributions[i].ec_contribution) + parseInt(result.contributions[i].ss_contribution);
+				pageSSSContri.dataObj = {'email': result.contributions[i].emp_email, 'ec': result.contributions[i].ec_contribution, 'ee': result.contributions[i].ee_contribution, 'er': er_contribution, 'total': total};
+				pageSSSContri.dataArray.push(pageSSSContri.dataObj);
+				if(i == len-1){
+					console.log(pageSSSContri.dataArray);
+					args = {'data': pageSSSContri.dataArray};
+					$.ajax({
+						method: "POST",
+							url: '<?php echo base_url('send-sss')?>',
+							data: args,
+							dataType: "json",
+							success: function(data){
+								console.log("Success");
+								$('#notif-badge').addClass('indicator');
+							}
+					});
+				}
+			}
+		});
 	});
 
 	pageSSSContri.populate = function(data){

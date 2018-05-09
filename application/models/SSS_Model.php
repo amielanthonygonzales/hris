@@ -18,6 +18,18 @@
 			return $sql->result();
 		}
 
+		public function updateNotification(){
+			$sql = $this->db->query("
+				UPDATE 
+					employee 
+					SET
+					emp_notification = 1
+					WHERE 
+					emp_deleted = 0" 
+				);
+			return 1;
+		}
+
 		public function getEmployeeData(){
 			$sql = $this->db->query("
 				SELECT 

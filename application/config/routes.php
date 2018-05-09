@@ -145,11 +145,14 @@ $route['update-reference/(:any)'] = 'api/SSS_Controller/updateReference/$1';
 $route['delete-reference/(:any)'] = 'api/SSS_Controller/deleteReference/$1';
 $route['sss-paid-datatable'] = 'api/SSS_Controller/dataTablePaidSSS';
 $route['sss-paid-datatable-emp/(:any)'] = 'api/SSS_Controller/dataTablePaidSSSEmp/$1';
+$route['send-sss'] = 'api/SSS_Controller/sendSSS';
+$route['sss-notification'] = 'api/SSS_Controller/sssNotification';
 //app
 $route['add-sss-reference/(:any)/(:any)'] = 'app/SSS_Controller/viewAddReference/$1/$2';
 
 //Paid Contribution
 //api
+$route['get-sss-contributions'] = 'api/Paid_Controller/getSSSContributions';
 $route['saved-contribution'] = 'api/Paid_Controller/addContribution';
 $route['get-contributions'] = 'api/Paid_Controller/getContributions';
 $route['get-contri-by-year/(:any)'] = 'api/Paid_Controller/getContriByYear/$1';

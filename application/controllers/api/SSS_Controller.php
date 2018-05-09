@@ -30,6 +30,77 @@
       		echo json_encode($data);
 		}
 
+		public function sendSSS(){
+			$data = $this->input->post();	
+			$now = new \DateTime('now');
+			$month = $now->format('F');
+			$config = Array(
+				'protocol' => 'smtp',
+				'smtp_host' => 'ssl://smtp.gmail.com',
+				'smtp_port' => '465',
+				'smp_timeout' => '30',
+				'smp_mailpath' => '/usr/sbin/sendmail',
+				'smtp_user' => 'jrpg99@gmail.com',
+				'smtp_pass' => 'pass1020',
+				'mailtype' => 'html',
+				'charset' => 'utf-8',
+				'wordwrap' => TRUE
+			);
+			$email;
+			$ec;
+			$ee;
+			$er;
+			$total;
+			$i=0;
+			foreach ($data as $key => $value) {
+				foreach ($value as $k => $v) {
+					foreach ($v as $index => $result) {
+						if($i%5 == 0){
+							$email = $result;
+						}
+						else if($i%5 == 1){
+							$ec = $result;
+						}
+						else if($i%5 == 2){
+							$ee = $result;
+						}
+						else if($i%5 == 3){
+							$er = $result;
+						}
+						else if($i%5 == 4){
+							$total = $result;
+						}
+						$i++;
+					}
+					$this->load->library('email', $config);
+					$this->email->from('jrpg99@gmail.com', 'admin');
+					$this->email->to($email);
+					$this->email->subject('SSS Contribution Payment');
+					$this->email->message("Good day!<br>Your SSS Contribution for this month of ".$month." has been paid. <br>Here are the breakdown of your contribution for this month: <br>EC Contribution: ".$ec."<br>EE Contribution: ".$ee."<br>ER Contribution: ".$er."<br>Total: ".$total);
+					$this->email->set_newline("\r\n");
+
+					$result = $this->email->send();
+					if(!$result){
+						$debugger = $this->email->print_debugger();
+						//echo $debugger;
+					}
+					if($result){
+						echo $result;
+					}
+					$this->email->clear();
+				}
+			}
+			$this->updateNotification();
+		}
+
+		public function updateNotification(){
+			$this->benchmark->mark('start');
+			$data['notifications'] = $this->SSS_Model->updateNotification();
+			$data['elapsed_time'] = $this->benchmark->elapsed_time('start', 'end');
+			header('Content-Type: application/json');
+			echo json_encode($data);
+		}
+
 		public function addReference(){
 			$this->benchmark->mark('start');
 			$postReference = $this->input->post();
