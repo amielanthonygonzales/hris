@@ -97,7 +97,8 @@
 								`ref_monthly_salary`, 
 								`ref_er`, 
 								`ref_ee`, 
-								`ref_ec`
+								`ref_ec`,
+								`ref_max`
 							) 
 					VALUES
 						(
@@ -106,7 +107,8 @@
 							".$this->db->escape($postReference['ref_monthly_salary']).", 
 							".$this->db->escape($postReference['ref_er']).", 
 							".$this->db->escape($postReference['ref_ee']).", 
-							".$this->db->escape($postReference['ref_ec'])."
+							".$this->db->escape($postReference['ref_ec']).", 
+							".$this->db->escape($postReference['ref_max'])."
 						)"
 					);
 				return $returndata = 1;

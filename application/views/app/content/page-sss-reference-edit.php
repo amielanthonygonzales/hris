@@ -113,6 +113,7 @@
 		pageSSSReferenceEdit.valid = true;
 		pageSSSReferenceEdit.action = '<?php echo $action?>';
 		pageSSSReferenceEdit.id = '<?php echo $id?>';
+		pageSSSReferenceEdit.saveMax = 0;
 
 		if(pageSSSReferenceEdit.action == "edit"){
 			pageSSSReferenceEdit.elem.find('.sss-ref-from').attr('readonly', "");
@@ -147,6 +148,7 @@
 		});
 
 		pageSSSReferenceEdit.elem.find('.btn-save').off("click").click(function(event){
+				
 				pageSSSReferenceEdit.elem.find('.modal-edit-sss-ref').hide();
 				pageSSSReferenceEdit.content = {
 					"ref_range_start" : pageSSSReferenceEdit.elem.find('.sss-ref-from').val(),
@@ -154,7 +156,8 @@
 					"ref_monthly_salary" : pageSSSReferenceEdit.elem.find('.sss-ref-monthly').val(),
 					"ref_er" : pageSSSReferenceEdit.elem.find('.sss-ref-er').val(),
 					"ref_ee" : pageSSSReferenceEdit.elem.find('.sss-ref-ee').val(),
-					"ref_ec" : pageSSSReferenceEdit.elem.find('.sss-ref-ec').val()
+					"ref_ec" : pageSSSReferenceEdit.elem.find('.sss-ref-ec').val(),
+					"ref_max" : pageSSSReferenceEdit.saveMax
 				};
 
 				if(pageSSSReferenceEdit.action == "edit"){
@@ -188,11 +191,22 @@
 
 
 					$.each(result, function(keyRef, valueRef){
+						if(valueRef['ref_max'] == '1'){
+							pageSSSReferenceEdit.maxRange = valueRef['ref_range_start'];
+						}
 
 					pageSSSReferenceEdit.start = pageSSSReferenceEdit.elem.find('.sss-ref-from').val();
 					pageSSSReferenceEdit.end = pageSSSReferenceEdit.elem.find('.sss-ref-to').val();
 
-					if(pageSSSReferenceEdit.end < pageSSSReferenceEdit.start){
+					if(pageSSSReferenceEdit.start > pageSSSReferenceEdit.maxRange){
+						pageSSSReferenceEdit.elem.find('.modal-error .modal-body p').html("Start of range is greater than the max range saved!");
+						pageSSSReferenceEdit.elem.find('.modal-error').modal("show");
+						pageSSSReferenceEdit.valid = false;
+					}else if(pageSSSReferenceEdit.end > pageSSSReferenceEdit.maxRange && pageSSSReferenceEdit.end != 'Over'){
+						pageSSSReferenceEdit.elem.find('.modal-error .modal-body p').html("End of range is greater than the max range saved!");
+						pageSSSReferenceEdit.elem.find('.modal-error').modal("show");
+						pageSSSReferenceEdit.valid = false;
+					}else if(pageSSSReferenceEdit.end < pageSSSReferenceEdit.start){
 						pageSSSReferenceEdit.elem.find('.modal-error .modal-body p').html("Invalid range!");
 						pageSSSReferenceEdit.elem.find('.modal-error').modal("show");
 						pageSSSReferenceEdit.valid = false;
@@ -212,12 +226,34 @@
 						pageSSSReferenceEdit.elem.find('.modal-error .modal-body p').html("End of range already exists!");
 						pageSSSReferenceEdit.elem.find('.modal-error').modal("show");
 						pageSSSReferenceEdit.valid = false;
+					}else if(pageSSSReferenceEdit.end == 'Over') {
+						pageSSSReferenceEdit.content = {
+							"ref_range_start" : pageSSSReferenceEdit.elem.find('.sss-ref-from').val(),
+							"ref_range_end" : pageSSSReferenceEdit.elem.find('.sss-ref-to').val(),
+							"ref_monthly_salary" : pageSSSReferenceEdit.elem.find('.sss-ref-monthly').val(),
+							"ref_er" : pageSSSReferenceEdit.elem.find('.sss-ref-er').val(),
+							"ref_ee" : pageSSSReferenceEdit.elem.find('.sss-ref-ee').val(),
+							"ref_ec" : pageSSSReferenceEdit.elem.find('.sss-ref-ec').val(),
+							"ref_max" : 1
+						};
+						pageSSSReferenceEdit.valid = true;
+						
 					}else if(pageSSSReferenceEdit.start < valueRef['ref_range_start']  && pageSSSReferenceEdit.end > valueRef['ref_range_end']){
 						pageSSSReferenceEdit.elem.find('.modal-error .modal-body p').html("Range already exists!");
 						pageSSSReferenceEdit.elem.find('.modal-error').modal("show");
 						pageSSSReferenceEdit.valid = false;
 					}else if(pageSSSReferenceEdit.end == 'Over') {
+						pageSSSReferenceEdit.content = {
+							"ref_range_start" : pageSSSReferenceEdit.elem.find('.sss-ref-from').val(),
+							"ref_range_end" : pageSSSReferenceEdit.elem.find('.sss-ref-to').val(),
+							"ref_monthly_salary" : pageSSSReferenceEdit.elem.find('.sss-ref-monthly').val(),
+							"ref_er" : pageSSSReferenceEdit.elem.find('.sss-ref-er').val(),
+							"ref_ee" : pageSSSReferenceEdit.elem.find('.sss-ref-ee').val(),
+							"ref_ec" : pageSSSReferenceEdit.elem.find('.sss-ref-ec').val(),
+							"ref_max" : 1
+						};
 						pageSSSReferenceEdit.valid = true;
+						
 					}else if(valueRef['ref_range_start'] != pageSSSReferenceEdit.start 
 						&& valueRef['ref_range_end'] != pageSSSReferenceEdit.end 
 						&& (!(pageSSSReferenceEdit.start > valueRef['ref_range_start']) && !(pageSSSReferenceEdit.end < valueRef['ref_range_end'])) 
@@ -228,6 +264,28 @@
 					});
 
 					if(pageSSSReferenceEdit.valid == true && pageSSSReferenceEdit.action == "add"){
+						// if(pageSSSReferenceEdit.end == 'Over') {
+						// 	pageSSSReferenceEdit.content = {
+						// 		"ref_range_start" : pageSSSReferenceEdit.elem.find('.sss-ref-from').val(),
+						// 		"ref_range_end" : pageSSSReferenceEdit.elem.find('.sss-ref-to').val(),
+						// 		"ref_monthly_salary" : pageSSSReferenceEdit.elem.find('.sss-ref-monthly').val(),
+						// 		"ref_er" : pageSSSReferenceEdit.elem.find('.sss-ref-er').val(),
+						// 		"ref_ee" : pageSSSReferenceEdit.elem.find('.sss-ref-ee').val(),
+						// 		"ref_ec" : pageSSSReferenceEdit.elem.find('.sss-ref-ec').val(),
+						// 		"ref_max" : 1
+						// 	};
+						
+						// }else{
+						// 	pageSSSReferenceEdit.content = {
+						// 		"ref_range_start" : pageSSSReferenceEdit.elem.find('.sss-ref-from').val(),
+						// 		"ref_range_end" : pageSSSReferenceEdit.elem.find('.sss-ref-to').val(),
+						// 		"ref_monthly_salary" : pageSSSReferenceEdit.elem.find('.sss-ref-monthly').val(),
+						// 		"ref_er" : pageSSSReferenceEdit.elem.find('.sss-ref-er').val(),
+						// 		"ref_ee" : pageSSSReferenceEdit.elem.find('.sss-ref-ee').val(),
+						// 		"ref_ec" : pageSSSReferenceEdit.elem.find('.sss-ref-ec').val(),
+						// 		"ref_max" : 0
+						// 	};
+						// }
 						$.ajax({
 							method: "POST",
 								url: "<?php echo base_url('add-reference')?>",
