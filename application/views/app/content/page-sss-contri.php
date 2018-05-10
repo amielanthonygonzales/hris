@@ -234,32 +234,42 @@
 		}
 
 		pageSSSContri.elem.find('.btn-paid').off("click").click(function(e){
-			pageSSSContri.contribution = {
-				"month" : pageSSSContri.month + 1,
-				"year" : pageSSSContri.getDate.getFullYear(),
-				"amount" : pageSSSContri.totalSSContri,
-				"gov_agency" : "SSS",
-				"paid_employee" : JSON.stringify(pageSSSContri.saveEmployeeInfo)
-			};
+			pageSSSContri.elem.find('.i-circle').removeClass('text-success').addClass('text-danger');
+			pageSSSContri.elem.find('.symbol').removeClass('s7-check').addClass('s7-attention');
+			pageSSSContri.elem.find('.btn-proceed').hide();
+			pageSSSContri.elem.find('.btn-yes').show().off("click").click(function(e){
+				pageSSSContri.contribution = {
+					"month" : pageSSSContri.month + 1,
+					"year" : pageSSSContri.getDate.getFullYear(),
+					"amount" : pageSSSContri.totalSSContri,
+					"gov_agency" : "SSS",
+					"paid_employee" : JSON.stringify(pageSSSContri.saveEmployeeInfo)
+				};
 
-			$.ajax({
-				method: "POST",
-					url: "<?php echo base_url('saved-contribution')?>",
-					data: pageSSSContri.contribution,
-					success: function(result){
-						if(result.success){
-							pageSSSContri.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
-							pageSSSContri.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
-							pageSSSContri.elem.find('.btn-proceed').show();
-							pageSSSContri.elem.find('.btn-yes').hide();
-							pageSSSContri.elem.find('.btn-no').hide();
-							pageSSSContri.elem.find('.message').html('Data has been saved recorded!');
-							pageSSSContri.elem.find('.modal-sss').modal();
-							pageSSSContri.elem.find('.btn-paid').hide();
-							
+				$.ajax({
+					method: "POST",
+						url: "<?php echo base_url('saved-contribution')?>",
+						data: pageSSSContri.contribution,
+						success: function(result){
+							if(result.success){
+								pageSSSContri.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
+								pageSSSContri.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
+								pageSSSContri.elem.find('.btn-proceed').show();
+								pageSSSContri.elem.find('.btn-yes').hide();
+								pageSSSContri.elem.find('.btn-no').hide();
+								pageSSSContri.elem.find('.message').html('Data has been saved recorded!');
+								pageSSSContri.elem.find('.modal-sss').modal();
+								pageSSSContri.elem.find('.btn-paid').hide();
+								
+							}
 						}
-					}
+				});
 			});
+			pageSSSContri.elem.find('.btn-no').show();
+			pageSSSContri.elem.find('.message').html('Are you sure you already paid the SSS Contribution for this month?');
+			pageSSSContri.elem.find('.modal-sss').modal();
+
+			
 		});
 
 		$.getJSON('<?php echo site_url('get-data-sss')?>' + "/" + pageSSSContri.pageNumber, callback);

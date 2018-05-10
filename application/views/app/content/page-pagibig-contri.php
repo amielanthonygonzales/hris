@@ -9,7 +9,6 @@
 				<div class="modal-body">
 					<div class="text-center">
 						<div class="i-circle"><i class="icon symbol"></i></div>
-						<h4>Awesome!</h4>
 						<p class="message"></p>
 					</div>
 				</div>
@@ -774,33 +773,42 @@
 	    }); 
 
 		pagePagibigContri.elem.find('.btn-paid').off("click").click(function(e){
-			pagePagibigContri.contribution = {
-				"month" : pagePagibigContri.month + 1,
-				"year" : pagePagibigContri.getDate.getFullYear(),
-				"amount" : pagePagibigContri.grandTotalContri,
-				"gov_agency" : "Pag-Ibig",
-				"paid_employee" : JSON.stringify(pagePagibigContri.saveEmployeeInfo)
-			};
-			console.log(pagePagibigContri.contribution);
+			pagePagibigContri.elem.find('.i-circle').removeClass('text-success').addClass('text-danger');
+			pagePagibigContri.elem.find('.symbol').removeClass('s7-check').addClass('s7-attention');
+			pagePagibigContri.elem.find('.btn-proceed').hide();
+			pagePagibigContri.elem.find('.btn-yes').show().off("click").click(function(e){
+				pagePagibigContri.contribution = {
+					"month" : pagePagibigContri.month + 1,
+					"year" : pagePagibigContri.getDate.getFullYear(),
+					"amount" : pagePagibigContri.grandTotalContri,
+					"gov_agency" : "Pag-Ibig",
+					"paid_employee" : JSON.stringify(pagePagibigContri.saveEmployeeInfo)
+				};
+				console.log(pagePagibigContri.contribution);
 
-			$.ajax({
-				method: "POST",
-					url: "<?php echo base_url('saved-contribution')?>",
-					data: pagePagibigContri.contribution,
-					success: function(result){
-						if(result.success){
-							pagePagibigContri.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
-							pagePagibigContri.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
-							pagePagibigContri.elem.find('.btn-proceed').show();
-							pagePagibigContri.elem.find('.btn-yes').hide();
-							pagePagibigContri.elem.find('.btn-no').hide();
-							pagePagibigContri.elem.find('.message').html('Data has been saved recorded!');
-							pagePagibigContri.elem.find('.modal-pagibig').modal();
-							pagePagibigContri.elem.find('.btn-paid').hide();
-							
+				$.ajax({
+					method: "POST",
+						url: "<?php echo base_url('saved-contribution')?>",
+						data: pagePagibigContri.contribution,
+						success: function(result){
+							if(result.success){
+								pagePagibigContri.elem.find('.i-circle').removeClass('text-danger').addClass('text-success');
+								pagePagibigContri.elem.find('.symbol').removeClass('s7-attention').addClass('s7-check');
+								pagePagibigContri.elem.find('.btn-proceed').show();
+								pagePagibigContri.elem.find('.btn-yes').hide();
+								pagePagibigContri.elem.find('.btn-no').hide();
+								pagePagibigContri.elem.find('.message').html('Data has been saved recorded!');
+								pagePagibigContri.elem.find('.modal-pagibig').modal();
+								pagePagibigContri.elem.find('.btn-paid').hide();
+								
+							}
 						}
-					}
+				});
 			});
+			pagePagibigContri.elem.find('.btn-no').show();
+			pagePagibigContri.elem.find('.message').html('Are you sure you already paid the Pag-Ibig Contribution for this month?');
+			pagePagibigContri.elem.find('.modal-pagibig').modal();
+			
 		});
 		$.getJSON('<?php echo site_url('get-data-per-page')?>' + "/" + pagePagibigContri.pageNumber, callback);
 	}
