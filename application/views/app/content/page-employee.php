@@ -827,6 +827,13 @@
 			pageEmployee.elem.find('.er-Contribution').val(value['er_contribution']);
 			pageEmployee.elem.find('.ee-Contribution').val(value['ee_contribution']);
 
+			if(value['pagibig_no'].length == 14){
+				pageEmployee.elem.find('.mp2-program').attr('checked','checked');
+				pageEmployee.elem.find('.mp2-group').show();
+			}else{
+				pageEmployee.elem.find('.mp2-group').hide();
+			}
+
 			pageEmployee.mid_no = value['pagibig_mid_no'].split('-');
 			pageEmployee.accountNo = value['pagibig_no'].split('-');
 			pageEmployee.sssNo = value['sss_no'].split('-');

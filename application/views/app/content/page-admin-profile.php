@@ -900,9 +900,18 @@
 			pageAdminProfile.elem.find('.er-Contribution').val(value['er_contribution']);
 			pageAdminProfile.elem.find('.ee-Contribution').val(value['ee_contribution']);
 
+			if(value['pagibig_no'].length == 14){
+				pageAdminProfile.elem.find('.mp2-program').attr('checked','checked');
+				pageAdminProfile.elem.find('.mp2-group').show();
+			}else{
+				pageAdminProfile.elem.find('.mp2-group').hide();
+			}
+
 			pageAdminProfile.mid_no = value['pagibig_mid_no'].split('-');
 			pageAdminProfile.accountNo = value['pagibig_no'].split('-');
 			pageAdminProfile.sssNo = value['sss_no'].split('-');
+
+
 			
 
 			
