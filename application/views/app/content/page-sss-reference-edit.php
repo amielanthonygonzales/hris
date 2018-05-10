@@ -195,8 +195,8 @@
 							pageSSSReferenceEdit.maxRange = valueRef['ref_range_start'];
 						}
 
-					pageSSSReferenceEdit.start = pageSSSReferenceEdit.elem.find('.sss-ref-from').val();
-					pageSSSReferenceEdit.end = pageSSSReferenceEdit.elem.find('.sss-ref-to').val();
+					pageSSSReferenceEdit.start = parseFloat(pageSSSReferenceEdit.elem.find('.sss-ref-from').val());
+					pageSSSReferenceEdit.end = parseFloat(pageSSSReferenceEdit.elem.find('.sss-ref-to').val());
 
 					if(pageSSSReferenceEdit.start > pageSSSReferenceEdit.maxRange){
 						pageSSSReferenceEdit.elem.find('.modal-error .modal-body p').html("Start of range is greater than the max range saved!");
