@@ -47,6 +47,7 @@
 				'wordwrap' => TRUE
 			);
 			$email;
+			$name;
 			$ec;
 			$ee;
 			$er;
@@ -55,19 +56,22 @@
 			foreach ($data as $key => $value) {
 				foreach ($value as $k => $v) {
 					foreach ($v as $index => $result) {
-						if($i%5 == 0){
+						if($i%6 == 0){
 							$email = $result;
 						}
-						else if($i%5 == 1){
+						else if($i%6 == 1){
+							$name = $result;
+						}
+						else if($i%6 == 2){
 							$ec = $result;
 						}
-						else if($i%5 == 2){
+						else if($i%6 == 3){
 							$ee = $result;
 						}
-						else if($i%5 == 3){
+						else if($i%6 == 4){
 							$er = $result;
 						}
-						else if($i%5 == 4){
+						else if($i%6 == 5){
 							$total = $result;
 						}
 						$i++;
@@ -76,7 +80,7 @@
 					$this->email->from('paulo@nmgresources.ph', 'admin');
 					$this->email->to($email);
 					$this->email->subject('SSS Contribution Payment');
-					$this->email->message("Good day!<br>Your SSS Contribution for this month of ".$month." has been paid. <br>Here are the breakdown of your contribution for this month: <br>EC Contribution: ".$ec."<br>EE Contribution: ".$ee."<br>ER Contribution: ".$er."<br>Total: ".$total);
+					$this->email->message("Good day, ".$name."!<br>Your SSS Contribution for this month of ".$month." has been paid. <br>Here are the breakdown of your contribution for this month: <br>EC Contribution: ".$ec."<br>EE Contribution: ".$ee."<br>ER Contribution: ".$er."<br>Total: ".$total);
 					$this->email->set_newline("\r\n");
 
 					$result = $this->email->send();
