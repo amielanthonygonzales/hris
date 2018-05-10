@@ -178,27 +178,27 @@
 							<div class="row form-group">
 								<div class="col-md-3">
 									<label for="ec-contribution">ER Contribution</label>
-									<input class="form-control er-Contribution" type="text" name="erContribution" readonly />
+									<input class="form-control er-Contribution cant-type" type="text" name="erContribution"/>
 								</div>
 								<div class="col-md-1">
 									<div class="dash-container-sss">+</div>
 								</div>
 								<div class="col-md-3">
 									<label for="ee-contribution">EE Contribution</label>
-									<input class="form-control ee-Contribution" type="text" name="eeContribution"  readonly />
+									<input class="form-control ee-Contribution cant-type" type="text" name="eeContribution" />
 								</div>
 								<div class="col-md-1">
 									<div class="dash-container-sss">=</div>
 								</div>
 								<div class="col-md-3">
 									<label for="ss-contribution">Total</label>
-									<input class="form-control sss-Contribution" type="text" name="ssContribution" 	readonly />
+									<input class="form-control sss-Contribution cant-type" type="text" name="ssContribution" />
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="ec-contribution">Employee Compensation Contribution</label>
-							<input class="form-control ec-Contribution" type="text" name="erContribution" placeholder="EC Contribution" readonly />
+							<input class="form-control ec-Contribution cant-type" type="text" name="erContribution" placeholder="EC Contribution" />
 						</div>
 					</div>
 				</div>
@@ -728,6 +728,17 @@
 			}
 		});
 		pageAdminProfile.elem.find('.empEmail').on("contextmenu",function(){
+	       return false;
+	    }); 
+
+	    pageAdminProfile.elem.find('.cant-type').keydown(function(e){
+			if(e.which == 9){
+				return true;
+			}else{
+				return false;
+			}
+		});
+		pageAdminProfile.elem.find('.cant-type').on("contextmenu",function(){
 	       return false;
 	    }); 
 
