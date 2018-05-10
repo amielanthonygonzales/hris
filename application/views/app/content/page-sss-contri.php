@@ -289,7 +289,7 @@
 			for(var i=0; i<len; i++){
 				var total = 0;
 				total = parseInt(result.contributions[i].ec_contribution) + parseInt(result.contributions[i].ss_contribution);
-				pageSSSContri.dataObj = {'email': result.contributions[i].emp_email, 'ec': result.contributions[i].ec_contribution, 'ee': result.contributions[i].ee_contribution, 'er': er_contribution, 'total': total};
+				pageSSSContri.dataObj = {'email': result.contributions[i].emp_email, 'ec': result.contributions[i].ec_contribution, 'ee': result.contributions[i].ee_contribution, 'er': result.contributions[i].er_contribution, 'total': total};
 				pageSSSContri.dataArray.push(pageSSSContri.dataObj);
 				if(i == len-1){
 					console.log(pageSSSContri.dataArray);

@@ -40,8 +40,8 @@
 				'smtp_port' => '465',
 				'smp_timeout' => '30',
 				'smp_mailpath' => '/usr/sbin/sendmail',
-				'smtp_user' => 'jrpg99@gmail.com',
-				'smtp_pass' => 'pass1020',
+				'smtp_user' => 'paulo@nmgresources.ph',
+				'smtp_pass' => 'milky Way01',
 				'mailtype' => 'html',
 				'charset' => 'utf-8',
 				'wordwrap' => TRUE
@@ -73,7 +73,7 @@
 						$i++;
 					}
 					$this->load->library('email', $config);
-					$this->email->from('jrpg99@gmail.com', 'admin');
+					$this->email->from('paulo@nmgresources.ph', 'admin');
 					$this->email->to($email);
 					$this->email->subject('SSS Contribution Payment');
 					$this->email->message("Good day!<br>Your SSS Contribution for this month of ".$month." has been paid. <br>Here are the breakdown of your contribution for this month: <br>EC Contribution: ".$ec."<br>EE Contribution: ".$ee."<br>ER Contribution: ".$er."<br>Total: ".$total);
