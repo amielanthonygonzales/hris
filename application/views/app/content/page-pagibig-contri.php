@@ -825,8 +825,8 @@
 			var len = result.contributions.length;
 			for(var i=0; i<len; i++){
 				var total = 0;
-				total = parseInt(result.contributions[i].pagibig_ee_share) + parseInt(result.contributions[i].pagibig_er_share);
-				pagePagibigContri.dataObj = {'email': result.contributions[i].emp_email, 'eeshare': result.contributions[i].pagibig_ee_share, 'ershare': result.contributions[i].pagibig_er_share, 'total': total};
+				total = parseInt(result.contributions[i].pagibig_ee_share) + parseInt(result.contributions[i].pagibig_ee_share_mp_two) + parseInt(result.contributions[i].pagibig_er_share) + parseInt(result.contributions[i].pagibig_er_share_mp_two);
+				pagePagibigContri.dataObj = {'email': result.contributions[i].emp_email, 'name': result.contributions[i].emp_first_name + " " + result.contributions[i].emp_last_name, 'eeshare': parseInt(result.contributions[i].pagibig_ee_share) + parseInt(result.contributions[i].pagibig_ee_share_mp_two), 'ershare': parseInt(result.contributions[i].pagibig_er_share) + parseInt(result.contributions[i].pagibig_er_share_mp_two), 'total': total};
 				pagePagibigContri.dataArray.push(pagePagibigContri.dataObj);
 				if(i == len-1){
 					console.log(pagePagibigContri.dataArray);

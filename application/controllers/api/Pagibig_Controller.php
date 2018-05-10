@@ -47,6 +47,7 @@
 				'wordwrap' => TRUE
 			);
 			$email;
+			$name;
 			$eeshare;
 			$ershare;
 			$total;
@@ -54,16 +55,19 @@
 			foreach ($data as $key => $value) {
 				foreach ($value as $k => $v) {
 					foreach ($v as $index => $result) {
-						if($i%4 == 0){
+						if($i%5 == 0){
 							$email = $result;
 						}
-						else if($i%4 == 1){
+						else if($i%5 == 1){
+							$name = $result;
+						}
+						else if($i%5 == 2){
 							$eeshare = $result;
 						}
-						else if($i%4 == 2){
+						else if($i%5 == 3){
 							$ershare = $result;
 						}
-						else if($i%4 == 3){
+						else if($i%5 == 4){
 							$total = $result;
 						}
 						$i++;
@@ -72,7 +76,7 @@
 					$this->email->from('paulo@nmgresources.ph', 'admin');
 					$this->email->to($email);
 					$this->email->subject('Pag-IBIG Contribution Payment');
-					$this->email->message("Good day!<br>Your Pag-IBIG Contribution for this month of ".$month." has been paid. <br>Here are the breakdown of your contribution for this month: <br>EE Share: ".$eeshare."<br>ER Share: ".$ershare."<br>Total: ".$total);
+					$this->email->message("Good day, ".$name."!<br>Your Pag-IBIG Contribution for this month of ".$month." has been paid. <br>Here are the breakdown of your contribution for this month: <br>EE Share: ".$eeshare."<br>ER Share: ".$ershare."<br>Total: ".$total);
 					$this->email->set_newline("\r\n");
 
 					$result = $this->email->send();
