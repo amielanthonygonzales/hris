@@ -906,7 +906,7 @@
 			}else{
 				pageAdminProfile.elem.find('.mp2-group').hide();
 			}
-
+			   
 			pageAdminProfile.mid_no = value['pagibig_mid_no'].split('-');
 			pageAdminProfile.accountNo = value['pagibig_no'].split('-');
 			pageAdminProfile.sssNo = value['sss_no'].split('-');
